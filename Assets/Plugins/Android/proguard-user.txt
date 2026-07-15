@@ -1,0 +1,13 @@
+-if class androidx.credentials.CredentialManager
+-keep class androidx.credentials.playservices.** {
+  *;
+}
+
+# Facebook SDK ProGuard rules
+-keep class com.facebook.** { *; }
+-keep class com.facebook.appevents.AppEventsLogger { *; }
+
+# 保留整个 MainClass 类及其所有方法
+-keep class com.blockfish.android.MainClass {
+    *;
+}

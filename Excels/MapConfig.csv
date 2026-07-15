@@ -1,0 +1,21 @@
+MapConfig表格,,,,,,,,,,,,,,,,,,
+Both,,,,,,,,,,,,,,,,,,
+ID,VariableName,VariableComment,Name,SceneName,Width,Height,GridDirection,Points,SpawnPoint,TargetPoint,GridProp,StageProp,Removeables,Theme,GridRootPos,CameraInitPos,CameraBattlePos,CameraScalePos
+int,string,string,string,string,int,int,GRID_TYPE(byte),Vector<int>,Vector<int>,Vector<int>,Vector<string>,Vector<string>,Vector<string>,int,Vector3,Vector3,float,Vector3
+Both,None,None,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both
+唯一ID,生成的变量名,注释,地图名称,地图场景路径,"横向格子数量,需要与格子点中的数量对应","纵向格子数量,需要与格子点中的数量对应",格子的行走方向数量,所有的格子点,起点格子下标列表,终点格子下标,地图格子机关,地图物体机关,可移除物件的位置Excel ObstacleConfig，只能在格子为2(可行走)的位置生效,生成地块的主题,地图格中心坐标,场景摄像机初始位置,战斗开始摄像机缩进向量,场景摄像机拉近位置
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,Path:NotAllowSpace,,,,,,,,,,,,,,
+76,,,密林村,Scene/BattleScene1_2_4/BattleScene1_2_4.unity,12,7,2,"5,2,2,2,2,2,2,
+2,2,2,2,2,5,2,
+2,2,2,2,2,2,2,
+2,2,5,5,2,2,9,
+2,2,2,9,9,2,2,
+2,8,2,2,2,9,2,
+2,2,2,2,2,8,5,
+2,2,9,9,2,2,2,
+9,2,2,2,5,2,2,
+2,2,2,2,9,2,2,
+2,5,5,2,2,2,2,
+2,2,2,2,2,2,2,",36,47,,,,1,"0,0,0","-1.7,42,-29.76",1,"-0.5,14.5,-7.5"

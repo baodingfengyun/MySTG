@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7575422147408668002
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 10
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Terrain_Lava
+  m_Shader: {fileID: -6465566751694194690, guid: 7b5916e762ad9c047b1af2db35b9846c,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: _BLACK_Normal_Strength
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Layer_0_BC:
+        m_Texture: {fileID: 2800000, guid: 20209a3df8667bc49b45b628c01d8113, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_0_MTAODS:
+        m_Texture: {fileID: 2800000, guid: 41616c46d6a4dd745862e267ed8a1f7b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_0_N:
+        m_Texture: {fileID: 2800000, guid: 4fdf1eafd6165de49bfe809e41860aef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_1_BC:
+        m_Texture: {fileID: 2800000, guid: ce994c0e8155bfd48a6a7263a7b4901e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_1_MTAODS:
+        m_Texture: {fileID: 2800000, guid: c652db30d76cb434aaa891882784fe8e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_1_N:
+        m_Texture: {fileID: 2800000, guid: d97575fa1b205cf46922feb2d434d163, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_2_BC:
+        m_Texture: {fileID: 2800000, guid: 4b50b5c2cef8e7642978cef09d97ba4a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_2_MTAODS:
+        m_Texture: {fileID: 2800000, guid: 7378d82602d888c40adbd8e9ac8bf8c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_2_N:
+        m_Texture: {fileID: 2800000, guid: 9d33c787608767d49ac5ff0412d238d4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_3_BC:
+        m_Texture: {fileID: 2800000, guid: 502d71c9a810bd94384760c384bba13c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_3_MTAODS:
+        m_Texture: {fileID: 2800000, guid: 7378d82602d888c40adbd8e9ac8bf8c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Layer_3_N:
+        m_Texture: {fileID: 2800000, guid: 9d33c787608767d49ac5ff0412d238d4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BLACK_Emiss:
+        m_Texture: {fileID: 2800000, guid: 1429cf3071ceea8419e51973155c7715, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BLUE_Emiss:
+        m_Texture: {fileID: 2800000, guid: 0e9d9d1865696ec4ea4d95fcc5199bd6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GREEN_Emiss:
+        m_Texture: {fileID: 2800000, guid: 092febb0e8a723c40aeb4bcde1de3b11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RED_Emiss:
+        m_Texture: {fileID: 2800000, guid: 5778f4bc27fc74e49a374acdc059b04d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_05de2d88e98e4ce08d05e6062c986e05_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 100a6a1aa26780a479c000fee1bc4931, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_e5c9e34bdecc4a70aeccf15e3d610545_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: a148e8d5bdf1b1e4ab2961812b38f680, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - BOOLEAN_EA81FC7B: 0
+    - Layer_0_Tiling: 8
+    - Layer_1_Height_Contrast: 1
+    - Layer_1_Tiling: 8
+    - Layer_1_Transition: 1
+    - Layer_2_Height_Contrast: 1
+    - Layer_2_Tiling: 5.1
+    - Layer_2_Transition: 1
+    - Layer_3_Height_Contrast: 2
+    - Layer_3_Tiling: 25
+    - Layer_3_Transition: 1
+    - _AmbientOcc: 1
+    - _BLACK_Emissive_moving_speed: 0
+    - _BLACK_HUE: 0
+    - _BLACK_Lightness: 0.2
+    - _BLACK_Normal_Strength: 1.5
+    - _BLACK_Rotate: 180
+    - _BLACK_Saturation: 1
+    - _BLACK_Smoothness_Strength: 0
+    - _BLUE_Emissive_moving_speed: 0.3
+    - _BLUE_HUE: 1
+    - _BLUE_Lightness: 0.5
+    - _BLUE_Normal_Strength: 1
+    - _BLUE_Rotate: 170
+    - _BLUE_Saturation: 1
+    - _BLUE_Smoothness_Strength: 0
+    - _GREEN_Emissive_moving_speed: 0
+    - _GREEN_HUE: 339
+    - _GREEN_Lightness: 0.4
+    - _GREEN_Normal_Strength: 0
+    - _GREEN_Rotate: 180
+    - _GREEN_Saturation: 0.65
+    - _GREEN_Smoothness_Strength: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _RED_Emissive_moving_speed: 0.05
+    - _RED_HUE: 348
+    - _RED_Lightness: 0.21
+    - _RED_Normal_Strength: 0
+    - _RED_Rotate: 180
+    - _RED_Saturation: 0.61
+    - _RED_Smoothness_Strength: 0
+    - _XRMotionVectorsPass: 1
+    - _alphaClipping: 0
+    m_Colors:
+    - _BLACK_Emis_ColorHDR: {r: 0, g: 0, b: 0, a: 1}
+    - _BLUE_Emis_ColorHDR: {r: 135.58704, g: 4.348475, b: 0, a: 0}
+    - _GREEN_Emis_ColorHDR: {r: 0, g: 0, b: 0, a: 0}
+    - _RED_Emis_ColorHDR: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

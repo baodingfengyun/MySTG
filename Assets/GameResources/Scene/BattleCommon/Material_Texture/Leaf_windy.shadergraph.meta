@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d4ab88899b87ba445aa8e834ede19478
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: scene/battlecommon/material_texture.unity3d
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}

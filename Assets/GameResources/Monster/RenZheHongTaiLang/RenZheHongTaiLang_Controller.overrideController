@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RenZheHongTaiLang_Controller
+  m_Controller: {fileID: 9100000, guid: 66c52e134bf6f1c4e83145872e447fbb, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c215d162da0535b47b499c141e478bb0, type: 2}
+    m_OverrideClip: {fileID: 1827226128182048838, guid: b293561347a500f4aaec22434d445432,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 50e4f8c62b13a554fae10f73084773cd, type: 2}
+    m_OverrideClip: {fileID: -7225907006050079174, guid: b73d70e815856554889680848653e382,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 5c2c1eb9f265a724d84e31a7747c9f7b, type: 2}
+    m_OverrideClip: {fileID: 3060872287085348379, guid: b293561347a500f4aaec22434d445432,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: af4821804815ef44b96ca0b0d1d65a4c, type: 2}
+    m_OverrideClip: {fileID: 6641085478485924818, guid: b293561347a500f4aaec22434d445432,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 3e7c3875dcea5ee49bf20fe5e3c602b9, type: 2}
+    m_OverrideClip: {fileID: -998496362607748373, guid: b293561347a500f4aaec22434d445432,
+      type: 3}

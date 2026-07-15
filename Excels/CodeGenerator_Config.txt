@@ -1,0 +1,13 @@
+// 下面这些是临时变量的定义,用于替换字符串
+ClientProjectPath=E:\Github\TowerDefence_Demo
+TablePath=E:\Github\TowerDefence_Demo\Excels
+// #start表示路径的配置正式开始
+#start
+SERVER_GAME_PROJECT_PATH =
+SERVER_FRAME_PROJECT_PATH =
+CLIENT_PROJECT_PATH = {ClientProjectPath}
+CLIENT_HOTFIX_PATH = {ClientProjectPath}\Assets\Scripts\HotFix
+SERVER_EXCLUDE_INCLUDE_PATH =
+SQLITE_PATH =
+EXCEL_PATH = {TablePath}
+VIRTUAL_CLIENT = false

@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6c9ce8aa9cbb32648825037141685e80
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: ui/common.unity3d
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}

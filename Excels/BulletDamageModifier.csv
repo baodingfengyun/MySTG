@@ -1,0 +1,12 @@
+﻿BulletDamageModifier表格,,,,,,,,,,
+Both,,,,,,,,,,
+ID,VariableName,VariableComment,Name,Type,Param0,ParamDesc0,Param1,ParamDesc1,Param2,ParamDesc2
+int,string,string,string,BULLET_DAMAGE_MODIFIER(byte),string,string,string,string,string,string
+Both,None,None,Both,Both,Both,Both,Both,Both,Both,Both
+唯一ID,生成的变量名,注释,名字,类型,参数0,参数描述0,参数1,参数描述1,参数2,参数描述2
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+1,,,对处于任意异常状态的敌人造成的伤害提高,1,0.3,伤害提高百分比,,,,
+2,,,对地面敌人伤害减少,2,0.5,减少百分比,,,,
+3,,,对空中敌人伤害减少,3,0.5,减少百分比,,,,

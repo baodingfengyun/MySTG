@@ -1,0 +1,2025 @@
+Localization表格,,,,,
+Both,,,,,
+ID,VariableName,VariableComment,Chinese,ChineseTraditional,English
+int,string,string,string,string,string
+Both,None,None,Both,Both,Both
+唯一ID,生成的变量名,注释,简体中文,繁体中文,英文
+,,,,,
+,,,,,
+,,,,,
+10000,,,排行榜,排行榜,Rank
+10001,,,背包,背包,Item
+10002,,,声望,聲望,Milestone
+10003,,,防线,防綫,Fortress
+10004,,,丰碑,丰碑,Monument
+10005,,,竞技场,競技場,Arena
+10006,,,矿场,礦場,Mine
+10007,,,免费奖励,免費獎勵,Free Rewards
+10008,,,泉水祈福,泉水祈福,Fountain
+10009,,,任务,任務,Quest
+10010,,,商城,商城,Shop
+10011,,,商店,商店,Shop
+10012,,,通行证,通行證,Battle Pass
+10013,,,研究所,研究所,Research
+10014,,,佣兵酒馆,傭兵酒館,Tavern
+10015,,,邮箱,郵箱,Mail
+10016,,,地图编辑器,地圖編輯器,Map Editor
+10017,,,冒险,冒險,Campaign
+10018,,,无尽深渊,無盡深淵,Endless Abyss
+10019,,,活动,活動,Events
+10020,,,首充,首充,"Beginner's
+Bundle"
+10021,,,好友,好友,Friends
+10022,,,聊天,聊天,Chat
+10023,,,我的佣兵,我的傭兵,Guardian
+10024,,,公告,公告,Notice
+11000,,,全部,全部,All
+11001,,,收集,收集,Collectible
+11002,,,宝石,寶石,Gem
+11003,,,宝箱,寶箱,Chest
+11004,,,机关,機關,Utillities
+11005,,,珍宝,珍寶,Treasure
+11006,,,关卡信息,關卡信息,INFO
+11007,,,关卡BOSS,關卡BOSS,BOSS
+11008,,,关卡怪物,關卡怪物,Enemy
+11009,,,血量,血量,Health
+11010,,,移动速度,移動速度,Speed
+11011,,,防御力,防禦力,Defense
+12000,,,{0}小时,{0}小時,{0} hours
+12001,,,放弃挖掘,放棄挖掘,Abandon
+12002,,,概率为:{0}%,概率為{0}%,Mining rate {0}%
+12003,,,概率为{0}%,概率為{0},Mining rate {0}%
+12004,,,派遣,派遣,Deploy
+12005,,,矿场正在挖掘中:,礦場正在挖掘中:,In opreation:
+12006,,,派遣中,派遣中,On duty
+12007,,,上阵,上陣,Deploy
+12008,,,是否取消本次挖矿？,是否放棄挖掘？,Abandon Mining？
+12009,,,佣兵,傭兵,Guardian
+12010,,,小时,小時,hour
+12011,,,预计收获,預計收穫,Estimated Rewards
+12012,,,派遣时长越长，获得道具越多,派遣時間越長，獲得的道具越多,Longer missions yield greater rewards.
+12013,,,"挖矿中,不能再次派遣","挖礦中,不能再次派遣",Already On Duty
+12014,,,挖矿中,挖礦中,Already On Duty
+12015,,,开始探险,開始探險,Start
+12016,,,取消探险,取消探险,Stop
+13000,,,普通模式通关{0}关卡,普通模式通過{0}關卡,Complete Level {0}
+13001,,,消耗{0}点{1},消耗{0}個{1},Consume {0} {1}
+13002,,,使用佣兵游玩{0}次关卡,使用傭兵遊玩{0}次關卡,Use Gaurdians to play {0} Levels
+13003,,,获得{0}个{1},獲得{0}個{1},Get {0} {1}
+13004,,,佣兵招募{0}次,傭兵招募{0}次,Recruit Guardians {0} times
+13005,,,商城购物{0}次,商城購物{0}次,Purchase items {0} times in Shop
+13006,,,在喷泉进行{0}次祈福,在噴泉進行{0}次祈福,Bless {0} times in Fountain
+13007,,,消灭{0}只{1},消滅{0}隻{1},Defeat {0} {1}
+13008,,,进行{0}次防线保卫,進行{0}次防線保衛,Defend Fortress {0} times
+13009,,,升级{0}次佣兵,升級{0}次傭兵,Level up Guardians {0} times
+13010,,,{0}名佣兵达到{1}级,{0}名傭兵達到{1}級,{0} Guardians reach Level {1}
+13011,,,{0}名佣兵达到{1}星,{0}名傭兵達到{1}星,{0} Guardians reach {1} star
+13012,,,在{0}模式下完成{1}关卡,在{0}模式下完成{1}關卡,Complete {1} levels in {0} Mode
+13013,,,在研究所中升级{0}次{1},在研究所中升級{0}次{1},Level up {1} {0} times in Research
+13014,,,{0}的研究等级达到{1}级,{0}的研究等級達到{1}級,{0} research level reaches {1}
+13015,,,喷泉祈福等级达到{0}级,噴泉祈福等級達到{0}級,Fountain Blessing Level reaches {0}
+13016,,,经典模式通关{0}关卡,經典模式通過{0}關卡,Complete Level {0}
+13017,,,通关关卡{0},通關關卡{0},Complete Level {0}
+13018,,,在佣兵酒馆进行{0}次新手抽卡,在傭兵酒館進行{0}次新手抽卡,Recruit {0} times in Tavern (Beginner)
+13019,,,领取丛林1-2奖励，激活焰角弗雷明,領取叢林1-2獎勵，激活焰角弗雷明,Unlock Flemming with Jungle 1-2 Rewards
+13020,,,领取丛林1-7奖励，激活狼舞者玲儿,領取叢林1-7獎勵，激活狼舞者玲兒,Unlock Linger with Jungle 1-7 Rewards
+13021,,,出战佣兵进行{0}次关卡,出戰傭兵進行{0}次關卡,Deploy Gaurdians {0} times
+13022,,,通关第一章{0},通關第一章{0},Complete Chapter 1 {0}
+13023,,,进行{0}波防线防守,進行{0}波防線防守,Defend {0} Waves in Fortress
+13024,,,通关第二章{0},通關第二章{0},Complete Chapter 2 {0}
+13025,,,{0}个防御塔研究达到{1}级,{0}個防禦塔研究達到{1}級,{0} towers research levels reach Lv{1}
+13026,,,进行{0}次矿洞探险,進行{0}次礦洞探險,Deploy Guardians {0} times in the Mine
+13027,,,缺省任务2,抽卡{0}次,Recruit {0} times
+13028,,,缺省任务3,獲得{0}個{1}級寶石,Gain {0} level {1} gem
+13029,,,缺省任务4,派遣傭兵{0}次,Dispatch the Guardian {0} times
+13030,,,缺省任务5,商城購買{0}次商品,Purchases {0} times in the Shop
+13031,,,缺省任务6,挑戰,Fight
+13032,,,缺省任务7,通關{0}關卡,Clear level {0}
+13033,,,缺省任务8,消耗{0}個{1},Consume {0} {1}
+13034,,,缺省任务9,消滅{0}波防線怪物,Eliminate {0} wave of enemies in the Fortress
+13035,,,缺省任务10,{0}關卡通關第{1}波,Eliminate wave {1} in {0} level
+13036,,,缺省任务11,傭兵派遣{0}次,Deploy Guardians {0} times
+13900,,,主线,主綫,Main Quests
+13901,,,任务数量,任務數量,Number of Quests
+13902,,,日常,日常,Daily Quests
+13903,,,已领取,已領取,Claimed
+13904,,,日常任务,日常任務,Daily
+13905,,,主线任务,主線任務,Campaign
+13906,,,挑战任务,挑戰任務,Challenge
+13907,,,声望任务,声望任务,Mission
+13908,,,已完成,已完成,Completed
+13909,,,进行中,進行中,In Progress
+14000,,,购买,購買,Purchase
+14001,,,确认购买,確認購買,Confirm Purchase
+14002,,,已售罄,已售罄,Sold Out
+14003,,,售罄,售罄,Sold Out
+14004,,,开服礼包,開服禮包,Welcome Gift
+14005,,,每日特惠,每日特惠,Daily Special
+14006,,,每周特惠,每週特惠,Weekly Special
+14007,,,每日限购,每日限購,Daily Limit
+14008,,,每周限购,每周限購,Weekly Limit
+14009,,,天,天,d
+14010,,,时,時,h
+14011,,,分,分,m
+14012,,,秒,秒,s
+14013,,,剩{0}{1},剩{0}{1},{0}{1} Left
+14014,,,{0}限购 {1},{0}限購 {1},{0} limit {1}
+14015,,,商品已达购买上限！,商品已達購買上限！,Purchase Limit Reached!
+14016,,,已售完,已售罄,Sold Out
+14017,,,礼包详情,禮包詳情,Included
+14018,,,物品,物品,Items
+14019,,,{0}天{1}时{2}分{3}秒,{0}天{1}时{2}分{3}秒,{0}d {1}h {2}m {3}s
+14020,,,{1}时{2}分{3}秒,{1}时{2}分{3}秒,{1}h {2}m {3}s
+14021,,,{2}分{3}秒,{2}分{3}秒,{2}m {3}s
+14022,,,{3}秒,{3}秒,{3}s
+14023,,,{1}时{2}分,{1}时{2}分,{1}h {2}m
+14024,,,{0}天,{0}天,{0} Day
+14100,,,货币礼包,貨幣禮包,Currency Pack
+14101,,,首充第一档礼包,首充第一檔禮包,First Recharge Tier 1 Pack
+14102,,,首充第二档礼包,首充第二檔禮包,First Recharge Tier 2 Pack
+14103,,,首充第三档礼包,首充第三檔禮包,First Recharge Tier 3 Pack
+14104,,,月卡A,月卡A,Monthly Card A
+14105,,,月卡B,月卡B,Monthly Card B
+14106,,,宝石随机箱 I,寶石隨機箱 I,Random Gem Box I
+14107,,,宝石随机箱 II,寶石隨機箱 II,Random Gem Box II
+14108,,,宝石随机箱 III,寶石隨機箱 III,Random Gem Box III
+14109,,,宝石随机箱 IV,寶石隨機箱 IV,Random Gem Box IV
+14110,,,随机佣兵碎片*5宝箱,隨機傭兵碎片*5寶箱,Random Guardian Shard *5 Box
+14111,,,随机佣兵碎片*10宝箱,隨機傭兵碎片*10寶箱,Random Guardian Shard *10 Box
+14112,,,随机图纸*10宝箱,隨機圖紙*10寶箱,Random Blueprint *10 Box
+14113,,,随机图纸*50宝箱,隨機圖紙*50寶箱,Random Blueprint *50 Box
+14114,,,随机图纸,隨機圖紙,Random Blueprint
+14115,,,佣兵盲盒,傭兵盲盒,Guardian Mystery Box
+14116,,,防御塔图纸盲盒,防禦塔圖紙盲盒,Tower Blueprint Mystery Box
+14117,,,幸运盲盒,幸運盲盒,Lucky Mystery Box
+14118,,,体力包（小）,體力包（小）,Stamina Pack (Small)
+14119,,,体力包（大）,體力包（大）,Stamina Pack (Large)
+14120,,,单卖测试品1,單賣測試品1,Solo Test Item 1
+14121,,,锯子特惠,鋸子特惠,Saw Special Offer
+14122,,,铲子特惠,鏟子特惠,Shovel Special Offer
+14123,,,经验书特惠,經驗書特惠,Experience Book Special Offer
+14124,,,大体力特惠,大體力特惠,Large Stamina Special Offer
+14125,,,500金币,500金幣,500 Coins
+14126,,,1000金币,1000金幣,1000 Coins
+14127,,,5500金币,5500金幣,5500 Coins
+14128,,,12000金币,12000金幣,12000 Coins
+14129,,,40000金币,40000金幣,40000 Coins
+14130,,,体力礼包,體力禮包,Stamina Gift Pack
+14131,,,防线大礼包,防線大禮包,Fortress Gift Pack
+14132,,,1级宝石袋,1級寶石袋,Level 1 Gem Bag
+14133,,,2级宝石袋,2級寶石袋,Level 2 Gem Bag
+14134,,,3级宝石袋,3級寶石袋,Level 3 Gem Bag
+14135,,,4级宝石袋,4級寶石袋,Level 4 Gem Bag
+14136,,,5级宝石袋,5級寶石袋,Level 5 Gem Bag
+14137,,,佣兵卡片随机宝箱,傭兵卡片隨機寶箱,Guardian Card Random Treasure Box
+14138,,,特惠礼包,特惠禮包,Exclusives
+14139,,,宝箱内容:,寶箱内容:,What's inside:
+15000,,,新手卡池,新手卡池,Beginner
+15001,,,常驻卡池,常驻卡池,Periodic
+15002,,,冰原精锐,冰原精銳,Arctic Elite
+15003,,,抽一次,抽一次,1 Recruit
+15004,,,抽十次,抽十次,10 Recruits
+15005,,,剩余次数:{0},剩餘次數:{0},Remaining:{0}
+15006,,,查看雇佣概率,查看雇傭概率,Odds Reveal
+15007,,,{0}抽必定获得1个金色品质佣兵（{1}/{0}）,{0}抽必定獲得1個金色品質傭兵（{1}/{0}）,1 Legendary Guardian guaranteed after {0} Recruits. ({1}/{0})
+16000,,,防御塔丰碑,防禦塔豐碑,Tower
+16001,,,全体十字弓加成效果:,全體十字弓加成效果,Curent Effect:
+16002,,,全体飞镖发射器加成效果:,全體飛鏢發射器加成效果,Curent Effect:
+16003,,,全体防空飞弹塔加成效果:,全體防空飛彈塔加成效果,Curent Effect:
+16004,,,全体火炮塔加成效果:,全體火炮塔加成效果,Curent Effect:
+16005,,,全体霰弹塔加成效果:,全體霰彈塔加成效果,Curent Effect:
+16006,,,回旋镖塔,回旋鏢塔,Boomerang
+16007,,,全体回旋镖塔加成效果:,全體回旋鏢塔加成效果,Curent Effect:
+16008,,,全体天空之矛加成效果:,全體天空之矛加成效果,Curent Effect:
+16009,,,全体风刃发射器加成效果:,全體波動塔加成效果,Curent Effect:
+16010,,,全体电磁震荡塔加成效果:,全體震蕩塔加成效果,Curent Effect:
+16011,,,气球飞弹塔,氣球炸彈塔,Balloon Launcher
+16012,,,全体气球飞弹塔加成效果:,全體氣球飛彈塔加成效果,Curent Effect:
+16013,,,进阶防御塔丰碑,進階防禦塔豐碑,Tower Advanced
+16014,,,攻击之力,攻擊之力,Attack
+16015,,,攻击之力效果:,攻擊之力效果,Curent Effect:
+16016,,,攻速之力,攻速之力,Speed
+16017,,,攻速之力效果:,攻速之力效果,Curent Effect:
+16018,,,暴击之力,暴擊之力,Critical Hit
+16019,,,暴击之力效果:,暴擊之力效果,Curent Effect:
+16020,,,暴伤之力,暴傷之力,Critical Damage
+16021,,,暴伤之力效果:,暴傷之力效果,Curent Effect:
+16022,,,养成之力,養成之力,Ascension
+16023,,,养成之力效果:,養成之力效果,Curent Effect:
+16024,,,改造之力,改造之力,Forging
+16025,,,改造之力效果:,改造之力效果,Curent Effect:
+16026,,,佣兵丰碑,傭兵豐碑,Guardian
+16027,,,村落之力,村落之力,Prime
+16028,,,村落之力效果:,村落之力效果,Curent Effect:
+16029,,,激活所有槽位解锁丰碑效果,激活所有槽位解鎖豐碑效果,Activate all slots to unlock the monument
+16030,,,所有塔对精英和BOSS伤害:+5%,所有塔對精英和BOSS傷害:+5%,+5% Damage to Elite and BOSS for all towers
+16031,,,激活,激活,Activate
+16032,,,所有塔BOSS回合攻速:+8%,所有塔BOSS回合攻速:+8%,+8% Atk Speed for all towers during BOSS round
+16033,,,所有塔暴击率:+3%,所有塔暴擊率:+3%,+3% Critical Hit Rate for all towers
+16034,,,所有塔暴击伤害:12%,所有塔暴擊傷害:12%,+12% Critical Damage for all towers
+16035,,,所有塔攻击力:+10%,所有塔攻擊力:+10%,+10% Atk for all towers
+16036,,,防御塔初始等级:+1,防禦塔初始等級:+1,+1 initial level for all towers
+16037,,,所有佣兵BOSS回合攻速:15%,所有傭兵BOSS回合攻速:15%,+15% Atk Speed for all Guardians during BOSS round
+16038,,,所有佣兵暴击率:+3%,所有傭兵暴擊率:+3%,+3% Critical Hit Rate for all Guardians
+16039,,,所有佣兵暴击伤害:12%,所有傭兵暴擊傷害:12%,+12% Critical Damage for all Guardians
+16040,,,所有佣兵攻击力:20%,所有傭兵攻擊力:20%,+20% Atk for all Guardians
+16041,,,佣兵主动技能CD减少1回合,傭兵主動技能CD減少1回合,Guardian active skill cooldown reduced by 1 turn
+16042,,,{0}攻击力: +{1},{0}攻擊力: +{1},{0} +{1} Attack
+16043,,,{0}攻击力: +{1}%,{0}攻擊力: +{1}%,{0} +{1}% Attack
+16044,,,{0}攻速: +{1}%,{0}攻速: +{1}%,{0} +{1}% Atk Speed
+16045,,,{0}震荡弹飞行速度: +{1}%,{0}震盪彈飛行速度: +{1}%,{0} +{1}% Bullet Speed
+16046,,,{0}对精英伤害: +{1}%,{0}對精英傷害: +{1}%,{0} +{1}% Damage to Elites
+16047,,,{0}对BOSS伤害: +{1}%,{0}對BOSS傷害: +{1}%,{0} +{1}% Damage to Bosses
+16048,,,{0}对精英和BOSS伤害: +{1}%,{0}對精英和BOSS傷害: +{1}%,{0} +{1}% Damage to Elites and Bosses
+16049,,,{0}暴击率: +{1}%,{0}暴擊率: +{1}%,{0} +{1}% Crit Chance
+16050,,,{0}暴击伤害: +{1}%,{0}暴擊傷害: +{1}%,{0} +{1}% Crit Damage
+16051,,,{0}BOSS回合攻速: +{1}%,{0}BOSS回合攻速: +{1}%,{0} +{1}% Atk Speed on Boss Wave 
+16052,,,{0}精英死亡50%概率获得{1}建筑币,{0}精英死亡5%機率獲得{1}建築幣,{0} +5% Chance to Gain {1} Cogs on Elite Death
+16053,,,{0}BOSS死亡50%概率获得{1}建筑币,{0}BOSS死亡50%機率獲得{1}建築幣,{0} +50% Chance to Gain {1} Cogs on Boss Death
+16054,,,{0}防御塔初始等级: +{1},{0}防禦塔初始等級: +{1},{0} +{1} Initial Level
+16055,,,{0}第3回合结束获得{1}建筑币,{0}第3回合結束獲得{1}建築幣,{0} Gain {1} Cogs at the End of Round 3
+16056,,,{0}第5回合结束获得{1}建筑币,{0}第5回合結束獲得{1}建築幣,{0} Gain {1} Cogs at the End of Round 5
+16057,,,{0}第8回合结束获得{1}建筑币,{0}第8回合結束獲得{1}建築幣,{0} Gain {1} Cogs at the End of Round 8
+16058,,,{0}第10回合结束获得{1}建筑币,{0}第10回合結束獲得{1}建築幣,{0} Gain {1} Cogs at the End of Round 10
+16059,,,{0}研究所提升攻击: +{1}%,{0}研究所提升攻擊: +{1}%,{0} +{1}% Attack in Reaserch
+16060,,,{0}升级提升攻击: +{1}%,{0}升級提升攻擊: +{1}%,{0} +{1}% Attack When Level Up
+16061,,,{0}每消耗20建筑币返还{1}建筑币,{0}每消耗20建築幣返還{1}建築幣,{0} +{1} Cogs Refund per 20 Spent
+16062,,,{0}佣兵等级提升攻击: +{1}%,{0}傭兵等級提升攻擊: +{1}%,{0} Guardian Level +{1}% Attack
+16063,,,{0}佣兵升星增加攻击: +{1},{0}傭兵升星增加攻擊: +{1},{0} +{1} Attack on Guardian Awakening
+16064,,,{0}佣兵达到30级时攻速: +{1}%,{0}傭兵達到30級時攻速: +{1}%,{0} +{1}% Atk Speed at Guardian Lv.30
+16065,,,{0}佣兵达到60级时攻速: +{1}%,{0}傭兵達到60級時攻速: +{1}%,{0} +{1}% Atk Speed at Guardian Lv.60
+16066,,,{0}佣兵达到3星时攻速: +{1}%,{0}傭兵達到3星時攻速: +{1}%,{0} +{1}% Atk Speed for 3-Star Guardians
+16067,,,{0}佣兵达到5星时攻速: +{1}%,{0}傭兵達到5星時攻速: +{1}%,{0} +{1}% Atk Speed for 5-Star Guardians
+16068,,,{0}放置佣兵获得{1}建筑币,{0}放置傭兵獲得{1}建築幣,{0} Gain {1} Cogs on Guardian Deploy
+16069,,,{0}佣兵使用主动技能获得{1}建筑币,{0}傭兵使用主動技能獲得{1}建築幣,{0} Gain {1} Cogs when Using Guardian Active Skills
+16070,,,{0}佣兵主动技能CD减少{1}回合,{0}傭兵主動技能CD減少{1}回合,{0} -{1} Turns Guardian Active Skill Cooldown
+17000,,,属性,屬性,Stats
+17001,,,攻击,攻擊,Atk
+17002,,,攻速,攻速,Atk Speed
+17003,,,射程,射程,Range
+17004,,,暴伤,暴傷,Crit Dmg
+17005,,,经验,經驗,EXP
+17006,,,主动,主動,Active
+17007,,,被动,被動,Passive
+17008,,,普攻,普攻,Auto
+17009,,,技能,技能,Ability
+17010,,,携带,携帶,Perk
+17011,,,信息,信息,Stats
+18000,,,请将【十字弓】（拖拽）到地面的（目标格位）,請將【十字弓】拖拽放到指定格子上,Drag the [Crossbow] to the designated tile
+18001,,,吹响【号角】，开启战斗！,點擊【開戰】按鈕,Tap the [Fight] button
+18002,,,点击选择第一个词条,點擊選擇第一個詞條,Tap to select the first perk
+18003,,,点击查看词条背包,點擊查看詞條背包,Tap to view the perk inventory
+18004,,,点击任意空白区域，关闭词条背包,點擊任意空白區域，關閉詞條背包,Tap anywhere to close the perk inventory
+18005,,,将【十字弓】（拖拽放置）到地面的（目标格位）,放置一座【十字弓】到指定格子上,Place a [Crossbow] on the designated tile
+18006,,,再放置一座【十字弓】到地面的（目标格位）,再放置一座【十字弓】到地面的（目标格位）,再放置一座【十字弓】到地面的（目标格位）
+18007,,,点击选择任意一个词条,點擊選擇任意一個詞條,Tap to select any perk
+18008,,,将【飞镖发射器】（拖拽放置）到地面的（目标格位）,放置【飛鏢發射器】到指定格子上,Place the [Ninja Star] on the designated tile
+18009,,,点击已通过的“关卡图标”,點擊已通過的“關卡圖標”,Select the Level we just finished
+18010,,,点击“关卡宝箱”,点击“关卡宝箱”,点击“关卡宝箱”
+18011,,,"点击左上角【返回】按钮,回到村庄","點擊左上角【返回】按鈕, 回到大廳",Tap the top-left [Return] button to go back to the village
+18012,,,点击【佣兵】,點擊【傭兵】,Tap [Guardians]
+18013,,,点击【冒险】,點擊【冒險】,Tap [Compaign]
+18014,,,点击“佣兵卡片”,點擊“傭兵卡片”,"Tap ""Guardian Card"""
+18015,,,点击【挑战】按钮,點擊【挑戰】按鈕,Tap the [Fight] button
+18016,,,放置任意两个防御塔,放置任意兩個防禦塔,Place any two towers
+18017,,,"将任意防御塔升级到3级, 强化工事","將任意防禦塔升級到3級, 強化工事",Upgrade any tower to Lv.3
+18018,,,放置任意一个防御塔,放置任意一個防禦塔,Place any tower
+18019,,,"将任意防御塔升级到5级, 强化工事","將任意防禦塔升級到5級, 強化工事",Upgrade any tower to Lv.5
+18100,,,你所在的村庄如今已被失心者包围，外围的布防只能抵挡他们一波攻势，下一波进攻很快就到，别傻站着，快来帮忙（构建防御！）,獸化的敵人即將來襲，放置防禦塔，做好作戰前的準備。,Beast-infested enemies are approaching! Place your towers and prepare for battle.
+18101,,,拿取(第1个战斗词条).,拿取第1個戰鬥詞條，詞條可以幫助我們強化陣地的作戰能力！,Grab the first battle perk; it will help us fortify our defenses!
+18102,,,拿取到的词条会进入词条背包，点击这里进行查看。,拿取到的詞條會進入詞條背包，點擊這裡進行查看。,The perks you acquire will go into your perk inventory. Tap here to view them.
+18103,,,让我们来巩固防线，再放置一座【十字弓】到地面的（目标格位）,讓我們來鞏固防線，再放置一座【十字弓】防禦塔。,Let's reinforce the defense line by placing another [Crossbow] tower.
+18104,,,根据前方哨兵的侦察，我们推演出下一次受袭的时间，在这期间我们要做好布防.,漂亮的作戰，看來你很有做指揮官的潛質，不要因為一次的成功而懈怠防禦，我有預感，下一次侵襲臨近了。,"Impressive battle! You have the potential of a great commander, but don’t slack off after just one victory. I have a feeling the next assault is close."
+18105,,,前方的哨兵报告，临近的村子发现兽化敌人的暗探，预计很快就会侵袭，让我们做好防御准备吧。,前方的哨兵報告，臨近的村子發現獸化敵人的暗探，預計很快就會侵襲，讓我們做好防禦準備吧。,Scouts ahead report that beast-infested spies have been spotted near the village. We need to prepare our defenses quickly!
+18106,,,"地图上已推演出敌人的(行进路线),(在路线上布置防御塔,能使敌人绕的更远,争取更多作战时间).","地图上已推演出敌人的(行进路线),(在路线上布置防御塔,能使敌人绕的更远,争取更多作战时间).","地图上已推演出敌人的(行进路线),(在路线上布置防御塔,能使敌人绕的更远,争取更多作战时间)."
+18107,,,做的很好！我越发相信，不远的未来，你将会是一名赫赫有名的指挥官！,做得很好，我越發相信，不遠的未來，你將會是一名赫赫有名的指揮官！,Well done! I’m more confident than ever that you will be a renowned commander in the near future.
+18108,,,除了布置防御点以外，作为指挥官，还要学会提升防御塔的质量，让我们开始升级防御塔，强化工事吧。,除了佈置防禦點以外，作為指揮官，還要學會提升防禦塔的質量，讓我們開始升級防禦塔，強化工事吧。,"Besides placing defense points, a good commander must also enhance the quality of the towers. Let's start upgrading the towers and fortifying our defenses."
+18109,,,点击作战场景内【十字弓】防御塔,點擊作戰場景內【十字弓】防禦塔。,Tap on the [Crossbow] tower in the battle scene.
+18110,,,"点击""小扳手""升级防御塔","點擊""小扳手""升級防禦塔。","Tap the ""Wrench"" icon to upgrade the tower."
+18111,,,点击作战场景内另一座【十字弓】防御塔,點擊作戰場景內另一座【十字弓】防禦塔。,Tap on another [Crossbow] tower in the battle scene.
+18112,,,"【飞镖发射器】可以攻击（近距离地面目标）,试试它的威力.",【飛鏢發射器】是一座能快速攻擊附近地面敵人的防禦塔，把它放在敵人的行進路線上，增強我們的工事。,The [Ninja Star] is a tower that rapidly attacks nearby ground enemies. Place it along the enemy’s path to strengthen our fortifications.
+18113,,,我已经很久没看过如此酣畅淋漓的战斗了，谢谢你保护了这个村子，享受荣耀的同时，去领取你赢得的奖励吧！,我已經很久沒看過如此酣暢淋漓的戰鬥了，謝謝你保護了這個村子，享受榮耀的同時，去領取你贏得的獎勵吧。,"It’s been a long time since I’ve seen such a thrilling battle. Thank you for protecting this village. As you bask in glory, go claim your well-deserved reward!"
+18114,,,这次的胜利让你赢得了一位佣兵伙伴的信任，佣兵对工事的防御有极大的帮助，集合佣兵让我们去进行下一场战斗吧！,这次的胜利让你赢得了一位佣兵伙伴的信任，佣兵对工事的防御有极大的帮助，集合佣兵让我们去进行下一场战斗吧！,这次的胜利让你赢得了一位佣兵伙伴的信任，佣兵对工事的防御有极大的帮助，集合佣兵让我们去进行下一场战斗吧！
+18115,,,点击【返回】按钮回到村庄，开启新一轮的战斗吧！,點擊【返回】按鈕回到村莊，開啟新一輪的戰鬥吧！,Tap the [Return] button to go back to the village and start a new round of battles.
+18116,,,新一轮的侵袭即将来临，和佣兵伙伴一起，守护我们的家园！,新一輪的侵襲即將來臨，和傭兵夥伴一起，進行一場轟轟烈烈的戰鬥吧！,A new wave of enemies is coming. Prepare for an epic battle alongside your Guardian companion!
+18117,,,切记在前往战场前，一定要把佣兵勇士编入战斗单位，不然你就只能孤军作战了！,切記在前往戰場前，一定要把傭兵勇士編入戰鬥單位，不然你就只能孤軍作戰了！,"Don’t forget to assign your Guardian to the battle unit before heading to the battlefield. Otherwise, you’ll be fighting alone!"
+18118,,,把佣兵拖拽到作战场地内，参与作战。,把傭兵拖拽到作戰場地內，參與作戰。,Drag the Guardian into the battle area to participate in combat.
+18119,,,每个佣兵都拥有自己强大的主动技能，点击技能图标释放技能阻击敌人吧。,每個傭兵都擁有自己強大的主動技能，點擊技能圖標釋放技能阻擊敵人吧。,Each Guardian has a powerful active skill. Tap the skill icon to unleash it and strike the enemy.
+18120,,,别忘了放置防御塔，佣兵孤军奋战可不是好事情！,別忘了放置防禦塔，傭兵孤軍奮戰可不是好事情！,Don’t forget to place towers; leaving the Guardian to fight alone isn’t a good idea!
+18121,,,前线哨兵警报！警报！敌方阵营将领Boss出现在战场！,前線哨兵警報！警報！敵方陣營將領Boss出現在戰場！,Alert! Alert! The enemy Boss has appeared on the battlefield !
+18122,,,这场战斗就交给你了，加油指挥官!,這場戰鬥就交給你了，加油指揮官！,"This battle is in your hands now. Good luck, Commander!"
+18123,,,干的漂亮！村民们还在等我们的消息，一起凯旋吧。,幹得漂亮！村民們還在等我們的消息，一起凱旋吧。,Great job! The villagers are awaiting our good news. Let’s celebrate our victory together.
+18124,,,你已经是一名合格的指挥官了，我的授课也到此结束，期待与你并肩作战，我们战场上见！,你已經是一名合格的指揮官了，我的授課也到此結束，期待與你並肩作戰，我們戰場上見！,You’re now a qualified Commander. My teachings are complete. I look forward to fighting alongside you on the battlefield!
+18125,,,"自从天外(陨石坠落)到这个世界,森林里很多原本善良的居民被陨石携带的(病毒感染),失去心智的他们开始攻击附近的村庄.","自从天外(陨石坠落)到这个世界,森林里很多原本善良的居民被陨石携带的(病毒感染),失去心智的他们开始攻击附近的村庄.","自从天外(陨石坠落)到这个世界,森林里很多原本善良的居民被陨石携带的(病毒感染),失去心智的他们开始攻击附近的村庄."
+18126,,,(木制地砖)承受不住防御塔的重量而无法放置，它会成为敌人移动的主要路线，多加注意！,(木制地砖)承受不住防御塔的重量而无法放置，它会成为敌人移动的主要路线，多加注意！,(木制地砖)承受不住防御塔的重量而无法放置，它会成为敌人移动的主要路线，多加注意！
+18127,,,拿取（战斗词条）可以使对应（防御塔的战斗能力提升.）,拿取（战斗词条）可以使对应（防御塔的战斗能力提升.）,拿取（战斗词条）可以使对应（防御塔的战斗能力提升.）
+18128,,,看样子你已经准备好，（“吹响号角”），（敌人）会（提前到达），这将是你的成名之战！,看样子你已经准备好，（“吹响号角”），（敌人）会（提前到达），这将是你的成名之战！,看样子你已经准备好，（“吹响号角”），（敌人）会（提前到达），这将是你的成名之战！
+18129,,,哨兵发现的敌人都会记录在这，了解他们会帮助你做出布防决策。,哨兵发现的敌人都会记录在这，了解他们会帮助你做出布防决策。,哨兵发现的敌人都会记录在这，了解他们会帮助你做出布防决策。
+18130,,,敌人的(飞行侦察兵)向我们飞来，快部署(防空塔)击落他！,敌人的(飞行侦察兵)向我们飞来，快部署(防空塔)击落他！,敌人的(飞行侦察兵)向我们飞来，快部署(防空塔)击落他！
+18131,,,"【十字弓】可以攻击(近距离空中目标),试试它的威力.","【十字弓】可以攻击(近距离空中目标),试试它的威力.","【十字弓】可以攻击(近距离空中目标),试试它的威力."
+18132,,,发现敌方(精英)和他的(飞行小队），（精英）会在（低血量）时（释放暗黑技能），快增加布防！,发现敌方(精英)和他的(飞行小队），（精英）会在（低血量）时（释放暗黑技能），快增加布防！,发现敌方(精英)和他的(飞行小队），（精英）会在（低血量）时（释放暗黑技能），快增加布防！
+18133,,,是时候迎头痛击他们了，吹响号角！,是时候迎头痛击他们了，吹响号角！,是时候迎头痛击他们了，吹响号角！
+18134,,,点击防御塔-【飞镖发射器】,点击【飞镖发射器】防御塔,点击【飞镖发射器】防御塔
+18135,,,点击敌方头像,点击敌方头像,点击敌方头像
+18136,,,点击当前波次敌人头像查看,点击当前波次敌人头像查看,点击当前波次敌人头像查看
+18137,,,点击界面关闭按钮,点击界面关闭按钮,点击界面关闭按钮
+18138,,,点击防御塔-【十字弓】,点击防御塔-【十字弓】,点击防御塔-【十字弓】
+18139,,,点击（确定）,点击（确定）,点击（确定）
+18140,,,前线哨兵报告，敌方数量突增，现在的工事强度严重不足，（升级防御塔），可以大大（提升战斗力！）,前线哨兵报告，敌方数量突增，现在的工事强度严重不足，（升级防御塔），可以大大（提升战斗力！）,前线哨兵报告，敌方数量突增，现在的工事强度严重不足，（升级防御塔），可以大大（提升战斗力！）
+18141,,,选中作战场地内【飞镖发射器】,选中作战场地内【飞镖发射器】,选中作战场地内【飞镖发射器】
+18142,,,面对大面积地面敌人，是时候展现【火炮塔】威力了！,面对大面积地面敌人，是时候展现【火炮塔】威力了！,面对大面积地面敌人，是时候展现【火炮塔】威力了！
+18143,,,出现了[火炮塔子弹+1]的强力作战词条，拿下它，让敌人尝尝火炮的洗礼！,出现了[火炮塔子弹+1]的强力作战词条，拿下它，让敌人尝尝火炮的洗礼！,出现了[火炮塔子弹+1]的强力作战词条，拿下它，让敌人尝尝火炮的洗礼！
+18144,,,再布防一座[火炮塔]，让我们轰他个七荤八素！,再布防一座[火炮塔]，让我们轰他个七荤八素！,再布防一座[火炮塔]，让我们轰他个七荤八素！
+18145,,,"属于你的[研究所]已经解锁，(作战前)记得先在研究所里(强化防御塔,提升作战能力！)","属于你的[研究所]已经解锁，(作战前)记得先在研究所里(强化防御塔,提升作战能力！)","属于你的[研究所]已经解锁，(作战前)记得先在研究所里(强化防御塔,提升作战能力！)"
+18146,,,[声望]功能已解锁！达成(声望任务)，村民们会给予你丰厚的(回报)！,[声望]功能已解锁！达成(声望任务)，村民们会给予你丰厚的(回报)！,[声望]功能已解锁！达成(声望任务)，村民们会给予你丰厚的(回报)！
+18147,,,漂亮的作战！去获取你的战利品吧，说不定会有惊喜！,漂亮的作战！去获取你的战利品吧，说不定会有惊喜！,漂亮的作战！去获取你的战利品吧，说不定会有惊喜！
+18148,,,拖拽【火炮塔】到地面的（目标格位）,拖拽【火炮塔】到地面的（目标格位）,拖拽【火炮塔】到地面的（目标格位）
+18149,,,点击（加速战斗）按钮,点击（加速战斗）按钮,点击（加速战斗）按钮
+18150,,,点击【研究所】建筑,点击【研究所】建筑,点击【研究所】建筑
+18151,,,点击（升级）按钮,点击（升级）按钮,点击（升级）按钮
+18152,,,(闯关获胜)，可以(解锁)不同的[防御塔]，应对不同的敌人。,(闯关获胜)，可以(解锁)不同的[防御塔]，应对不同的敌人。,(闯关获胜)，可以(解锁)不同的[防御塔]，应对不同的敌人。
+18153,,,[{0}]已解锁,[{0}]已解锁,[{0}]已解锁
+18154,,,战斗前及每回合结束后，都有可能抽取到已解锁的防御塔，拿取后可在本局对战中使用。,战斗前及每回合结束后，都有可能抽取到已解锁的防御塔，拿取后可在本局对战中使用。,战斗前及每回合结束后，都有可能抽取到已解锁的防御塔，拿取后可在本局对战中使用。
+18155,,,拿取防御塔-【飞镖发射器】,拿取防御塔-【飞镖发射器】,拿取防御塔-【飞镖发射器】
+18156,,,拿取防御塔-【十字弓】,拿取防御塔-【十字弓】,拿取防御塔-【十字弓】
+18157,,,拿取防御塔-【火炮塔】,拿取防御塔-【火炮塔】,拿取防御塔-【火炮塔】
+18158,,,【任务】功能已解锁！达成每一项[任务]，都会有额定的[回报]！,【任务】功能已解锁！达成每一项[任务]，都会有额定的[回报]！,【任务】功能已解锁！达成每一项[任务]，都会有额定的[回报]！
+18159,,,【泉水祈福】功能已解锁！提升[祈福等级]，可领取可观的奖励！,【泉水祈福】功能已解锁！提升[祈福等级]，可领取可观的奖励！,【泉水祈福】功能已解锁！提升[祈福等级]，可领取可观的奖励！
+18160,,,【矿洞探险】功能已解锁！派遣佣兵前往[探险]，获得惊喜收获！,【矿洞探险】功能已解锁！派遣佣兵前往[探险]，获得惊喜收获！,【矿洞探险】功能已解锁！派遣佣兵前往[探险]，获得惊喜收获！
+18161,,,【丰碑】功能已解锁！组合好丰碑的搭配，将是战斗的制胜关键！,【丰碑】功能已解锁！组合好丰碑的搭配，将是战斗的制胜关键！,【丰碑】功能已解锁！组合好丰碑的搭配，将是战斗的制胜关键！
+18162,,,【防线】功能已解锁！它是这座村庄最后的防御，是你的大本营！布阵、御敌、征战，去实现作为指挥官的宏图霸业吧！,【防线】功能已解锁！它是这座村庄最后的防御，是你的大本营！布阵、御敌、征战，去实现作为指挥官的宏图霸业吧！,【防线】功能已解锁！它是这座村庄最后的防御，是你的大本营！布阵、御敌、征战，去实现作为指挥官的宏图霸业吧！
+18163,,,【a】功能已解锁！占位,【a】功能已解锁！占位,【a】功能已解锁！占位
+18164,,,【b】功能已解锁！占位,【b】功能已解锁！占位,【b】功能已解锁！占位
+18165,,,【c】功能已解锁！占位,【c】功能已解锁！占位,【c】功能已解锁！占位
+18166,,,【d】功能已解锁！占位,【d】功能已解锁！占位,【d】功能已解锁！占位
+18167,,,【e】功能已解锁！占位,【e】功能已解锁！占位,【e】功能已解锁！占位
+18168,,,【f】功能已解锁！占位,【f】功能已解锁！占位,【f】功能已解锁！占位
+18169,,,【g】功能已解锁！占位,【g】功能已解锁！占位,【g】功能已解锁！占位
+18170,,,点击作战场景内防御塔-【火炮塔】,点击作战场景内防御塔-【火炮塔】,点击作战场景内防御塔-【火炮塔】
+18171,,,"点击""小扳手""将，【火炮塔】升至3级.","点击""小扳手""将，【火炮塔】升至3级.","点击""小扳手""将，【火炮塔】升至3级."
+18172,,,"点击""小扳手""将，【火炮塔】升至4级.","点击""小扳手""将，【火炮塔】升至4级.","点击""小扳手""将，【火炮塔】升至4级."
+18173,,,"再次点击""小扳手""，将【火炮塔】升至5级.","再次点击""小扳手""，将【火炮塔】升至5级.","再次点击""小扳手""，将【火炮塔】升至5级."
+18900,,,新手教官狼雅,新手教官狼雅,Trainer Lanya
+19000,,,感谢,感謝,Credits
+19001,,,设置,設置,Settings
+19002,,,退出游戏,退出遊戲,Quit
+19003,,,联系我们,聯係我們,Contact Us
+19004,,,语言,語言,Language
+19005,,,系统设置,系統設置,System
+19006,,,声音,聲音,Audio
+19007,,,背景音乐,背景音樂,BGM
+19008,,,音效,音效,SFX
+19009,,,语言设置,語言設置,Language
+19010,,,账号设置,帳號設置,Account
+19011,,,账号绑定,帳號綁定,Link Account With
+19012,,,关于,關於,About
+19013,,,版本信息,版本資訊,Version
+19014,,,版权声明,版權聲明,Copyright
+19015,,,用户相关,用戶相關,User
+19016,,,用户协议,用戶協議,User Agreement
+19017,,,隐私声明,隱私聲明,Privacy Statement
+19018,,,点击查看,點擊查看,Details
+19019,,,暂无,暫無,N/A
+19020,,,渲染质量,渲染質量,Rendering Quality
+19021,,,低,低,Low
+19022,,,中,中,Medium
+19023,,,高,高,High
+19024,,,游戏版本号,遊戲版本號,Version
+20011,,,1-立即获得500钻石,1 -立即獲得500鑽石,1 -Instantly receive 500 diamonds
+20012,,,2-每日获得30钻石,2 -每日獲得30鑽石,2 -Gain 30 Diamonds daily
+20013,,,3-每日获得1500金币,3 -每日獲得1500金幣,3 -Gain 1500 Gold Coins daily
+20014,,,4-每日获得2个防御塔图纸盲盒,4 -每日獲得2個防禦塔圖紙盲盒,4 -Gain 2 Blueprint boxes daily
+20015,,,5-每日获得2个佣兵盲盒,5 -每日獲得2個傭兵盲盒,5 -Gain 2 Guardian boxes daily
+20021,,,1-立即获得1000钻石,1 -立即獲得1000鑽石,1 -Instantly receive 1000 Diamonds
+20022,,,1-每日获得60体力,1 -每日獲得60體力,1 -Gain 60 stamina daily
+20023,,,2-账号体力上限+60,2 -帳號體力上限+60,2 -+60 Stamina limit
+20024,,,3-签到奖励补签次数+3,3 -簽到獎勵補簽次數+3,3 -+3 Catch-up times
+20025,,,4-餐厅存储四叶草+15,4 -餐廳存儲四葉草+15,4 -+15 clovers in Dining Hall
+21000,,,七日礼包,七日禮包,"Weekly
+Rewards"
+21001,,,签到,簽到,Sign-in
+21002,,,特惠,特惠,Special
+21003,,,第一天,第一天,Day 1
+21004,,,第二天,第二天,Day 2
+21005,,,第三天,第三天,Day 3
+21006,,,第四天,第四天,Day 4
+21007,,,第五天,第五天,Day 5
+21008,,,第六天,第六天,Day 6
+21009,,,第七天,第七天,Day 7
+21010,,,未开启,未開啟,Locked
+21011,,,已领取过该奖励,已領取過該獎勵,Claimed
+21012,,,奖励未开启,獎勵未開啟,Cannot claim yet
+21013,,,领取,領取,Claim
+21014,,,日历签到,日曆簽到,Monthly Bonus
+21015,,,月卡,月卡,Privilege Card
+21016,,,餐厅,餐廳,Dining Hall
+21017,,,补签,補簽,Catch-up
+21018,,,月卡双倍,月卡雙倍,Card x2
+21019,,,累计大奖,累計大獎,Cumulative Reward
+21020,,,本月免费补签:,本月免費補簽:,Free Catch-ups:
+21021,,,本月签到:,本月簽到:,Signed-in:
+21022,,,超值月卡,超值月卡,Silver Card
+21023,,,福利月卡,福利月卡,Gold Card
+21024,,,每日领取,每日領取,Daily Rewards
+21025,,,立即获得,立即獲得,Bonus
+21026,,,月卡加码,月卡加碼,Cards Bonus:
+21027,,,同时激活双月卡可获得以下奖励,同時激活雙月卡可獲得以下獎勵,Activating both cards will get the following rewards
+21028,,,见 面 豪 礼     超 值 回 馈,見 面 豪 禮     超 值 回 饋,Exclusive Welcome Deal with Incredible Value!
+21029,,,月卡生效中,月卡生效中,Card Activated
+21030,,,累签大奖,纍簽大獎,Bonus Reward
+21031,,,充值豪礼,充值豪禮,Recharge Bonus
+21032,,,超值补给,超值補給,Value Supply
+21033,,,每日充值,每日充值,Daily Recharge
+21034,,,累充礼包,纍充禮包,Recharge Bonus
+30000,,,大灰狼,大灰狼,Big Bad Wolf
+30001,,,小灰狼,小灰狼,Little Grey Wolf
+30002,,,普通狼,普通狼,Wolf
+30003,,,飞天狼,飛天狼,Skywolf
+30004,,,困狼,困狼,Sleepy Wolf
+30005,,,忍者红太狼分身,忍者紅太狼分身,Ninja Red Wolf avatar
+30100,,,护士狼,護士狼,Nurse Wolf
+30101,,,护盾狼,護盾狼,Shield Wolf
+30102,,,法师狼,法師狼,Sorcerer Wolf
+30103,,,自爆狼,自爆狼,Bomb Wolf
+30104,,,装甲运狼车,裝甲運狼車,Trojan Sheep
+30105,,,金刚狼,金剛狼,Wolverine
+30106,,,上忍忍者狼,上忍忍者狼,Jonin Wolf
+30107,,,下忍忍者狼,下忍忍者狼,Genin Wolf
+30108,,,闪现狼,閃現狼,Blink Wolf
+30109,,,女巫狼,女巫狼,Witch Wolf
+30110,,,冲锋野猪,暴走狼,Charging Boar
+30200,,,圣殿勇士,聖殿勇士,Templer Warriors
+30201,,,忍者红太狼,忍者紅太狼,Ninja Red Wolf
+30202,,,恶狼将军,惡狼將軍,Wolf General
+30203,,,教父维托,教父維托,Godfather Vito
+30204,,,杰克哥哥,傑克哥哥,Big Jack
+30205,,,杰克弟弟,傑克弟弟,Lil Jack
+30206,,,火爆桑尼,火爆桑尼,Fiery Sonny
+30207,,,狡猾弗雷多,狡猾弗雷多,Cunning Fredo
+30208,,,精明迈克,精明邁克,Smart Mike
+30209,,,自爆狼王,自爆狼王,Bomb Wolf King
+30210,,,飞贼沙维尔,飛賊沙維爾,Xavier the Burglar
+30211,,,沙漠狼,沙漠狼,Desert Wolf
+31000,,,"不共存类别:分身,嘲讽","不共存類別:分身,嘲諷","Non-co-existing: duplicity, mockery"
+31001,,,施法时间{0}秒,施法時間{0}秒,Duration {0} seconds
+31002,,,施法间隔{0}秒,施法間隔{0}秒,Cooldown {0} seconds
+39000,,,三十六计，走为上计，脚底抹油，开溜！觊觎我的财宝，没门！,三十六計，走為上計，腳底抹油，開溜！覬覦我的財寶，沒門！,The best plan is to slip away quietly.
+39001,,,我很穷的，看我这一身破衣烂衫，你还舍得打我么？,我很窮的，看我這一身破衣爛衫，你還捨得打我嗎？,Don't hit me please...
+39002,,,不好！有只狼进来了!,不好！有只狼进来了!,Uh-oh! A wolf has come in!
+39003,,,猜错啦！,猜錯啦！,Wrong guess!
+39004,,,向我开炮吧！！,向我開炮吧！！,Fire at me!!
+39005,,,我去，假身不给力啊,我去，假身不給力啊,"Oh man, this trick isn't working well!"
+39006,,,不要气馁，继续前进,不要气馁，继续前进,"Don't be discouraged, keep moving forward."
+39007,,,永远别恨你的敌人,永遠別恨你的敵人,Never hate your enemies.
+39008,,,为什么受伤的总是我……,為什麼受傷的總是我……,Why am I always the one getting hurt...
+39009,,,不是你死就是我亡！,不是你死就是我亡！,It's either you or me!
+39010,,,真是太糟糕了,真是太糟糕了,This is really terrible.
+39011,,,还是失误了么,還是失誤了嗎？,Was it still a mistake?
+39012,,,别逼我,别逼我,Don't push me.
+39013,,,哎哟，打的还挺准,哎呦，打得還挺準,"Ouch, that was quite accurate!"
+39014,,,别搞医疗纠纷啊！,別搞醫療糾紛啊！,Don't cause a medical dispute!
+39015,,,我有护盾我怕谁,我有護盾我怕誰,"With my shield, I'm not afraid of anything!"
+39016,,,小心！我可是背了炸弹的！,小心！我可是背了炸彈的！,Watch out! I'm carrying a bomb!
+39017,,,让子弹来得更猛烈点吧！,讓子彈來得更猛烈點吧！,Let the bullets come more fiercely!
+39018,,,不要打了，再打就内出血了,不要打了，再打就內出血了,"Stop hitting me, or I'll start bleeding internally!"
+39019,,,分的出哪个是我么？,分得出哪個是我嗎？,Can you tell which one is me?
+39020,,,&……%&%￥%……￥……,&……%&%￥%……￥……,&……%&%￥%……￥……
+39021,,,我困我我开心,我困我我開心,"I'm sleepy, and I'm happy."
+39022,,,哎呦疼啦,哎呦疼啦,"Ouch, that hurts!"
+39023,,,好痛，别打啦,好痛，別打啦,"Ouch, stop hitting me!"
+39024,,,伤不起啊伤不起……,傷不起啊傷不起……,I can't take the hurt…
+39025,,,别打脸行不,別打臉行不,"Please, not the face!"
+39026,,,那么高摔下来会很疼哦,那麼高摔下來會很疼哦,Falling from that height would really hurt!
+39027,,,速度再快也抚平不了羊儿给我的创伤,速度再快也撫平不了羊兒給我的創傷,The lambs gave me too much wounds....
+39028,,,猜猜我是真的吗?,猜猜我是真的嗎？,Guess if I'm real?
+39029,,,主啊！赐予我力量吧！,主啊！賜予我力量吧！,"Lord, grant me strength!"
+39030,,,分身是我的最爱,分身是我的最愛,Shadow cloning is my favorite trick.
+39031,,,进攻，狼群的勇士们！,進攻，狼群的勇士們！,"Attack, warriors of the wolf pack!"
+39032,,,我说我能，我就能,我說我能，我就能,"If I say I can, then I can."
+39033,,,兄弟齐心，其利断金,兄弟齊心，其利斷金,Brothers united can cut through metal.
+39034,,,不让过？我偏要过！,不讓過？我偏要過！,Won't let me pass? I insist on crossing!
+39035,,,我真的不想这样,我真的不想這樣,I really don't want this.
+39036,,,小心谨慎，精打细算,小心謹慎，精打細算,Cautious and meticulous.
+39037,,,为了部落！,為了部落！,For the tribe!
+39038,,,现在都什么年代了，还步行~,現在都什麼年代了，還步行～,Who's still walking nowadays?
+39039,,,医者仁心，善有善报嘛,醫者仁心，善有善報嘛,A doctor's kind heart brings good karma.
+39040,,,哥来自圣殿！,哥來自聖殿！,I came from the sanctuary!
+39041,,,我不是自杀式袭击者,我不是自殺式襲擊者,I'm not a suicide attacker.
+39042,,,雄炯炯气昂昂冲进羊村！,雄炯炯氣昂昂衝進羊村！,Charrrrrrrrrrge!
+39043,,,看来需要亲自上阵了,看來需要親自上陣了,Looks like it's time to join the battle myself.
+39044,,,人海战术有时挺有用的,人海戰術有時挺有用的,Swarm tactics can be quite effective sometimes.
+39045,,,我悄悄的来,我悄悄的來,I arrive quietly.
+39046,,,饿了，吃羊！,餓了，吃羊！,Hungry? Eat lamb!
+39047,,,我也有牙哦,我也有牙哦,I have teeth too!
+39048,,,爱小羊，更爱吃羊，我是大灰狼,愛小羊，更愛吃羊，我是大灰狼,"Love lambs, love eating them more, I'm the Big Bad Wolf."
+39049,,,不要和我比短跑，你伤不起,不要和我比短跑，你傷不起,You can't afford the injury racing with me.
+39050,,,我可是狼中贵族,我可是狼中貴族,I am a noble wolf.
+39051,,,不走寻常路，飞行才给力！,不走尋常路，飛行才給力！,Flying is the only way!
+39052,,,暴走族入场，各位让道！,暴走族入場，各位讓道！,"Gangsters incoming, make way!"
+39053,,,为了蜂蜜和胜利！,為了蜂蜜和勝利！,for the honey and the victory!
+39054,,,传递消息,傳遞消息,Swooping in.
+39055,,,迅速突袭！,迅速突襲！,Strike swiftly!
+39056,,,我会为了蜂蜜回来的！,我會為了蜂蜜回來的！,I'll be back for my honey!
+39057,,,看来又是时候倒挂了！,看來又是時候倒掛了！,Guess it's time to hang upside down again!
+39058,,,天空... 不再属于我...,天空... 不再屬於我...,The sky... is no longer mine...
+40000,,,银币,銀幣,Silver Coins
+40001,,,佣兵经验,傭兵經驗,Guardian Exp.
+40002,,,1级升星道具,1級升星道具,Awakening Item I
+40003,,,2级升星道具,2級升星道具,Awakening Item II
+40004,,,3级升星道具,3級升星道具,Awakening Item III
+40005,,,4级升星道具,4級升星道具,Awakening Item IV
+40006,,,5级升星道具,5級升星道具,Awakening Item V
+40007,,,战斗手册 I,戰鬥手冊 I,Combat Journal I
+40008,,,战斗手册 II,戰鬥手冊 II,Combat Journal II
+40009,,,战斗手册 III,戰鬥手冊 III,Combat Journal III
+40010,,,战斗手册 IV,戰鬥手冊 IV,Combat Journal IV
+40011,,,战斗手册 V,戰鬥手冊 V,Combat Journal IV
+40012,,,宝石 I,寶石 I,Gemstone I
+40013,,,宝石 II,寶石 II,Gemstone II
+40014,,,宝石 III,寶石 III,Gemstone III
+40015,,,宝石 IV,寶石 IV,Gemstone IV
+40016,,,宝石 V,寶石 V,Gemstone V
+40017,,,红宝石 I,紅寶石 I,Ruby I
+40018,,,红宝石 II,紅寶石 II,Ruby II
+40019,,,红宝石 III,紅寶石 III,Ruby III
+40020,,,红宝石 IV,紅寶石 IV,Ruby IV
+40021,,,红宝石 V,紅寶石 V,Ruby V
+40022,,,蓝宝石 I,藍寶石 I,Sapphire I
+40023,,,蓝宝石 II,藍寶石 II,Sapphire II
+40024,,,蓝宝石 III,藍寶石 III,Sapphire III
+40025,,,蓝宝石 IV,藍寶石 IV,Sapphire IV
+40026,,,蓝宝石 V,藍寶石 V,Sapphire V
+40027,,,绿宝石 I,綠寶石 I,Emerald I
+40028,,,绿宝石 II,綠寶石 II,Emerald II
+40029,,,绿宝石 III,綠寶石 III,Emerald III
+40030,,,绿宝石 IV,綠寶石 IV,Emerald IV
+40031,,,绿宝石 V,綠寶石 V,Emerald V
+40032,,,紫宝石 I,紫寶石 I,Amethyst I
+40033,,,紫宝石 II,紫寶石 II,Amethyst II
+40034,,,紫宝石 III,紫寶石 III,Amethyst III
+40035,,,紫宝石 IV,紫寶石 IV,Amethyst IV
+40036,,,紫宝石 V,紫寶石 V,Amethyst V
+40037,,,捕兽夹 I,捕獸夾 I,Trap I
+40038,,,捕兽夹 II,捕獸夾 II,Trap II
+40039,,,捕兽夹 III,捕獸夾 III,Trap III
+40040,,,铲子 I,鏟子 I,Shovel I
+40041,,,铲子 II,鏟子 II,Shovel II
+40042,,,铲子 III,鏟子 III,Shovel III
+40043,,,窜天猴 I,竄天猴 I,Skyrocket I
+40044,,,窜天猴 II,竄天猴 II,Skyrocket II
+40045,,,窜天猴 III,竄天猴 III,Skyrocket III
+40046,,,地雷 I,地雷 I,Landmine I
+40047,,,地雷 II,地雷 II,Landmine II
+40048,,,地雷 III,地雷 III,Landmine III
+40049,,,荆棘 I,荊棘 I,Ground Spikes I
+40050,,,荆棘 II,荊棘 II,Ground Spikes II
+40051,,,荆棘 III,荊棘 III,Ground Spikes III
+40052,,,锯子 I,鋸子 I,Saw I
+40053,,,锯子 II,鋸子 II,Saw II
+40054,,,锯子 III,鋸子 III,Saw III
+40055,,,礼包,禮包,Gift Pack
+40056,,,魔铲,魔鏟,Magic Shovel
+40057,,,塔强化手册,塔強化手冊,Tower Codex
+40058,,,塔强化手册 I,塔強化手冊 I,Tower Codex I
+40059,,,塔强化手册 II,塔強化手冊 II,Tower Codex II
+40060,,,塔强化手册 III,塔強化手冊 III,Tower Codex III
+40061,,,塔强化手册 IV,塔強化手冊 IV,Tower Codex IV
+40062,,,塔强化手册 V,塔強化手冊 V,Tower Codex V
+40063,,,糖果,糖果,Candy
+40064,,,玩家经验,玩家經驗,Player Exp.
+40065,,,战斗道具,戰鬥道具,Battle items
+40066,,,体力,體力,Stamina
+40067,,,战力,戰力,BP
+40068,,,战力:,戰力:,BP:
+40069,,,银骰子,銀骰子,Silver Dice
+40070,,,金骰子,金骰子,Gold Dice
+40071,,,金币,金币,Gold Coin
+40072,,,钻石,鑽石,Diamond
+40073,,,能量符文 I,能量符文 I,Energy Rune I
+40074,,,力量符文 I,力量符文 I,Strength Rune I
+40075,,,敏捷符文 I,敏捷符文 I,Agility Rune I
+40076,,,能量符文 II,能量符文 II,Energy Rune II
+40077,,,力量符文 II,力量符文 II,Strength Rune II
+40078,,,敏捷符文 II,敏捷符文 II,Agility Rune II
+40079,,,能量符文 III,能量符文 III,Energy Rune III
+40080,,,力量符文 III,力量符文 III,Strength Rune III
+40081,,,敏捷符文 III,敏捷符文 III,Agility Rune III
+40082,,,普通佣兵券,普通僱傭兵券,Standard Guardian Ticket
+40083,,,高级佣兵券,高級僱傭兵券,Premium Guardian Ticket
+40084,,,防线币,防線幣,Fortress Coins
+40085,,,祈福券,祈福券,Blessing Ticket
+40086,,,十字弓图纸,十字弓圖紙,Crossbow Blueprint
+40087,,,防空飞弹塔图纸,防空飛彈塔圖紙,Anti-aircraft Blueprint
+40088,,,投石机图纸,投石機圖紙,Catapult Blueprint
+40089,,,镶嵌塔图纸,鑲嵌塔圖紙,Inlay Tower Blueprint
+40090,,,火炮塔图纸,火炮塔圖紙,Meteor Cannon Blueprint
+40091,,,回旋飞镖塔图纸,回旋飛鏢塔圖紙,Boomerang Blueprint
+40092,,,霰弹塔图纸,霰彈塔圖紙,Shotgun Tower Blueprint
+40093,,,天空之矛图纸,天空之矛圖紙,Sky Spear Blueprint
+40094,,,飞镖塔图纸,飛鏢塔圖紙,Ninja Star Blueprint
+40095,,,气球炸弹塔图纸,氣球炸彈塔圖紙,Balloon Bomb Tower Blueprint
+40096,,,电磁震荡塔图纸,震盪塔圖紙,Orbit Orb Blueprint
+40097,,,风刃发射器图纸,波動塔圖紙,Blast Orb Blueprint
+40098,,,焰角弗雷明碎片,焰角弗雷明碎片,Flemming Shard
+40099,,,狼舞者玲儿碎片,狼舞者玲兒碎片,Wolf Dancer Ling'er Shard
+40100,,,风弩埃尔文碎片,弩衛埃爾文碎片,Crossbow Guard Elvin Shard
+40101,,,影牙爱德华碎片,影牙愛德華碎片,Shadowfang Edward Shard
+40102,,,海豹突击队狼恩碎片,海豹突擊隊狼恩碎片,Seal Team Wolf En Shard
+40103,,,终结者羊八百碎片,終結者羊八百碎片,Terminator Young 800 Shard
+40104,,,时空电师特斯洛碎片,時空電師特斯洛碎片,Time Electrician Tesla Shard
+40105,,,引力学者羊顿碎片,引力學者羊頓碎片,Gravitationalist Yangton Shard
+40106,,,冰霜术士霜灵碎片,冰霜術士霜靈碎片,Frost Sorcerer Frost Spirit Shard
+40107,,,冰刃战士狼雅碎片,冰刃戰士狼雅碎片,Ice Blade Warrior Wolf Ya Shard
+40108,,,白金刚洛奇碎片,大猩猩-拳擊手碎片,Gorilla - Boxer Shard
+40109,,,丛林卫士杰森碎片,犀牛-衛士碎片,Rhino - Guard Shard
+40110,,,绵羊-终结者碎片,綿羊-終結者碎片,Sheep - Terminator Shard
+40111,,,绵羊-弓箭手碎片,綿羊-弓箭手碎片,Sheep - Archer Shard
+40112,,,隐士忍者拉菲碎片,烏龜-忍者碎片,Turtle - Ninja Shard
+40113,,,森林学者林奈碎片,貓頭鷹-科學家碎片,Owl - Scientist Shard
+40114,,,先知万加碎片,倉鼠-巫師碎片,Hamster - Wizard Shard
+40115,,,焰角弗雷明佣兵卡,焰角弗雷明傭兵卡,Flamehorn Flemming Guardian Card
+40116,,,狼舞者玲儿佣兵卡,狼舞者玲兒傭兵卡,Wolf Dancer Ling'er Guardian Card
+40117,,,风弩埃尔文佣兵卡,弩衛埃爾文傭兵卡,Crossbow Guard Elvin Guardian Card
+40118,,,影牙爱德华佣兵卡,影牙愛德華傭兵卡,Shadowfang Edward Guardian Card
+40119,,,海豹突击队狼恩佣兵卡,海豹突擊隊狼恩傭兵卡,Seal Team Wolf En Guardian Card
+40120,,,终结者羊八百佣兵卡,終結者羊八百傭兵卡,Terminator Sheep 800 Guardian Card
+40121,,,时空电师特斯洛佣兵卡,時空電師特斯洛傭兵卡,Time Electrician Tesla Guardian Card
+40122,,,引力学者羊顿佣兵卡,引力學者羊頓傭兵卡,Gravitationalist Newton Guardian Card
+40123,,,冰霜术士霜灵佣兵卡,冰霜術士霜靈傭兵卡,Frost Sorcerer Frost Spirit Guardian Card
+40124,,,冰刃战士狼雅佣兵卡,冰刃戰士狼雅傭兵卡,Ice Blade Warrior Wolf Ya Guardian Card
+40125,,,白金刚洛奇佣兵卡,大猩猩-拳擊手傭兵卡,Gorilla - Boxer Guardian Card
+40126,,,丛林卫士杰森佣兵卡,犀牛-衛士傭兵卡,Rhino - Guard Guardian Card
+40127,,,绵羊-终结者佣兵卡,綿羊-終結者傭兵卡,Sheep - Terminator Guardian Card
+40128,,,绵羊-弓箭手佣兵卡,綿羊-弓箭手傭兵卡,Sheep - Archer Guardian Card
+40129,,,隐士忍者拉菲佣兵卡,烏龜-忍者傭兵卡,Turtle - Ninja Guardian Card
+40130,,,森林学者林奈佣兵卡,貓頭鷹-科學家傭兵卡,Owl - Scientist Guardian Card
+40131,,,先知万加佣兵卡,倉鼠-巫師傭兵卡,Hamster - Wizard Guardian Card
+40132,,,焰角弗雷明佣兵,焰角弗雷明傭兵,Flemming
+40133,,,狼舞者玲儿佣兵,狼舞者玲兒傭兵,Wolf Dancer Ling'er Guardian
+40134,,,风弩埃尔文佣兵,弩衛埃爾文傭兵,Crossbow Guard Elvin Guardian
+40135,,,影牙爱德华佣兵,影牙愛德華傭兵,Shadowfang Edward Guardian
+40136,,,海豹突击队狼恩佣兵,海豹突擊隊狼恩傭兵,Seal Team Wolf En Guardian
+40137,,,终结者羊八百佣兵,終結者羊八百傭兵,Terminator Sheep 800 Guardian
+40138,,,时空电师特斯洛佣兵,時空電師特斯洛傭兵,Time Electrician Tesla Guardian
+40139,,,引力学者羊顿佣兵,引力學者羊頓傭兵,Gravitationalist Newton Guardian
+40140,,,冰霜术士霜灵佣兵,冰霜術士霜靈傭兵,Frost Sorcerer Frost Spirit Guardian
+40141,,,冰刃战士狼雅佣兵,冰刃戰士狼雅傭兵,Ice Blade Warrior Wolf Ya Guardian
+40142,,,白金刚洛奇佣兵,大猩猩-拳擊手傭兵,Gorilla - Boxer Guardian
+40143,,,丛林卫士杰森佣兵,犀牛-衛士傭兵,Rhino - Guard Guardian
+40144,,,绵羊-终结者佣兵,綿羊-終結者傭兵,Sheep - Terminator Guardian
+40145,,,绵羊-弓箭手佣兵,綿羊-弓箭手傭兵,Sheep - Archer Guardian
+40146,,,隐士忍者拉菲佣兵,烏龜-忍者傭兵,Turtle - Ninja Guardian
+40147,,,森林学者林奈佣兵,貓頭鷹-科學家傭兵,Owl - Scientist Guardian
+40148,,,先知万加佣兵,倉鼠-巫師傭兵,Hamster - Wizard Guardian
+40149,,,圣洁泉水,聖潔泉水,Scared Spring
+40150,,,蓝-锋利符文 I,藍色 A 符文 I,Blue A Rune I
+40151,,,蓝-锋利符文 II,藍色 A 符文 II,Blue A Rune II
+40152,,,蓝-锋利符文 III,藍色 A 符文 III,Blue A Rune III
+40153,,,蓝-锋利符文 IV,藍色 A 符文 IV,Blue A Rune IV
+40154,,,蓝-锋利符文 V,藍色 A 符文 V,Blue A Rune V
+40155,,,蓝-强攻 符文 I,藍色 B 符文 I,Blue B Rune I
+40156,,,蓝-强攻 符文 II,藍色 B 符文 II,Blue B Rune II
+40157,,,蓝-强攻 符文 III,藍色 B 符文 III,Blue B Rune III
+40158,,,蓝-强攻 符文 IV,藍色 B 符文 IV,Blue B Rune IV
+40159,,,蓝-强攻 符文 V,藍色 B 符文 V,Blue B Rune V
+40160,,,蓝-高能 符文 I,藍色 C 符文 I,Blue C Rune I
+40161,,,蓝-高能 符文 II,藍色 C 符文 II,Blue C Rune II
+40162,,,蓝-高能 符文 III,藍色 C 符文 III,Blue C Rune III
+40163,,,蓝-高能 符文 IV,藍色 C 符文 IV,Blue C Rune IV
+40164,,,蓝-高能 符文 V,藍色 C 符文 V,Blue C Rune V
+40165,,,蓝-改造 符文 I,藍色 D 符文 I,Blue D Rune I
+40166,,,蓝-改造 符文 II,藍色 D 符文 II,Blue D Rune II
+40167,,,蓝-改造 符文 III,藍色 D 符文 III,Blue D Rune III
+40168,,,蓝-改造 符文 IV,藍色 D 符文 IV,Blue D Rune IV
+40169,,,蓝-改造 符文 V,藍色 D 符文 V,Blue D Rune V
+40170,,,蓝-祝福 符文 I,藍色 E 符文 I,Blue E Rune I
+40171,,,蓝-祝福 符文 II,藍色 E 符文 II,Blue E Rune II
+40172,,,蓝-祝福 符文 III,藍色 E 符文 III,Blue E Rune III
+40173,,,蓝-祝福 符文 IV,藍色 E 符文 IV,Blue E Rune IV
+40174,,,蓝-祝福 符文 V,藍色 E 符文 V,Blue E Rune V
+40175,,,绿-锋利符文 I,綠色 A 符文 I,Green A Rune I
+40176,,,绿-锋利符文 II,綠色 A 符文 II,Green A Rune II
+40177,,,绿-锋利符文 III,綠色 A 符文 III,Green A Rune III
+40178,,,绿-锋利符文 IV,綠色 A 符文 IV,Green A Rune IV
+40179,,,绿-锋利符文 V,綠色 A 符文 V,Green A Rune V
+40180,,,绿-强攻 符文 I,綠色 B 符文 I,Green B Rune I
+40181,,,绿-强攻 符文 II,綠色 B 符文 II,Green B Rune II
+40182,,,绿-强攻 符文 III,綠色 B 符文 III,Green B Rune III
+40183,,,绿-强攻 符文 IV,綠色 B 符文 IV,Green B Rune IV
+40184,,,绿-强攻 符文 V,綠色 B 符文 V,Green B Rune V
+40185,,,绿-高能 符文 I,綠色 C 符文 I,Green C Rune I
+40186,,,绿-高能 符文 II,綠色 C 符文 II,Green C Rune II
+40187,,,绿-高能 符文 III,綠色 C 符文 III,Green C Rune III
+40188,,,绿-高能 符文 IV,綠色 C 符文 IV,Green C Rune IV
+40189,,,绿-高能 符文 V,綠色 C 符文 V,Green C Rune V
+40190,,,绿-改造 符文 I,綠色 D 符文 I,Green D Rune I
+40191,,,绿-改造 符文 II,綠色 D 符文 II,Green D Rune II
+40192,,,绿-改造 符文 III,綠色 D 符文 III,Green D Rune III
+40193,,,绿-改造 符文 IV,綠色 D 符文 IV,Green D Rune IV
+40194,,,绿-改造 符文 V,綠色 D 符文 V,Green D Rune V
+40195,,,绿-祝福 符文 I,綠色 E 符文 I,Green E Rune I
+40196,,,绿-祝福 符文 II,綠色 E 符文 II,Green E Rune II
+40197,,,绿-祝福 符文 III,綠色 E 符文 III,Green E Rune III
+40198,,,绿-祝福 符文 IV,綠色 E 符文 IV,Green E Rune IV
+40199,,,绿-祝福 符文 V,綠色 E 符文 V,Green E Rune V
+40200,,,紫-锋利符文 I,紫色 A 符文 I,Purple A Rune I
+40201,,,紫-锋利符文 II,紫色 A 符文 II,Purple A Rune II
+40202,,,紫-锋利符文 III,紫色 A 符文 III,Purple A Rune III
+40203,,,紫-锋利符文 IV,紫色 A 符文 IV,Purple A Rune IV
+40204,,,紫-锋利符文 V,紫色 A 符文 V,Purple A Rune V
+40205,,,紫-强攻 符文 I,紫色 B 符文 I,Purple B Rune I
+40206,,,紫-强攻 符文 II,紫色 B 符文 II,Purple B Rune II
+40207,,,紫-强攻 符文 III,紫色 B 符文 III,Purple B Rune III
+40208,,,紫-强攻 符文 IV,紫色 B 符文 IV,Purple B Rune IV
+40209,,,紫-强攻 符文 V,紫色 B 符文 V,Purple B Rune V
+40210,,,紫-高能 符文 I,紫色 C 符文 I,Purple C Rune I
+40211,,,紫-高能 符文 II,紫色 C 符文 II,Purple C Rune II
+40212,,,紫-高能 符文 III,紫色 C 符文 III,Purple C Rune III
+40213,,,紫-高能 符文 IV,紫色 C 符文 IV,Purple C Rune IV
+40214,,,紫-高能 符文 V,紫色 C 符文 V,Purple C Rune V
+40215,,,紫-改造 符文 I,紫色 D 符文 I,Purple D Rune I
+40216,,,紫-改造 符文 II,紫色 D 符文 II,Purple D Rune II
+40217,,,紫-改造 符文 III,紫色 D 符文 III,Purple D Rune III
+40218,,,紫-改造 符文 IV,紫色 D 符文 IV,Purple D Rune IV
+40219,,,紫-改造 符文 V,紫色 D 符文 V,Purple D Rune V
+40220,,,紫-祝福 符文 I,紫色 E 符文 I,Purple E Rune I
+40221,,,紫-祝福 符文 II,紫色 E 符文 II,Purple E Rune II
+40222,,,紫-祝福 符文 III,紫色 E 符文 III,Purple E Rune III
+40223,,,紫-祝福 符文 IV,紫色 E 符文 IV,Purple E Rune IV
+40224,,,紫-祝福 符文 V,紫色 E 符文 V,Purple E Rune V
+40225,,,黄-锋利符文 I,黃色 A 符文 I,Yellow A Rune I
+40226,,,黄-锋利符文 II,黃色 A 符文 II,Yellow A Rune II
+40227,,,黄-锋利符文 III,黃色 A 符文 III,Yellow A Rune III
+40228,,,黄-锋利符文 IV,黃色 A 符文 IV,Yellow A Rune IV
+40229,,,黄-锋利符文 V,黃色 A 符文 V,Yellow A Rune V
+40230,,,黄-强攻 符文 I,黃色 B 符文 I,Yellow B Rune I
+40231,,,黄-强攻 符文 II,黃色 B 符文 II,Yellow B Rune II
+40232,,,黄-强攻 符文 III,黃色 B 符文 III,Yellow B Rune III
+40233,,,黄-强攻 符文 IV,黃色 B 符文 IV,Yellow B Rune IV
+40234,,,黄-强攻 符文 V,黃色 B 符文 V,Yellow B Rune V
+40235,,,黄-高能 符文 I,黃色 C 符文 I,Yellow C Rune I
+40236,,,黄-高能 符文 II,黃色 C 符文 II,Yellow C Rune II
+40237,,,黄-高能 符文 III,黃色 C 符文 III,Yellow C Rune III
+40238,,,黄-高能 符文 IV,黃色 C 符文 IV,Yellow C Rune IV
+40239,,,黄-高能 符文 V,黃色 C 符文 V,Yellow C Rune V
+40240,,,黄-改造 符文 I,黃色 D 符文 I,Yellow D Rune I
+40241,,,黄-改造 符文 II,黃色 D 符文 II,Yellow D Rune II
+40242,,,黄-改造 符文 III,黃色 D 符文 III,Yellow D Rune III
+40243,,,黄-改造 符文 IV,黃色 D 符文 IV,Yellow D Rune IV
+40244,,,黄-改造 符文 V,黃色 D 符文 V,Yellow D Rune V
+40245,,,黄-祝福 符文 I,黃色 E 符文 I,Yellow E Rune I
+40246,,,黄-祝福 符文 II,黃色 E 符文 II,Yellow E Rune II
+40247,,,黄-祝福 符文 III,黃色 E 符文 III,Yellow E Rune III
+40248,,,黄-祝福 符文 IV,黃色 E 符文 IV,Yellow E Rune IV
+40249,,,黄-祝福 符文 V,黃色 E 符文 V,Yellow E Rune V
+40250,,,特惠佣兵,特惠傭兵,Guardian Special Offer
+41000,,,通用货币,通用貨幣,Common currency
+41007,,,使用后获得{0}点佣兵经验,使用後獲得{0}點傭兵經驗,Gain {0} points of pet experience after use
+41008,,,增加佣兵经验，用于佣兵升级,增加傭兵經驗，用於傭兵升級,Increased pet experience for pet upgrades
+41037,,,"怪物碰到后定身,只可触发一次","怪物碰到後定身,只可觸發一次","When the monster hits, it can only be triggered once"
+41040,,,可以移除石墩,可以移除石墩,Stone piers can be removed
+41043,,,"只能放在石墩上,攻击范围内的飞天怪物","只能放在石墩上,攻擊範圍內的飛天怪物","Can only be placed on the stone pier, attacking the range of the flying monster"
+41046,,,"怪物碰到后触发造成单次伤害,触发后就销毁","怪物碰到後觸發造成單次傷害,觸發後就銷毀","When the monster encounters, it causes a single damage, and then it is destroyed"
+41049,,,"怪物碰到后触发造成单次伤害,可多次触发","怪物碰到後觸發造成單次傷害,可多次觸發","Monster encounters trigger a single damage, can trigger many times"
+41052,,,可以移除树木,可以移除樹木,You can remove trees
+41055,,,打开后获得惊喜,打開後獲得驚喜,Open it and get a surprise
+41056,,,用于移动防御塔,用於移動防禦塔,Used for mobile defense towers
+41057,,,使用后获得{0}点防御塔经验,使用後獲得{0}點防禦塔經驗,Gain {0} tower experience after using it
+41058,,,用于防御塔升级研究,用於防禦塔升級研究,Used for Tower Research
+41059,,,增加防御塔经验，用于塔升级,增加防禦塔經驗，用於塔升級,Added defensive tower experience for tower upgrades
+41063,,,完成日常任务获得，可用于兑换日常任务奖励,完成日常任務獲得，可用於兌換日常任務獎勵,"Complete daily quests, can be used to redeem daily task rewards"
+41064,,,玩家等级提升,玩家等級提升,Player level up
+41065,,,打开后可随机获得1张佣兵卡片或若干佣兵碎片,購買後隨機可獲得1張傭兵卡片或若干傭兵碎片,Gain 1 Guardian Card or Guardian Shards.
+41066,,,打开后可获得随机防御塔图纸20张,購買後可獲得隨機防禦塔圖紙20張,Randomly Obtain 20 Tower Blueprints
+41067,,,盲盒内佣兵卡片、佣兵碎片、防御塔图纸应有尽有，但只能获得1样道具哦！,盲盒內傭兵卡片、傭兵碎片、防禦塔圖紙應有盡有，但只能獲得1樣道具哦！,"Gain 1 item from Guardian Cards, Guardian Shards, or Tower Blueprint."
+41068,,,使用后补充20点体力,使用後補充20點體力,Restores 20 stamina.
+41069,,,使用后补充50点体力,使用後補充50點體力,Restores 50 stamina.
+41070,,,XXXXX,XXXXX,XXXXX
+41071,,,打开后获得1把1级锯子,購買後獲得1把1級鋸子,Gain a Saw I.
+41072,,,打开后获得1把1级铲子,購買後獲得1把1級鏟子,Gain a Shovel I.
+41073,,,购买后获得1张佣兵卡片,購買後獲得1張傭兵卡片,Gain a Guardian Card.
+41074,,,购买后获得塔强化手册III*1,購買後獲得塔強化手冊III*1,Gain a Tower Codex III.
+41075,,,购买后获得100点体力,購買後獲得100點體力,Restores 100 stamina.
+41076,,,打开后获得500金币,購買後獲得500金幣,Gain 500 coins.
+41077,,,打开后获得3500金币,購買後獲得3500金幣,"Gain 3,500 coins."
+41078,,,打开后获得10000金币,購買後獲得10000金幣,"Gain 10,000 coins."
+41079,,,打开后获得50000金币,購買後獲得50000金幣,"Gain 50,000 coins."
+41080,,,打开后获得100000金币,購買後獲得100000金幣,"Gain 100,000 coins."
+41081,,,打开后获得20体力，20000银币,購買後獲得20體力，20000銀幣,"Get 20 stamina, 20,000 silver coins."
+41082,,,购买后获得2800金币，280000银币，2个铲子，2个锯子,購買後獲得2800金幣，280000銀幣，2個鏟子，2個鋸子,"Get 2,800 coins, 280,000 silver, 2 shovels, 2 saws."
+41083,,,打开后随机获得1枚1级宝石,開啟後隨機獲得1枚1級寶石,Random Gem I on opening.
+41084,,,打开后随机获得1枚2级宝石,開啟後隨機獲得1枚2級寶石,Random Gem II on opening.
+41085,,,打开后随机获得1枚3级宝石,開啟後隨機獲得1枚3級寶石,Random Gem III on opening.
+41086,,,打开后随机获得1枚4级宝石,開啟後隨機獲得1枚4級寶石,Random Gem IV on opening.
+41087,,,打开后随机获得1枚5级宝石,開啟後隨機獲得1枚5級寶石,Random Gem V on opening.
+41088,,,打开后随机获得1个佣兵卡片,開啟後隨機獲得1個傭兵卡片,Random Guardian Card on opening.
+41089,,,用于游玩防线深林寻宝,用於遊玩防線深林尋寶,For Defense Line Forest Treasure Hunt.
+41090,,,用于游玩防线遗迹寻宝,用於遊玩防線遺跡尋寶,For Defense Line Relic Treasure Hunt.
+41091,,,用于挑战关卡的体力,用於挑戰關卡的體力,Energy for Fight
+41092,,,可用于对应佣兵升星,可用於對應傭兵升星,Guardian Awakening Item
+41093,,,可用于对应佣兵激活,可用於對應傭兵激活,Use for activating this Guardian
+41094,,,在祈福中使用，增加泉水等级,在祈福中使用，增加泉水等級,Use to increase blessing level in the Fountain
+41095,,,随机获得研究所防御塔图纸,隨機獲得研究所防禦塔圖紙,Randomly Obtain Tower Blueprints
+41096,,,用于防线商城内购买物品,用於防綫商城内購買商品,Use to purchase goods in Fotress Store
+41097,,,可用于丰碑符文镶嵌,可用於豐碑符文鑲嵌,Can be embedded in Monument Runes
+50000,,,冰刃战士狼雅,冰刃戰士狼雅,Lanya - the Iceblade
+50001,,,冰霜术士霜灵,冰霜術士霜靈,Aurora - the Frost Mage
+50002,,,海豹突击队狼恩,海豹突擊隊狼恩,Wulfen - the Navy SEAL
+50003,,,狼舞者玲儿,狼舞者玲兒,Ling'er - the Flamewaltz
+50004,,,风弩埃尔文,弩衛埃爾文,Elwynn - the Verdant Ranger
+50005,,,时空电师特斯洛,時空電師特斯洛,Tsloe - the Electromancer
+50006,,,焰角弗雷明,焰角弗雷明,Flemming - the Inferno Horn
+50007,,,引力学者羊顿,引力學者羊頓,Youngton - the Gravitationalist
+50008,,,影牙爱德华,影牙愛德華,Edward - the Shadowfang
+50009,,,终结者羊八百,終結者羊八百,Yang-800 - the Terminator
+50010,,,白金刚洛奇,白金剛洛基,Loki - the Platinum
+50011,,,丛林卫士杰森,叢林衛士傑森,Jason - the Jungle Guardian
+50012,,,隐士忍者拉菲,隱士忍者拉斐,Rafael - the Hermit Ninja
+50013,,,森林学者林奈,森林學者林奈,Linnea - the Forest Sage
+50014,,,先知万加,先知萬嘉,"Manga, the Seer"
+51000,,,A1型闪光弹,A1型閃光彈,M-A1 Flashbang
+51001,,,暗影利爪,暗影利爪,Shadow Claw
+51002,,,冰霜领域,冰霜領域,Frost Field
+51003,,,冰霜增幅,冰霜增幅,Frost Amplification
+51004,,,冰锥,冰錐,Ice Cone
+51005,,,电流网,電流網,Electric Net
+51006,,,电能增幅,電能增幅,Charge Boost
+51007,,,弓弩强化,弓弩強化,Crossbow enhancement
+51008,,,光谱效应,光譜效應,Spectrum Effect
+51009,,,寒冰坠击,寒冰墜擊,Ice Comet
+51010,,,火舞之击,火舞之擊,Fire Dance Strike
+51011,,,火焰之心,火焰之心,Heart of Flame
+51012,,,连环射击,連環射擊,Crossbowslinger
+51013,,,烈焰和声,烈焰和聲,Harmony of Flames
+51014,,,烈焰斩,烈焰斬,Flame Slash
+51015,,,苹果,蘋果,Apple
+51016,,,失重,失重,Weightlessness
+51017,,,时空传送,時空傳送,Teleport
+51018,,,霜刃滑行,霜刃滑行,Iceblade Surge
+51019,,,霜刃强化,霜刃強化,Iceblade Strengthening
+51020,,,突击步枪,突擊步槍,Assault Rifle
+51021,,,卫士指令,衛士指令,Guardian's Decree
+51022,,,霰弹枪,霰彈槍,Shotgun
+51023,,,血之诱惑,血之誘惑,Blood Temptation
+51024,,,炎狼之舞,炎狼之舞,Inferno Waltz
+51025,,,炎舞虹镜,炎舞虹鏡,Flameburst Slam
+51026,,,夜狼钩爪,夜狼鉤爪,Blood Temptation
+51027,,,战术陷阱,戰術陷阱,Tactical Trap
+51028,,,致残打击,致殘打擊,Crippling Strike
+51029,,,终结者模式,終結者模式,Terminator Mode
+51030,,,摆拳挥舞,擺拳揮舞,Swinging Fist
+51031,,,撼地重锤,撼地重錘,Earthshaker Hammer
+51032,,,臂斩火焰,臂斬火焰,Blazing Arm
+51033,,,横扫,橫掃,Sweep
+51034,,,旋风连斩,旋風連斬,Whirlwind Slash
+51035,,,守卫之心,守衛之心,Guardian's Heart
+51036,,,千鸟手里剑,千鳥手裡劍,Chidori Shuriken
+51037,,,雷之呼吸,雷之呼吸,Breath of Thunder
+51038,,,奥义: 理财,奧義: 理財,Finance Mastery
+51039,,,药剂师,藥劑師,Alchemist
+51040,,,点金术,點金術,Midas Potion
+51041,,,强化药水,強化藥水,Enhanced Potion
+51042,,,落雷,落雷,Thunderstrike
+51043,,,超负荷,超負荷,Overcharge
+51044,,,能量充盈,能量充盈,Energy Infusion
+51045,,,A1型闪光弹 I,A1型閃光彈 I,M-A1 Flashbang I
+51046,,,A1型闪光弹 II,A1型閃光彈 II,M-A1 Flashbang II
+51047,,,A1型闪光弹 III,A1型閃光彈 III,M-A1 Flashbang III
+51048,,,A1型闪光弹 IV,A1型閃光彈 IV,M-A1 Flashbang IV
+51049,,,A1型闪光弹 V,A1型閃光彈 V,M-A1 Flashbang V
+51050,,,暗影利爪 I,暗影利爪 I,Shadow Claw I
+51051,,,暗影利爪 II,暗影利爪 II,Shadow Claw II
+51052,,,暗影利爪 III,暗影利爪 III,Shadow Claw III
+51053,,,暗影利爪 IV,暗影利爪 IV,Shadow Claw IV
+51054,,,暗影利爪 V,暗影利爪 V,Shadow Claw V
+51055,,,奥义: 理财 I,奧義: 理財 I,Finance Mastery I
+51056,,,奥义: 理财 II,奧義: 理財 II,Finance Mastery II
+51057,,,奥义: 理财 III,奧義: 理財 III,Finance Mastery III
+51058,,,奥义: 理财 IV,奧義: 理財 IV,Finance Mastery IV
+51059,,,奥义: 理财 V,奧義: 理財 V,Finance Mastery V
+51060,,,摆拳挥舞 I,擺拳揮舞 I,Swinging Fist I
+51061,,,摆拳挥舞 II,擺拳揮舞 II,Swinging Fist II
+51062,,,摆拳挥舞 III,擺拳揮舞 III,Swinging Fist III
+51063,,,摆拳挥舞 IV,擺拳揮舞 IV,Swinging Fist IV
+51064,,,摆拳挥舞 V,擺拳揮舞 V,Swinging Fist V
+51065,,,臂斩火焰 I,臂斬火焰 I,Blazing Arm I
+51066,,,臂斩火焰 II,臂斬火焰 II,Blazing Arm II
+51067,,,臂斩火焰 III,臂斬火焰 III,Blazing Arm III
+51068,,,臂斩火焰 IV,臂斬火焰 IV,Blazing Arm IV
+51069,,,臂斩火焰 V,臂斬火焰 V,Blazing Arm V
+51070,,,冰霜领域 I,冰霜領域 I,Frost Field I
+51071,,,冰霜领域 II,冰霜領域 II,Frost Field II
+51072,,,冰霜领域 III,冰霜領域 III,Frost Field III
+51073,,,冰霜领域 IV,冰霜領域 IV,Frost Field IV
+51074,,,冰霜领域 V,冰霜領域 V,Frost Field V
+51075,,,冰霜增幅 I,冰霜增幅 I,Frost Amplification I
+51076,,,冰霜增幅 II,冰霜增幅 II,Frost Amplification II
+51077,,,冰霜增幅 III,冰霜增幅 III,Frost Amplification III
+51078,,,冰霜增幅 IV,冰霜增幅 IV,Frost Amplification IV
+51079,,,冰霜增幅 V,冰霜增幅 V,Frost Amplification V
+51080,,,冰锥 I,冰錐 I,Ice Cone I
+51081,,,冰锥 II,冰錐 II,Ice Cone II
+51082,,,冰锥 III,冰錐 III,Ice Cone III
+51083,,,冰锥 IV,冰錐 IV,Ice Cone IV
+51084,,,冰锥 V,冰錐 V,Ice Cone V
+51085,,,超负荷 I,超負荷 I,Overcharge I
+51086,,,超负荷 II,超負荷 II,Overcharge II
+51087,,,超负荷 III,超負荷 III,Overcharge III
+51088,,,超负荷 IV,超負荷 IV,Overcharge IV
+51089,,,超负荷 V,超負荷 V,Overcharge V
+51090,,,点金术 I,點金術 I,Midas Potion I
+51091,,,点金术 II,點金術 II,Midas Potion II
+51092,,,点金术 III,點金術 III,Midas Potion III
+51093,,,点金术 IV,點金術 IV,Midas Potion IV
+51094,,,点金术 V,點金術 V,Midas Potion V
+51095,,,电流网 I,電流網 I,Electric Net I
+51096,,,电流网 II,電流網 II,Electric Net II
+51097,,,电流网 III,電流網 III,Electric Net III
+51098,,,电流网 IV,電流網 IV,Electric Net IV
+51099,,,电流网 V,電流網 V,Electric Net V
+51100,,,电能增幅 I,電能增幅 I,Charge Boost I
+51101,,,电能增幅 II,電能增幅 II,Charge Boost II
+51102,,,电能增幅 III,電能增幅 III,Charge Boost III
+51103,,,电能增幅 IV,電能增幅 IV,Charge Boost IV
+51104,,,电能增幅 V,電能增幅 V,Charge Boost V
+51105,,,弓箭手主动 IV,弓箭手主动 IV,Crossbowslinger IV
+51106,,,弓箭手主动 V,弓箭手主动 V,Crossbowslinger V
+51107,,,弓弩强化 I,弓弩強化 I,Crossbow Enhancement I
+51108,,,弓弩强化 II,弓弩強化 II,Crossbow Enhancement II
+51109,,,弓弩强化 III,弓弩強化 III,Crossbow Enhancement III
+51110,,,弓弩强化 IV,弓弩強化 IV,Crossbow Enhancement IV
+51111,,,弓弩强化 V,弓弩強化 V,Crossbow Enhancement V
+51112,,,光谱效应 I,光譜效應 I,Spectrum Effect I
+51113,,,光谱效应 II,光譜效應 II,Spectrum Effect II
+51114,,,光谱效应 III,光譜效應 III,Spectrum Effect III
+51115,,,光谱效应 IV,光譜效應 IV,Spectrum Effect IV
+51116,,,光谱效应 V,光譜效應 V,Spectrum Effect V
+51117,,,寒冰坠击 I,寒冰墜擊 I,Ice Comet I
+51118,,,寒冰坠击 II,寒冰墜擊 II,Ice Comet II
+51119,,,寒冰坠击 III,寒冰墜擊 III,Ice Comet III
+51120,,,寒冰坠击 IV,寒冰墜擊 IV,Ice Comet IV
+51121,,,寒冰坠击 V,寒冰墜擊 V,Ice Comet V
+51122,,,撼地重锤 I,撼地重錘 I,Earthshaker Hammer I
+51123,,,撼地重锤 II,撼地重錘 II,Earthshaker Hammer II
+51124,,,撼地重锤 III,撼地重錘 III,Earthshaker Hammer III
+51125,,,撼地重锤 IV,撼地重錘 IV,Earthshaker Hammer IV
+51126,,,撼地重锤 V,撼地重錘 V,Earthshaker Hammer V
+51127,,,横扫 I,橫掃 I,Sweep I
+51128,,,横扫 II,橫掃 II,Sweep II
+51129,,,横扫 III,橫掃 III,Sweep III
+51130,,,横扫 IV,橫掃 IV,Sweep IV
+51131,,,横扫 V,橫掃 V,Sweep V
+51132,,,火舞之击 I,火舞之擊 I,Fire Dance Strike I
+51133,,,火舞之击 II,火舞之擊 II,Fire Dance Strike II
+51134,,,火舞之击 III,火舞之擊 III,Fire Dance Strike III
+51135,,,火舞之击 IV,火舞之擊 IV,Fire Dance Strike IV
+51136,,,火舞之击 V,火舞之擊 V,Fire Dance Strike V
+51137,,,火焰之心 I,火焰之心 I,Heart of Flame I
+51138,,,火焰之心 II,火焰之心 II,Heart of Flame II
+51139,,,火焰之心 III,火焰之心 III,Heart of Flame III
+51140,,,火焰之心 IV,火焰之心 IV,Heart of Flame IV
+51141,,,火焰之心 V,火焰之心 V,Heart of Flame V
+51142,,,雷之呼吸 I,雷之呼吸 I,Breath of Thunder I
+51143,,,雷之呼吸 II,雷之呼吸 II,Breath of Thunder II
+51144,,,雷之呼吸 III,雷之呼吸 III,Breath of Thunder III
+51145,,,雷之呼吸 IV,雷之呼吸 IV,Breath of Thunder IV
+51146,,,雷之呼吸 V,雷之呼吸 V,Breath of Thunder V
+51147,,,连环射击 I,連環射擊 I,Crossbowslinger I
+51148,,,连环射击 II,連環射擊 II,Crossbowslinger II
+51149,,,连环射击 III,連環射擊 III,Crossbowslinger III
+51150,,,连环射击 IV,連環射擊 IV,Crossbowslinger IV
+51151,,,连环射击 V,連環射擊 V,Crossbowslinger V
+51152,,,烈焰和声 I,烈焰和聲 I,Harmony of Flames I
+51153,,,烈焰和声 II,烈焰和聲 II,Harmony of Flames II
+51154,,,烈焰和声 III,烈焰和聲 III,Harmony of Flames III
+51155,,,烈焰和声 IV,烈焰和聲 IV,Harmony of Flames IV
+51156,,,烈焰和声 V,烈焰和聲 V,Harmony of Flames V
+51157,,,烈焰斩 I,烈焰斬 I,Flame Slash I
+51158,,,烈焰斩 II,烈焰斬 II,Flame Slash II
+51159,,,烈焰斩 III,烈焰斬 III,Flame Slash III
+51160,,,烈焰斩 IV,烈焰斬 IV,Flame Slash IV
+51161,,,烈焰斩 V,烈焰斬 V,Flame Slash V
+51162,,,落雷 I,落雷 I,Thunderstrike I
+51163,,,落雷 II,落雷 II,Thunderstrike II
+51164,,,落雷 III,落雷 III,Thunderstrike III
+51165,,,落雷 IV,落雷 IV,Thunderstrike IV
+51166,,,落雷 V,落雷 V,Thunderstrike V
+51167,,,能量充盈 I,能量充盈 I,Energy Infusion I
+51168,,,能量充盈 II,能量充盈 II,Energy Infusion II
+51169,,,能量充盈 III,能量充盈 III,Energy Infusion III
+51170,,,能量充盈 IV,能量充盈 IV,Energy Infusion IV
+51171,,,能量充盈 V,能量充盈 V,Energy Infusion V
+51172,,,苹果 I,蘋果 I,Apple I
+51173,,,苹果 II,蘋果 II,Apple II
+51174,,,苹果 III,蘋果 III,Apple III
+51175,,,苹果 IV,蘋果 IV,Apple IV
+51176,,,苹果 V,蘋果 V,Apple V
+51177,,,千鸟手里剑 I,千鳥手裏劍 I,Chidori Shuriken I
+51178,,,千鸟手里剑 II,千鳥手裏劍 II,Chidori Shuriken II
+51179,,,千鸟手里剑 III,千鳥手裏劍 III,Chidori Shuriken III
+51180,,,千鸟手里剑 IV,千鳥手裏劍 IV,Chidori Shuriken IV
+51181,,,千鸟手里剑 V,千鳥手裏劍 V,Chidori Shuriken V
+51182,,,强化药水 I,強化藥水 I,Enhanced Potion I
+51183,,,强化药水 II,強化藥水 II,Enhanced Potion II
+51184,,,强化药水 III,強化藥水 III,Enhanced Potion III
+51185,,,强化药水 IV,強化藥水 IV,Enhanced Potion IV
+51186,,,强化药水 V,強化藥水 V,Enhanced Potion V
+51187,,,失重 I,失重 I,Weightlessness I
+51188,,,失重 II,失重 II,Weightlessness II
+51189,,,失重 III,失重 III,Weightlessness III
+51190,,,失重 IV,失重 IV,Weightlessness IV
+51191,,,失重 V,失重 V,Weightlessness V
+51192,,,时空传送 I,時空傳送 I,Teleport I
+51193,,,时空传送 II,時空傳送 II,Teleport II
+51194,,,时空传送 III,時空傳送 III,Teleport III
+51195,,,时空传送 IV,時空傳送 IV,Teleport IV
+51196,,,时空传送 V,時空傳送 V,Teleport V
+51197,,,守卫之心 I,守衛之心 I,Guardian's Heart I
+51198,,,守卫之心 II,守衛之心 II,Guardian's Heart II
+51199,,,守卫之心 III,守衛之心 III,Guardian's Heart III
+51200,,,守卫之心 IV,守衛之心 IV,Guardian's Heart IV
+51201,,,守卫之心 V,守衛之心 V,Guardian's Heart V
+51202,,,霜刃滑行 I,霜刃滑行 I,Iceblade Surge I
+51203,,,霜刃滑行 II,霜刃滑行 II,Iceblade Surge II
+51204,,,霜刃滑行 III,霜刃滑行 III,Iceblade Surge III
+51205,,,霜刃滑行 IV,霜刃滑行 IV,Iceblade Surge IV
+51206,,,霜刃滑行 V,霜刃滑行 V,Iceblade Surge V
+51207,,,霜刃强化 I,霜刃強化 I,Iceblade Strengthening I
+51208,,,霜刃强化 II,霜刃強化 II,Iceblade Strengthening II
+51209,,,霜刃强化 III,霜刃強化 III,Iceblade Strengthening III
+51210,,,霜刃强化 IV,霜刃強化 IV,Iceblade Strengthening IV
+51211,,,霜刃强化 V,霜刃強化 V,Iceblade Strengthening V
+51212,,,突击步枪 I,突擊步槍 I,Assault Rifle I
+51213,,,突击步枪 II,突擊步槍 II,Assault Rifle II
+51214,,,突击步枪 III,突擊步槍 III,Assault Rifle III
+51215,,,突击步枪 IV,突擊步槍 IV,Assault Rifle IV
+51216,,,突击步枪 V,突擊步槍 V,Assault Rifle V
+51217,,,卫士指令 I,衛士指令 I,Guardian's Decree I
+51218,,,卫士指令 II,衛士指令 II,Guardian's Decree II
+51219,,,卫士指令 III,衛士指令 III,Guardian's Decree III
+51220,,,卫士指令 IV,衛士指令 IV,Guardian's Decree IV
+51221,,,卫士指令 V,衛士指令 V,Guardian's Decree V
+51222,,,霰弹枪 I,霰彈槍 I,Shotgun I
+51223,,,霰弹枪 II,霰彈槍 II,Shotgun II
+51224,,,霰弹枪 III,霰彈槍 III,Shotgun III
+51225,,,霰弹枪 IV,霰彈槍 IV,Shotgun IV
+51226,,,霰弹枪 V,霰彈槍 V,Shotgun V
+51227,,,旋风连斩 I,旋風連斬 I,Whirlwind Slash I
+51228,,,旋风连斩 II,旋風連斬 II,Whirlwind Slash II
+51229,,,旋风连斩 III,旋風連斬 III,Whirlwind Slash III
+51230,,,旋风连斩 IV,旋風連斬 IV,Whirlwind Slash IV
+51231,,,旋风连斩 V,旋風連斬 V,Whirlwind Slash V
+51232,,,血之诱惑 I,血之誘惑 I,Blood Temptation I
+51233,,,血之诱惑 II,血之誘惑 II,Blood Temptation II
+51234,,,血之诱惑 III,血之誘惑 III,Blood Temptation III
+51235,,,血之诱惑 IV,血之誘惑 IV,Blood Temptation IV
+51236,,,血之诱惑 V,血之誘惑 V,Blood Temptation V
+51237,,,炎狼之舞 I,炎狼之舞 I,Inferno Waltz I
+51238,,,炎狼之舞 II,炎狼之舞 II,Inferno Waltz II
+51239,,,炎狼之舞 III,炎狼之舞 III,Inferno Waltz III
+51240,,,炎狼之舞 IV,炎狼之舞 IV,Inferno Waltz IV
+51241,,,炎狼之舞 V,炎狼之舞 V,Inferno Waltz V
+51242,,,炎舞虹镜 I,炎舞虹鏡 I,Flameburst Slam I
+51243,,,炎舞虹镜 II,炎舞虹鏡 II,Flameburst Slam II
+51244,,,炎舞虹镜 III,炎舞虹鏡 III,Flameburst Slam III
+51245,,,炎舞虹镜 IV,炎舞虹鏡 IV,Flameburst Slam IV
+51246,,,炎舞虹镜 V,炎舞虹鏡 V,Flameburst Slam V
+51247,,,药剂师 I,藥劑師 I,Alchemist I
+51248,,,药剂师 II,藥劑師 II,Alchemist II
+51249,,,药剂师 III,藥劑師 III,Alchemist III
+51250,,,药剂师 IV,藥劑師 IV,Alchemist IV
+51251,,,药剂师 V,藥劑師 V,Alchemist V
+51252,,,夜狼钩爪 I,夜狼鉤爪 I,Nightwolf Hook I
+51253,,,夜狼钩爪 II,夜狼鉤爪 II,Nightwolf Hook II
+51254,,,夜狼钩爪 III,夜狼鉤爪 III,Nightwolf Hook III
+51255,,,夜狼钩爪 IV,夜狼鉤爪 IV,Nightwolf Hook IV
+51256,,,夜狼钩爪 V,夜狼鉤爪 V,Nightwolf Hook V
+51257,,,战术陷阱 I,戰術陷阱 I,Tactical Trap I
+51258,,,战术陷阱 II,戰術陷阱 II,Tactical Trap II
+51259,,,战术陷阱 III,戰術陷阱 III,Tactical Trap III
+51260,,,战术陷阱 IV,戰術陷阱 IV,Tactical Trap IV
+51261,,,战术陷阱 V,戰術陷阱 V,Tactical Trap V
+51262,,,致残打击 I,致殘打擊 I,Crippling Strike I
+51263,,,致残打击 II,致殘打擊 II,Crippling Strike II
+51264,,,致残打击 III,致殘打擊 III,Crippling Strike III
+51265,,,致残打击 IV,致殘打擊 IV,Crippling Strike IV
+51266,,,致残打击 V,致殘打擊 V,Crippling Strike V
+51267,,,终结者模式 I,終結者模式 I,Terminator Mode I
+51268,,,终结者模式 II,終結者模式 II,Terminator Mode II
+51269,,,终结者模式 III,終結者模式 III,Terminator Mode III
+51270,,,终结者模式 IV,終結者模式 IV,Terminator Mode IV
+51271,,,终结者模式 V,終結者模式 V,Terminator Mode V
+51999,,,未启用技能,null,null
+59000,,,暗夜是我的领域，敌人将无处可逃。,暗夜是我的領域，敵人將無處可逃。,"Night is my realm, and there is nowhere to hide."
+59001,,,大家好，谁想被我冰到掉渣？,大家好，誰想被我冰到掉渣？,Who wants to be frozen into pieces?
+59002,,,火焰与狼灵，随我的舞步飞扬！,火焰與狼靈，隨我的舞步飛揚！,"Flame and spirits, soar with my dance!"
+59003,,,科学的时代来临了。,科學的時代來臨了。,The age of science has arrived.
+59004,,,科学和魔法的界限？哦，我早就打破了那个。,科學和魔法的界限？哦，我早就打破了那個。,"The boundary between science and magic? Oh, I broke that long ago."
+59005,,,狼雅降临，冷艳致命。,狼雅降臨，冷艷致命。,"Langya descends, coldly and deadly."
+59006,,,没有海豹，只有狼。,沒有海豹，只有狼。,"There are no seals, only wolves."
+59007,,,你知道诸葛连弩吗？,你知道諸葛連弩嗎？,Do you know the Chu-ko-nu?
+59008,,,热血沸腾！,熱血沸騰！,Fired Up!
+59009,,,我回来了，就像他说的那样！,我回來了，就像他說的那樣！,"I'm back, just like he said!"
+59010,,,真男人，死也要死在前线。,真男人，死也要死在前線。,Real men die on the frontline.
+59011,,,站稳，守护者冲锋！,站穩，守護者衝鋒！,"Stand firm, the guardian charges!"
+59012,,,无声致命。,無聲致命。,Silent but deadly.
+59013,,,智慧与科学，为您服务。,智慧與科學，為您服務。,"Wisdom and science, at your service."
+59014,,,魔法，在小小漩涡中旋转。,魔法，在小小漩渦中旋轉。,Magic swirls in tiny whirls.
+60000,,,气球炸弹塔,氣球炸彈塔,Balloon Launcher
+60001,,,风刃发射器,風刃發射器,Blast Orb
+60002,,,电磁震荡塔,電磁震蕩塔,Orbit Orb
+60003,,,飞镖发射器,飛鏢發射器,Ninja Star
+60004,,,天空之矛,天空之矛,Sky Spear
+60005,,,霰弹塔,霰彈塔,Shotgun Tower
+60006,,,回旋飞镖塔,回旋飛鏢塔,Boomerang
+60007,,,火炮塔,火炮塔,Meteor Cannon
+60008,,,石墩,石墩,Stone Pillar
+60009,,,镶嵌塔,鑲嵌塔,Inlaid Tower
+60010,,,投石机,投石機,Trebuchet
+60011,,,防空飞弹塔,防空飛彈塔,Anti-aircraft
+60012,,,十字弓,十字弓,Crossbow
+61000,,,[地面目标]对目标方向发射一颗波导能量弹，对经过的所有敌人造成伤害。飞行距离有上限。,對目標方向發射一顆波導能量彈，對經過的所有敵人造成傷害。飛行距離有上限。,"Fire a waveguide energy bomb in the direction of the target, dealing damage to all enemies in its path. There is an upper limit to the flight distance."
+61001,,,[地面目标]每若干秒在塔周围生成一个能量球，与路过的敌人发生碰撞时球体消失并造成伤害。,每若幹秒在塔周圍生成一個能量球，與路過的敵人發生碰撞時球體消失並造成傷害。,"Spawn an energy ball around the tower every few seconds. When you collide with a passing enemy, the ball disappears and deals damage."
+61002,,,[空中目标]利用热气球将炸弹升向空中，这些炸弹会在接近目标时引爆，对一片区域内的空中单位造成破坏。,利用熱氣球將炸彈升向空中，這些炸彈會在接近目標時引爆，對一片區域內的空中單位造成破壞。,"Hot air balloons are used to lift bombs into the air, which will detonate as they approach their target, causing damage to air units in an area."
+61003,,,[地面目标]结合了古老的工艺与简单的机械原理，快速而精准地向敌人发射飞镖。,結合了古老的工藝與簡單的機械原理，快速而精準地向敵人發射飛鏢。,A combination of ancient craftsmanship and simple mechanics to fire darts at enemies with speed and precision.
+61004,,,[所有目标]能够发射重型长矛，以击落任何想要穿越防线的敌人，擅长对精英目标进行精确打击。,能夠發射重型長矛，以擊落任何想要穿越防線的敵人，擅長對精英目標進行精準打擊。,"Capable of launching heavy spears to knock down any enemy attempting to breach the defenses, excels at precise strikes against elite targets"
+61005,,,[地面目标]类似霰弹枪的原理，发射一组小型弹丸对面前30度扇形范围内所有敌人造成伤害。,類似霰彈槍的原理，發射一組小型彈丸對面前30度扇形範圍內所有敵人造成傷害。,"Similar to the principle of a shotgun, fire a group of small pellets that deal damage to all enemies within a 30-degree sector in front of them."
+61006,,,[空中目标]调整了飞镖发射器的结构设计，使其可以对空中狭窄区域内来回打击。,調整了防空飛彈塔的結構設計，使其可以對空中和地面單位同時實施打擊。對空中單位傷害減半,The structural design of the air defense missile tower was adjusted so that it could strike air and ground units simultaneously. Damage to air units reduced by half
+61007,,,[地面目标]向天空中发射重型炮弹，经过一段时间后炮弹在目标位置垂直落向地面造成AOE伤害。,向天空中發射重型炮彈，經過一段時間後炮彈在目標位置垂直落向地面造成AOE傷害。,"Fire heavy artillery shells into the air, and after a period of time, the shells fall vertically to the ground at the target position to cause AOE damage."
+61008,,,放置后，可修改敌人行进路径，部分战斗道具可放置在其上方,擋路用，部分道具可以放置在上方,"For blocking the way, some items can be placed above"
+61009,,,[所有目标]能够调动自然元素的力量，发射具有不同元素属性的能量球攻击敌人。（需要安装宝石才能攻击）,能夠調動自然元素的力量，發射具有不同元素屬性的能量球攻擊敵人。（需要安裝寶石才能攻擊）,It can mobilize the power of natural elements and launch energy balls with different elemental attributes to attack enemies. (Gems need to be installed to attack)
+61010,,,[地面目标]古老的军事工程但仍然可以投入战场使用，投出的成捆碎石在撞击时会碎裂造成AOE伤害，但无法攻击近处。,古老的軍事工程但仍然可以投入戰場使用，投出的成捆碎石在撞擊時會碎裂造成AOE傷害，但無法攻擊近處。,"Old military engineering, but still usable in the field, throws bundles of rubble that shatter on impact, inflicting AOE damage, but can't hit close."
+61011,,,[空中目标]能够一次发射多枚小型防空弹，针对多个飞行目标进行精准打击。无法攻击地面敌人,能夠一次發射多枚小型防空彈，針對多個飛行目標進行精準打擊。無法攻擊地面敵人,It can launch multiple small air defense missiles at a time to accurately strike multiple flying targets. Unable to attack ground enemies
+61012,,,[所有目标]初级防御塔，使用拉力来弹射出箭矢，为城防提供基本保护。,初級防禦塔，使用拉力來彈射出箭矢，為城防提供基本保護。,"Primary defense towers, which use tension to catapult arrows, provide basic protection for city defenses."
+62000,,,升级消耗,升級消耗,Cost
+62001,,,火力强化,火力强化,Dmg Boost
+62002,,,速射,速射,Rapid Fire
+62003,,,爆炸扩散,爆炸擴散,Extra Powder
+62004,,,多多益善,多多益善,Extra Orbs
+62005,,,投石机伤害增加,投石機傷害增加,Catapult Damage Increase
+62006,,,投石机爆炸范围增加,投石機爆炸範圍增加,Catapult Blast Radius Increase
+62007,,,镶嵌塔伤害增加,鑲嵌塔傷害增加,Inlaid Tower Damage Increase
+62008,,,镶嵌塔攻击间隔减少,鑲嵌塔攻擊間隔減少,Inlaid Tower Attack Interval Reduction
+62009,,,连击强化,連擊強化,Double Shot
+62010,,,多重射击,多重射擊,Multi-shots
+62011,,,能量转移,能量轉移,Energy Transfer
+62012,,,激励,激勵,Rampage Boost
+62013,,,火力集群,火力集群,Clustered Might
+62014,,,随机改造,隨機改造,Random Transform
+62015,,,击退,擊退,Knockback
+62016,,,扩容,擴容,Extra Bullet
+62017,,,短距疾射,短距疾射,Close-Range Burst 
+62018,,,弹射子弹,彈射子彈,Bouncing Bullets
+62019,,,灼烧路面,灼燒路面,Burning Area
+62020,,,范围强化,範圍强化,Searching Range
+62021,,,连续投掷,連續投擲,Extra Throw
+62022,,,致残,致殘,Crippling Throw
+62023,,,回音镖,回音鏢,Double Throw
+62024,,,热身运动,熱身運動,Warm Up
+62025,,,气球音爆,氣球音爆,Sonic Boom
+62026,,,破甲,破甲,Armor Breaker
+62027,,,斩杀,斬殺,Execute
+62028,,,修复,修復,Repair
+62029,,,穿透强化,穿透强化,Penetration
+62030,,,投石机射程增加,投石機射程增加,Catapult Range Increase
+62031,,,"投石机子弹飞行距离越远,爆炸范围越大","投石機子彈飛行距離越遠,爆炸範圍越大","Catapult Bullet Travels Farther, Larger Explosion Range"
+62032,,,"投石机子弹飞行距离越远,伤害越大","投石機子彈飛行距離越遠,傷害越大","Catapult Bullet Travels Farther, More Damage"
+62033,,,投石机子弹对爆炸中心一定范围内的敌人伤害增加,投石機子彈對爆炸中心一定範圍內的敵人傷害增加,Catapult Bullet Increases Damage to Enemies Near Blast Center
+62034,,,"投石机子弹飞行速度增加,伤害增加","投石機子彈飛行速度增加,傷害增加",Catapult Bullet Speed and Damage Increase
+62035,,,投石机命中时有几率眩晕敌人,投石機命中時有幾率眩晕敵人,Catapult Hits May Stun Enemies
+62036,,,镶嵌塔紫宝石目标增加,鑲嵌塔紫寶石目標增加,Inlaid Tower Amethyst Target Increase
+62037,,,鼓舞,鼓舞,Inspiration
+62038,,,落井下石,落井下石,Bully
+62039,,,火力全开,火力全開,Rapid Surge
+62040,,,风刃强化,風刃强化,Enhanced Orb
+62041,,,减速磁场,減速磁場,Slowing Zone
+62042,,,空袭震波,空襲震波,Areial Shockwave
+62043,,,弹射飞镖,彈射飛鏢,Bouncing Star
+62044,,,专注,專注,Focus
+62045,,,致命一击,致命一擊,Fatal Strike
+62046,,,先发制人,先發制人,Early Assult
+62047,,,动力加速度,動力加速度,Attack Fury
+62048,,,乱射,亂射,Wild Throw
+62049,,,小型陨石,小型隕石,Smaller Barrage 
+62050,,,不稳定过载,不穩定過載,Unstable Crit
+62051,,,火药节约,火藥節約,Eco Powder
+62052,,,梅开二度,梅開二度,Barrage Spread
+62053,,,巨兽杀手,巨獸殺手,Giant Killer
+62054,,,势能集群,勢能集群,Kinetic Cluster
+62055,,,预备弹药,預備彈藥,Prepared Bullets
+62056,,,弹丸收束,彈丸收束,Shutgun Choke
+62057,,,赏金猎人,賞金獵人,Bounty Hunter
+62058,,,狂热,狂熱,Fever
+62059,,,强化投掷,强化投擲,Power Throw
+62060,,,巨型回旋镖,巨型回旋鏢,Bigger Boomerang
+62061,,,精锐杀手,精銳殺手,Elite Killer
+62062,,,连击球,连击球,Sustained Orb
+62063,,,电磁加速,電磁加速,Accelerate
+62064,,,生物电能,生物電能,Energy Draining
+62065,,,快速充能,快速充能,Rapid Charge
+62066,,,风刃连击,風刃連擊,Auto Orb
+62067,,,顺风射击,順風射擊,Windborne Orb
+62068,,,消灭折扣,消滅折扣,Slay Savings
+62069,,,碎片扩散,碎片擴散,Shrapnel Spread
+62070,,,满载炸弹,滿載炸弹,Fully Loaded
+63001,,,{0}伤害+{1}%,{0}傷害+{1}%,+{1}% Damage for {0}
+63002,,,{0}攻速+{1}%,{0}攻速+{1}%,+{1}% Atk Speed for {0}
+63003,,,{0}爆炸范围+{1}%,{0}爆炸範圍+{1}%,+{1}% AOE Radius for {0}
+63004,,,{0}能量球数量+{1}个,{0}能量球數量+{1}個,+{1} Orb count for {0}
+63005,,,{0}攻击时有{1}%的几率连续攻击2次,{0}攻擊時有{1}%的機率連續攻擊2次,+{1}% chance for {0} to shot an extra arrow when attack.
+63006,,,{0}每{1}次攻击后，下1次攻击会造成范围伤害,{0}每{1}次攻擊後，下1次攻擊會造成範圍傷害,"After every {1} attacks, {0} next attack causes AOE damage"
+63007,,,{0}每攻击{1}次后下一击必定暴击,{0}每攻擊{1}次後下一擊必定暴擊,Every {1} attacks ensure the next {0} hit is a critical strike
+63008,,,场上每有1个{0}，佣兵的攻击+{1}%，攻速+{2}%，上限{3}%,場上每有1個{0}，傭兵的攻擊+{1}%，攻速+{2}%，上限{3}%,"For every {0} on the field, Guardians +{1}% Attack, +{2}% Atk Speed. (Capped at {3}%)"
+63009,,,{0}前{1}波伤害+{2}%,{0}前{1}波傷害+{2}%,+{2}% Damage for {0} in first {1} waves
+63010,,,{0}击杀{1}个敌人后，随机变成一个同等级的其他防御塔,{0}擊殺{1}個敵人後，隨機變成一個同等級的其他防禦塔,"After defeating {1} enemies,  {0} transforms into a random tower"
+63011,,,{0}命中敌人时有{1}%几率使敌人击退{2}格,{0}命中敵人時有{1}%機率使敵人擊退{2}格,+{1}% chance for {0} to knock back enemies {2} girds
+63012,,,{0}子弹数量+{1}，攻速-{2}%,{0}子彈數量+{1}，攻速-{2}%,"{0} +{1} Bullet count, Atk Speed -{2}%"
+63013,,,{0}攻速+{1}%，射程-{2}%,{0}攻速+{1}%，射程-{2}%,"{0} +{1}% Atk Speed, -{2}% Range"
+63014,,,{0}子弹的弹跳次数+{1}，弹跳伤害{2}%,{0}子彈的彈跳次數+{1}，彈跳傷害{2}%,"{0} +{1} Bullets bounce, {2}% Damage"
+63015,,,{0}子弹数量+{1}，爆炸范围减少{2}%,{0}子彈數量+{1}，爆炸範圍減少{2}%,"{0} +{1} Bullet count ,-{2}% AOE"
+63016,,,{0}子弹爆炸后会留下一个减速{1}%的地面，持续{2}秒,{0}子彈爆炸後會留下一個減速{1}%的地面，持續{2}秒,{0} bullets can burn the area for {2} seconds. Enemies stand on it are slowed by {1}%.
+63017,,,{0}每次攻击会击退敌方单位{1}格,{0}每次攻擊會擊退敵方單位{1}格,{0} can knock back enemies {1} tile
+63018,,,{0}射程+{1}%,{0}射程+{1}%,+{1}% Range for {0}
+63019,,,{0}子弹命中目标减速{1}%，持续{2}秒,{0}子彈命中目標減速{1}%，持續{2}秒,{0} bullets slow targets by {1}% for {2} seconds
+63020,,,{0}子弹数+{1}倍，但是攻击-{2}%,{0}子彈數+{1}倍，但是攻擊-{2}%,"{0} bullet count x{1} , -{2}% Damage"
+63021,,,{0}释放子弹数量超过{1}，攻速+{2}%，直到波次结束,{0}釋放子彈數量超過{1}，攻速+{2}%，直到波次結束,"After throwing {1} boomerangs, {0} +{2}% Atk Speed till the wave ends."
+63022,,,若{0}击中目标血量超过{1}%，晕眩{2}秒，BOSS时间减半,若{0}擊中目標血量超過{1}%，暈眩{2}秒，BOSS時間減半,{0} can stun enemy with more than {1}% health for {2} seconds. (Stun Duration -50% on BOSS)
+63023,,,{0}击中的单位防御-{1}%，持续{2}秒,{0}擊中的單位防禦-{1}%，持續{2}秒,-{1}% Enemy Defense for {2} seconds when hit by {0}
+63024,,,{0}击中血量小于{1}%的单位有{2}%的概率斩杀,{0}擊中血量小於{1}%的單位有{2}%的機率斬殺,+{2}% Chance for {0} to execute enemy with less than {1}% health
+63025,,,{0}每击杀{1}个敌人，回复{2}点已损失的羊村生命,{0}每擊殺{1}個敵人，回復{2}點已損失的羊村生命,Restores {2} HP for evey {1} enemies defeated by {0}.
+63026,,,{0}子弹每穿过一个敌方单位，子弹攻击+{1}%,{0}子彈每穿過一個敵方單位，子彈攻擊+{1}%,+{1}% {0} Damage for each enemy the orb goes through
+63027,,,子弹每飞行1个格子，爆炸范围+{1}%,子彈每飛行1個格子，爆炸範圍+{1}%,+{1}% AOE radius for every tile bullet traveled
+63028,,,子弹每飞行1个格子，伤害+{1}%,子彈每飛行1個格子，傷害+{1}%,+{1}% Damage for every tile bullet traveled
+63029,,,子弹对爆炸中心的{1}%范围内的敌人伤害+{2}%,子彈對爆炸中心的{1}%範圍內的敵人傷害+{2}%,+{2}% Damage to enemies within {1}% of the AOE center
+63030,,,子弹飞行速度+{1}%，伤害+{2}%,子彈飛行速度+{1}%，傷害+{2}%,"+{2}% Damage, +{1}% Bullet speed"
+63031,,,子弹爆炸时有{1}%的几率使范围内的敌人眩晕{2}秒,子彈爆炸時有{1}%的機率使範圍內的敵人暈眩{2}秒,+{1}% Chance to stun enemies within range for {2} seconds
+63032,,,紫宝石闪电链目标数量+{1}个,紫寶石閃電鏈目標數量+{1}個, Amethyst lightning chain targets increase by {1}
+63033,,,{0}对处于异常状态下的单位造成的伤害+{1}%,{0}對處於異常狀態下的單位造成的傷害+{1}%,+{1}% {0} Damage to debuffed enemies
+63034,,,1格范围内，每有1个塔，{0}攻击+{1}%,1格範圍內，每有一個塔，{0}攻擊+{1}%,+{1}% {0} Attack for each tower within 1 tile
+63035,,,1格范围内，每有1个塔，{0}攻速+{1}%,1格範圍內，每有一個塔，{0}攻速+{1}%,+{1}% {0} Atk Speed for each tower nearby
+63036,,,{0}每{1}秒攻速+{2}%，持续{3}秒,{0}每{1}秒攻速+{2}%，持續{3}秒,"Every {1} seconds, {0}  +{2}% Atk Speed for {3} seconds"
+63037,,,{0}击杀敌人时，攻击+{1}%，攻速+{2}%，持续{3}秒,{0}擊殺敵人时，攻擊+{1}%，攻速+{2}%，持續{3}秒,"When defeating enemies, {0} +{1}% Damage, +{2}% Atk Speed for {3} seconds "
+63038,,,{0}每次攻击提高攻击{2}%。上限{3}层，切换目标重置。攻击-{1}%,{0}每次攻擊提高攻擊{2}%。上限{3}層，切換目標重置。攻擊-{1}%,Every hit +{2}% Attack. (Up to {3} stacks (reset after switching targets). -{1}% Attack
+63039,,,{0}攻击+{1}%，但每次攻击将随机选择射程内目标,{0}攻擊+{1}%，但每次攻擊將隨機選擇射程內目標,+{1}% Attack. Randomly attack target within range.
+63040,,,每波开始，{0}有{1}%概率进入过载状态，暴击概率+{2}%，暴击伤害+{3}%；,每波開始，{0}有{1}%概率進入過載狀態，暴擊概率+{2}%，暴擊傷害+{3}%；,"At the beginning of each wave, {0} has {1}% chance to Overload: +{2}% Crit Chance; +{3}% Crit Damage"
+63041,,,{0}子弹弹跳次数+{1}，伤害-{2}%,{0}子彈彈跳次數+{1}，傷害-{2}%,"+{1} {0} bullet bounce, -{2}% Damage"
+63042,,,{0}炮弹着陆时有{1}%概率多爆炸{2}次,{0}炮彈著陸時有{1}%概率多爆炸{2}次,+{1}% Chance for {0} to explode {2} times
+63043,,,{0}波次开始的前{1}秒，攻速+{2}%,{0}波次開始的前{1}秒，攻速+{2}%,"At the beginning of each wave, {0} +{2}% Atk speed for {1} seconds"
+63044,,,{0}每击杀{1}个敌人，获得{2}建造点,{0}每擊殺{1}個敵人，獲得{2}建造點,+{2} Cogs when {0} defeating {1} enemies
+63045,,,{0}击杀{1}个敌人后，下一次攻击伤害+{2}%,{0}擊殺{1}個敵人後，下一次攻擊傷害+{2}%,"After defeating {1} enemies, {0} +{2}% Attack for the next shot"
+63046,,,{0}攻击精英/首领怪物时，攻击+{1}%,{0}攻擊精英/首領怪物時，攻擊+{1}%,+{1}% {0} Attack when the target is Elites/BOSS
+63047,,,{0}子弹碰撞后不消失，但是伤害-{1}%,{0}子彈碰撞後不消失，但是傷害-{1}%,"Orbs stay after impact, -{1}% {0} Damage"
+63048,,,{0}能量球的旋转速度+{1}%,{0}能量球的旋轉速度+{1}%,+{1}% Orbs spin speed for {0}
+63049,,,{0}射程内的怪物移动速度-{1}%，多个电磁震荡塔不叠加,{0}射程內的怪物移動速度-{1}%，多個震蕩塔不疊加,{0} can -{1}% Nearby enemies' Movement Speed. (No Stack)
+63050,,,{0}击杀{1}个敌人，获得{2}个能量球,{0}擊殺{1}個敵人，獲得{2}個能量球,+{2} Orbs when {0} defeating {1} enemies
+63051,,,{0}能量球生成间隔-{1}%,{0}能量球生成間隔-{1}%,+{1}% Orbs recharging speed for {0}
+63052,,,每有{1}个能量球消失，{0}{2}格范围的塔暴击+{3}%，持续{4}秒，最多{5}层,每有{1}個能量球消失，{0}{2}格範圍的塔暴擊+{3}%，持續{4}秒，最多{5}層,{0} can +{3}% Crit Chance for towers within {2} tiles for {4} seconds when {1} orbs detonate. Up to {5} stacks.
+63053,,,{0}索敌范围+{1}%,{0}索敵範圍+{1}%,+{1}% Detecting range for {0}
+63054,,,{0}子弹+{1}，射速-{2}%,{0}子彈+{1}，射速-{2}%,"+{1} {0} bullet count, -{2}% Atk Speed"
+63055,,,{0}子弹大小+{1}%，伤害+{2}%,{0}子彈大小+{1}%，傷害+{2}%,"+{1}% {0} bullet size, +{2}% Damage"
+63056,,,{0}{1}级+{2}飞行距离，{3}级+{4}飞行距离,{0}{1}級+{2}飛行距離，{3}級+{4}飛行距離,+{2}/{4} {0} bullet traveling range at Lv.{1}/Lv.{3}
+63057,,,{0}爆炸范围有{1}%概率造成{2}秒晕眩,{0}爆炸範圍有{1}%概率造成{2}秒暈眩,+{1}% Chance for {0} to cause {2} seconds stun
+63058,,,{0}爆炸范围+{1}%，但是攻击-{2}%,{0}爆炸範圍+{1}%，但是攻擊-{2}%,"+{1}% {0} AOE radius, -{2}% Attack"
+63059,,,{0}在{1}秒内没有造成伤害，下次攻击子弹+{2},{0}在{1}秒內沒有造成傷害，下次攻擊子彈+{2},+{2} Bombs for the next attack if not causing any damage within {1} seconds
+63060,,,{0}击杀的单位会对附近{1}格的空中单位造成此单位最大生命{2}%的伤害,{0}擊殺的單位會對附近{1}格的空中單位造成此單位最大生命{2}%的傷害,{0} deals {2}% of the defeated enemy's max health as damage to nearby air enemies within {1} tiles.
+63061,,,{0}击杀{1}个敌人后，升级将变为免费,{0}擊殺{1}個敵人後，升級將變為免費,"After defeating {1} enemies, {0} upgrading becomes free"
+63062,,,{0}子弹体积增大{1}%,{0}子彈體積增大{1}%,+{1}% {0} bullet size
+63063,,,{0}范围增大{1}%，飞行速度+{2}%,{0}範圍增大{1}%，飛行速度+{2}%,"+{1}% Range, +{2}% travel speed for {0}"
+63064,,,{0}子弹+{1}，攻速-{2}%,{0}子彈+{1}，攻速-{2}%,"+{1} {0} bullet count, -{2}% Atk Speed"
+63065,,,{0}每击杀{1}个单位，攻速+{2}%，上限{3}%,{0}每擊殺{1}個單位，攻速+{2}%，上限{3}%,"After defeating {1} enemies, {0} +{2}% Atk Speed (up to {3}%)"
+63066,,,{0}每次攻击提升攻速{2}%，上限{3}层，若{4}秒未攻击则重置。攻速-{1}%,{0}每次攻擊提升攻速{2}%，上限{3}層，若{4}秒未攻擊則重置。攻速-{1}%,+{2}% {0} Atk Speed for each hit (max {3} stacks). Resets if not attacking in {4} seconds. -{1}% Atk Speed
+63067,,,{0}子弹数量+{1}，造成的伤害-{2}%,{0}子彈數量+{1}，造成的傷害-{2}%,"+{1} {0} bullet count, -{2}% Damage dealt"
+70000,,,新手村-1,新手村-1,Tutorial I
+70001,,,新手村-2,新手村-2,Tutorial II
+70002,,,新手村-3,新手村-3,Tutorial III
+70003,,,丛林1-1,叢林1-1,Jungle  1-1
+70004,,,丛林1-2,叢林1-2,Jungle  1-2
+70005,,,丛林1-3,叢林1-3,Jungle  1-3
+70006,,,丛林1-4,叢林1-4,Jungle  1-4
+70007,,,丛林1-5,叢林1-5,Jungle  1-5
+70008,,,丛林1-6,叢林1-6,Jungle  1-6
+70009,,,丛林1-7,叢林1-7,Jungle  1-7
+70010,,,丛林1-8,叢林1-8,Jungle  1-8
+70011,,,丛林1-9,叢林1-9,Jungle  1-9
+70012,,,沼泽2-1,沼澤2-1,Swamp 2-1
+70013,,,沼泽2-2,沼澤2-2,Swamp 2-2
+70014,,,沼泽2-3,沼澤2-3,Swamp 2-3
+70015,,,沼泽2-4,沼澤2-4,Swamp 2-4
+70016,,,沼泽2-5,沼澤2-5,Swamp 2-5
+70017,,,沼泽2-6,沼澤2-6,Swamp 2-6
+70018,,,沼泽2-7,沼澤2-7,Swamp 2-7
+70019,,,沼泽2-8,沼澤2-8,Swamp 2-8
+70020,,,沼泽2-9,沼澤2-9,Swamp 2-9
+70021,,,沙漠边缘,沙漠邊緣,Desert Edge
+70022,,,安蒂亚村,安蒂亞村,Antia
+70023,,,流沙村,流沙村,Quicksand
+70024,,,德泽沙漠,德澤沙漠,Dezert Sands
+70025,,,荒芜戈壁,荒蕪戈壁,Barren Wasteland
+70026,,,凯奇镇,凱奇鎮,Kedge Town
+70027,,,奥雷矿场,奧雷礦場,Ore Mines
+70028,,,矿区铁道,礦區鐵道,Mine Railway
+70029,,,麦恩矿山,麥恩礦山,Maine Mine
+70030,,,风起沙丘,風起沙丘,Rising Dunes
+70031,,,迷尘沙丘,迷塵沙丘,Dusty Dunes
+70032,,,杜恩沙丘,杜恩沙丘,Dune of Doom
+70033,,,风沙峡谷,風沙峽谷,Windy Canyon
+70034,,,菲洛克村,菲洛克村,Phyloc
+70035,,,热风深谷,熱風深谷,Hotwind Ravine
+70036,,,沙海废墟,沙海廢墟,Sandswept Ruins
+70037,,,碎石废墟,碎石廢墟,Shattered Ruins
+70038,,,遗迹荒城,遺跡荒城,Ancient City
+70039,,,干枯河谷,乾枯河谷,Dry Ravine
+70040,,,沙痕干河,沙痕乾河,Dustmark Riverbed
+70041,,,荒漠河谷,荒漠河谷,Desert Canyon
+70042,,,艾伊尔村,艾伊爾村,Aiel
+70043,,,风沙驿站,風沙驛站,Sandswept Outpost
+70044,,,烈日营地,烈日營地,Sun Camp
+70045,,,三迪镇,三迪鎮,Sandy Town
+70046,,,绿洲边缘,綠洲邊緣,Oasis Edge
+70047,,,绿洲细河,綠洲細河,Oasis Stream
+70048,,,沙池绿洼,沙池綠窪,Sandpool Green
+70049,,,沙漠绿泊,沙漠綠泊,Desert Oasis
+70050,,,沙湖碧泊,沙湖碧泊,Lake of Emeralds
+70051,,,巴罗村,含水洞窟,A water-bearing cave
+70052,,,葱茏丛林,寒冷空穴,Cold hole
+70053,,,缺省关卡名3,河流村,River Town
+70054,,,缺省关卡名4,黑暗洞窟,Cave of darkness
+70055,,,缺省关卡名5,黑火村,Black Fire Town
+70056,,,赤火地带,呼嚕嚕村,Hululu Town
+70057,,,玄武岩盆地3,虎克工廠,Hook Factory
+70058,,,火山口3,花海,Sea of flowers
+70059,,,银蛇之巅,黃金海灘,Golden Beach
+70060,,,雪峰山脉3,火山村1,Volcano Town 1
+70061,,,风雪平原3,火山村2,Volcano Town 2
+70062,,,缺省关卡名12,漿果村,Berry Town
+70063,,,缺省关卡名13,卡西村,Cassie Town
+70064,,,缺省关卡名14,凱奇鎮,Cage Town
+70065,,,缺省关卡名15,考斯特岸,Coster Bank
+70066,,,缺省关卡名16,克勒蒙村,The Town of Clermont
+70067,,,缺省关卡名17,礦區鐵道,Railway in mining area
+70068,,,缺省关卡名18,拉卡維村,The Town of Raqqawi
+70069,,,缺省关卡名19,拉瓦錫鎮,The town of Lavoisier
+70070,,,缺省关卡名20,雷尼爾村,Rainier Town
+70071,,,缺省关卡名21,烈焰熔爐,Furnace of fire
+70072,,,缺省关卡名22,流沙村,Quicksand Town
+70073,,,缺省关卡名23,魯姆車間,Ruum Workshop
+70074,,,缺省关卡名24,麥恩礦山,Manne mine
+70075,,,缺省关卡名25,密林村,Dense forest Town
+70076,,,缺省关卡名26,莫諾雷村,The Town of Monore
+70077,,,缺省关卡名27,瀑布,waterfall
+70078,,,缺省关卡名28,丘陵,Hills
+70079,,,缺省关卡名29,丘陵1,Hill 1
+70080,,,缺省关卡名30,丘陵2,Hill 2
+70081,,,缺省关卡名31,熔巖村1,Lava Town 1
+70082,,,缺省关卡名32,三迪鎮,Sandi Town
+70083,,,缺省关卡名33,沙漠戈壁,The desert Gobi
+70084,,,缺省关卡名34,生命森林,Forest of life
+70085,,,缺省关卡名35,濕地,wetland
+70086,,,缺省关卡名36,樹莓村,Raspberry Town
+70087,,,缺省关卡名37,水晶通道,Channel of crystals
+70088,,,缺省关卡名38,水晶王座,The Crystal Throne
+70089,,,缺省关卡名39,斯貝斯鎮,The town of Spays
+70090,,,缺省关卡名40,斯蒂爾鎮,The Town of Steele
+70091,,,缺省关卡名41,蘇蘭德城,The City of Surand
+70092,,,缺省关卡名42,塔特村,The Town of Tate
+70093,,,缺省关卡名43,苔蘚洞穴,Cave of moss
+70094,,,缺省关卡名44,泰勒斯鎮,The town of Thales
+70095,,,缺省关卡名45,泰威爾鎮,The town of Tewell
+70096,,,缺省关卡名46,坦克爾村,Town of Tankel
+70097,,,缺省关卡名47,特洛伊島,Troy Island
+70098,,,缺省关卡名48,沃夫沼澤,Wharf marsh
+70099,,,缺省关卡名49,西利村,Town of Seeley
+70100,,,缺省关卡名50,峽谷1,Canyon 1
+70101,,,缺省关卡名51,峽谷2,Canyon 2
+70102,,,缺省关卡名52,峽谷3,Canyon 3
+70103,,,缺省关卡名53,峽谷4,Canyon 4
+70104,,,缺省关卡名54,小浪沙灘,Small wave beach
+70105,,,缺省关卡名55,羊羊大陸,Sheep sheep continent
+70106,,,缺省关卡名56,銀蛇之巔,The top of the Silver Snake
+70107,,,缺省关卡名57,漁壑海岸,Fishing gully coast
+70108,,,缺省关卡名58,沼澤邊緣,Edge of swamp
+70109,,,新手无尽,新手無盡,Abyss
+70110,,,阵地,陣地,Fortress
+70111,,,教学,教學,Tutorial
+70112,,,丛林,叢林,Jungle
+70113,,,沼泽,沼澤,Swamp
+70114,,,沙漠,沙漠,Desert
+70115,,,沙丘,沙丘,Dunes
+70116,,,绿洲,綠洲,Oasis
+70117,,,火山区域1,火山區域1,Volcanic Zone I
+70118,,,火山区域2,火山區域2,Volcanic Zone II
+70119,,,火山区域3,火山區域3,Volcanic Zone III
+80000,,,开始游戏,開始游戲,Start
+80001,,,密码,密碼,Password
+80002,,,其他方式登录,其他方式登錄,Other Login Methods
+80003,,,请输入,請輸入,Enter Here
+80004,,,输入密码,輸入密碼,Password
+80005,,,输入账号,輸入賬號,Acount Name
+80006,,,我已阅读并同意<color=#FFC700>服务协议</color>和<color=#FFC700>隐私政策</color>,我已閲讀并同意<color=#FFC700>服務協議</color>和<color=#FFC700>隱私政策</color>,I have read and agree to the<color=#FFC700> Terms of Service </color> and<color=#FFC700> Privacy Policy </color>
+80007,,,再次输入密码,再次輸入密碼,Re-enter Password
+80008,,,确认密码,確認密碼,Confirm Password
+80009,,,账号或密码错误,賬號或密碼錯誤,Invalid username or password
+80010,,,账号,賬號,Account
+80011,,,账号昵称,賬號昵稱,Nickname
+80012,,,账号注册,賬號註冊,Create Account
+80013,,,创建,創建,Create
+80014,,,注册,註冊,Create
+80015,,,注册账号,注冊賬號,Create Account
+80016,,,波次失败,波次失敗,Failure of wave
+80017,,,波次通过,波次通過,Passage of wave
+80018,,,成功升级到{0}级!,成功升級到{0}級!,Successfully Upgraded to Lv.{0}!
+80019,,,成功升星,成功升星,Awakening Successful!
+80020,,,成功镶嵌{0},成功鑲嵌{0},Successfully Embeded {0}
+80021,,,出怪口{0}没有怪物寻路路线,出怪口{0}沒有怪物尋路路線,There are no monster wayfinding routes out of the mouth {0}
+80022,,,"当前可升级,无法使用经验书","當前可升級,無法使用經驗書","Currently upgradable, experience books cannot be used"
+80023,,,当前塔无法卖出,當前塔無法賣出,The tower is not available for sale
+80024,,,"该佣兵派遣中,无法选择","該傭兵派遣中,無法選擇",This Guardian is currently dispatched and cannout be selected.
+80025,,,怪物数量不能小于等于0,怪物數量不能小於等於0,The number of monsters cannot be less than or equal to 0
+80026,,,获得{0},獲得{0} ,Get {0}
+80027,,,建造材料不足,建造材料不足,Not Enough Items
+80028,,,金币不足,金幣不足,Not Enough Items
+80029,,,空位不足,空位不足,Slots Full
+80030,,,网络请求超时,網絡請求超時,The network request timed out
+80031,,,银币不足，需要{0},"銀幣不足,需要{0}",Not enough coins. {0}
+80032,,,最多只能拥有{0}个物品,最多只能擁有{0}個物品,You can have at most {0} items
+80033,,,{0}不足！,{0}不足！,{0} is not enough
+80034,,,两次输入的密码不同！,兩次輸入的密碼不同!,Two different passwords!
+80035,,,密码不能为空!,密碼不能為空!,The password cannot be empty!
+80036,,,昵称不能为空!,昵稱不能為空!,Nicknames cannot be empty!
+80037,,,需请先阅读并同意条款,需請先閱讀並同意條款,Please read and agree to the terms and conditions
+80038,,,账号不能为空!,賬號不能為空!,Account cannot be empty!
+80039,,,{0}升级完成!,{0}升級完成!,{0} The upgrade is complete
+80040,,,正在升级,正在升級,Being upgraded
+80041,,,镶嵌成功！,鑲嵌成功！,Mosaic success!
+80042,,,是否消耗货币购买,是否消耗貨幣購買,Whether to spend money to buy
+80043,,,请选择一个佣兵后再进行派遣,請選擇一個傭兵后再進行派遣,Please select a Guardian before dispatching.
+80044,,,输入的时间不能小于等于0,輸入的時間不能小於等於0,The input time cannot be less than or equal to 0
+80045,,,"派遣成功,努力挖掘中","派遣成功,努力挖掘中","Dispatch successful, diligently carrying out the task."
+80046,,,请完成{0}模式第{1}章关卡:{2},請完成{0}模式第{1}章關卡:{2},Complete level {2} in {0} mode {1}.
+80047,,,升级材料:{0}不足!,升級材料:{0}不足!,Insufficient {0}
+80048,,,"升级成功!攻击力+{0}, 攻击范围+{1}, 攻击间隔{2}","升級成功!攻擊力+{0}, 攻擊範圍+{1}, 攻擊間隔{2}","Upgrade succeed!Attack+{0}, Range+{1}, CD{2}"
+80049,,,升级经验不足!,升級經驗不足!,Lack of experience in upgrading!
+80050,,,"已达最大等级,无法使用经验书","已達最大等級,無法使用經驗書",Maximum level has been reached. Experience book cannot be used
+80051,,,佣兵激活成功！,傭兵激活成功！,Guardian Activated Successfully!
+80052,,,佣兵碎片不足！,傭兵碎片不足！,Not Enough Guardian Fragments!
+80053,,,升星材料:{0}不足!,升星材料:{0}不足!,Insufficient {0}
+80054,,,没有可的删除邮件,沒有可的刪除郵件,There is no way to delete emails
+80055,,,没有可领取的邮件,沒有可領取的郵件,There is no mail to collect
+80056,,,没有领取邮件,沒有領取郵件,Not picking up the mail
+80057,,,是否领取所有邮件?,是否領取所有郵件?,Do you collect all mail?
+80058,,,是否删除所有已读和领取过的邮件？,是否刪除所有已讀和領取過的郵件？,Do you delete all messages that have been read and collected?
+80059,,,确认拆除此防御塔?,確認拆除此防禦塔?,Demolish this tower?
+80060,,,使用1个【{0}】来移除,使用1個【{0}】來移除,Use 1 [{0}] to remove
+80061,,,是否保存进度退出?,是否退出當前關卡?,Will you exit the current level?
+80062,,,是否取消 {0} 的防守?,是否取消 {0} 的防守?,Retreat from {0}?
+80063,,,是否确认退出游戏？,是否確認退出遊戲？,Retreat Now?
+80064,,,"同时只能挑战一个{0}模式关卡, {1} 正在战斗中,是否放弃战斗?","同時只能挑戰一個 {0} 模式關卡, {1} 正在戰鬥中,是否放棄戰鬥?","At the same time, only one {0} level can be Challenged. {1} is currently in battle. Do you want to give up the battle?"
+80065,,,无剩余狼群,無剩余狼群,No wolves left
+80066,,,无效的道具,無效的道具,Invalid items
+80067,,,无效的塔,無效的塔,Invalid tower
+80068,,,消耗体力:{0}/{1},消耗體力:{0}/{1},Stamina Used: {0}/{1}
+80069,,,消耗体力:<color=#FF0000>{0}/{1}</color>,消耗體力:<color=#FF0000>{0}/{1}</color>,Stamina Used: <color=#FF0000>{0}/{1}</color>
+80070,,,"已经通关,不能在开始战斗","已經通關,不能在開始戰鬥","Have completed the level, can not start the battle"
+80071,,,"已经通关了,不能再开始战斗了","已經通關了,不能再開始戰鬥了",We've passed the level. We can't start fighting anymore
+80072,,,通关奖励,通關獎勵,Rewards
+80073,,,无限模式,無限模式,Infinite Mode
+80074,,,战役,戰役,Campaign
+80075,,,波数,波數,Wave
+80076,,,正在防守其他关卡,正在防守其他關卡,Depolyed in other levels
+80077,,,消耗品,消耗品,Cost
+80078,,,升星,覺醒,Awaken
+80079,,,积分:,積分:,Points:
+80080,,,积分商城,積分商城,"Points
+Store"
+80081,,,密林探险,密林探險,"Jungle
+Adventure"
+80082,,,宝石镶嵌,寶石鑲嵌,Gem inlay
+80083,,,每日上限,每日上限,Daily limit
+80084,,,投掷,投擲,Roll
+80085,,,未投资,未投資,Uninvested
+80086,,,深林密藏,深林密藏,Deep Forest Hidden
+80087,,,遗迹密藏,遺跡密藏,Relic Hidden
+80088,,,离开战斗？,離開戰鬥？,Retreat Now?
+80089,,,当前,當前,Current
+80090,,,未达到当前声望,未達到當前聲望,Not reached current reputation
+80091,,,重回羊村,重回羊村,Return to Origins
+80092,,,小试牛刀,小試牛刀,Initiate's Trial
+80093,,,清扫外围,清掃外圍,Border Skirmish
+80094,,,决战丛林,決戰叢林,Jungle Showdown
+80095,,,重整羊村,重整羊村,Rebuild the Town
+80096,,,沼泽探险,沼澤探險,Swamp Expedition
+80097,,,前往,前往,Go
+80098,,,可领取,可領取,Claim
+80099,,,存储上限:<color=#00FF20>{0}</color>/{1},存儲上限:<color=#00FF20>{0}</color>/{1},Limit:<color=#00FF20>{0}</color>/{1}
+80100,,,体力恢复成功,體力恢復成功,Stamina recovery successful
+80101,,,佣兵选择,傭兵選擇,Select Guardian
+80102,,,仍有可上阵佣兵,仍有可上陣傭兵,More Guardians Awaiting
+80103,,,请完成普通模式,請完成普通模式,Please Complete Normal Mode
+80104,,,下一章,下一章,Next Chapter
+80105,,,祈福材料不足！,祈福材料不足！,Not Enough Items
+80106,,,未达成前置声望,未達成前置聲望,Finish current achievements to unlock
+80107,,,符文未全部镶嵌,符文未全部鑲嵌,Embed All Runes to Activate
+80108,,,佣兵卡片不足！,傭兵卡片不足！,Not Enough Items
+80109,,,关卡失败,關卡失敗,Fail
+80110,,,经验球已达储存上限,經驗球已達儲存上限,You need to collect first.
+80111,,,每日,每日,Daily
+80112,,,每周,每週,Weekly
+80113,,,每月,每月,Monthly
+80114,,,永久,永久,Permanent
+80115,,,放弃挖矿,放棄挖礦,Abandon
+80116,,,{0}研究成功，升至{1}级！,{0}研究成功，升至{1}級！,{0} Research Level Reaches {1}!
+80117,,,餐点还在准备中请稍等,餐點還在準備中請稍等,"Your meal is still being prepared, please wait a moment."
+80118,,,已在探险行动中！,已在探險行動中！,Already on an Expedition
+80119,,,可领取！,可領取！,Claim
+80120,,,未在当前层,未在當前層,Not on Current Level
+80121,,,道具不足!,道具不足！,Not Enough Item
+80122,,,抽卡资源不足！,抽卡資源不足！,Not Enough Item
+80123,,,没有词条可以选择,沒有詞條可以選擇,There is no selections
+80124,,,成功升星!,成功升星！,Awakening Success!
+80125,,,所有塔,所有塔,All Towers
+80126,,,所有佣兵,所有傭兵,All Guardians
+80127,,,对空塔,對空塔,Anti-air Towers
+80128,,,对地塔,對地塔,Anti-ground Towers
+80129,,,该保险箱已投资！,該保險箱已投資！,This vault has already been invested
+80130,,,已达最小,已達最小,Cannot be Reduced
+80131,,,货币不足！,貨幣不足！,Not Enough Item
+80132,,,只能在肉鸽模式使用,只能在肉鴿模式使用,Cannot be used in current mode
+80133,,,无效的ID,無效的ID,Invalid ID
+80134,,,升级成功：{0}{1}，{2}{3}，{4}{5},升級成功：{0}{1}，{2}{3}，{4}{5},Level Up Success! {0}{1}，{2}{3}，{4}{5}
+80135,,,重新挑战,重新挑戰,Try Again
+80136,,,体力不足！,體力不足！,Not Enough Stamina
+80137,,,已经有同名地图了,已經有同名地圖了,Name Already Taken
+80138,,,防线Lv.{0}开启,防線Lv.{0}開啟,Requires Lv.{0} Fortress
+80139,,,{0}层终点,{0}層終點,End Point of Level {0}
+80140,,,当前没有在该格！,當前沒有在該格！,Not in This Slot
+80141,,,{0}层,{0}層,Level {0}
+80142,,,已达最大可灌注经验!,已達最大可灌注經驗！,Max EXP Reached
+80143,,,请填充灌注材料！,請填充灌注材料！,Please Fill EXPs First
+80144,,,升星材料不足！,升星材料不足！,Not Enough Item
+80145,,,升级材料不足!,升級材料不足!,Not Enough Item
+80146,,,升级材料不足！,升级材料不足！,Not Enough Item
+80147,,,使用{0}个【{1}】来移除,使用{0}個【{1}】來移除,Use {0} {1} to remove
+80148,,,防御塔经验：,防禦塔經驗：,Tower EXP: 
+80149,,,未对该保险箱进行投资！,未對該保險箱進行投資!,Uninvested Vault!
+80150,,,剩余次数不足！,剩餘次數不足！,Insufficient Attempts
+80151,,,该卡池已结束！,該卡池已結束！,Event Ended
+80152,,,投资时间未结束！,投資時間未結束！,Investment Not Completed
+80153,,,已达最大,已達最大,Maximum Reached
+80154,,,剩余天数:{0}天,剩餘天數:{0}天,{0} Days Left
+80155,,,符文未全部镶嵌！,符文未全部鑲嵌！,Runes Not Fully Equiped
+80156,,,当前声望等级内任务未完成,當前聲望等級内任務未完成,Need to Complete All Current Quests
+80157,,,当前关卡未解锁,當前關卡未解鎖,Locked
+80158,,,无尽深渊未解锁,無盡深淵未解鎖,Locked
+80159,,,正在升级!,正在升級!,In Progress
+80160,,,升级货币不足！,升級貨幣不足！,Not Enough Item
+80161,,,"当前正在升级,无法使用经验书","當前正在升級,無法使用經驗書",Cannot Use While In Progress
+80162,,,{0}上限{1}/{2},{0}上限{1}/{2},{0} limit {1}/{2}
+80163,,,已投资该保险箱！,已投資該保險箱！,Already Invested
+80164,,,补签次数已用尽,補簽次數已用盡,No More Catch-ups
+80165,,,请完成{0}模式{1}:{2},請完成{0}模式{1}:{2},Clear {0} {1}: {2} First
+80166,,,此处没有障碍物,此處沒有障礙物,There is no obstacles
+80167,,,需要 {0} 个 {1} 来移除,需要 {0} 个 {1} 來移除,Need {0} {1} to remove
+80168,,,经典,經典,Classic
+80169,,,抽卡,肉鴿,Roguelike
+80170,,,普通,普通,Normal
+80171,,,是否投资{0}{1}，{2}后获得{3}{4},是否投資{0}{1}？{2}后獲得{3}{4},Invest {0} {1} to get {3} {4} after {2}?
+80172,,,恭喜玩家{0}掘金之路投资成功，财源广进！,恭喜玩家{0}掘金之路投資成功，財源廣進！,Congratulations to player {0} for striking gold! Your investment has paved the way to wealth!
+80173,,,将在 {0} 后收获,將在 {0} 后收穫,Gain Rewards After {0}
+80174,,,"1、消耗骰子获得前进步数，投掷几点即可前进几格
+2、到达指定位置可获得对应任务或奖励
+3、到达终点可获得大奖，终点大奖格子需要精准筛出指定步数
+4、获得前一轮大奖后进入下一轮，奖励晋级共5轮
+5、可消耗钻石购买骰子
+6、【银骰子】可在【深林密藏】游玩，【金骰子】可在【遗迹密藏】内游玩","1、消耗掘金鏟獲得前進步數，投擲幾點即可前進幾格
+2、到達指定位置可獲得對應任務或獎勵
+3、到達終點可獲得大獎，終點大獎格子需要精準篩出指定步數
+4、獲得前一輪大獎後進入下一輪，獎勵晉級共5輪
+5、可消耗鑽石購買掘金鏟，不限購買次數
+6、每月1號0點重置活動","1. Use gold shovels to advance the number of spaces rolled.
+2. Land on special spaces to unlock rewards or quests.
+3. Reach the final space for a grand prize; precise steps are required.
+4. Complete the round to progress to the next, with five levels of increasing rewards.
+5. Buy unlimited gold shovels with diamonds.
+6. Resets on the 1st of each month at 00:00."
+80175,,,Boss来袭！,Boss來襲！,Boss Incoming!
+80176,,,广告次数已使用完,廣告次數已用完,Come Back Later
+80177,,,正在下载版本文件,正在下載版本文件,Downloading files...
+80178,,,产出根据佣兵决定，需在该矿场选择佣兵查看！,產出根據傭兵決定，需在該礦場選擇傭兵查看,You need to depoly a Guardian first!
+80179,,,天降横财,天降橫財,Guaranteed Profit
+80180,,,加载中...,加載中...,Loading...
+80181,,,概率公示,概率公示,Odds Reveal
+80182,,,正在巡视村庄...,正在巡視村莊...,Inspecting the Town...
+80183,,,正在打扫羊毛，准备干净利落...,正在打掃羊毛，準備乾淨俐落...,"Sweeping up wool, getting everything neat and tidy..."
+80184,,,正在运送物资...,正在運送物資...,Delivering supplies...
+80185,,,"准备完毕, 即将启程...",準備完畢，即將啟程...,Ready to roll! Let's hit the road...
+80186,,,完成{0}关开启此功能,完成{0}解鎖此功能,Complete {0} to unlock
+80187,,,完成{0}关开启防御塔,完成{0}解鎖防禦塔,Complete {0} to unlock
+80188,,,道具不足，需要{0},道具不足，需要{0},"Items Enough, Needed {0}"
+80189,,,暂无公告,暫無公告,No Announcements
+80190,,,上一章无尽深渊未解锁,上一章深淵無盡未解鎖,the previous Abyss is locked
+80191,,,下一章无尽深渊未解锁,下一章深淵無盡未解鎖,the next Abyss is locked
+80192,,,{0}不足,{0}不足,{0} Not Enough
+80193,,,{0} 未解锁！,{0} 未解鎖！,{0} is locked!
+80194,,,已达最大限购次数,已達到最大限購次數,Maximum Reached
+80195,,,已升至最大等级！,已升至最大等級！,Max Level Reached
+80196,,,经验球已达上限,經驗球已達上限！,Maximum Reached
+80197,,,奖励展示,獎勵展示,Rewards
+80198,,,掘金之路,掘金之路,Rags to Riches
+80199,,,恭喜！佣兵激活成功,恭喜！傭兵激活成功,New Guardian Recruited!
+81000,,,点击任意位置退出,點擊任意位置退出,Tap to Exit
+81001,,,点击领取,點擊領取,Tap to Cliam Rewards
+81002,,,点击任意位置关闭,點擊任意位置關閉,Tap to Close
+81003,,,返回,返回,Back
+81004,,,放弃,放棄,Give up
+81005,,,取消,取消,Cancel
+81006,,,确认,確認,Confirm
+81007,,,使用经验书,使用經驗書,Use experience book
+81008,,,收起,收起,Put away
+81009,,,"已通关
+进入查看","已通關
+進入查看","Cleared
+View"
+81010,,,删除已读,刪除已讀,Delete Read
+81011,,,一键领取,一鍵領取,"Claim
+All"
+81012,,,拆除,拆除,Demolish
+81013,,,卖出防御塔,賣出防禦塔,Sell the defense tower
+81014,,,移除,移除,Remove
+81015,,,移除障碍,移除障礙,Remove obstacles
+81016,,,再次游玩,再次遊玩,Play again
+81017,,,战斗,開戰,Fight
+81018,,,讨伐,討伐,Crusade
+81019,,,迎战,迎戰,Engage
+81020,,,继续,繼續,Continue
+81021,,,升级,升級,Upgrade
+81022,,,镶嵌,鑲嵌,Equip
+81023,,,提升,提升,Level Up
+81024,,,确定,確定,Confirm
+81025,,,全部领取,全部領取,Claim All
+81026,,,祈福,祈福,Bless
+81027,,,一键清空,一鍵清空,Remove All
+81028,,,退出关卡,退出關卡,Quit
+81029,,,跳过动画,跳過動畫,Skip Anim
+81030,,,登出,登出,Log Out
+81031,,,未绑定,未綁定,Connect
+81032,,,已绑定,已綁定,Connected
+81033,,,分解,分解,Shatter
+81034,,,点击屏幕继续,點擊屏幕繼續,Tap to Continue
+81035,,,使用,使用,Use
+81036,,,再次挑战,再次挑戰,Play Again
+81037,,,点击任意位置继续,點擊任意位置繼續,Tap to Continue
+81038,,,返回大厅,返回大廳,Back
+81039,,,下一关卡,下一關卡,Next
+81040,,,扫荡,掃蕩,Sweep
+81041,,,点击抽取奖励,點擊抽取獎勵,Tap to Claim Rewards
+81042,,,结束战斗,結束戰鬥,Finish
+81043,,,下一波次,下一波次,Next Wave
+81044,,,消耗,消耗,Cost
+81045,,,强化,强化,Fortify
+81046,,,起点,起點,Start Point
+81047,,,投资,投資,Investment
+81048,,,奖励信息,獎勵信息,Reward Info
+81049,,,一星宝箱,一星寶箱,1-Star Chest
+81050,,,二星宝箱,二星寶箱,2-Star Chest
+81051,,,三星宝箱,三星寶箱,3-Star Chest
+81052,,,关卡奖励,關卡獎勵,Stage Rewards
+81053,,,领取奖励,領取獎勵,Claim Reward
+81054,,,排名,排名,Rankings
+81055,,,关卡得分,關卡得分,Stage Score
+81056,,,得分排名,得分排名,Score Rank
+81057,,,官方,官方,Nature Guardians Team
+81058,,,发件人:,發件人:,From:
+81059,,,附件:,附件:,Items:
+85000,,,解锁佣兵技能,解鎖傭兵技能,Unlock Guardian Skills
+85001,,,提升佣兵技能等级,提升傭兵技能等級,Boost Guardian Skills Dmg
+85002,,,采矿中,采礦中,Mining
+85003,,,锁定中,鎖定中,Locked
+85004,,,未上阵,未上陣,Undepolyed
+85005,,,已上阵,已上陣,Deployed
+85006,,,战斗中,戰鬥中,In Combat
+85007,,,未激活,未擁有,Not owned
+85008,,,当前佣兵未激活不可选择,當前傭兵未激活不可選擇,Cannot select
+85009,,,忙碌中,忙碌中,On Duty
+85010,,,已达最高等级,已達最高等級,Max Level Reached
+85011,,,已达最高等级!,已達最高等級!,Max Level Reached!
+85012,,,已达最高星级,已達最高星級,Max Star Reached
+85013,,,镶嵌所有槽位升级丰碑效果,鑲嵌所有槽位升級豐碑效果,Upgrade Stele Effect with All Slots Inlaid
+85014,,,已获得该丰碑所有等级效果,已獲得該豐碑所有等級效果,All Stele Effects Unlocked
+85015,,,已镶嵌,已鑲嵌,Embedded
+85016,,,广告奖励,廣告獎勵,Ad Rewards
+85017,,,灌注经验不足!,灌注經驗不足!,Need More Exp.
+85018,,,"当前正在防线战斗中,不能跳转到其他页面","當前正在防線戰鬥中,不能跳轉到其他頁面",You can not leave during the fight!
+85019,,,需激活双月卡,需要激活雙月卡,Need to activate 2 Cards
+85020,,,找不到最新版本,找不到最新版本,Can not find the latest version
+85021,,,刷 新,刷 新,Refresh
+85022,,,是否拆除此防御塔？,是否拆除此防禦塔？,Remove this tower?
+90000,,,退出,退出,Exit
+90001,,,主题,主題,Theme
+90002,,,战场,戰場,Field
+90003,,,障碍物,障礙物,Obstacle
+90004,,,装饰,裝飾,Decoration
+90005,,,士兵,士兵,Enemy
+90006,,,首领,首領,Boss
+90007,,,创建地图,創建地圖,Create
+90008,,,创建新地图,創建新地圖,Create a New Map
+90009,,,点击创建新地图,點擊創建新地圖,Create a new map
+90010,,,编辑选中地图,編輯選中地圖,Edit Selected Map
+90011,,,编辑地图,編輯地圖,Edit
+90012,,,删除地图,刪除地圖,Delete
+90013,,,试玩,試玩,Play
+90014,,,发布地图,發佈地圖,Publish
+100001,,,短时间提升自身移动速度。,短時間提升自身移動速度。,Brief Speed Boost
+100002,,,移动时无视地面阻挡物。,移動時無視地面阻擋物。,Pass Through Obstacles
+100003,,,向前方闪烁3格距离，沿途不会触发陷阱。,向前方閃爍3格距離，沿途不會觸發陷阱。,"Blink Forward 3 Tiles, Avoids Traps"
+100004,,,召唤1只小灰狼进入战场，属性继承召唤者属性的一定百分比。,召喚1隻小灰狼進入戰場，屬性繼承召喚者屬性的一定百分比。,"Summon a Little Grey Wolf, Inherits a Percentage of Your Stats"
+100005,,,受到的火属性伤害增加。,受到的火屬性傷害增加。,Increased Fire Damage Taken
+100006,,,受到的毒属性伤害增加。,受到的毒屬性傷害增加。,Increased Poison Damage Taken
+100007,,,降低受到的所有元素伤害。,降低受到的所有元素傷害。,Reduce Elemental Damage Taken
+100008,,,降低受到的火属性和冰属性伤害。,降低受到的火屬性和冰屬性傷害。,Reduce Fire and Ice Damage Taken
+100009,,,降低被【眩晕】和【击退】的概率；同时降低被眩晕时间和被击退距离。,降低被【眩暈】和【擊退】的概率；同時降低被眩暈時間和被擊退距離。,Reduce Stun and Knockback Chance; Shortens Stun Duration and Knockback Distance
+100010,,,被击败时原地召唤若干只“小突袭狼”。,被擊敗時原地召喚若干隻“小突襲狼”。,"Summon a Pack of ""Mini Ambush Wolves"" Upon Defeat"
+100011,,,无法被【击退】。,無法被【擊退】。,Immune to Knockback
+100012,,,被击败时发生自爆，使周围的敌方单位【缴械】无法攻击。,被擊敗時發生自爆，使周圍的敵方單位【繳械】無法攻擊。,"Explode Upon Defeat, Disarming Nearby Enemies"
+100013,,,降低自身被暴击的概率。,降低自身被暴擊的概率。,Decrease Critical Hit Chance Against You
+100014,,,受到的电属性伤害增加。,受到的電屬性傷害增加。,Increased Electric Damage Taken
+100015,,,使周围的陷阱无法触发。,使周圍的陷阱無法觸發。,Disarm Nearby Traps
+100016,,,无法被防御单位侦测,無法被防禦塔單位偵測。,Invisible to defense units
+100017,,,哥哥被击败时，使自身获得伤害减免和移速提升效果。,哥哥被擊敗時，使自身獲得傷害減免和移速提升效果。,Gain Damage Reduction and Speed Boost When Brother is Defeated
+100018,,,弟弟被击败时，使自身获得伤害减免和移速提升效果。,弟弟被擊敗時，使自身獲得傷害減免和移速提升效果。,Gain Damage Reduction and Speed Boost When Sibling is Defeated
+100019,,,受到的冰属性伤害增加。,受到的冰屬性傷害增加。,Increased Ice Damage Taken
+100020,,,免疫所有元素伤害。,免疫所有元素傷害。,Immune to All Elemental Damage
+100021,,,提高自身移动速度，但增加受到的攻击伤害。,提高自身移動速度，但增加受到的攻擊傷害。,"Increase Speed, But Take More Damage"
+100022,,,清除自身负面状态，同时召唤两个分身。分身继承一定百分比血量，一段时间后消失。,清除自身負面狀態，同時召喚兩個分身。分身繼承一定百分比血量，一段時間後消失。,Cleanse Debuffs and Summon Two Clones. Clones Inherit a Percentage of Your Health and Disappear After a Time.
+100023,,,对周围一名血量最低的友方单位释放护盾，使其在一段时间内获得伤害减免。,對周圍一名血量最低的友方單位釋放護盾，使其在一段時間內獲得傷害減免。,"Shield the Lowest Health Ally, Reducing Damage Taken for a Time"
+100024,,,恢复自身和周围友军一定百分比的生命。,恢復自身和周圍友軍一定百分比的生命。,Heal Yourself and Nearby Allies by a Percentage
+100025,,,提升60%闪避率，可以闪避以自身为目标的攻击，但无法闪避AOE/溅射伤害。,提升60%閃避率，可以閃避以自身為目標的攻擊，但無法閃避AOE/濺射傷害。,"Increase Dodge Rate by 60%, Can Dodge Targeted Attacks, But Not AOE/Splash Damage"
+100026,,,向地图中最强的一名敌方单位扔出一颗炸弹，使目标【缴械】。,向地圖中最強的一名敵方單位扔出一顆炸彈，使目標【繳械】。,"Throw a Bomb at the Strongest Enemy on the Map, Disarming Them"
+100027,,,原地释放一颗烟雾弹，烟雾停留一段时间，使所有烟雾范围内的友方单位闪避率提升。,原地釋放一顆煙霧彈，煙霧停留一段時間，使所有煙霧範圍內的友方單位閃避率提升。,"Drop a Smoke Bomb, Increasing Dodge Rate for All Allies Within the Smoke"
+100028,,,光环效果，使周围的防御塔被【缴械】,光環效果，使周圍的防禦塔被【繳械】。,Aura Effect: Disarms Nearby Towers
+100029,,,召唤1只飞天狼进入战场，属性继承召唤者属性的一定百分比。,召喚1隻飛天狼進入戰場，屬性繼承召喚者屬性的一定百分比。,"Summon a Flying Wolf, Inheriting a Percentage of Your Stats"
+100030,,,清除自身负面状态，同时召唤若干个分身。分身继承一定百分比血量，一段时间后消失。,清除自身負面狀態，同時召喚若干個分身。分身繼承一定百分比血量，一段時間後消失。,Cleanse Debuffs and Summon Multiple Clones. Clones Inherit a Percentage of Your Health and Disappear After a Time.
+100031,,,自身获得70%攻击伤害减免，强迫范围内敌方防御单位攻击自己，持续一段时间。,自身獲得70%攻擊傷害減免，強迫範圍內敵方防禦單位攻擊自己，持續一段時間。,"Gain 70% Damage Reduction, Forcing Nearby Enemy Towers to Target You for a Duration"
+100032,,,召唤1只暴走狼进入战场，属性继承召唤者属性的一定百分比。,召喚1隻暴走狼進入戰場，屬性繼承召喚者屬性的一定百分比。,"Summon a Frenzied Wolf, Inheriting a Percentage of Your Stats"
+100033,,,在一定时间内完全免疫物理伤害,在一定時間內完全免疫物理傷害。,Completely Immune to Physical Damage for a Time
+110001,,,飞行,飛行,Fly
+110002,,,狂奔,狂奔,Sprint
+110003,,,闪现,閃現,Blink
+110004,,,初级召唤,初級召喚,Summon I
+110005,,,怕火,怕火,Blaze Fear
+110006,,,怕毒,怕毒,Toxin Fear
+110007,,,元素抵抗,元素抵抗,Elem Resist
+110008,,,恒温,恆溫,Homeotherm
+110009,,,强壮,強壯,Tough
+110010,,,突袭部队,突襲部隊,Ambush Troop
+110011,,,稳重,穩重,Heavy
+110012,,,弱点防御,弱點防禦,Critical Guard
+110013,,,怕电,怕電,Spark Fear
+110014,,,谨慎,謹慎,Cautious
+110015,,,潜行,潛行,Stealth
+110016,,,兄弟情谊,兄弟情誼,Brotherhood
+110017,,,怕冰,怕冰,Chill Fear
+110018,,,元素免疫,元素免疫,Elem Immunity
+110019,,,轻装上阵,輕裝上陣,Lightweight
+110020,,,分身术,分身術,Clone
+110021,,,守护之盾,守護之盾,Shield
+110022,,,群疗,群療,Heal
+110023,,,灵活,靈活,Agile
+110024,,,投弹,投彈,Grenade
+110025,,,烟雾弹,煙霧彈,Smoke
+110026,,,威严,威嚴,Blackmail
+110027,,,高级召唤,高級召喚,Summon II
+110028,,,多重影分身,多重影分身,Shadow Clone
+110029,,,嘲讽,嘲諷,Taunt
+110030,,,刀枪不入,刀槍不入,Impervious
+110031,,,自爆,自爆,Kamikaze
+120001,,,挥舞火焰剑对面前的敌人发动扇形斩击，造成{0}攻击力的火伤害,揮舞火焰劍對面前的敵人發動扇形斬擊，造成{0}攻擊力的火傷害,"Swing the sword in a fan-shaped slash at enemies, dealing {0} Attack as Fire Damage."
+120002,,,场上每存在1个防御塔：增加自身{0}%的攻击力，上限{1}%；增加自身{2}%暴击率，上限{3}%,場上每存在1個防禦塔：增加自身{0}%的攻擊力，上限{1}%；增加自身{2}%暴擊率，上限{3}%。,For every tower on the field:  +{0}% Attack (up to {1}%); + {2} Crit Rate (up to {3}%).
+120003,,,使剑身缠绕火焰斩向地面，对敌人造成{0}攻击力的火伤害，并使其进入烧伤：初始受到{1}攻击力的烧伤，每{2}秒衰减至{3}%,使劍身纏繞火焰斬向地面引發火焰爆發，對敵人造成{0}攻擊力的火傷害，並使其進入燃燒狀態：初始受到{1}攻擊力的燃燒傷害，每{2}秒衰減至{3}%。,"Wreathe the sword in flames and smash the ground to deal {0} Attack Fire Damage and inflict Burning: dealing {1}% Attack damage initially, decaying to {3}% over {2} seconds."
+120004,,,利用火焰能量在双手掌心生成火球攻击敌人，每颗火球造成{0}攻击力的伤害,利用火焰能量在雙手掌心生成火球攻擊敵人，每顆火球造成{0}攻擊力的傷害,"Throw two fireballs at a single enemy, each dealing {0} Attack damage."
+120005,,,用声音催动自然中的火焰能量，使射程范围内的所有敌人受到的火伤害提升{2}%,用聲音催動自然中的火焰能量，使射程範圍內的所有敵人受到的火屬性傷害提升{2}%。,"Humming to channel the natural fire energy, +{2}% fire damage taken for all enemies within range."
+120006,,,原地起舞，使周围敌人烧伤，初始烧伤值为{0}；效果持续时间内周围燃烧状态下的敌人每次受到的递减烧伤变为递增。,原地起舞，使周圍敵人燒傷，初始燒傷值為{0}；技能持續時間內處於燒傷的敵人受到的遞減傷害變爲遞增。,"Dance in place, burning nearby enemies with an initial burn of {0}. Burn Dmg to nearby enemies change to increasing over time."
+120007,,,使用连弩攻击单体敌人，每发箭矢造成{0}攻击力的伤害。有{1}%的概率发射一支额外箭矢,使用連弩攻擊單體敵人，每發箭矢造成{0}攻擊力的傷害。有{1}%的概率發射一支額外箭矢。,"Use Chu-ko-nu  to attack the single target, dealing {0} Attack damage. There is a {1}% chance to fire an additional arrow."
+120008,,,改良箭矢，使场上所有{0}攻击力+{1}点。,改良箭矢，使場上所有{0}攻擊力+{1}點。,+{1} Attack for all {0} on the field.
+120009,,,为场上所有的{0}注入风之能量，使所有{0}攻击速度+{1}%，持续{2}秒,為場上所有的{0}注入風之能量，使所有{0}攻擊速度+{1}%，持續{2}秒。,+{1}% Atk speed for all {0} for {2} seconds.
+120010,,,爪击单体敌人，造成攻击力{0}的伤害，有{1}%的概率使目标出血：每移动一小段距离，受到最大生命值{2}%的出血伤害，持续{3}秒,爪擊單體敵人，造成攻擊力{0}的傷害，有{1}%的概率使目標出血：每移動一小段距離，受到最大生命值{2}%的出血傷害，持續{3}秒。,"Claw a single enemy, dealing {0}% Attack damage and has a {1}% chance to inflict Bleeding: the target takes {2}% of max HP as bleed damage every time they move, lasting for {3} seconds."
+120011,,,场上每存在1名出血状态的敌人：攻击力+{0}，上限{1}；攻击速度+{2}%，上限{3}%,場上每存在1名出血狀態的敵人，提升自身{0}攻擊力，上限{1}，提升自身{2}%攻擊速度，上限{3}%。,"For each Bleeding enemy on the field: +{0} Attack (up to {1}), +{2}% Atk Speed (up to {3}%)."
+120012,,,对距离村庄最近的1名出血状态下敌人发射钩爪，将敌人拉到自己身边并造成{0}攻击力的伤害,對距離村莊最近的1名出血狀態下敵人發射鉤爪，將敵人拉到自己身邊並造成{0}攻擊力的傷害。,"Shoot a hook at a Bleeding enemy closest to the destination, pulling them toward Edward and dealing {0}% Attack damage."
+120013,,,使用电流攻击射程范围内的所有敌人，造成{0}攻击力的伤害，每个敌人都会分摊伤害,使用電流攻擊射程範圍內的所有敵人，造成{0}攻擊力的傷害，每個敵人都會分攤傷害。,Strike all enemies in range with electric currents that dealing {0} Attack damage. Damage is shared among all targets.
+120014,,,场上有超过{0}个{1}时，自身和周围相邻{2}格范围内防御塔的射程增加{3}%,場上有超過{0}個{1}時，自身和周圍相鄰{2}格範圍內防禦塔的射程增加{3}%。,+{3}% Range for towers {2} tiles when there are more than {1} {0} on the field.
+120015,,,激活时间逆流器，对目标区域内所有敌人造成攻击力{0}的伤害，并将他们向后传送{1}格,激活時間逆流器，對目標區域內所有敵人造成攻擊力{0}的傷害，並將他們向後傳送{1}格。,"Activate the Time Reverser, dealing {0} Attack damage to all enemies in the target area and teleporting them {1} tiles back."
+120016,,,对目标打出摆拳二连击，分别造成{0}攻击力和{1}攻击力的伤害,對目標打出擺拳二連擊，分別造成{0}攻擊力和{1}攻擊力的傷害。,"Punch the target twice, dealing {0} and {1} Attack damage."
+120017,,,猛击地面，对周围所有敌人造成{0}次{1}攻击力的伤害,猛擊地面，對周圍所有敵人造成{0}次{1}攻擊力的傷害。,"Smash the ground {0} times, dealing {1} Attack damage to all surrounding enemies."
+120018,,,周围{0}格范围内的防御塔提升{1}%的攻击速度。,周圍{0}格範圍內的防禦塔提升{1}%的攻擊速度。,+{1}% Atk Speed for towers within {0} tiles.
+120019,,,对面前的敌人发动扇形斩击，造成攻击力{0}的伤害,對面前的敵人發動扇形斬擊，造成攻擊力{0}的傷害，並附加1層火焰印記。,"Perform a fan-shaped slash, dealing {0} Attack Damage."
+120020,,,原地挥舞大刀{1}次攻击周围{0}范围内的敌人，每次造成{2}攻击力的伤害,原地揮舞大刀{1}次攻擊周圍{0}範圍內的敵人，每次造成{2}攻擊力的傷害。,"Swing the greatsword {1} times, dealing {2} Attack damage per hit on enemies within {0} range."
+120021,,,场上每存在1个{0}：自身攻击力增加{1}%， 上限{2}%；自身攻速增加{3}%，上限{4}%。,場上每存在1個{0}：自身攻擊力增加{1}%， 上限{2}%；自身攻速增加{3}%，上限{4}%。,For each {0} on the field: +{1}% Attack (up to {2}%); +{3}% Atk Speed (up to {4}%).
+120022,,,对目标投掷一发可弹跳{1}次的雷电手里剑，造成攻击力{0}的伤害,對目標投擲一發可彈跳{1}次的雷電手裡劍，造成攻擊力{0}的傷害。,"Throw a lightning shuriken that bounces {1} times, dealing {0} Attack damage."
+120023,,,调整呼吸方式，使自身攻速提升{0}%，持续{1}秒；技能持续时间的前{4}秒内，每{2}次攻击可获得{3}点建造点。,調整呼吸方式，使自身攻速提升{0}%，持續{1}秒；技能持續時間的前{4}秒內，每{2}次攻擊可獲得{3}點建造點。,"After using the ability, + {0}% Atk Speed for {1} seconds. During the first {4} seconds, gain {3} Cogs for every {2} hits."
+120024,,,每个回合结束时，每{0}建造点可额外获得{1}点利息，上限{2}点。,每個回合結束時，每{0}建造點可額外獲得{1}點利息，上限{2}點。,"At the end of each wave, gain {1} bonus interest for every {0} Cogs (up to {2})."
+120025,,,对目标投掷试验麻醉剂，造成攻击力{0}的伤害，同时有{1}%的概率使目标眩晕{2}秒。,對目標投擲試驗麻醉劑，造成攻擊力{0}的傷害，同時有{1}%的概率使目標眩暈{2}秒。,"Throw a potion at the target, dealing {0} Attack damage. There is a {1}% chance to stun the target for {2} seconds."
+120026,,,对目标区域挥洒强化药剂，并使自身{0}格范围内防御塔{3}秒内攻击力提高{1}，攻击速度提高{2}%,對目標區域揮灑強化藥劑，並使自身{0}格範圍內防禦塔{3}秒內攻擊力提高{1}，攻擊速度提高{2}%。,"Splash the target area with enhancing potion, +{1} Attack and +{2}% Atk Speed for towers within {0} tiles for {3} seconds."
+120027,,,村庄每进入1个敌人，会增加{0}建造点，上限{1}点。(Boss无效),村莊每進入1個敵人，會增加{0}建造點，上限{1}點。(Boss无效),"For every enemy that enters the village, gain {0} Cogs (up to {1}).  (Invalid for Boss)"
+120028,,,召唤雷电打击目标地点{0}范围内所有敌人，造成{1}攻击力的伤害。,召喚雷電打擊目標地點{0}範圍內所有敵人，造成{1}攻擊力的傷害。,"Summon lightning to strike all enemies at the target area, dealing {1}% Attack damage."
+120029,,,暂时吸收自然雷电能量，在{2}秒内，使自身攻击间隔减少{1}%，同时每次攻击释放的落雷+{0}。,暫時吸收自然雷電能量，在{2}秒內，使自身攻擊間隔減少{1}%，同時每次攻擊釋放的落雷+{0}。,"Absorb natural lightning energy, reducing attack interval by {1}% for {2} seconds and +{0} lightning strikes per attack."
+120030,,,自身周围{0}格范围内存在{1}个或以上的防御塔时，攻击力提升{2}%。,自身周圍{0}格範圍內存在{1}個或以上的防禦塔時，攻擊力提升{2}%。,+{2}% Attack when there are {1} or more towers within {1} tiles.
+120031,,,攻击对单体敌人发射3连发子弹，若目标处于任意异常状态，造成额外伤害。,null,null
+120032,,,使场上所有陷阱在触发时附带自身攻击力百分比的伤害。,null,null
+120033,,,对目标区域投掷1颗闪光弹，使区域内所有敌人进入混乱状态。,null,null
+120034,,,对面前扇形范围发射多发子弹。,null,null
+120035,,,使自身和场上所有霰弹塔攻击产生暴击时对受伤的目标造成减速。,null,null
+120036,,,激活终结者模式，暂时提高自身攻击速度。,null,null
+120037,,,"向敌人投掷苹果，造成物理伤害,同时有几率眩晕",null,null
+120038,,,使射程范围内潜行/隐身单位现形，并提高这些单位受到的攻击伤害,null,null
+120039,,,"使目标范围内所有地面单位敌人进入【浮空状态】,浮空的地面敌人落地后对范围内所有敌人造成伤害并眩晕",null,null
+120040,,,攻击射出尖锐的冰锥，对单体目标造成伤害,null,null
+120041,,,提升场上所有镶嵌了寒冰宝石的塔攻击力,null,null
+120042,,,召唤数枚冰锥，轰击目标区域路面，每发对范围内敌人造成攻击力,null,null
+120043,,,每次挥剑时，都会制造一道寒冰刃从地面滑行而出，沿着目标地点向敌人路径反方向滑行，对所有接触到的目标造成冰属性伤害,null,null
+120044,,,场上有特定数量的风刃发射器时，冰刃抵达最大滑行距离时会产生冰裂爆炸，对敌人造成AOE冰属性伤害,null,null
+120045,,,使周围地面产生数发冰刺，对接触到的所有地面敌人造成冰属性伤害，并叠加减速。,null,null
+120046,,,激活时间逆流器，对目标区域内所有敌人造成伤害，并将向后传送3格。,null,null
+120047,,,终结者每过n回合，对旁边的防御塔升级,null,null
+120048,,,使用十字弩攻击单体敌人。有概率发射一支额外箭矢。,null,null
+120049,,,提升场上所有十字弓的攻击力。,null,null
+130001,,,【消耗体力提升通行证等级】{0},【消耗體力提升通行證等級】{0},Use Stamina to Level Up Pass {0}
+130002,,,免费通行证,免費通行證,Free Pass
+130003,,,完美通行证,完美通行證,Premium Pass
+130004,,,至尊通行证,至尊通行證,Ultimate Pass
+130005,,,免费基金,免費基金,Free Fund
+130006,,,高级基金,高級基金,Advanced Fund
+130007,,,冒险基金，主线闯关获得对应奖励！,冒險基金，主線闖關獲得對應獎勵！,"Adventure Fund, Earn Rewards by Completing Main Quests!"
+130008,,,返利400%,返利400%,400% Cashback
+130009,,,前往充值,前往充值,Recharge
+130010,,,{0}后重置,{0}後重置,Reset After {0}
+130011,,,全部挡位领取完后立即重置（超出金额自动保存），仅<color=#00CCEE>钻石商城</color>充值计入额度。,全部擋位領取完後立即重置（超出金額自動保存），僅<color=#00CCEE>鑽石商城</color>充值計入額度。,Instant reset after all tiers claimed. Only <color=#00CCEE>Diamond Store</color> count.
+130012,,,累计充值,累計充值,Cumulative
+130013,,,活动倒计时:  {0},活動倒計時:  {0},Event Countdown: {0}
+130014,,,限购{0}/{1},限購{0}/{1},Purchase Limit {0}/{1}
+130015,,,{0}折,{0}折,{0}x Discount
+130016,,,日礼包,日禮包,Daily Gift Pack
+130017,,,周礼包,周禮包,Weekly Gift Pack
+130018,,,月礼包,月禮包,Monthly Gift Pack
+130019,,,每日礼包1,每日禮包1,Daily Gift Pack 1
+130020,,,每日礼包2,每日禮包2,Daily Gift Pack 2
+130021,,,每日礼包3,每日禮包3,Daily Gift Pack 3
+130022,,,每日礼包4,每日禮包4,Daily Gift Pack 4
+130023,,,每日礼包5,每日禮包5,Daily Gift Pack 5
+130024,,,每日礼包6,每日禮包6,Daily Gift Pack 6
+130025,,,每周礼包1,每周禮包1,Weekly Gift Pack 1
+130026,,,每周礼包2,每周禮包2,Weekly Gift Pack 2
+130027,,,每周礼包3,每周禮包3,Weekly Gift Pack 3
+130028,,,每周礼包4,每周禮包4,Weekly Gift Pack 4
+130029,,,每周礼包5,每周禮包5,Weekly Gift Pack 5
+130030,,,每周礼包6,每周禮包6,Weekly Gift Pack 6
+130031,,,每月礼包1,每月禮包1,Monthly Gift Pack 1
+130032,,,每月礼包2,每月禮包2,Monthly Gift Pack 2
+130033,,,每月礼包3,每月禮包3,Monthly Gift Pack 3
+130034,,,每月礼包4,每月禮包4,Monthly Gift Pack 4
+130035,,,每月礼包5,每月禮包5,Monthly Gift Pack 5
+130036,,,每月礼包6,每月禮包6,Monthly Gift Pack 6
+130037,,,移除塔,移除塔,Remove Tower
+130038,,,刷新时间 {0},刷新時間 {0},Refresh Time: {0}
+130039,,,用于精英佣兵池抽卡,用于精英傭兵池抽卡,For Elite Guardian Recruitment
+130040,,,用于普通佣兵池抽卡,用于普通傭兵池抽卡,For Regular Guardian Recruitment
+130041,,,符文随机宝箱,符文隨機寶箱,Rune Mystery Box
+130042,,,符文I 随机宝箱,符文I 隨機寶箱,Rune I Mystery Box
+130043,,,符文II 随机宝箱,符文II 隨機寶箱,Rune II Mystery Box
+130044,,,符文III 随机宝箱,符文III 隨機寶箱,Rune III Mystery Box
+130045,,,符文IV 随机宝箱,符文IV 隨機寶箱,Rune IV Mystery Box
+130046,,,符文V 随机宝箱,符文V 隨機寶箱,Rune V Mystery Box
+130047,,,打开后随机获得1枚符文,打開後隨機獲得1枚符文,Randomly Obtain 1 Rune Upon Opening
+130048,,,打开后随机获得1枚1级符文,打開後隨機獲得1枚1級符文,Randomly Obtain 1 Rune I Upon Opening
+130049,,,打开后随机获得1枚2级符文,打開後隨機獲得1枚2級符文,Randomly Obtain 1 Rune II Upon Opening
+130050,,,打开后随机获得1枚3级符文,打開後隨機獲得1枚3級符文,Randomly Obtain 1 Rune III Upon Opening
+130051,,,打开后随机获得1枚4级符文,打開後隨機獲得1枚4級符文,Randomly Obtain 1 Rune IV Upon Opening
+130052,,,打开后随机获得1枚5级符文,打開後隨機獲得1枚5級符文,Randomly Obtain 1 Rune V Upon Opening
+130053,,,防御塔经验,防禦塔經驗,Tower Experience
+130054,,,推荐,推薦,Recommended
+130055,,,我的,我的,My Maps
+130056,,,创作者:,創作者:,Creator:
+130057,,,搜索,搜索,Search
+130058,,,我的发布,我的發布,Published
+130059,,,地图名称,地圖名稱,Map Name
+130060,,,游玩次数,遊玩次數,Total Played
+130061,,,评分,評分,Rating
+130062,,,我的创作,我的創作,Drafts
+130063,,,画布,畫布,Canvas
+130064,,,地块,地塊,Tiles
+130065,,,敌人,敵人,Enemies
+130066,,,怪物强度类型不符合,怪物強度類型不符合,Monster strength type mismatch
+130067,,,已经存在此怪物了,已經存在此怪物了,Monster already exists
+130068,,,"改变地图尺寸将清空所有格子,是否确认要改变?","改變地圖尺寸將清空所有格子,是否確認要改變?","Changing map size will clear all tiles, confirm change?"
+130069,,,"至少需要一个小怪,无法开始游戏","至少需要壹個小怪,無法開始遊戲","No enemies found, cannot start game"
+130070,,,"当前地图未保存,是否确认要退出?","當前地圖未保存,是否確認要退出?","Current map is not saved, confirm exit?"
+130071,,,"无效的寻路路线,无法开始游戏","無效的尋路路線,無法開始遊戲","Invalid enemy path route, cannot start game"
+130072,,,最大,最大,Max
+130073,,,打开后获得随机佣兵碎片*10,打開後獲得隨機傭兵碎片*10,Open to receive 10 random Guardian shards
+130074,,,可镶嵌在防御塔上提升战斗效果,可鑲嵌在防禦塔上提升戰鬥效果,Can be embedded in towers to enhance combat effects
+130075,,,防御塔手册特惠,防禦塔手冊特惠,Tower Codex Special Offer
+130076,,,打开后获得随机佣兵碎片*5,打開後獲得隨機傭兵碎片*5,Open to receive 5 random Guardian shards
+130077,,,打开后获得随机3级宝石*1,打開後獲得隨機3級寶石*1,Open to receive 1 random Gem III
+130078,,,打开后获得随机2级宝石*1,打開後獲得隨機2級寶石*1,Open to receive 1 random Gem II
+130079,,,打开后获得随机1级宝石*1,打開後獲得隨機1級寶石*1,Open to receive 1 random Gem I
+130080,,,{0}天{1}时{2}分,{0}天{1}時{2}分,{0}d {1}h {2}m
+130081,,,月卡奖励,月卡獎勵,Monthly Card Rewards
+140000,,,碎石,碎石,Gravel
+140001,,,石块,石塊,Rock
+140002,,,大石块,大石塊,Large Rock
+140003,,,粗糙岩石,粗糙岩石,Rough Rock
+140004,,,硬质岩石,硬質岩石,Solid Rock
+140005,,,巨大岩石,巨大岩石,Huge Boulder
+140006,,,庞然巨石,龐然巨石,Giant Boulder
+140007,,,杂草,雜草,Weeds
+140008,,,大树桩,大樹樁,Large Stump
+140009,,,小树,小樹,Small Tree
+140010,,,成熟树木,成熟樹木,Mature Tree
+140011,,,古老树木,古老樹木,Ancient Tree
+140012,,,参天大树,參天大樹,Giant Tree
+140013,,,泰坦树木,泰坦樹木,Titan Tree
+140014,,,沙漠狼-装甲运狼车,沙漠狼-裝甲運狼車,Desert Wolf - Armored Transport
+140015,,,分身狼,分身狼,Clone Wolf
+140016,,,盗宝小灰狼,盜寶小灰狼,Treasure Thief Grey Wolf
+140017,,,僵尸狼,僵屍狼,Zombie Wolf
+140018,,,巨熊,巨熊,Giant Bear
+140019,,,蝙蝠,蝙蝠,Bat
+140020,,,秃鹫,禿鷲,Vulture
+140021,,,是个活力四射、好动的家伙，喜欢迅速穿梭在敌人之间，试图绕过防御来对羊村造成伤害。,是個活力四射、好動的家夥，喜歡迅速穿梭在敵人之間，試圖繞過防禦來對羊村造成傷害。,"An energetic and active creature, likes to swiftly move among enemies attempting to bypass defenses to damage Sheep Village."
+140022,,,靠着一顶带螺旋桨的帽子成为了狼族中最早的一批空军。,靠着一頂帶螺旋槳的帽子成爲了狼族中最早的一批空軍。,"Among the first of the wolves' air force, thanks to a propeller hat."
+140023,,,专精召唤法术。,專精召喚法術。,Specializes in summoning spells.
+140024,,,自诩为狼村的金色闪光。,自詡爲狼村的金色閃光。,Considers itself the golden flash of Wolf Village.
+140025,,,沙漠中的强盗。,沙漠中的強盜。,Desert Bandit.
+140026,,,跑得很快的幼狼。,跑得很快的幼狼。,Fast-running young wolf.
+140027,,,森林中随处可见的狼。,森林中隨處可見的狼。,Commonly seen in the forests.
+140028,,,非常嗜睡，反射弧很长。,非常嗜睡，反射弧很長。,Very sleepy with slow reflexes.
+140029,,,潜行高手，狼忍村侦察兵。,潛行高手，狼忍村偵察兵。,"Stealth master, scout of Wolf Ninja Village."
+140030,,,善于使用分身术来迷惑敌人。,善於使用分身術來迷惑敵人。,Skilled at using cloning techniques to confuse enemies.
+140031,,,拥有极高的血量和耐久力，对高温和寒冷都有较好的抵抗能力。,擁有極高的血量和耐久力，對高溫和寒冷都有較好的抵抗能力。,"Has high health and durability, with good resistance to both heat and cold."
+140032,,,狼群的秘密武器，一旦“爆胎”，立马变身“狼窝出击站”。,狼群的秘密武器，一旦“爆胎”，立馬變身“狼窩出擊站”。,"The wolf pack's secret weapon, transforms into a 'Wolf Den Attack Station' if 'tires are blown'."
+140033,,,“砰”的一声，周围防御塔就变成了昂贵的摆设！,“砰”的一聲，週圍防禦塔就變成了昂貴的擺設！,"With a 'bang', nearby defense towers turn into costly decorations!"
+140034,,,会使用法力为友方施加护盾。,會使用法力爲友方施加護盾。,Uses magic to cast protective shields on allies.
+140035,,,梦想是成为圣殿勇士。,夢想是成爲聖殿勇士。,Dreams of becoming a Temple Knight.
+140036,,,温柔的护士姐姐狼，乐于助人，总是照顾其他狼族成员，为他们提供治疗。,溫柔的護士姐姐狼，樂於助人，總是照顧其他狼族成員，爲他們提供治療。,"Gentle nurse wolf, always helping and caring for other wolves, providing them with healing."
+140037,,,因伤退役的马戏团演员，身手仍然灵活，善于躲避。,因傷退役的馬戲團演員，身手仍然靈活，善於躲避。,"Retired circus performer due to injury, still agile and good at dodging."
+140038,,,“艺术就是爆炸！”,“藝術就是爆炸！”,Art is an explosion!
+140039,,,为人处世十分谨慎，总是走一步看三步。,爲人處世十分謹慎，總是走一步看三步。,"Very cautious in life, always thinking three steps ahead."
+140040,,,狼族黑帮中最难缠的对手。,狼族黑幫中最難纏的對手。,The most formidable opponent in the wolf gang.
+140041,,,狼族黑帮头号打手，脾气火爆，行事鲁莽。,狼族黑幫頭號打手，脾氣火爆，行事魯莽。,"Top enforcer of the wolf gang, hot-tempered and reckless."
+140042,,,从小与哥哥相依为命，可以为了兄弟做任何事。,從小與哥哥相依爲命，可以爲了兄弟做任何事。,"Grew up dependent on his older brother, would do anything for him."
+140043,,,从小与弟弟相依为命，可以为了兄弟做任何事。,從小與弟弟相依爲命，可以爲了兄弟做任何事。,"Grew up dependent on his younger brother, would do anything for him."
+140044,,,狼族的黑帮教父，不怒自威。,狼族的黑幫教父，不怒自威。,"The godfather of the wolf gang, commands respect without anger."
+140045,,,狼群中的铁血统帅。,狼群中的鐵血統帥。,Iron-blooded commander of the wolf pack.
+140046,,,狼忍村的特别上忍，众多仰慕者趋之若鹜的对象。,狼忍村的特別上忍，衆多仰慕者趨之若鶩的對象。,"Special Jounin of Wolf Ninja Village, admired by many."
+140047,,,狼族第一战将。,狼族第一戰將。,Top general of the wolf clan.
+140048,,,百变小神偷，极其贪财，身手矫健，身上藏着很多金银珠宝，遇到危险脚底抹油。,百變小神偷，極其貪財，身手矯健，身上藏着很多金銀珠寶，遇到危險腳底抹油。,"Versatile little master thief, extremely greedy, agile, carrying lots of gold and jewels, escapes at the first sign of danger."
+140049,,,分身狼的影子分身。,分身狼的影子分身。,Shadow clone of Clone Wolf.
+140050,,,能够激活魔法护甲免疫物理伤害,能夠激活魔法護甲免疫物理傷害,Can activate magic armor to become immune to physical damage.
+140051,,,解锁新词条:{0},解鎖新詞條:{0},New Perk Unlocked: {0}
+140052,,,已复制!,已複製！,Copied!
+140053,,,冒险基金,冒險基金,Adventure Fund
+140054,,,深渊战令,深淵戰令,Abyss Battle Pass
+140055,,,确定替换该塔？,確定替換該塔？,Confirm replacing the tower?
+140056,,,服务器状态,伺服器狀態,Server status
+140057,,,服务器维护,伺服器維護,Server maintenance
+140058,,,钻石礼包,鑽石禮包,Diamond Pack
+140059,,,60钻石,60鑽石,60 Diamonds
+140060,,,330钻石,330鑽石,330 Diamonds
+140061,,,750钻石,750鑽石,750 Diamonds
+140062,,,1480钻石,1480鑽石,1480 Diamonds
+140063,,,3780钻石,3780鑽石,3780 Diamonds
+140064,,,7780钻石,7780鑽石,7780 Diamonds
+140065,,,远程,遠程,Ranged Guardians
+140066,,,近战,近戰,Melee Guardians
+140067,,,升到指定级别可解锁词条,升到指定級別可解鎖詞條,Upgrade to unlock Perks accordingly.
+140068,,,上一章,上一章,Previous chapter
+140069,,,充值60钻,充值60鑽,Recharge 60 diamonds
+140070,,,充值300钻,充值300鑽,Recharge 300 diamonds
+140071,,,到达波次,到達波次,Wave Reached
+140072,,,登录已失效,登入已失效,Login Expired
+140073,,,波次数据发送失败，是否重试,波次數據發送失敗，是否重試？,Failed to Send Wave Data. Retry?
+140074,,,解锁后加入战斗词条池中:,解鎖後加入戰鬥詞條池中：,Level up to unlock perks for battle selection.
+140075,,,我已阅读并同意,我已閲讀并同意,I have read and agree to the
+140076,,, 服务协议 , 服務協議 , Terms of Service 
+140077,,,和,和,and
+140078,,, 隐私政策 , 隱私政策 , Privacy Policy 
+140079,,,中文,中文,中文
+140080,,,繁體中文,繁體中文,繁體中文
+140081,,,English,English,English
+140082,,,https://www.blockfish.io/termsofservice,https://www.blockfish.io/termsofservice,https://www.blockfish.io/termsofservice
+140083,,,https://www.blockfish.io/privacypolicy,https://www.blockfish.io/privacypolicy,https://www.blockfish.io/privacypolicy
+140084,,,已达最大等级,已達最大等級,Max Level Reached
+140085,,,1分,1分,1m
+140086,,,防守进度：,防守進度：,Defense Progress: 
+140087,,,用户已经存在,用戶已經存在,User already exists
+140088,,,放置【火炮塔】到指定格子上,放置【火炮塔】到指定格子上,Place the [Meteor Cannon] on the designated tile
+140089,,,等待消息中,等待消息中,Waiting for response
+140090,,,{0}精英死亡5%概率获得{1}建筑币,{0}精英死亡有5%概率獲得{1}建築幣,{0} elite has a 5% chance to drop {1} Cogs upon death
+140091,,,已取消登录,已取消登錄,Login Canceled
+140092,,,登录失败,登錄失敗,Login Failed
+140093,,,登录中...,登入中...,Logging in...
+140094,,,{0}金币,{0}金幣,{0} Coins
+140095,,,{0}钻石,{0}鑽石,{0} Diamonds
+140096,,,购买后立即获得以下物品,購買後立即獲得以下物品,Items received upon purchase
+140097,,,购买并打开，可随机获得{0}个以下物品：,購買並打開，可隨機獲得{0}個以下物品：,Randomly receive {0} of the following items upon purchase
+140098,,,携带<color=#3333DD>{0}</color>进入战斗,携带<color=#3333DD>{0}</color>进入战斗,携带<color=#3333DD>{0}</color>进入战斗
+140099,,,产线完备,產線完備,Production line complete
+140100,,,密林村,密林村,JungleVillage

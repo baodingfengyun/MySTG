@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TuJiu_Controller
+  m_Controller: {fileID: 9100000, guid: c10870655859140498bca67b80487e2d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c215d162da0535b47b499c141e478bb0, type: 2}
+    m_OverrideClip: {fileID: 2211151630470425512, guid: 754363bf39deab74ea6d6033734f2795,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 484d545139fb05f4580196e044b7ed44, type: 2}
+    m_OverrideClip: {fileID: 5558474050497837923, guid: 754363bf39deab74ea6d6033734f2795,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: d47fcc0b2ca3ff84d99319945ff82ae8, type: 2}
+    m_OverrideClip: {fileID: -1699001772359232789, guid: 754363bf39deab74ea6d6033734f2795,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: da1184543aaaefd49a90aa4fe2463e1a, type: 2}
+    m_OverrideClip: {fileID: 4612263184947321843, guid: 754363bf39deab74ea6d6033734f2795,
+      type: 3}

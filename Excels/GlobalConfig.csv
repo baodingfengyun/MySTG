@@ -1,0 +1,50 @@
+﻿GlobalConfig表格,,,,
+Both,,,,
+ID,VariableName,VariableComment,Type,Value
+int,string,string,string,string
+Both,None,None,Both,Both
+唯一ID,生成的变量名,注释,说明,参数
+,,,,
+,,,,
+,,,,
+1,,,max_waves,[20]
+2,,,waves_gap,[1200]
+3,,,max_power,[100]
+4,,,power_gap,[600]
+5,,,init_mail,"{
+ ""title"": "" Welcome to Nature Guardians!"",
+ ""content"": ""Dear Adventurer,\nWelcome to Nature Guardians! We're thrilled to have you join our family, working together to protect this beautiful village and stand against those sneaky enemies! Your arrival has made our village defenses even stronger.\nTo help you begin your journey as a Guardian, we've prepared a generous welcome reward just for you!\nIf you have any questions, feel free to reach out to in-game customer support or connect with our community to share strategies and tips.\nWe're looking forward to seeing you in action—the future of our village is in your hands!\nHappy gaming,\nThe Defend the Sheep Village Team"",
+ ""items"": [{
+   ""item_id"": 1005,
+   ""num"": 1000
+  },
+{
+   ""item_id"": 302,
+   ""num"": 2
+  }
+ ]
+}
+"
+6,,,fortress_wins,[3]
+7,,,fortress_monster_hp,[200]
+8,,,fortress_lose_exp,[7500]
+9,,,fortress_loses,[1]
+10,,,canteen_cycle,[10800]
+11,,,canteen_max_food,[15]
+12,,,canteen_food_restores_power,[15]
+13,,,make_up_count,[3]
+14,,,vip_make_up_count,[6]
+15,,,vip_canteen_max_food,[30]
+16,,,vip_max_power,[160]
+17,,,ludo_consum_item,[2125]
+18,,,ludo_advanced_consum_item,[2126]
+19,,,ludo_consum_num,[1]
+20,,,ludo_advanced_consum_num,[1]
+21,,,max_dice,[10]
+22,,,max_advanced_dice,[1]
+23,,,init_critical_damage,[5000]
+24,,,fortress_tower_upgrade_exp,[100]
+25,,,daily_task_num_of_rand,[1]
+26,,,daily_recharge,[100201:60|100202:300]
+27,,,rogue_add_tower_weight,"[1,5,500|6,10,700]"
+28,,,rogue_tower_slot_count,[5]

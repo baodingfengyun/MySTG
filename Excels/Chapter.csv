@@ -1,0 +1,10 @@
+Chapter表格,,,,,
+Both,,,,,
+ID,VariableName,VariableComment,Name,Desc,Image
+int,string,string,string,string,string
+Both,None,None,Both,Both,Both
+唯一ID,生成的变量名,注释,名字,描述,章节背景地图
+,,,,,
+,,,,,
+,,,,,Path:NotAllowSpace
+102,,,丛林,,

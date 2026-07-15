@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FeiZeiShaWeiEr_Controller
+  m_Controller: {fileID: 9100000, guid: c10870655859140498bca67b80487e2d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: af4821804815ef44b96ca0b0d1d65a4c, type: 2}
+    m_OverrideClip: {fileID: 1593661577086433684, guid: 321ad7c19feea30438fdf39d60085d7f,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 50e4f8c62b13a554fae10f73084773cd, type: 2}
+    m_OverrideClip: {fileID: 8276126401348060491, guid: 321ad7c19feea30438fdf39d60085d7f,
+      type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: c215d162da0535b47b499c141e478bb0, type: 2}
+    m_OverrideClip: {fileID: -7603181622944626506, guid: 321ad7c19feea30438fdf39d60085d7f,
+      type: 3}

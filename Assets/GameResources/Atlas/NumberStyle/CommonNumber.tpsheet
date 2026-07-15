@@ -1,0 +1,84 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:ced0c852241eb42ab2b7b3d7bab3c424:2b2c1685c243c1491b7246ec0c900dd7:f12ece000a37ebabf40ed8dace8432b9$
+#
+:format=40300
+:texture=CommonNumber.png
+:size=1024x1024
+:pivotpoints=enabled
+:borders=disabled
+
+Bleed;1;531;128;128; 0.5;0.5; 0;0;0;0
+Brun;1;402;128;128; 0.5;0.5; 0;0;0;0
+miss;1;660;363;363; 0.5;0.5; 0;0;0;0
+Number_Bleed_0;130;79;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_1;130;14;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_2;195;79;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_3;195;14;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_4;259;595;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_5;259;530;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_6;259;465;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_7;259;400;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_8;259;335;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_9;259;270;64;64; 0.5;0.5; 0;0;0;0
+Number_Bleed_Critical;1;273;128;128; 0.5;0.5; 0;0;0;0
+Number_Fire_0;495;829;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_1;455;179;43;64; 0.5;0.5; 0;0;0;0
+Number_Fire_2;495;764;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_3;495;699;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_4;454;569;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_5;454;504;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_6;454;439;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_7;454;374;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_8;454;309;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_9;454;244;45;64; 0.5;0.5; 0;0;0;0
+Number_Fire_Critical;1;144;128;128; 0.5;0.5; 0;0;0;0
+Number_Freeze_0;259;205;64;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_1;260;140;64;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_2;260;75;64;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_3;499;179;40;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_4;495;894;49;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_5;455;114;43;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_6;260;10;64;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_7;324;595;64;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_8;365;959;64;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_9;365;894;64;64; 0.5;0.5; 0;0;0;0
+Number_Freeze_Critical;1;15;128;128; 0.5;0.5; 0;0;0;0
+Number_Magic_0;365;829;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_1;365;764;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_2;365;699;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_3;324;530;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_4;324;465;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_5;324;400;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_6;324;335;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_7;324;270;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_8;324;205;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_9;325;140;64;64; 0.5;0.5; 0;0;0;0
+Number_Magic_Critical;130;531;128;128; 0.5;0.5; 0;0;0;0
+Number_Recover_0;325;75;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_1;325;10;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_2;389;634;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_3;430;959;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_4;430;894;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_5;455;49;43;64; 0.5;0.5; 0;0;0;0
+Number_Recover_6;430;829;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_7;430;764;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_8;430;699;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_9;389;569;64;64; 0.5;0.5; 0;0;0;0
+Number_Recover_Critical;130;402;128;128; 0.5;0.5; 0;0;0;0
+Number_Restraint_0;389;504;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_1;389;439;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_2;389;374;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_3;389;309;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_4;389;244;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_5;390;179;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_6;390;114;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_7;390;49;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_8;454;634;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_9;495;959;64;64; 0.5;0.5; 0;0;0;0
+Number_Restraint_Critical;130;273;128;128; 0.5;0.5; 0;0;0;0
+Poisoning;130;144;128;128; 0.5;0.5; 0;0;0;0

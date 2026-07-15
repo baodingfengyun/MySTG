@@ -1,0 +1,10 @@
+Level表格,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Both,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ID,VariableName,VariableComment,Mode,Name,Chapter,MapID,IconNumberName,IconPosition,LevelType,Desc,DisplayImage,NextLevel,Music,UnLockByCompleteLevel,PowerUse,InitCurrency,RewardPreview,MonsterPreview,NeedExp,RewardFirst,Star1,Star2,Star3,Reward1,Reward2,Reward3,Endless,SaveProgress,AutoStart
+int,string,string,BATTLE_MODE(byte),string,int,int,string,Vector2Int,LEVEL_TYPE(byte),string,string,Vector<int>,int,int,int,int,Vector<int>,Vector<int>,int,int,int,int,int,int,int,int,bool,bool,bool
+Both,None,None,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both,Both
+唯一ID,生成的变量名,注释,"游戏模式BATTLE_MODE:1.常规战斗 2.防线战斗 3.主线抽卡模式 4.无尽抽卡模式,5:肉鸽模式",关卡名字,所属章节,地图ID Excel MapConfig,图标关卡标号名,图标在大地图中显示的坐标,关卡类型,关卡说明,关卡展示图,下一关卡,背景音乐ID,完成某个关卡后解锁,体力消耗,初始货币,奖励预览,怪物预览,通关分数,首通奖励,关卡1星条件,关卡2星条件,关卡3星条件,1星关卡奖励,2星关卡奖励,3星关卡奖励,是否为无尽关卡,中途退出时是否存储关卡进度,是否自动倒计时开始
+,,,,,Chapter,MapConfig,,,,,,,Audio,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1209,,,5,密林村,102,76,1-1-5,"758,179",0,TBD,Texture/UILevelDetail/Level_1-1-9.png,,2003,0,5,12,,,1200,1,1,3,-1,73000015,73000016,73000017,0,0,1

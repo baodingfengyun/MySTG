@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: a7814f6fbdb4b194d97d6d213e7e586d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: scene/battlecommon/terrain_texture.unity3d
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
