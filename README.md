@@ -364,6 +364,8 @@ https://github.com/ZHOURUIH/MyFramework
 
 建议先运行本 Demo 了解框架的完整项目流程，再结合 MyFramework 文档查看各个模块的具体使用方式。
 
+## 由于是使用老项目修改而来,所以并未能完全使用框架中所有的功能特性,比如TweenSequence,QuickEffect,DamageNumber,TileImageRenderer,循环滚动列表等
+
 ---
 
 ## 常见问题
@@ -393,16 +395,6 @@ Unity 2022.3.62f2c1
 ```
 
 其他 Unity 版本可能会出现 Package、URP、序列化数据或脚本 API 不兼容的问题。
-
-### README 中的视频无法播放
-
-建议确认：
-
-* 视频格式为 MP4
-* 视频使用 H.264 编码
-* 视频地址单独占据一行
-* 地址为 GitHub 生成的 `user-attachments` 地址
-* 视频文件没有超过 GitHub 的附件大小限制
 
 ---
 
