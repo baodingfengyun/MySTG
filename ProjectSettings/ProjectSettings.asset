@@ -819,8 +819,8 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     Android: USE_URP;USE_HYBRID_CLR;USE_OBFUZ
-    Standalone: USE_URP;USE_HYBRID_CLR;USE_AVPRO_VIDEO;USE_PURCHASING;USE_OBFUZ
-    WebGL: USE_HYBRID_CLR;USE_OBFUZ
+    Standalone: USE_URP;USE_HYBRID_CLR;USE_OBFUZ
+    WebGL: USE_HYBRID_CLR;USE_OBFUZ;USE_URP
     iPhone: USE_URP;USE_HYBRID_CLR;USE_AVPRO_VIDEO;USE_PURCHASING;USE_OBFUZ
   additionalCompilerArguments: {}
   platformArchitecture: {}
