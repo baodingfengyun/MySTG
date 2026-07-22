@@ -2,6 +2,7 @@
 using UnityEngine;
 using static UnityUtility;
 
+// 不推荐这种全局参数的配置方式,请使用MyFramework仓库中的示例形式去配置全局参数
 public class ExcelGlobalConfig : ExcelTableT<EDGlobalConfig>
 {
     protected Dictionary<string, string> mStringValues;

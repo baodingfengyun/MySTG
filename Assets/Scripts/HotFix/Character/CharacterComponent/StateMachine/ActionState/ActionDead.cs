@@ -1,6 +1,4 @@
 ﻿using static FrameBaseHotFix;
-using static GDR;
-using static GBR;
 
 // 死亡
 public class ActionDead : CharacterState
@@ -25,8 +23,7 @@ public class ActionDead : CharacterState
 				// 死亡后没有死亡动作就马上会被销毁
 				mStateTime = 0.0f;
 			}
-			string effectPath = mExcelEffect.query(MONSTER_DEAD_EFFECT_ID).mPath;
-			mEffectManager.playEffectAsyncAtPosition(effectPath, mCharacter.getPosition(), 1.0f, true, 0);
+			mEffectManager.playEffectAsyncAtPosition(EDEffect.MONSTER_DEAD.mPath, mCharacter.getPosition(), 1.0f, true);
 		}
 		else
 		{

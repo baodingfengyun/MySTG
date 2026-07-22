@@ -6,6 +6,27 @@ using UnityEngine;
 // BuffDetail表格
 public class EDBuffDetail : ExcelDataT<EDBuffDetail>
 {
+	public const int TOWER_BUILDING_BUFF_ID = 279;	// 建造塔的buff
+	public const int CONVEYOR_SPEED_UP_ID = 5001;	// 传送带加速Buff
+	public const int CONVEYOR_SPEED_DOWN_ID = 5002;	// 传送带减速Buff
+	public const int CONVEYOR_PUSHMOVE_ID = 5003;	// 怪物眩晕时被传送带推动Buff
+	public const int TUNNEL_ID = 5006;				// 进入隧道附加的buff
+	public const int FOCUS_ATTACK_MONSTER_ID = 7205;// 集火某个怪物的buff
+
+	private static EDBuffDetail _TOWER_BUILDING_BUFF;// 建造塔的buff
+	private static EDBuffDetail _CONVEYOR_SPEED_UP;	// 传送带加速Buff
+	private static EDBuffDetail _CONVEYOR_SPEED_DOWN;// 传送带减速Buff
+	private static EDBuffDetail _CONVEYOR_PUSHMOVE;	// 怪物眩晕时被传送带推动Buff
+	private static EDBuffDetail _TUNNEL;			// 进入隧道附加的buff
+	private static EDBuffDetail _FOCUS_ATTACK_MONSTER;// 集火某个怪物的buff
+
+	public static EDBuffDetail TOWER_BUILDING_BUFF { get { return _TOWER_BUILDING_BUFF ??= mTable.query(TOWER_BUILDING_BUFF_ID); } }// 建造塔的buff
+	public static EDBuffDetail CONVEYOR_SPEED_UP { get { return _CONVEYOR_SPEED_UP ??= mTable.query(CONVEYOR_SPEED_UP_ID); } }// 传送带加速Buff
+	public static EDBuffDetail CONVEYOR_SPEED_DOWN { get { return _CONVEYOR_SPEED_DOWN ??= mTable.query(CONVEYOR_SPEED_DOWN_ID); } }// 传送带减速Buff
+	public static EDBuffDetail CONVEYOR_PUSHMOVE { get { return _CONVEYOR_PUSHMOVE ??= mTable.query(CONVEYOR_PUSHMOVE_ID); } }// 怪物眩晕时被传送带推动Buff
+	public static EDBuffDetail TUNNEL { get { return _TUNNEL ??= mTable.query(TUNNEL_ID); } }// 进入隧道附加的buff
+	public static EDBuffDetail FOCUS_ATTACK_MONSTER { get { return _FOCUS_ATTACK_MONSTER ??= mTable.query(FOCUS_ATTACK_MONSTER_ID); } }// 集火某个怪物的buff
+
 	public int mBuffTypeID;							// buff类型ID,索引到Buff表
 	public string mName;							// buff名字
 	public string mDescription;						// buff描述

@@ -1,6 +1,5 @@
 ﻿using static FrameBaseUtility;
 using static GameUtility;
-using static GameDefine;
 using static FileUtility;
 using static GB;
 
@@ -10,7 +9,6 @@ public class StartSceneDownload : SceneProcedure
 	public StartSceneDownload()
 	{
         mInstance = new GameDownload();
-        mInstance.setDynamicDownloadList(DYNAMIC_DOWNLOAD_LIST);
 		mInstance.setTipCallback((DOWNLOAD_TIP tip) =>
 		{
 			if (tip == DOWNLOAD_TIP.NONE)
@@ -108,7 +106,7 @@ public class StartSceneDownload : SceneProcedure
     protected void launch()
     {
         // 下载或者加载程序集
-        HybridCLRSystem.launchHotFix(getAESKeyBytes(), getAESIVBytes(), (string fileName, BytesIntCallback callback) =>
+        HybridCLRSystem.launchHotFix((string fileName, BytesIntCallback callback) =>
         {
             openFileAsync(availableReadPath(fileName), true, bytes => callback?.Invoke(bytes, bytes.Length));
         }, onLaunchError);

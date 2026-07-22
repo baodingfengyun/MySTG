@@ -6,6 +6,12 @@ using UnityEngine;
 // Tower表格
 public class EDTower : ExcelDataT<EDTower>
 {
+	public const int STONE_TOWER_ID = 450;			// 石墩
+
+	private static EDTower _STONE_TOWER;			// 石墩
+
+	public static EDTower STONE_TOWER { get { return _STONE_TOWER ??= mTable.query(STONE_TOWER_ID); } }// 石墩
+
 	public string mName;							// 名称
 	public byte mFunctionType;						// 功能类型
 	public string mFunctionTypeName;				// 功能类型名

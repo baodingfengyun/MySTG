@@ -87,9 +87,9 @@ public class BattleScene : SceneInstance
 	{
 		AsyncTaskGroup group = mAsyncTaskGroupManager.createGroup(callback);
 		// 加载需要用到的材质
-		string towerRangeEffect = mExcelEffect.query(TOWER_RANGE_EFFECT_ID).mPath;
-		string towerMinRangeEffect = mExcelEffect.query(TOWER_MIN_RANGE_EFFECT_ID).mPath;
-		string skillRangeEffect = mExcelEffect.query(SKILL_RANGE_EFFECT_ID).mPath;
+		string towerRangeEffect = EDEffect.TOWER_RANGE.mPath;
+		string towerMinRangeEffect = EDEffect.TOWER_MIN_RANGE.mPath;
+		string skillRangeEffect = EDEffect.SKILL_RANGE.mPath;
 		group.addTask(mPrefabPoolManager.createObjectAsync(towerRangeEffect, true, true, (res) => { res.transform.parent = mRoot.transform; mTowerRangeEffect = res; }));
 		group.addTask(mPrefabPoolManager.createObjectAsync(towerMinRangeEffect, true, true, (res) => { res.transform.parent = mRoot.transform; mTowerMinRangeEffect = res; }));
 		group.addTask(mPrefabPoolManager.createObjectAsync(skillRangeEffect, true, true, (res) => { res.transform.parent = mRoot.transform; mSkillRangeEffect = res; }));
@@ -102,9 +102,9 @@ public class BattleScene : SceneInstance
 		group.addTask(mResourceManager.loadGameResourceAsync<Material>(HEX_GREEN_MAT, (res) => { mHexGreenMaterial = res.get(); }));
 		group.addTask(mResourceManager.loadGameResourceAsync<Material>(HEX_BLOCK_MAT, (res) => { mHexBlockMaterial = res.get(); }));
 		group.addTask(mResourceManager.loadGameResourceAsync<Material>(DRAG_TIP_MAT, (res) => { mHexDragTipMaterial = res.get(); }));
-		group.addTask(mPrefabPoolManager.initObjectToPoolAsync(mExcelEffect.query(BATTLE_MOVE_PATH_EFFECT_ID).mPath, 0, false, null));
-		group.addTask(mPrefabPoolManager.initObjectToPoolAsync(mExcelEffect.query(BATTLE_PATH_EFFECT_ID).mPath, 0, true, null));
-		group.addTask(mPrefabPoolManager.initObjectToPoolAsync(mExcelEffect.query(BATTLE_PATH_PREVIEW_EFFECT_ID).mPath, 0, true, null));
+		group.addTask(mPrefabPoolManager.initObjectToPoolAsync(EDEffect.BATTLE_MOVE_PATH.mPath, 0, false, null));
+		group.addTask(mPrefabPoolManager.initObjectToPoolAsync(EDEffect.BATTLE_PATH.mPath, 0, true, null));
+		group.addTask(mPrefabPoolManager.initObjectToPoolAsync(EDEffect.BATTLE_PATH_PREVIEW.mPath, 0, true, null));
 
 		// 加载格子资源,初始化格子属性
 		Vector3 gridRootPos = mTowerDefenceSystem.getGridRootPos();
@@ -222,7 +222,7 @@ public class BattleScene : SceneInstance
 		{
 			logError("终点特效未销毁");
 		}
-		mEffectManager.createEffectAsyncSafe(mExcelEffect.query(END_POINT_EFFECT_ID).mPath, this, null, true, (GameEffect effect) =>
+		mEffectManager.createEffectAsyncSafe(EDEffect.END_POINT.mPath, this, null, true, (GameEffect effect) =>
 		{
 			mEndPointEffect = effect;
 			int targetIndex = mTowerDefenceSystem.getBattleModeInstance().getTargetPointIndex();
@@ -234,7 +234,7 @@ public class BattleScene : SceneInstance
 		int pathCount = mTowerDefenceSystem.getMonsterRoadList().Count;
 		for (int i = 0; i < pathCount; ++i)
 		{
-			GameObject previewObject = mPrefabPoolManager.createObject(mExcelEffect.query(BATTLE_PATH_PREVIEW_EFFECT_ID).mPath, true, true);
+			GameObject previewObject = mPrefabPoolManager.createObject(EDEffect.BATTLE_PATH_PREVIEW.mPath, true, true);
 			myLineRenderer previewPathLine = mPreviewPathRenderer.add(new());
 			previewPathLine.setLineRenderer(previewObject.GetComponent<LineRenderer>());
 			previewPathLine.setActive(false);
@@ -673,8 +673,7 @@ public class BattleScene : SceneInstance
 			if (mSelectingEffect == null)
 			{
 				long assignID = tower.getAssignID();
-				string effectPath = mExcelEffect.query(TOWER_SELECT_EFFECT_ID).mPath;
-				mEffectManager.createEffectAsyncSafe(effectPath, this, null, true, (GameEffect effect) =>
+				mEffectManager.createEffectAsyncSafe(EDEffect.TOWER_SELECT.mPath, this, null, true, (GameEffect effect) =>
 				{
 					if (assignID != tower.getAssignID())
 					{
@@ -684,7 +683,7 @@ public class BattleScene : SceneInstance
 					mSelectingEffect = effect;
 					effect.setPosition(tower.getPosition());
 					effect.play();
-				}, 0);
+				});
 			}
 			else
 			{
@@ -887,7 +886,7 @@ public class BattleScene : SceneInstance
 		GameEffect effect = pathList.find(item => !item.isActive());
 		if (effect == null)
 		{
-			effect = pathList.add(mEffectManager.createEffect(mExcelEffect.query(BATTLE_MOVE_PATH_EFFECT_ID).mPath, null, mGridRoot, false, false));
+			effect = pathList.add(mEffectManager.createEffect(EDEffect.BATTLE_MOVE_PATH.mPath, null, mGridRoot, false, false));
 			effect.enableMoveInfo();
 			effect.getCOMMoveInfo().setActive(true);
 		}

@@ -1,6 +1,5 @@
 ﻿using static GameUtilityHotFix;
 using static GBR;
-using static GDR;
 
 // 放置塔到场景中,Rogue模式
 public class CmdGlobalPutTowerRogue : CmdGlobalPutTower
@@ -33,7 +32,7 @@ public class CmdGlobalPutTowerRogue : CmdGlobalPutTower
 			// 进入建造CD
 			mTowerDefenceSystem.startBuildingCD();
 			// 给塔添加建造中的状态
-			characterAddBuff(TOWER_BUILDING_BUFF, tower, null);
+			characterAddBuff(EDBuffDetail.TOWER_BUILDING_BUFF_ID, tower, null);
 		}
 
 		postPutTower(gridIndex);

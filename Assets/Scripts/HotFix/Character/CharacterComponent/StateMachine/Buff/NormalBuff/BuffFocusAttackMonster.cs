@@ -1,6 +1,5 @@
 ﻿using static FrameBaseHotFix;
 using static GBR;
-using static GDR;
 
 // 参数
 public class BuffFocusAttackMonsterParam : CharacterBuffParamT<BuffFocusAttackMonsterParam>
@@ -21,23 +20,19 @@ public class BuffFocusAttackMonster : CharacterBuffT<BuffFocusAttackMonsterParam
 			return;
 		}
 		mTowerDefenceSystem.setFocusedMonster(monster);
-		EDEffect effectData = mExcelEffect.query(FOCUS_BUFF_EFFECT);
-		if (effectData != null)
+		mEffectManager.createEffectAsyncSafe(EDEffect.FOCUS_BUFF.mPath, mCharacterGame, mCharacterGame, EDEffect.FOCUS_BUFF.mSupportMoveToHide, (GameEffect effect) =>
 		{
-			mEffectManager.createEffectAsyncSafe(effectData.mPath, mCharacterGame, mCharacterGame, effectData.mSupportMoveToHide, (GameEffect effect) =>
+			if (mCharacterGame == null)
 			{
-				if (mCharacterGame == null)
-				{
-					return;
-				}
-				mEffect = effect;
-				mCharacterGame.getAvatar().addLoadedCallback(_ =>
-				{
-					mEffect?.play();
-					mEffect?.setParent((mCharacterGame.getAvatar() as COMMonsterAvatar).getHeadPoint().gameObject);
-				});
-			}, 0, false);
-		}
+				return;
+			}
+			mEffect = effect;
+			mCharacterGame.getAvatar().addLoadedCallback(_ =>
+			{
+				mEffect?.play();
+				mEffect?.setParent((mCharacterGame.getAvatar() as COMMonsterAvatar).getHeadPoint().gameObject);
+			});
+		}, 0, false);
 	}
 	public override void resetProperty()
 	{

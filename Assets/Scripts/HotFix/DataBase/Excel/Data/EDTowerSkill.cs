@@ -196,195 +196,195 @@ public class EDTowerSkill : ExcelDataT<EDTowerSkill>
 	public const int BO_DONG_3_GREEN_ID = 15204;	// 三星风刃发射器绿宝石
 	public const int BO_DONG_3_BLUE_ID = 15205;		// 三星风刃发射器蓝宝石
 
-	public static EDTowerSkill _SHI_ZI_GONG_1;		// 一星十字弓
-	public static EDTowerSkill _SHI_ZI_GONG_1_PURPLE;// 一星十字弓紫宝石
-	public static EDTowerSkill _SHI_ZI_GONG_1_RED;	// 一星十字弓红宝石
-	public static EDTowerSkill _SHI_ZI_GONG_1_GREEN;// 一星十字弓绿宝石
-	public static EDTowerSkill _SHI_ZI_GONG_1_BLUE;	// 一星十字弓蓝宝石
-	public static EDTowerSkill _SHI_ZI_GONG_2;		// 二星十字弓
-	public static EDTowerSkill _SHI_ZI_GONG_2_PURPLE;// 二星十字弓紫宝石
-	public static EDTowerSkill _SHI_ZI_GONG_2_RED;	// 二星十字弓红宝石
-	public static EDTowerSkill _SHI_ZI_GONG_2_GREEN;// 二星十字弓绿宝石
-	public static EDTowerSkill _SHI_ZI_GONG_2_BLUE;	// 二星十字弓蓝宝石
-	public static EDTowerSkill _SHI_ZI_GONG_3;		// 三星十字弓
-	public static EDTowerSkill _SHI_ZI_GONG_3_PURPLE;// 三星十字弓紫宝石
-	public static EDTowerSkill _SHI_ZI_GONG_3_RED;	// 三星十字弓红宝石
-	public static EDTowerSkill _SHI_ZI_GONG_3_GREEN;// 三星十字弓绿宝石
-	public static EDTowerSkill _SHI_ZI_GONG_3_BLUE;	// 三星十字弓蓝宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_1;// 一星防空飞弹塔
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_1_PURPLE;// 一星防空飞弹塔紫宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_1_RED;// 一星防空飞弹塔红宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_1_GREEN;// 一星防空飞弹塔绿宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_1_BLUE;// 一星防空飞弹塔蓝宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_2;// 二星防空飞弹塔
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_2_PURPLE;// 二星防空飞弹塔紫宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_2_RED;// 二星防空飞弹塔红宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_2_GREEN;// 二星防空飞弹塔绿宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_2_BLUE;// 二星防空飞弹塔蓝宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_3;// 三星防空飞弹塔
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_3_PURPLE;// 三星防空飞弹塔紫宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_3_RED;// 三星防空飞弹塔红宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_3_GREEN;// 三星防空飞弹塔绿宝石
-	public static EDTowerSkill _FANG_KONG_FEI_DAN_3_BLUE;// 三星防空飞弹塔蓝宝石
-	public static EDTowerSkill _TOU_SHI_JI_1;		// 一星投石机
-	public static EDTowerSkill _TOU_SHI_JI_1_PURPLE;// 一星投石机紫宝石
-	public static EDTowerSkill _TOU_SHI_JI_1_RED;	// 一星投石机红宝石
-	public static EDTowerSkill _TOU_SHI_JI_1_GREEN;	// 一星投石机绿宝石
-	public static EDTowerSkill _TOU_SHI_JI_1_BLUE;	// 一星投石机蓝宝石
-	public static EDTowerSkill _TOU_SHI_JI_2;		// 二星投石机
-	public static EDTowerSkill _TOU_SHI_JI_2_PURPLE;// 二星投石机紫宝石
-	public static EDTowerSkill _TOU_SHI_JI_2_RED;	// 二星投石机红宝石
-	public static EDTowerSkill _TOU_SHI_JI_2_GREEN;	// 二星投石机绿宝石
-	public static EDTowerSkill _TOU_SHI_JI_2_BLUE;	// 二星投石机蓝宝石
-	public static EDTowerSkill _TOU_SHI_JI_3;		// 三星投石机
-	public static EDTowerSkill _TOU_SHI_JI_3_PURPLE;// 三星投石机紫宝石
-	public static EDTowerSkill _TOU_SHI_JI_3_RED;	// 三星投石机红宝石
-	public static EDTowerSkill _TOU_SHI_JI_3_GREEN;	// 三星投石机绿宝石
-	public static EDTowerSkill _TOU_SHI_JI_3_BLUE;	// 三星投石机蓝宝石
-	public static EDTowerSkill _XIANG_QIAN_1_PURPLE_1;// 一星镶嵌塔一星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_1_RED;	// 一星镶嵌塔红宝石
-	public static EDTowerSkill _XIANG_QIAN_1_GREEN;	// 一星镶嵌塔绿宝石
-	public static EDTowerSkill _XIANG_QIAN_1_BLUE;	// 一星镶嵌塔蓝宝石
-	public static EDTowerSkill _XIANG_QIAN_1_PURPLE_2;// 一星镶嵌塔二星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_1_PURPLE_3;// 一星镶嵌塔三星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_1_PURPLE_4;// 一星镶嵌塔四星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_1_PURPLE_5;// 一星镶嵌塔五星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_2_PURPLE_1;// 二星镶嵌塔一星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_2_RED;	// 二星镶嵌塔红宝石
-	public static EDTowerSkill _XIANG_QIAN_2_GREEN;	// 二星镶嵌塔绿宝石
-	public static EDTowerSkill _XIANG_QIAN_2_BLUE;	// 二星镶嵌塔蓝宝石
-	public static EDTowerSkill _XIANG_QIAN_2_PURPLE_2;// 二星镶嵌塔二星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_2_PURPLE_3;// 二星镶嵌塔三星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_2_PURPLE_4;// 二星镶嵌塔四星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_2_PURPLE_5;// 二星镶嵌塔五星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_3_PURPLE_1;// 三星镶嵌塔一星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_3_RED;	// 三星镶嵌塔红宝石
-	public static EDTowerSkill _XIANG_QIAN_3_GREEN;	// 三星镶嵌塔绿宝石
-	public static EDTowerSkill _XIANG_QIAN_3_BLUE;	// 三星镶嵌塔蓝宝石
-	public static EDTowerSkill _XIANG_QIAN_3_PURPLE_2;// 三星镶嵌塔二星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_3_PURPLE_3;// 三星镶嵌塔三星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_3_PURPLE_4;// 三星镶嵌塔四星紫宝石
-	public static EDTowerSkill _XIANG_QIAN_3_PURPLE_5;// 三星镶嵌塔五星紫宝石
-	public static EDTowerSkill _HUO_PAO_1;			// 一星火炮塔
-	public static EDTowerSkill _HUO_PAO_1_PURPLE;	// 一星火炮塔紫宝石
-	public static EDTowerSkill _HUO_PAO_1_RED;		// 一星火炮塔红宝石
-	public static EDTowerSkill _HUO_PAO_1_GREEN;	// 一星火炮塔绿宝石
-	public static EDTowerSkill _HUO_PAO_1_BLUE;		// 一星火炮塔蓝宝石
-	public static EDTowerSkill _HUO_PAO_2;			// 二星火炮塔
-	public static EDTowerSkill _HUO_PAO_2_PURPLE;	// 二星火炮塔紫宝石
-	public static EDTowerSkill _HUO_PAO_2_RED;		// 二星火炮塔红宝石
-	public static EDTowerSkill _HUO_PAO_2_GREEN;	// 二星火炮塔绿宝石
-	public static EDTowerSkill _HUO_PAO_2_BLUE;		// 二星火炮塔蓝宝石
-	public static EDTowerSkill _HUO_PAO_3;			// 三星火炮塔
-	public static EDTowerSkill _HUO_PAO_3_PURPLE;	// 三星火炮塔紫宝石
-	public static EDTowerSkill _HUO_PAO_3_RED;		// 三星火炮塔红宝石
-	public static EDTowerSkill _HUO_PAO_3_GREEN;	// 三星火炮塔绿宝石
-	public static EDTowerSkill _HUO_PAO_3_BLUE;		// 三星火炮塔蓝宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_1;	// 一星回旋飞镖塔
-	public static EDTowerSkill _QIU_XING_FEI_DAN_1_PURPLE;// 一星回旋飞镖塔紫宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_1_RED;// 一星回旋飞镖塔红宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_1_GREEN;// 一星回旋飞镖塔绿宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_1_BLUE;// 一星回旋飞镖塔蓝宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_2;	// 二星回旋飞镖塔
-	public static EDTowerSkill _QIU_XING_FEI_DAN_2_PURPLE;// 二星回旋飞镖塔紫宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_2_RED;// 二星回旋飞镖塔红宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_2_GREEN;// 二星回旋飞镖塔绿宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_2_BLUE;// 二星回旋飞镖塔蓝宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_3;	// 三星回旋飞镖塔
-	public static EDTowerSkill _QIU_XING_FEI_DAN_3_PURPLE;// 三星回旋飞镖塔紫宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_3_RED;// 三星回旋飞镖塔红宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_3_GREEN;// 三星回旋飞镖塔绿宝石
-	public static EDTowerSkill _QIU_XING_FEI_DAN_3_BLUE;// 三星回旋飞镖塔蓝宝石
-	public static EDTowerSkill _XIAN_DAN_1;			// 一星霰弹塔
-	public static EDTowerSkill _XIAN_DAN_1_PURPLE;	// 一星霰弹塔紫宝石
-	public static EDTowerSkill _XIAN_DAN_1_RED;		// 一星霰弹塔红宝石
-	public static EDTowerSkill _XIAN_DAN_1_GREEN;	// 一星霰弹塔绿宝石
-	public static EDTowerSkill _XIAN_DAN_1_BLUE;	// 一星霰弹塔蓝宝石
-	public static EDTowerSkill _XIAN_DAN_2;			// 二星霰弹塔
-	public static EDTowerSkill _XIAN_DAN_2_PURPLE;	// 二星霰弹塔紫宝石
-	public static EDTowerSkill _XIAN_DAN_2_RED;		// 二星霰弹塔红宝石
-	public static EDTowerSkill _XIAN_DAN_2_GREEN;	// 二星霰弹塔绿宝石
-	public static EDTowerSkill _XIAN_DAN_2_BLUE;	// 二星霰弹塔蓝宝石
-	public static EDTowerSkill _XIAN_DAN_3;			// 三星霰弹塔
-	public static EDTowerSkill _XIAN_DAN_3_PURPLE;	// 三星霰弹塔紫宝石
-	public static EDTowerSkill _XIAN_DAN_3_RED;		// 三星霰弹塔红宝石
-	public static EDTowerSkill _XIAN_DAN_3_GREEN;	// 三星霰弹塔绿宝石
-	public static EDTowerSkill _XIAN_DAN_3_BLUE;	// 三星霰弹塔蓝宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_1;// 一星天空之矛
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_PURPLE;// 一星天空之矛紫宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_RED;// 一星天空之矛红宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_GREEN;// 一星天空之矛绿宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_BLUE;// 一星天空之矛蓝宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_2;// 二星天空之矛
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_PURPLE;// 二星天空之矛紫宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_RED;// 二星天空之矛红宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_GREEN;// 二星天空之矛绿宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_BLUE;// 二星天空之矛蓝宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_3;// 三星天空之矛
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_PURPLE;// 三星天空之矛紫宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_RED;// 三星天空之矛红宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_GREEN;// 三星天空之矛绿宝石
-	public static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_BLUE;// 三星天空之矛蓝宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_1;	// 一星飞镖发射器
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_1_PURPLE;// 一星飞镖发射器紫宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_1_RED;// 一星飞镖发射器红宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_1_GREEN;// 一星飞镖发射器绿宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_1_BLUE;// 一星飞镖发射器蓝宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_2;	// 二星飞镖发射器
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_2_PURPLE;// 二星飞镖发射器紫宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_2_RED;// 二星飞镖发射器红宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_2_GREEN;// 二星飞镖发射器绿宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_2_BLUE;// 二星飞镖发射器蓝宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_3;	// 三星飞镖发射器
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_3_PURPLE;// 三星飞镖发射器紫宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_3_RED;// 三星飞镖发射器红宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_3_GREEN;// 三星飞镖发射器绿宝石
-	public static EDTowerSkill _FEI_BIAO_FA_SHE_3_BLUE;// 三星飞镖发射器蓝宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_1;	// 一星气球炸弹塔
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_1_PURPLE;// 一星气球炸弹塔紫宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_1_RED;// 一星气球炸弹塔红宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_1_GREEN;// 一星气球炸弹塔绿宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_1_BLUE;// 一星气球炸弹塔蓝宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_2;	// 二星气球炸弹塔
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_2_PURPLE;// 二星气球炸弹塔紫宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_2_RED;// 二星气球炸弹塔红宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_2_GREEN;// 二星气球炸弹塔绿宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_2_BLUE;// 二星气球炸弹塔蓝宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_3;	// 三星气球炸弹塔
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_3_PURPLE;// 三星气球炸弹塔紫宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_3_RED;// 三星气球炸弹塔红宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_3_GREEN;// 三星气球炸弹塔绿宝石
-	public static EDTowerSkill _QI_QIU_ZHA_DAN_3_BLUE;// 三星气球炸弹塔蓝宝石
-	public static EDTowerSkill _ZHEN_DANG_1;		// 一星电磁震荡塔
-	public static EDTowerSkill _ZHEN_DANG_1_PURPLE;	// 一星电磁震荡塔紫宝石
-	public static EDTowerSkill _ZHEN_DANG_1_RED;	// 一星电磁震荡塔红宝石
-	public static EDTowerSkill _ZHEN_DANG_1_GREEN;	// 一星电磁震荡塔绿宝石
-	public static EDTowerSkill _ZHEN_DANG_1_BLUE;	// 一星电磁震荡塔蓝宝石
-	public static EDTowerSkill _ZHEN_DANG_2;		// 二星电磁震荡塔
-	public static EDTowerSkill _ZHEN_DANG_2_PURPLE;	// 二星电磁震荡塔紫宝石
-	public static EDTowerSkill _ZHEN_DANG_2_RED;	// 二星电磁震荡塔红宝石
-	public static EDTowerSkill _ZHEN_DANG_2_GREEN;	// 二星电磁震荡塔绿宝石
-	public static EDTowerSkill _ZHEN_DANG_2_BLUE;	// 二星电磁震荡塔蓝宝石
-	public static EDTowerSkill _ZHEN_DANG_3;		// 三星电磁震荡塔
-	public static EDTowerSkill _ZHEN_DANG_3_PURPLE;	// 三星电磁震荡塔紫宝石
-	public static EDTowerSkill _ZHEN_DANG_3_RED;	// 三星电磁震荡塔红宝石
-	public static EDTowerSkill _ZHEN_DANG_3_GREEN;	// 三星电磁震荡塔绿宝石
-	public static EDTowerSkill _ZHEN_DANG_3_BLUE;	// 三星电磁震荡塔蓝宝石
-	public static EDTowerSkill _BO_DONG_1;			// 一星风刃发射器
-	public static EDTowerSkill _BO_DONG_1_PURPLE;	// 一星风刃发射器紫宝石
-	public static EDTowerSkill _BO_DONG_1_RED;		// 一星风刃发射器红宝石
-	public static EDTowerSkill _BO_DONG_1_GREEN;	// 一星风刃发射器绿宝石
-	public static EDTowerSkill _BO_DONG_1_BLUE;		// 一星风刃发射器蓝宝石
-	public static EDTowerSkill _BO_DONG_2;			// 二星风刃发射器
-	public static EDTowerSkill _BO_DONG_2_PURPLE;	// 二星风刃发射器紫宝石
-	public static EDTowerSkill _BO_DONG_2_RED;		// 二星风刃发射器红宝石
-	public static EDTowerSkill _BO_DONG_2_GREEN;	// 二星风刃发射器绿宝石
-	public static EDTowerSkill _BO_DONG_2_BLUE;		// 二星风刃发射器蓝宝石
-	public static EDTowerSkill _BO_DONG_3;			// 三星风刃发射器
-	public static EDTowerSkill _BO_DONG_3_PURPLE;	// 三星风刃发射器紫宝石
-	public static EDTowerSkill _BO_DONG_3_RED;		// 三星风刃发射器红宝石
-	public static EDTowerSkill _BO_DONG_3_GREEN;	// 三星风刃发射器绿宝石
-	public static EDTowerSkill _BO_DONG_3_BLUE;		// 三星风刃发射器蓝宝石
+	private static EDTowerSkill _SHI_ZI_GONG_1;		// 一星十字弓
+	private static EDTowerSkill _SHI_ZI_GONG_1_PURPLE;// 一星十字弓紫宝石
+	private static EDTowerSkill _SHI_ZI_GONG_1_RED;	// 一星十字弓红宝石
+	private static EDTowerSkill _SHI_ZI_GONG_1_GREEN;// 一星十字弓绿宝石
+	private static EDTowerSkill _SHI_ZI_GONG_1_BLUE;// 一星十字弓蓝宝石
+	private static EDTowerSkill _SHI_ZI_GONG_2;		// 二星十字弓
+	private static EDTowerSkill _SHI_ZI_GONG_2_PURPLE;// 二星十字弓紫宝石
+	private static EDTowerSkill _SHI_ZI_GONG_2_RED;	// 二星十字弓红宝石
+	private static EDTowerSkill _SHI_ZI_GONG_2_GREEN;// 二星十字弓绿宝石
+	private static EDTowerSkill _SHI_ZI_GONG_2_BLUE;// 二星十字弓蓝宝石
+	private static EDTowerSkill _SHI_ZI_GONG_3;		// 三星十字弓
+	private static EDTowerSkill _SHI_ZI_GONG_3_PURPLE;// 三星十字弓紫宝石
+	private static EDTowerSkill _SHI_ZI_GONG_3_RED;	// 三星十字弓红宝石
+	private static EDTowerSkill _SHI_ZI_GONG_3_GREEN;// 三星十字弓绿宝石
+	private static EDTowerSkill _SHI_ZI_GONG_3_BLUE;// 三星十字弓蓝宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_1;// 一星防空飞弹塔
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_1_PURPLE;// 一星防空飞弹塔紫宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_1_RED;// 一星防空飞弹塔红宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_1_GREEN;// 一星防空飞弹塔绿宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_1_BLUE;// 一星防空飞弹塔蓝宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_2;// 二星防空飞弹塔
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_2_PURPLE;// 二星防空飞弹塔紫宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_2_RED;// 二星防空飞弹塔红宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_2_GREEN;// 二星防空飞弹塔绿宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_2_BLUE;// 二星防空飞弹塔蓝宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_3;// 三星防空飞弹塔
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_3_PURPLE;// 三星防空飞弹塔紫宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_3_RED;// 三星防空飞弹塔红宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_3_GREEN;// 三星防空飞弹塔绿宝石
+	private static EDTowerSkill _FANG_KONG_FEI_DAN_3_BLUE;// 三星防空飞弹塔蓝宝石
+	private static EDTowerSkill _TOU_SHI_JI_1;		// 一星投石机
+	private static EDTowerSkill _TOU_SHI_JI_1_PURPLE;// 一星投石机紫宝石
+	private static EDTowerSkill _TOU_SHI_JI_1_RED;	// 一星投石机红宝石
+	private static EDTowerSkill _TOU_SHI_JI_1_GREEN;// 一星投石机绿宝石
+	private static EDTowerSkill _TOU_SHI_JI_1_BLUE;	// 一星投石机蓝宝石
+	private static EDTowerSkill _TOU_SHI_JI_2;		// 二星投石机
+	private static EDTowerSkill _TOU_SHI_JI_2_PURPLE;// 二星投石机紫宝石
+	private static EDTowerSkill _TOU_SHI_JI_2_RED;	// 二星投石机红宝石
+	private static EDTowerSkill _TOU_SHI_JI_2_GREEN;// 二星投石机绿宝石
+	private static EDTowerSkill _TOU_SHI_JI_2_BLUE;	// 二星投石机蓝宝石
+	private static EDTowerSkill _TOU_SHI_JI_3;		// 三星投石机
+	private static EDTowerSkill _TOU_SHI_JI_3_PURPLE;// 三星投石机紫宝石
+	private static EDTowerSkill _TOU_SHI_JI_3_RED;	// 三星投石机红宝石
+	private static EDTowerSkill _TOU_SHI_JI_3_GREEN;// 三星投石机绿宝石
+	private static EDTowerSkill _TOU_SHI_JI_3_BLUE;	// 三星投石机蓝宝石
+	private static EDTowerSkill _XIANG_QIAN_1_PURPLE_1;// 一星镶嵌塔一星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_1_RED;	// 一星镶嵌塔红宝石
+	private static EDTowerSkill _XIANG_QIAN_1_GREEN;// 一星镶嵌塔绿宝石
+	private static EDTowerSkill _XIANG_QIAN_1_BLUE;	// 一星镶嵌塔蓝宝石
+	private static EDTowerSkill _XIANG_QIAN_1_PURPLE_2;// 一星镶嵌塔二星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_1_PURPLE_3;// 一星镶嵌塔三星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_1_PURPLE_4;// 一星镶嵌塔四星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_1_PURPLE_5;// 一星镶嵌塔五星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_2_PURPLE_1;// 二星镶嵌塔一星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_2_RED;	// 二星镶嵌塔红宝石
+	private static EDTowerSkill _XIANG_QIAN_2_GREEN;// 二星镶嵌塔绿宝石
+	private static EDTowerSkill _XIANG_QIAN_2_BLUE;	// 二星镶嵌塔蓝宝石
+	private static EDTowerSkill _XIANG_QIAN_2_PURPLE_2;// 二星镶嵌塔二星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_2_PURPLE_3;// 二星镶嵌塔三星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_2_PURPLE_4;// 二星镶嵌塔四星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_2_PURPLE_5;// 二星镶嵌塔五星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_3_PURPLE_1;// 三星镶嵌塔一星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_3_RED;	// 三星镶嵌塔红宝石
+	private static EDTowerSkill _XIANG_QIAN_3_GREEN;// 三星镶嵌塔绿宝石
+	private static EDTowerSkill _XIANG_QIAN_3_BLUE;	// 三星镶嵌塔蓝宝石
+	private static EDTowerSkill _XIANG_QIAN_3_PURPLE_2;// 三星镶嵌塔二星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_3_PURPLE_3;// 三星镶嵌塔三星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_3_PURPLE_4;// 三星镶嵌塔四星紫宝石
+	private static EDTowerSkill _XIANG_QIAN_3_PURPLE_5;// 三星镶嵌塔五星紫宝石
+	private static EDTowerSkill _HUO_PAO_1;			// 一星火炮塔
+	private static EDTowerSkill _HUO_PAO_1_PURPLE;	// 一星火炮塔紫宝石
+	private static EDTowerSkill _HUO_PAO_1_RED;		// 一星火炮塔红宝石
+	private static EDTowerSkill _HUO_PAO_1_GREEN;	// 一星火炮塔绿宝石
+	private static EDTowerSkill _HUO_PAO_1_BLUE;	// 一星火炮塔蓝宝石
+	private static EDTowerSkill _HUO_PAO_2;			// 二星火炮塔
+	private static EDTowerSkill _HUO_PAO_2_PURPLE;	// 二星火炮塔紫宝石
+	private static EDTowerSkill _HUO_PAO_2_RED;		// 二星火炮塔红宝石
+	private static EDTowerSkill _HUO_PAO_2_GREEN;	// 二星火炮塔绿宝石
+	private static EDTowerSkill _HUO_PAO_2_BLUE;	// 二星火炮塔蓝宝石
+	private static EDTowerSkill _HUO_PAO_3;			// 三星火炮塔
+	private static EDTowerSkill _HUO_PAO_3_PURPLE;	// 三星火炮塔紫宝石
+	private static EDTowerSkill _HUO_PAO_3_RED;		// 三星火炮塔红宝石
+	private static EDTowerSkill _HUO_PAO_3_GREEN;	// 三星火炮塔绿宝石
+	private static EDTowerSkill _HUO_PAO_3_BLUE;	// 三星火炮塔蓝宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_1;// 一星回旋飞镖塔
+	private static EDTowerSkill _QIU_XING_FEI_DAN_1_PURPLE;// 一星回旋飞镖塔紫宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_1_RED;// 一星回旋飞镖塔红宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_1_GREEN;// 一星回旋飞镖塔绿宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_1_BLUE;// 一星回旋飞镖塔蓝宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_2;// 二星回旋飞镖塔
+	private static EDTowerSkill _QIU_XING_FEI_DAN_2_PURPLE;// 二星回旋飞镖塔紫宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_2_RED;// 二星回旋飞镖塔红宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_2_GREEN;// 二星回旋飞镖塔绿宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_2_BLUE;// 二星回旋飞镖塔蓝宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_3;// 三星回旋飞镖塔
+	private static EDTowerSkill _QIU_XING_FEI_DAN_3_PURPLE;// 三星回旋飞镖塔紫宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_3_RED;// 三星回旋飞镖塔红宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_3_GREEN;// 三星回旋飞镖塔绿宝石
+	private static EDTowerSkill _QIU_XING_FEI_DAN_3_BLUE;// 三星回旋飞镖塔蓝宝石
+	private static EDTowerSkill _XIAN_DAN_1;		// 一星霰弹塔
+	private static EDTowerSkill _XIAN_DAN_1_PURPLE;	// 一星霰弹塔紫宝石
+	private static EDTowerSkill _XIAN_DAN_1_RED;	// 一星霰弹塔红宝石
+	private static EDTowerSkill _XIAN_DAN_1_GREEN;	// 一星霰弹塔绿宝石
+	private static EDTowerSkill _XIAN_DAN_1_BLUE;	// 一星霰弹塔蓝宝石
+	private static EDTowerSkill _XIAN_DAN_2;		// 二星霰弹塔
+	private static EDTowerSkill _XIAN_DAN_2_PURPLE;	// 二星霰弹塔紫宝石
+	private static EDTowerSkill _XIAN_DAN_2_RED;	// 二星霰弹塔红宝石
+	private static EDTowerSkill _XIAN_DAN_2_GREEN;	// 二星霰弹塔绿宝石
+	private static EDTowerSkill _XIAN_DAN_2_BLUE;	// 二星霰弹塔蓝宝石
+	private static EDTowerSkill _XIAN_DAN_3;		// 三星霰弹塔
+	private static EDTowerSkill _XIAN_DAN_3_PURPLE;	// 三星霰弹塔紫宝石
+	private static EDTowerSkill _XIAN_DAN_3_RED;	// 三星霰弹塔红宝石
+	private static EDTowerSkill _XIAN_DAN_3_GREEN;	// 三星霰弹塔绿宝石
+	private static EDTowerSkill _XIAN_DAN_3_BLUE;	// 三星霰弹塔蓝宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_1;// 一星天空之矛
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_PURPLE;// 一星天空之矛紫宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_RED;// 一星天空之矛红宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_GREEN;// 一星天空之矛绿宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_1_BLUE;// 一星天空之矛蓝宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_2;// 二星天空之矛
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_PURPLE;// 二星天空之矛紫宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_RED;// 二星天空之矛红宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_GREEN;// 二星天空之矛绿宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_2_BLUE;// 二星天空之矛蓝宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_3;// 三星天空之矛
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_PURPLE;// 三星天空之矛紫宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_RED;// 三星天空之矛红宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_GREEN;// 三星天空之矛绿宝石
+	private static EDTowerSkill _TIAN_KONG_ZHI_MAO_3_BLUE;// 三星天空之矛蓝宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_1;	// 一星飞镖发射器
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_1_PURPLE;// 一星飞镖发射器紫宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_1_RED;// 一星飞镖发射器红宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_1_GREEN;// 一星飞镖发射器绿宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_1_BLUE;// 一星飞镖发射器蓝宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_2;	// 二星飞镖发射器
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_2_PURPLE;// 二星飞镖发射器紫宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_2_RED;// 二星飞镖发射器红宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_2_GREEN;// 二星飞镖发射器绿宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_2_BLUE;// 二星飞镖发射器蓝宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_3;	// 三星飞镖发射器
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_3_PURPLE;// 三星飞镖发射器紫宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_3_RED;// 三星飞镖发射器红宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_3_GREEN;// 三星飞镖发射器绿宝石
+	private static EDTowerSkill _FEI_BIAO_FA_SHE_3_BLUE;// 三星飞镖发射器蓝宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_1;	// 一星气球炸弹塔
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_1_PURPLE;// 一星气球炸弹塔紫宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_1_RED;// 一星气球炸弹塔红宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_1_GREEN;// 一星气球炸弹塔绿宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_1_BLUE;// 一星气球炸弹塔蓝宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_2;	// 二星气球炸弹塔
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_2_PURPLE;// 二星气球炸弹塔紫宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_2_RED;// 二星气球炸弹塔红宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_2_GREEN;// 二星气球炸弹塔绿宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_2_BLUE;// 二星气球炸弹塔蓝宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_3;	// 三星气球炸弹塔
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_3_PURPLE;// 三星气球炸弹塔紫宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_3_RED;// 三星气球炸弹塔红宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_3_GREEN;// 三星气球炸弹塔绿宝石
+	private static EDTowerSkill _QI_QIU_ZHA_DAN_3_BLUE;// 三星气球炸弹塔蓝宝石
+	private static EDTowerSkill _ZHEN_DANG_1;		// 一星电磁震荡塔
+	private static EDTowerSkill _ZHEN_DANG_1_PURPLE;// 一星电磁震荡塔紫宝石
+	private static EDTowerSkill _ZHEN_DANG_1_RED;	// 一星电磁震荡塔红宝石
+	private static EDTowerSkill _ZHEN_DANG_1_GREEN;	// 一星电磁震荡塔绿宝石
+	private static EDTowerSkill _ZHEN_DANG_1_BLUE;	// 一星电磁震荡塔蓝宝石
+	private static EDTowerSkill _ZHEN_DANG_2;		// 二星电磁震荡塔
+	private static EDTowerSkill _ZHEN_DANG_2_PURPLE;// 二星电磁震荡塔紫宝石
+	private static EDTowerSkill _ZHEN_DANG_2_RED;	// 二星电磁震荡塔红宝石
+	private static EDTowerSkill _ZHEN_DANG_2_GREEN;	// 二星电磁震荡塔绿宝石
+	private static EDTowerSkill _ZHEN_DANG_2_BLUE;	// 二星电磁震荡塔蓝宝石
+	private static EDTowerSkill _ZHEN_DANG_3;		// 三星电磁震荡塔
+	private static EDTowerSkill _ZHEN_DANG_3_PURPLE;// 三星电磁震荡塔紫宝石
+	private static EDTowerSkill _ZHEN_DANG_3_RED;	// 三星电磁震荡塔红宝石
+	private static EDTowerSkill _ZHEN_DANG_3_GREEN;	// 三星电磁震荡塔绿宝石
+	private static EDTowerSkill _ZHEN_DANG_3_BLUE;	// 三星电磁震荡塔蓝宝石
+	private static EDTowerSkill _BO_DONG_1;			// 一星风刃发射器
+	private static EDTowerSkill _BO_DONG_1_PURPLE;	// 一星风刃发射器紫宝石
+	private static EDTowerSkill _BO_DONG_1_RED;		// 一星风刃发射器红宝石
+	private static EDTowerSkill _BO_DONG_1_GREEN;	// 一星风刃发射器绿宝石
+	private static EDTowerSkill _BO_DONG_1_BLUE;	// 一星风刃发射器蓝宝石
+	private static EDTowerSkill _BO_DONG_2;			// 二星风刃发射器
+	private static EDTowerSkill _BO_DONG_2_PURPLE;	// 二星风刃发射器紫宝石
+	private static EDTowerSkill _BO_DONG_2_RED;		// 二星风刃发射器红宝石
+	private static EDTowerSkill _BO_DONG_2_GREEN;	// 二星风刃发射器绿宝石
+	private static EDTowerSkill _BO_DONG_2_BLUE;	// 二星风刃发射器蓝宝石
+	private static EDTowerSkill _BO_DONG_3;			// 三星风刃发射器
+	private static EDTowerSkill _BO_DONG_3_PURPLE;	// 三星风刃发射器紫宝石
+	private static EDTowerSkill _BO_DONG_3_RED;		// 三星风刃发射器红宝石
+	private static EDTowerSkill _BO_DONG_3_GREEN;	// 三星风刃发射器绿宝石
+	private static EDTowerSkill _BO_DONG_3_BLUE;	// 三星风刃发射器蓝宝石
 
 	public static EDTowerSkill SHI_ZI_GONG_1 { get { return _SHI_ZI_GONG_1 ??= mTable.query(SHI_ZI_GONG_1_ID); } }// 一星十字弓
 	public static EDTowerSkill SHI_ZI_GONG_1_PURPLE { get { return _SHI_ZI_GONG_1_PURPLE ??= mTable.query(SHI_ZI_GONG_1_PURPLE_ID); } }// 一星十字弓紫宝石

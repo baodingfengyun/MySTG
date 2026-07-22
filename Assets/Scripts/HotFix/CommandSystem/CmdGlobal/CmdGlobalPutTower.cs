@@ -1,6 +1,5 @@
 ﻿using static FrameBaseHotFix;
 using static GBR;
-using static GDR;
 
 // 放置塔到场景中的命令基类,提供公共函数
 public class CmdGlobalPutTower
@@ -24,7 +23,7 @@ public class CmdGlobalPutTower
 		tower.notifyStartFight();
 
 		// 创建特效显示
-		mEffectManager.playEffectAsync(mExcelEffect.query(TOWER_PLACE_EFFECT_ID).mPath, tower, 2.6f, true, 0);
+		mEffectManager.playEffectAsync(EDEffect.TOWER_PLACE.mPath, tower, 2.6f, true);
 		AT.SOUND_2D(SOUND_HOTFIX.BUILD_TOWER);
 
 		// 广播事件

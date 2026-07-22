@@ -1,6 +1,4 @@
 ﻿using static FrameBaseHotFix;
-using static GBR;
-using static GDR;
 
 // 参数
 public class BuffBuildingParam : CharacterBuffParamT<BuffBuildingParam>
@@ -21,8 +19,7 @@ public class BuffBuilding : CharacterBuffT<BuffBuildingParam>
 	public override void enter()
 	{
 		base.enter();
-		string effectPath = mExcelEffect.query(TOWER_SELECT_EFFECT_ID).mPath;
-		mEffectManager.createEffectAsyncSafe(effectPath, this, null, true, (GameEffect effect) =>
+		mEffectManager.createEffectAsyncSafe(EDEffect.TOWER_SELECT.mPath, this, null, true, (GameEffect effect) =>
 		{
 			mEffect = effect;
 			mEffect.setPosition(mCharacter.getPosition());

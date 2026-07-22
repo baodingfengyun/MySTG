@@ -1,5 +1,4 @@
 ﻿using static FrameBaseHotFix;
-using static GDR;
 using static GBR;
 
 // 塔升星
@@ -17,7 +16,7 @@ public class CmdGlobalUpgradeStarTower
 		// 更新UI
 		mBattleScene.showTowerRange(tower);
 		mUITowerInfo.setTower(mTowerDefenceSystem.getSelectedTowerScene());
-		mEffectManager.playEffectAsync(mExcelEffect.query(TOWER_STAR_UP_EFFECT_ID).mPath, tower, 2.6f, true, 0);
+		mEffectManager.playEffectAsync(EDEffect.TOWER_PLACE.mPath, tower, 2.6f, true);
 		using var a = new ClassScope<EventTowerSkillChanged>(out var eventParam);
 		eventParam.mTower = tower;
 		mEventSystem.pushEvent(eventParam, tower.getGUID());

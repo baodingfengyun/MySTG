@@ -2,8 +2,6 @@
 using UnityEditor;
 using UnityEngine;
 using static EditorCommonUtility;
-using static GameDefine;
-using static UnityUtility;
 using static FrameMacro;
 
 public abstract class PlatformInfo : PlatformBase
@@ -24,22 +22,10 @@ public abstract class PlatformInfo : PlatformBase
         {
             Debug.LogError("不支持的平台");
         }
-        if (info != null)
-        {
-            info.mTarget = target;
-            info.mAssetBundleFullPath = getAssetBundlePath(true);
-        }
         return info;
     }
     public override string getDefaultPlatformDefineInternal() 
     {
         return USE_HYBRID_CLR + ";" + USE_OBFUZ + ";" + USE_URP; 
     }
-    protected override void configureScriptingDefine()
-    {
-        string platformDefine = getDefaultPlatformDefine();
-        log("设置宏:" + platformDefine);
-        PlayerSettings.SetScriptingDefineSymbols(getNameBuildTarget(), platformDefine);
-    }
-    protected override List<string> getDynamicDownloadList() { return DYNAMIC_DOWNLOAD_LIST; }
 }

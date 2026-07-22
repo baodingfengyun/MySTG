@@ -1,5 +1,4 @@
 ﻿using static FrameBase;
-using static GameDefine;
 using static GB;
 
 // 最顶层的管理对象
@@ -15,7 +14,6 @@ public class Game : GameFramework
 	{
         mOnInitFrameSystem += gameInitFrameSystem;
         mOnRegisteStuff += gameRegiste;
-        mOnPackageName += () => { return ANDROID_PLUGIN_BUNDLE_NAME; };
 
         base.init();
         mGameSceneManager.enterScene<StartScene>();

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Text;
-using static FileUtility;
-using static GameDefine;
-using static GB;
+﻿using static GB;
 
 // 工具函数
 public class GameUtility
@@ -54,13 +50,7 @@ public class GameUtility
 		{
 			mUIDialogOKResources?.setOKCallback(callback);
 			mUIDialogOKResources?.close();
-
         }
-	}
-	// 不传任何参数就是关闭对话框
-	public static void dialogOKResources()
-	{
-		dialogOKResources(null, null);
 	}
 	public static void dialogTipResources(string info)
 	{
@@ -74,24 +64,10 @@ public class GameUtility
 		else
 		{
 			mUIDialogTipResources?.close();
-
         }
 	}
 	public static void dialogTipResources()
 	{
 		dialogTipResources(null);
 	}
-    public static byte[] getAESKeyBytes()
-    {
-        // 将密钥再加一次密
-        byte[] newBytes = new byte[16];
-        Buffer.BlockCopy(Encoding.UTF8.GetBytes(generateFileMD5(AES_KEY)), 0, newBytes, 0, newBytes.Length);
-        return newBytes;
-    }
-    public static byte[] getAESIVBytes()
-    {
-        byte[] newBytes = new byte[16];
-        Buffer.BlockCopy(Encoding.UTF8.GetBytes(generateFileMD5(AES_IV)), 0, newBytes, 0, newBytes.Length);
-        return newBytes;
-    }
 }

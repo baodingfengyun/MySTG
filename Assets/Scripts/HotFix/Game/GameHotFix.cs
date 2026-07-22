@@ -34,6 +34,5 @@ public class GameHotFix : GameHotFixBase<GameHotFix>
         registeFrameSystem<GuideSystem>(com =>              mGuideSystem = com);
         registeFrameSystem<RedPointManager>(com =>          mRedPointManager = com);
     }
-    protected override string getAndroidPluginBundleName() { return ""; }
     protected override Type getStartGameSceneType() { return typeof(GameSceneLogin); }
 }

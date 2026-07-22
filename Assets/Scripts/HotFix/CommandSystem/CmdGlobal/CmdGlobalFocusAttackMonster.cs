@@ -1,5 +1,4 @@
 ﻿using static GBR;
-using static GDR;
 using static GameUtilityHotFix;
 
 // 集火怪物的buff
@@ -15,6 +14,6 @@ public class CmdGlobalFocusAttackMonster
 		{
 			item.getStateMachine().removeFirstState<BuffFocusAttackMonster>(false);
 		}
-		characterAddBuff(FOCUS_ATTACK_MONSTER_BUFF, monster, null);
+		characterAddBuff(EDBuffDetail.FOCUS_ATTACK_MONSTER_ID, monster, null);
 	}
 }

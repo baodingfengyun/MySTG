@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using static MathUtility;
 using static UnityUtility;
 using static FrameBaseHotFix;
-using static GDR;
 using static GBR;
 
 // 将传入的塔随机变成别的塔，保留等级
@@ -40,7 +39,7 @@ public class CmdGlobalRandomChangeTowerRogue : CmdGlobalPutTower
 			mTowerDefenceSystem.setSelectedTowerScene(newTower);
 			mBattleScene.showTowerRange(newTower);
 		}
-		mEffectManager.playEffectAsync(mExcelEffect.query(TOWER_PLACE_EFFECT_ID).mPath, newTower, 2.6f, true, 0);
+		mEffectManager.playEffectAsync(EDEffect.TOWER_PLACE.mPath, newTower, 2.6f, true);
 
 		mUITowerInfo.safe()?.setTower(newTower);
 		return true;

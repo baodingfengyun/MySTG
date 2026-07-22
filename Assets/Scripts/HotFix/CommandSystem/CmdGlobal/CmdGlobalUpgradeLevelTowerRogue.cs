@@ -1,7 +1,6 @@
 ﻿using static GameUtilityHotFix;
 using static FrameBaseHotFix;
 using static GBR;
-using static GDR;
 
 // 塔升级,Rogue模式
 public class CmdGlobalUpgradeLevelTowerRogue
@@ -37,7 +36,7 @@ public class CmdGlobalUpgradeLevelTowerRogue
 		CmdGlobalFreeUpLevelRogue.execute(tower, false);
 		mUITowerInfo?.setTower(tower);
 		tip("成功升级到{0}级!", level.IToS());
-		mEffectManager.playEffectAsync(mExcelEffect.query(TOWER_LEVEL_UP_EFFECT_ID).mPath, tower, 2.6f, true, 0);
+		mEffectManager.playEffectAsync(EDEffect.TOWER_PLACE.mPath, tower, 2.6f, true);
 
 		using var a = new ClassScope<EventTowerLevelChange>(out var eventParam);
 		eventParam.mTower = tower;

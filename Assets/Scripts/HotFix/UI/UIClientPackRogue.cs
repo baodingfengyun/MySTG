@@ -7,7 +7,6 @@ using static MathUtility;
 using static UnityUtility;
 using static WidgetUtility;
 using static GBR;
-using static GDR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIClientPackRogue.prefab
@@ -310,7 +309,7 @@ public class UIClientPackRogue : LayoutScript
 		mTowerDefenceSystem.cmdSelectItemOwned(null);
 		CmdGlobalSelectTowerScene.execute(null);
 		mBattleScene.getMouseGridIndexAndPoint(touchPoint.getCurPosition(), out _, out Vector3 point);
-		mDragingTower = CmdGlobalCreateTower.execute(mExcelTower.query(STONE_TOWER_ID), point);
+		mDragingTower = CmdGlobalCreateTower.execute(EDTower.STONE_TOWER, point);
 		mDragingTower.setPosition(generateOffset(point));
 		mDragValid = false;
 		LT.HIDE<UITowerInfo>();
@@ -393,7 +392,7 @@ public class UIClientPackRogue : LayoutScript
 		}
 		// 检查货币是否足够
 		bool allowPut = mDragValid;
-		int buildCost = mExcelTower.getRogueNextLevelCost(mExcelTower.query(STONE_TOWER_ID), 0);
+		int buildCost = mExcelTower.getRogueNextLevelCost(EDTower.STONE_TOWER, 0);
 		if (allowPut && mTowerDefenceSystem.getGoldCoinRogue() < buildCost)
 		{
 			tip("道具不足，需要{0}", buildCost.IToS());

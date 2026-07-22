@@ -170,169 +170,169 @@ public class EDBuff : ExcelDataT<EDBuff>
 	public const int BuffAttackUpByGridTowerCount_ID = 208;// 附近n格内有m个塔时，提升攻击力
 	public const int BuffAddTowerRogue_ID = 500;	// 将防御塔带入肉鸽战斗
 
-	public static EDBuff _BuffPoison;				// 中毒
-	public static EDBuff _BuffMoveSpeedDown;		// 百分比减速,固定百分比
-	public static EDBuff _BuffMoveSpeedDownByLevel;	// 百分比减速,根据宝石等级和塔等级计算
-	public static EDBuff _BuffSkillRangeUp;			// 增加射程,固定百分比
-	public static EDBuff _BuffStrickBack;			// 击退一定距离,单位为格子大小
-	public static EDBuff _TriggerHit;				// 命中时触发
-	public static EDBuff _BuffDisableSkill;			// 不允许释放技能
-	public static EDBuff _TriggerHPUnderPercent;	// 血量降低到一定时触发
-	public static EDBuff _BuffMoveSpeedUp;			// 百分比加速,固定百分比
-	public static EDBuff _BuffFlyable;				// 具有飞天能力,可以使用飞行路线
-	public static EDBuff _BuffFlashForward;			// 向前闪现一定距离
-	public static EDBuff _BuffSummonMonster;		// 召唤怪物
-	public static EDBuff _TriggerHPUnderPercentMulti;// 血量降低到一定时触发多个buff
-	public static EDBuff _BuffDamageOnce;			// 单次固定伤害
-	public static EDBuff _BuffHoldPosition;			// 禁锢,不允许移动
-	public static EDBuff _BuffBuilding;				// 塔建造中的状态
-	public static EDBuff _BuffTypeTowerAttackUp;	// (已废弃)提升所有指定类型塔的攻击力
-	public static EDBuff _BuffVertigo;				// 眩晕
-	public static EDBuff _BuffHasTypeBuffIncreaseDamage;// 攻击拥有指定buff类型的敌人时伤害增加
-	public static EDBuff _TriggerWillHit;			// 即将命中时触发
-	public static EDBuff _BuffCriticalUp;			// 暴击率增加
-	public static EDBuff _BuffTypeTowerIncreaseSelfCritical;// 场上指定类型的塔越多,自身增加的暴击率越多
-	public static EDBuff _BuffTypeTowerIncreaseSelfDamage;// 自己的暴击不可被闪避
-	public static EDBuff _BuffBurn;					// 场上指定类型的塔越多,伤害增加越多
-	public static EDBuff _BuffFireImprint;			// 火焰印记
-	public static EDBuff _BuffBeenFireDamageUp;		// 受到的火属性伤害提升
-	public static EDBuff _BuffBeenDarkDamageUp;		// 受到的暗属性伤害提升
-	public static EDBuff _BuffBeenIceDamageUp;		// 受到的冰属性伤害提升
-	public static EDBuff _BuffBeenLightDamageUp;	// 受到的光属性伤害提升
-	public static EDBuff _BuffBeenPoisonDamageUp;	// 受到的毒属性伤害提升
-	public static EDBuff _BuffBeenLightningDamageUp;// 受到的电属性伤害提升
-	public static EDBuff _BuffBeenFireDamageDown;	// 受到的火属性伤害降低
-	public static EDBuff _BuffBeenDarkDamageDown;	// 受到的暗属性伤害降低
-	public static EDBuff _BuffBeenIceDamageDown;	// 受到的冰属性伤害降低
-	public static EDBuff _BuffBeenLightDamageDown;	// 受到的光属性伤害降低
-	public static EDBuff _BuffBeenPoisonDamageDown;	// 受到的毒属性伤害降低
-	public static EDBuff _BuffBeenLightningDamageDown;// 受到的电属性伤害降低
-	public static EDBuff _BuffAttackUp;				// 提升攻击力
-	public static EDBuff _BuffAttackDown;			// 降低攻击力
-	public static EDBuff _TriggerDirectly;			// 直接触发
-	public static EDBuff _BuffBleeding;				// 出血
-	public static EDBuff _BuffTypeBuffIncreaseSelfAttack;// 场上拥有指定状态的敌人越多,自身增加的攻击力越多
-	public static EDBuff _BuffTypeBuffIncreaseSelfAttackSpeed;// 场上拥有指定状态的敌人越多,自身减少的攻击速度越多
-	public static EDBuff _BuffRangeEnemyBurnToIncrease;// 范围内敌人身上的燃烧伤害由递减改为递增
-	public static EDBuff _BuffConfusion;			// 混乱,向路线的反方向移动
-	public static EDBuff _TriggerCritical;			// 暴击时触发
-	public static EDBuff _BuffAttackSpeedUp;		// 增加攻速
-	public static EDBuff _BuffTransferBack;			// 沿移动路径向后传送一定距离
-	public static EDBuff _BuffRemoveTypeBuff;		// 移除指定类型的buff
-	public static EDBuff _BuffBeenDamageDown;		// 受到的伤害降低
-	public static EDBuff _BuffBeenDamageUp;			// 受到的伤害提升
-	public static EDBuff _TriggerBuffToTypeBuffMonster;// 范围内拥有指定buff的敌人会附加指定buff,敌人超出范围时,会移除buff
-	public static EDBuff _TriggerBuffToInvisibleMonster;// 范围内隐身的敌人会附加指定buff,敌人超出范围时,会移除buff
-	public static EDBuff _BuffFloatToAir;			// 浮空
-	public static EDBuff _TriggerTypeTowerOverCountBuffToSelf;// 场上指定类型的塔超过一定数量时,会给自己附加指定buff,塔数量低于一定数量时会移除buff
-	public static EDBuff _TriggerBuffToTypeTowerAndSelf;// 给自己和指定类型的塔附加buff
-	public static EDBuff _TriggerBuffToTypeTower;	// 给指定类型的塔附加buff
-	public static EDBuff _BuffBeenBurnDamageUp;		// 受到的燃烧伤害提升
-	public static EDBuff _BuffBeenPoisoningDamageUp;// 受到的中毒伤害提升
-	public static EDBuff _BuffBeenAllElementDamageDown;// 受到的所有元素属性伤害降低
-	public static EDBuff _BuffSneak;				// 潜行
-	public static EDBuff _BuffVertigoDecrease;		// 降低被眩晕的概率和眩晕的时间
-	public static EDBuff _TriggerWillDie;			// 即将死亡时触发
-	public static EDBuff _BuffAntiStrickBack;		// 无法被击退
-	public static EDBuff _BuffDisarm;				// 缴械
-	public static EDBuff _BuffAntiCriticalUp;		// 暴击抗性提升
-	public static EDBuff _BuffBeenShockedDamageUp;	// 受到的感电伤害提升
-	public static EDBuff _TriggerTypeMonsterDie;	// 指定怪物死亡时触发
-	public static EDBuff _BuffSlowIncrease;			// 受到的减速效果提升
-	public static EDBuff _BuffImmunityElementDebuffDamage;// 免疫所有元素伤害
-	public static EDBuff _BuffClearDebuff;			// 清除所有debuff
-	public static EDBuff _TriggerBuffToRangeMonsterOnce;// 范围内所有怪物附加buff,只在进入状态时添加一次,并且不会主动移除
-	public static EDBuff _BuffRecoverHPPercentOnce;	// 百分比恢复血量
-	public static EDBuff _BuffEvasionUp;			// 闪避率提升
-	public static EDBuff _BuffForceChangeTarget;	// 强制改变防御塔和英雄的目标选择为指定目标,技能目标为对自己释放的除外
-	public static EDBuff _BuffShocked;				// 感电
-	public static EDBuff _BuffFreeze;				// 冰冻
-	public static EDBuff _BuffParalysis;			// 麻痹
-	public static EDBuff _BuffMoveSpeedDownValue;	// 固定数值减速,减速到负数时,可以让怪物后退
-	public static EDBuff _BuffPushMove;				// 怪物在眩晕等无法移动的状态时，强制移动怪物位置
-	public static EDBuff _BuffMoveSpeedUpValue;		// 固定数值加速
-	public static EDBuff _BuffDamageOverTime;		// 无属性持续伤害
-	public static EDBuff _BuffMoveSpeedDownNoEffect;// 百分比减速,固定百分比，无特效
-	public static EDBuff _BuffInTunnel;				// 通过隧道时不可攻击状态
-	public static EDBuff _TriggerBuffToAllTower;	// 给所有防御塔附加buff,持续时间内新增的塔也会被附加buff
-	public static EDBuff _BuffDamageUp;				// 伤害增加
-	public static EDBuff _BuffTowerExploRangeUp;	// 增加子弹爆炸范围
-	public static EDBuff _BuffZhenDangTaBulletCountUp;// 增加电磁震荡塔能量球个数
-	public static EDBuff _BuffResetLastSkillCD;		// 重置刚释放过的技能CD
-	public static EDBuff _TriggerFireSkill;			// 释放技能时触发
-	public static EDBuff _TriggerFireCountSkillHit;	// 释放一定次数技能后的命中时触发
-	public static EDBuff _BuffRangeDamageOnce;		// 造成一次范围攻击力百分比伤害
-	public static EDBuff _TriggerFireCountSkillWillGenerateDamage;// 释放一定次数技能后的即将命中时触发
-	public static EDBuff _BuffAlwaysCriticalHit;	// 攻击必定暴击
-	public static EDBuff _BuffTypeTowerIncreaseSelfAttack;// 场上指定类型的塔越多,自身增加的攻击力越多
-	public static EDBuff _BuffTypeTowerIncreaseSelfAttackSpeed;// 场上指定类型的塔越多,自身增加的攻速越多
-	public static EDBuff _BuffDamageUpBeforeWave;	// 前一定波数伤害增加
-	public static EDBuff _BuffIncreaseBulletCount;	// 增加子弹数量
-	public static EDBuff _BuffAttackSpeedDown;		// 降低攻速
-	public static EDBuff _BuffSkillRangeDown;		// 射程降低
-	public static EDBuff _TriggerKillMonster;		// 击杀怪物时触发
-	public static EDBuff _TriggerTimeInterval;		// 每隔一定时间触发一次
-	public static EDBuff _BuffBulletFlyDisIncreaseExploRange;// 爆炸范围随着飞行距离增加
-	public static EDBuff _BuffBulletFlyDisIncreaseDamage;// 伤害随着飞行距离增加
-	public static EDBuff _BuffBulletDamageUpInExploRange;// 对子弹爆炸一定范围内的敌人伤害增加
-	public static EDBuff _BuffBulletSpeedUp;		// 子弹飞行速度增加
-	public static EDBuff _TriggerBuffToBulletExploRange;// 子弹爆炸时给范围内所有敌人附加buff
-	public static EDBuff _BuffXiangQianTaPurpleGemTargetCountUp;// 镶嵌塔紫宝石技能弹射目标数量增加
-	public static EDBuff _BuffTowerExploRangeDown;	// 减少火炮塔爆炸范围
-	public static EDBuff _BuffIncreaseBulletCountHuoPao;// 火炮塔子弹数量增加
-	public static EDBuff _BuffDamageDown;			// 伤害降低
-	public static EDBuff _BuffAroundTowerCountAttackUp;// 塔附近1格有n个塔，每个塔增加该塔的攻击
-	public static EDBuff _BuffAroundTowerCountAttackSpeedUp;// 塔附近1格有n个塔，每个塔增加该塔的攻速
-	public static EDBuff _BuffMoveSpeedDownRouge;	// 肉鸽模式球形飞弹天赋特定减速Buff,百分比
-	public static EDBuff _TriggerWillHitHpMinPercent;// 击中前怪物血量高于百分比触发
-	public static EDBuff _BuffDefenceDownPercent;	// 防御力百分比降低
-	public static EDBuff _BuffInstantDeath;			// 即死
-	public static EDBuff _TriggerWillHitHpMaxPercent;// 击中前怪物血量低于百分比触发
-	public static EDBuff _BuffDamageUpStrengthMonster;// 攻击指定怪物时攻击力百分比加成
-	public static EDBuff _BuffAttackSpeedUpStepped;	// 初始攻击间隔提高，每次攻击降低攻击间隔，有叠加上限，若一定时间内未进行攻击则重置
-	public static EDBuff _TriggerBuffOnWaveStart;	// 每波开始，概率添加某些状态，没随机到就会移除
-	public static EDBuff _BuffCriticalDamageUp;		// 暴击伤害增加
-	public static EDBuff _BuffIncreaseBulletCountByNoDamageTime;// 一段时间内没有造成伤害，下次攻击子弹增加
-	public static EDBuff _BuffRangeDamageByHpMaxPercent;// 击杀怪物时,对周围指定类型的怪物造成当前怪物最大血量百分比的伤害
-	public static EDBuff _BuffIncreaseBulletCountPercent;// 百分比增加子弹数量
-	public static EDBuff _TriggerBuffByWaveBulletCount;// 塔释放一定数量子弹,触发buff,直到波次结束
-	public static EDBuff _BuffRogueKillMonsterAddBuildCoin;// 肉鸽模式，塔每击杀n个敌人，获得m肉鸽建造点
-	public static EDBuff _BuffAttackUpOnceByKillMonster;// 击杀n个敌人后，下一次攻击提高
-	public static EDBuff _BuffRogueKillMonsterCureLevelHp;// 每击杀n个敌人，回复m点已损失的羊村生命
-	public static EDBuff _BuffAttackDownThenUpByHitSameMonster;// 攻击力降低，每次攻击提高攻击力。上限n层，切换目标时重置
-	public static EDBuff _BuffChangeSearchTargetType;// 寻敌方式修改
-	public static EDBuff _BuffDamageUpToDebuffMonster;// 对处于异常状态下的单位造成的伤害提升
-	public static EDBuff _BuffRogueKillMonsterFreeUpLevel;// 击杀n个敌人后，该塔升级免费
-	public static EDBuff _BuffScaleBullet;			// 调整子弹大小
-	public static EDBuff _BuffBulletAttackUpHitMonster;// 波动塔子弹每穿过一个敌方单位，子弹攻击提高
-	public static EDBuff _BuffIncreaseFlyDisByRogueTowerLevel;// 肉鸽模式，按塔等级增加子弹飞行距离
-	public static EDBuff _BuffIncreaseBulletBounceTimes;// 增加弹跳子弹的弹跳次数
-	public static EDBuff _BuffKillMonsterChangeRandomTower;// 击杀n个敌人后，随机变成一个塔，保留等级
-	public static EDBuff _BuffIncreaseHuoPaoExplosionMulti;// 火炮子弹概率爆炸多次
-	public static EDBuff _BuffZhenDangNotDestroyBulletOnHit;// 设置电磁震荡塔子弹不消失
-	public static EDBuff _TriggerBuffByEnterTowerRange;// 向进入该塔射程范围内的怪物添加buff
-	public static EDBuff _BuffMoveSpeedDownZhenDownTowerRange;// 电磁震荡塔射程减速buff，不叠加
-	public static EDBuff _BuffZhenDangAddBulletByKillMonster;// 电磁震荡塔击杀n个敌人，获得能量球
-	public static EDBuff _TriggerBuffWhenBulletConsume;// 消耗n个子弹后触发buff
-	public static EDBuff _TriggerBuffToHexRangeTower;// 对六边形半径范围内的塔触发buff
-	public static EDBuff _BuffZhenDangConsumeCriticalUp;// 电磁震荡塔子弹消耗的特殊暴击加成buff
-	public static EDBuff _TriggerBuffGlobalWhenBulletExplosionHuoPao;// 当塔的子弹爆炸时，对战斗中的全局角色触发buff
-	public static EDBuff _TriggerBuffWithAreaCollider;// 生成一个区域模型，根据他的碰撞箱，对其中的怪物附加buff
-	public static EDBuff _BuffMoveSpeedDownHuoPaoExplosionArea;// 火炮塔子弹爆炸残留提供的减速buff
-	public static EDBuff _BuffFocusAttackMonster;	// 集火怪物的buff
-	public static EDBuff _TriggerBuffToGridRangeTowerWhenPlace;// 在放置和移动英雄时,对一定范围内的塔触发buff
-	public static EDBuff _BuffWaveUpTowerNear;		// 每过n回合，对旁边的防御塔升级
-	public static EDBuff _BuffAttackSpeedUpGongJianShou;// 弓手特殊攻速增加
-	public static EDBuff _BuffRogueHitMonsterAddBuildCoin;// 每击中n个敌人，获得m银币
-	public static EDBuff _BuffRogueCoinInterest;	// 肉鸽回合结束时，每有n银币，额外获得m银币，m有上限
-	public static EDBuff _BuffRogueMonsterBreakAddCoin;// 肉鸽模式前n个进入基地的怪物转化为m银币，boss无效
-	public static EDBuff _BuffImmunityPhysicDamage;	// 免疫物理伤害
-	public static EDBuff _BuffAttackSpeedUpByKillMonster;// 每击杀n单位，攻速增加
-	public static EDBuff _BuffAttackCriticalUpByTowerCount;// 根据场上防御塔数量，提升自身攻击力和暴击率
-	public static EDBuff _TriggerBuffToGridRangeTowerByTowerCount;// 在放置和移动英雄时，且有一定数量的某种塔时，对一定范围内的塔触发buff
-	public static EDBuff _BuffSpeedAttackUpByTowerCount;// 根据场上某种防御塔数量，提升自身攻速和攻击
-	public static EDBuff _BuffAttackUpByGridTowerCount;// 附近n格内有m个塔时，提升攻击力
-	public static EDBuff _BuffAddTowerRogue;		// 将防御塔带入肉鸽战斗
+	private static EDBuff _BuffPoison;				// 中毒
+	private static EDBuff _BuffMoveSpeedDown;		// 百分比减速,固定百分比
+	private static EDBuff _BuffMoveSpeedDownByLevel;// 百分比减速,根据宝石等级和塔等级计算
+	private static EDBuff _BuffSkillRangeUp;		// 增加射程,固定百分比
+	private static EDBuff _BuffStrickBack;			// 击退一定距离,单位为格子大小
+	private static EDBuff _TriggerHit;				// 命中时触发
+	private static EDBuff _BuffDisableSkill;		// 不允许释放技能
+	private static EDBuff _TriggerHPUnderPercent;	// 血量降低到一定时触发
+	private static EDBuff _BuffMoveSpeedUp;			// 百分比加速,固定百分比
+	private static EDBuff _BuffFlyable;				// 具有飞天能力,可以使用飞行路线
+	private static EDBuff _BuffFlashForward;		// 向前闪现一定距离
+	private static EDBuff _BuffSummonMonster;		// 召唤怪物
+	private static EDBuff _TriggerHPUnderPercentMulti;// 血量降低到一定时触发多个buff
+	private static EDBuff _BuffDamageOnce;			// 单次固定伤害
+	private static EDBuff _BuffHoldPosition;		// 禁锢,不允许移动
+	private static EDBuff _BuffBuilding;			// 塔建造中的状态
+	private static EDBuff _BuffTypeTowerAttackUp;	// (已废弃)提升所有指定类型塔的攻击力
+	private static EDBuff _BuffVertigo;				// 眩晕
+	private static EDBuff _BuffHasTypeBuffIncreaseDamage;// 攻击拥有指定buff类型的敌人时伤害增加
+	private static EDBuff _TriggerWillHit;			// 即将命中时触发
+	private static EDBuff _BuffCriticalUp;			// 暴击率增加
+	private static EDBuff _BuffTypeTowerIncreaseSelfCritical;// 场上指定类型的塔越多,自身增加的暴击率越多
+	private static EDBuff _BuffTypeTowerIncreaseSelfDamage;// 自己的暴击不可被闪避
+	private static EDBuff _BuffBurn;				// 场上指定类型的塔越多,伤害增加越多
+	private static EDBuff _BuffFireImprint;			// 火焰印记
+	private static EDBuff _BuffBeenFireDamageUp;	// 受到的火属性伤害提升
+	private static EDBuff _BuffBeenDarkDamageUp;	// 受到的暗属性伤害提升
+	private static EDBuff _BuffBeenIceDamageUp;		// 受到的冰属性伤害提升
+	private static EDBuff _BuffBeenLightDamageUp;	// 受到的光属性伤害提升
+	private static EDBuff _BuffBeenPoisonDamageUp;	// 受到的毒属性伤害提升
+	private static EDBuff _BuffBeenLightningDamageUp;// 受到的电属性伤害提升
+	private static EDBuff _BuffBeenFireDamageDown;	// 受到的火属性伤害降低
+	private static EDBuff _BuffBeenDarkDamageDown;	// 受到的暗属性伤害降低
+	private static EDBuff _BuffBeenIceDamageDown;	// 受到的冰属性伤害降低
+	private static EDBuff _BuffBeenLightDamageDown;	// 受到的光属性伤害降低
+	private static EDBuff _BuffBeenPoisonDamageDown;// 受到的毒属性伤害降低
+	private static EDBuff _BuffBeenLightningDamageDown;// 受到的电属性伤害降低
+	private static EDBuff _BuffAttackUp;			// 提升攻击力
+	private static EDBuff _BuffAttackDown;			// 降低攻击力
+	private static EDBuff _TriggerDirectly;			// 直接触发
+	private static EDBuff _BuffBleeding;			// 出血
+	private static EDBuff _BuffTypeBuffIncreaseSelfAttack;// 场上拥有指定状态的敌人越多,自身增加的攻击力越多
+	private static EDBuff _BuffTypeBuffIncreaseSelfAttackSpeed;// 场上拥有指定状态的敌人越多,自身减少的攻击速度越多
+	private static EDBuff _BuffRangeEnemyBurnToIncrease;// 范围内敌人身上的燃烧伤害由递减改为递增
+	private static EDBuff _BuffConfusion;			// 混乱,向路线的反方向移动
+	private static EDBuff _TriggerCritical;			// 暴击时触发
+	private static EDBuff _BuffAttackSpeedUp;		// 增加攻速
+	private static EDBuff _BuffTransferBack;		// 沿移动路径向后传送一定距离
+	private static EDBuff _BuffRemoveTypeBuff;		// 移除指定类型的buff
+	private static EDBuff _BuffBeenDamageDown;		// 受到的伤害降低
+	private static EDBuff _BuffBeenDamageUp;		// 受到的伤害提升
+	private static EDBuff _TriggerBuffToTypeBuffMonster;// 范围内拥有指定buff的敌人会附加指定buff,敌人超出范围时,会移除buff
+	private static EDBuff _TriggerBuffToInvisibleMonster;// 范围内隐身的敌人会附加指定buff,敌人超出范围时,会移除buff
+	private static EDBuff _BuffFloatToAir;			// 浮空
+	private static EDBuff _TriggerTypeTowerOverCountBuffToSelf;// 场上指定类型的塔超过一定数量时,会给自己附加指定buff,塔数量低于一定数量时会移除buff
+	private static EDBuff _TriggerBuffToTypeTowerAndSelf;// 给自己和指定类型的塔附加buff
+	private static EDBuff _TriggerBuffToTypeTower;	// 给指定类型的塔附加buff
+	private static EDBuff _BuffBeenBurnDamageUp;	// 受到的燃烧伤害提升
+	private static EDBuff _BuffBeenPoisoningDamageUp;// 受到的中毒伤害提升
+	private static EDBuff _BuffBeenAllElementDamageDown;// 受到的所有元素属性伤害降低
+	private static EDBuff _BuffSneak;				// 潜行
+	private static EDBuff _BuffVertigoDecrease;		// 降低被眩晕的概率和眩晕的时间
+	private static EDBuff _TriggerWillDie;			// 即将死亡时触发
+	private static EDBuff _BuffAntiStrickBack;		// 无法被击退
+	private static EDBuff _BuffDisarm;				// 缴械
+	private static EDBuff _BuffAntiCriticalUp;		// 暴击抗性提升
+	private static EDBuff _BuffBeenShockedDamageUp;	// 受到的感电伤害提升
+	private static EDBuff _TriggerTypeMonsterDie;	// 指定怪物死亡时触发
+	private static EDBuff _BuffSlowIncrease;		// 受到的减速效果提升
+	private static EDBuff _BuffImmunityElementDebuffDamage;// 免疫所有元素伤害
+	private static EDBuff _BuffClearDebuff;			// 清除所有debuff
+	private static EDBuff _TriggerBuffToRangeMonsterOnce;// 范围内所有怪物附加buff,只在进入状态时添加一次,并且不会主动移除
+	private static EDBuff _BuffRecoverHPPercentOnce;// 百分比恢复血量
+	private static EDBuff _BuffEvasionUp;			// 闪避率提升
+	private static EDBuff _BuffForceChangeTarget;	// 强制改变防御塔和英雄的目标选择为指定目标,技能目标为对自己释放的除外
+	private static EDBuff _BuffShocked;				// 感电
+	private static EDBuff _BuffFreeze;				// 冰冻
+	private static EDBuff _BuffParalysis;			// 麻痹
+	private static EDBuff _BuffMoveSpeedDownValue;	// 固定数值减速,减速到负数时,可以让怪物后退
+	private static EDBuff _BuffPushMove;			// 怪物在眩晕等无法移动的状态时，强制移动怪物位置
+	private static EDBuff _BuffMoveSpeedUpValue;	// 固定数值加速
+	private static EDBuff _BuffDamageOverTime;		// 无属性持续伤害
+	private static EDBuff _BuffMoveSpeedDownNoEffect;// 百分比减速,固定百分比，无特效
+	private static EDBuff _BuffInTunnel;			// 通过隧道时不可攻击状态
+	private static EDBuff _TriggerBuffToAllTower;	// 给所有防御塔附加buff,持续时间内新增的塔也会被附加buff
+	private static EDBuff _BuffDamageUp;			// 伤害增加
+	private static EDBuff _BuffTowerExploRangeUp;	// 增加子弹爆炸范围
+	private static EDBuff _BuffZhenDangTaBulletCountUp;// 增加电磁震荡塔能量球个数
+	private static EDBuff _BuffResetLastSkillCD;	// 重置刚释放过的技能CD
+	private static EDBuff _TriggerFireSkill;		// 释放技能时触发
+	private static EDBuff _TriggerFireCountSkillHit;// 释放一定次数技能后的命中时触发
+	private static EDBuff _BuffRangeDamageOnce;		// 造成一次范围攻击力百分比伤害
+	private static EDBuff _TriggerFireCountSkillWillGenerateDamage;// 释放一定次数技能后的即将命中时触发
+	private static EDBuff _BuffAlwaysCriticalHit;	// 攻击必定暴击
+	private static EDBuff _BuffTypeTowerIncreaseSelfAttack;// 场上指定类型的塔越多,自身增加的攻击力越多
+	private static EDBuff _BuffTypeTowerIncreaseSelfAttackSpeed;// 场上指定类型的塔越多,自身增加的攻速越多
+	private static EDBuff _BuffDamageUpBeforeWave;	// 前一定波数伤害增加
+	private static EDBuff _BuffIncreaseBulletCount;	// 增加子弹数量
+	private static EDBuff _BuffAttackSpeedDown;		// 降低攻速
+	private static EDBuff _BuffSkillRangeDown;		// 射程降低
+	private static EDBuff _TriggerKillMonster;		// 击杀怪物时触发
+	private static EDBuff _TriggerTimeInterval;		// 每隔一定时间触发一次
+	private static EDBuff _BuffBulletFlyDisIncreaseExploRange;// 爆炸范围随着飞行距离增加
+	private static EDBuff _BuffBulletFlyDisIncreaseDamage;// 伤害随着飞行距离增加
+	private static EDBuff _BuffBulletDamageUpInExploRange;// 对子弹爆炸一定范围内的敌人伤害增加
+	private static EDBuff _BuffBulletSpeedUp;		// 子弹飞行速度增加
+	private static EDBuff _TriggerBuffToBulletExploRange;// 子弹爆炸时给范围内所有敌人附加buff
+	private static EDBuff _BuffXiangQianTaPurpleGemTargetCountUp;// 镶嵌塔紫宝石技能弹射目标数量增加
+	private static EDBuff _BuffTowerExploRangeDown;	// 减少火炮塔爆炸范围
+	private static EDBuff _BuffIncreaseBulletCountHuoPao;// 火炮塔子弹数量增加
+	private static EDBuff _BuffDamageDown;			// 伤害降低
+	private static EDBuff _BuffAroundTowerCountAttackUp;// 塔附近1格有n个塔，每个塔增加该塔的攻击
+	private static EDBuff _BuffAroundTowerCountAttackSpeedUp;// 塔附近1格有n个塔，每个塔增加该塔的攻速
+	private static EDBuff _BuffMoveSpeedDownRouge;	// 肉鸽模式球形飞弹天赋特定减速Buff,百分比
+	private static EDBuff _TriggerWillHitHpMinPercent;// 击中前怪物血量高于百分比触发
+	private static EDBuff _BuffDefenceDownPercent;	// 防御力百分比降低
+	private static EDBuff _BuffInstantDeath;		// 即死
+	private static EDBuff _TriggerWillHitHpMaxPercent;// 击中前怪物血量低于百分比触发
+	private static EDBuff _BuffDamageUpStrengthMonster;// 攻击指定怪物时攻击力百分比加成
+	private static EDBuff _BuffAttackSpeedUpStepped;// 初始攻击间隔提高，每次攻击降低攻击间隔，有叠加上限，若一定时间内未进行攻击则重置
+	private static EDBuff _TriggerBuffOnWaveStart;	// 每波开始，概率添加某些状态，没随机到就会移除
+	private static EDBuff _BuffCriticalDamageUp;	// 暴击伤害增加
+	private static EDBuff _BuffIncreaseBulletCountByNoDamageTime;// 一段时间内没有造成伤害，下次攻击子弹增加
+	private static EDBuff _BuffRangeDamageByHpMaxPercent;// 击杀怪物时,对周围指定类型的怪物造成当前怪物最大血量百分比的伤害
+	private static EDBuff _BuffIncreaseBulletCountPercent;// 百分比增加子弹数量
+	private static EDBuff _TriggerBuffByWaveBulletCount;// 塔释放一定数量子弹,触发buff,直到波次结束
+	private static EDBuff _BuffRogueKillMonsterAddBuildCoin;// 肉鸽模式，塔每击杀n个敌人，获得m肉鸽建造点
+	private static EDBuff _BuffAttackUpOnceByKillMonster;// 击杀n个敌人后，下一次攻击提高
+	private static EDBuff _BuffRogueKillMonsterCureLevelHp;// 每击杀n个敌人，回复m点已损失的羊村生命
+	private static EDBuff _BuffAttackDownThenUpByHitSameMonster;// 攻击力降低，每次攻击提高攻击力。上限n层，切换目标时重置
+	private static EDBuff _BuffChangeSearchTargetType;// 寻敌方式修改
+	private static EDBuff _BuffDamageUpToDebuffMonster;// 对处于异常状态下的单位造成的伤害提升
+	private static EDBuff _BuffRogueKillMonsterFreeUpLevel;// 击杀n个敌人后，该塔升级免费
+	private static EDBuff _BuffScaleBullet;			// 调整子弹大小
+	private static EDBuff _BuffBulletAttackUpHitMonster;// 波动塔子弹每穿过一个敌方单位，子弹攻击提高
+	private static EDBuff _BuffIncreaseFlyDisByRogueTowerLevel;// 肉鸽模式，按塔等级增加子弹飞行距离
+	private static EDBuff _BuffIncreaseBulletBounceTimes;// 增加弹跳子弹的弹跳次数
+	private static EDBuff _BuffKillMonsterChangeRandomTower;// 击杀n个敌人后，随机变成一个塔，保留等级
+	private static EDBuff _BuffIncreaseHuoPaoExplosionMulti;// 火炮子弹概率爆炸多次
+	private static EDBuff _BuffZhenDangNotDestroyBulletOnHit;// 设置电磁震荡塔子弹不消失
+	private static EDBuff _TriggerBuffByEnterTowerRange;// 向进入该塔射程范围内的怪物添加buff
+	private static EDBuff _BuffMoveSpeedDownZhenDownTowerRange;// 电磁震荡塔射程减速buff，不叠加
+	private static EDBuff _BuffZhenDangAddBulletByKillMonster;// 电磁震荡塔击杀n个敌人，获得能量球
+	private static EDBuff _TriggerBuffWhenBulletConsume;// 消耗n个子弹后触发buff
+	private static EDBuff _TriggerBuffToHexRangeTower;// 对六边形半径范围内的塔触发buff
+	private static EDBuff _BuffZhenDangConsumeCriticalUp;// 电磁震荡塔子弹消耗的特殊暴击加成buff
+	private static EDBuff _TriggerBuffGlobalWhenBulletExplosionHuoPao;// 当塔的子弹爆炸时，对战斗中的全局角色触发buff
+	private static EDBuff _TriggerBuffWithAreaCollider;// 生成一个区域模型，根据他的碰撞箱，对其中的怪物附加buff
+	private static EDBuff _BuffMoveSpeedDownHuoPaoExplosionArea;// 火炮塔子弹爆炸残留提供的减速buff
+	private static EDBuff _BuffFocusAttackMonster;	// 集火怪物的buff
+	private static EDBuff _TriggerBuffToGridRangeTowerWhenPlace;// 在放置和移动英雄时,对一定范围内的塔触发buff
+	private static EDBuff _BuffWaveUpTowerNear;		// 每过n回合，对旁边的防御塔升级
+	private static EDBuff _BuffAttackSpeedUpGongJianShou;// 弓手特殊攻速增加
+	private static EDBuff _BuffRogueHitMonsterAddBuildCoin;// 每击中n个敌人，获得m银币
+	private static EDBuff _BuffRogueCoinInterest;	// 肉鸽回合结束时，每有n银币，额外获得m银币，m有上限
+	private static EDBuff _BuffRogueMonsterBreakAddCoin;// 肉鸽模式前n个进入基地的怪物转化为m银币，boss无效
+	private static EDBuff _BuffImmunityPhysicDamage;// 免疫物理伤害
+	private static EDBuff _BuffAttackSpeedUpByKillMonster;// 每击杀n单位，攻速增加
+	private static EDBuff _BuffAttackCriticalUpByTowerCount;// 根据场上防御塔数量，提升自身攻击力和暴击率
+	private static EDBuff _TriggerBuffToGridRangeTowerByTowerCount;// 在放置和移动英雄时，且有一定数量的某种塔时，对一定范围内的塔触发buff
+	private static EDBuff _BuffSpeedAttackUpByTowerCount;// 根据场上某种防御塔数量，提升自身攻速和攻击
+	private static EDBuff _BuffAttackUpByGridTowerCount;// 附近n格内有m个塔时，提升攻击力
+	private static EDBuff _BuffAddTowerRogue;		// 将防御塔带入肉鸽战斗
 
 	public static EDBuff BuffPoison { get { return _BuffPoison ??= mTable.query(BuffPoison_ID); } }// 中毒
 	public static EDBuff BuffMoveSpeedDown { get { return _BuffMoveSpeedDown ??= mTable.query(BuffMoveSpeedDown_ID); } }// 百分比减速,固定百分比
