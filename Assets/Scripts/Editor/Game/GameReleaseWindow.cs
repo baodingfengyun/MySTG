@@ -230,8 +230,8 @@ public class GameReleaseWindow : GameEditorWindow
 			preName += "_Test";
         }
 		// 移除开头的http:或者https:,如果还有:,则认为是IP+端口号,虽然可以用正则表达式,但是正则阅读起来比较麻烦
-		server = server.removeStartString("http:");
-		server = server.removeStartString("https:");
+		server = server.removeStart("http:");
+		server = server.removeStart("https:");
 		if (server.Contains(':'))
 		{
 			preName += "_" + server[(server.IndexOf(':') + 1)..];
