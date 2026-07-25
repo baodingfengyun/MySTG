@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 using static EditorCommonUtility;
 using static FrameMacro;
@@ -24,6 +23,11 @@ public abstract class PlatformInfo : PlatformBase
         }
         return info;
     }
+    // 此处只做示例,并非真的只用版本号作为文件夹名字
+	public override string getRemotePathInEditor(string version)
+	{
+        return version;
+	}
     public override string getDefaultPlatformDefineInternal() 
     {
         return USE_HYBRID_CLR + ";" + USE_OBFUZ + ";" + USE_URP; 
