@@ -9,34 +9,12 @@ public class StartSceneDownload : SceneProcedure
 	public StartSceneDownload()
 	{
         mInstance = new GameDownload();
-		mInstance.setTipCallback((DOWNLOAD_TIP tip) =>
-		{
-			if (tip == DOWNLOAD_TIP.NONE)
-			{
-				dialogTipResources();
-			}
-			else if (tip == DOWNLOAD_TIP.CHECKING_UPDATE)
-			{
-				dialogTipResources("正在检查更新...");
-			}
-			else if (tip == DOWNLOAD_TIP.DOWNLOAD_FAILED)
-			{
-				dialogYesNoResources("文件下载失败,是否重试?", retry);
-			}
-			else if (tip == DOWNLOAD_TIP.NOT_IN_REMOTE_FILE_LIST)
-			{
-				dialogYesNoResources("已下载的文件不存在于远端文件列表,是否重新开始更新?", retry);
-			}
-			else if (tip == DOWNLOAD_TIP.VERIFY_FAILED)
-			{
-				dialogYesNoResources("下载文件错误,是否重试?", retry);
-			}
-		});
+		mInstance.setErrorCallback(onDownloadError);
+		mInstance.setProgressCallback(onDownloadProgress);
 	}
 	public override void init()
 	{
 		base.init();
-        mInstance.setProgressCallback(onDownloadProgress);
         if (isEditor() || !isEnableHotFix() || isWebGL())
         {
             mInstance.skipDownload();
@@ -68,6 +46,25 @@ public class StartSceneDownload : SceneProcedure
             stopApplication();
         }
     }
+    protected void onDownloadError(DOWNLOAD_ERROR tip)
+    {
+		if (tip == DOWNLOAD_ERROR.NONE)
+		{
+			dialogTipResources();
+		}
+		else if (tip == DOWNLOAD_ERROR.DOWNLOAD_FAILED)
+		{
+			dialogYesNoResources("文件下载失败,是否重试?", retry);
+		}
+		else if (tip == DOWNLOAD_ERROR.NOT_IN_REMOTE_FILE_LIST)
+		{
+			dialogYesNoResources("已下载的文件不存在于远端文件列表,是否重新开始更新?", retry);
+		}
+		else if (tip == DOWNLOAD_ERROR.VERIFY_FAILED)
+		{
+			dialogYesNoResources("下载文件错误,是否重试?", retry);
+		}
+	}
     protected void onDownloadProgress(float progress, PROGRESS_TYPE type, string info, int bytesPerSecond, int downloadRemainSeconds)
 	{
 		mUIDownload.setProgress(progress);
