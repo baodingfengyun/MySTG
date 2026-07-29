@@ -28,8 +28,15 @@ public abstract class PlatformInfo : PlatformBase
 	{
         return version;
 	}
-    public override string getDefaultPlatformDefineInternal() 
-    {
-        return USE_HYBRID_CLR + ";" + USE_OBFUZ + ";" + USE_URP; 
-    }
+    // 这里是常驻的宏
+	public override string getDefaultPlatformDefine()
+	{
+		return USE_HYBRID_CLR + ";" + USE_OBFUZ + ";" + USE_URP;
+	}
+	//------------------------------------------------------------------------------------------------------------------------------
+	// 这里是仅在打包时动态设置的宏
+	protected override string getBuildTimePlatformDefineInternal()
+	{
+        return "";
+	}
 }

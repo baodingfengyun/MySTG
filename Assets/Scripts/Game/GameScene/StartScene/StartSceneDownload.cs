@@ -1,6 +1,5 @@
 ﻿using static FrameBaseUtility;
 using static GameUtility;
-using static FileUtility;
 using static GB;
 
 public class StartSceneDownload : SceneProcedure
@@ -15,15 +14,8 @@ public class StartSceneDownload : SceneProcedure
 	public override void init()
 	{
 		base.init();
-        if (isEditor() || !isEnableHotFix() || isWebGL())
-        {
-            mInstance.skipDownload();
-        }
-        else
-        {
-            mInstance.startCheckVersion();
-        }
-    }
+		mInstance.start();
+	}
     public override void exit()
     {
         base.exit();
@@ -39,7 +31,7 @@ public class StartSceneDownload : SceneProcedure
     {
         if (yes)
         {
-            mInstance.startCheckVersion();
+            mInstance.start();
         }
         else
         {
@@ -103,9 +95,6 @@ public class StartSceneDownload : SceneProcedure
     protected void launch()
     {
         // 下载或者加载程序集
-        HybridCLRSystem.launchHotFix((string fileName, BytesIntCallback callback) =>
-        {
-            openFileAsync(availableReadPath(fileName), true, bytes => callback?.Invoke(bytes, bytes.Length));
-        }, onLaunchError);
+        HybridCLRSystem.launchHotFix(onLaunchError);
     }
 }

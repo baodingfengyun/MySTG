@@ -87,7 +87,7 @@ public class GameReleaseWindow : GameEditorWindow
 			}
 			if (button("还原宏定义", 120))
 			{
-                PlayerSettings.SetScriptingDefineSymbols(getNameBuildTarget(), mPlatform.getDefaultPlatformDefine());
+                PlayerSettings.SetScriptingDefineSymbols(getNameBuildTarget(), mPlatform.getBuildTimePlatformDefine());
             }
 			label("当前宏定义:" + PlayerSettings.GetScriptingDefineSymbols(getNameBuildTarget()));
 		}
