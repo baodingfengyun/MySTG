@@ -1,6 +1,4 @@
 ﻿using static GBR;
-using static MathUtility;
-using static StringUtility;
 
 // 参数
 public class BuffRangeDamageOnceParam : CharacterBuffParamT<BuffRangeDamageOnceParam>
@@ -30,7 +28,7 @@ public class BuffRangeDamageOnce : CharacterBuffT<BuffRangeDamageOnceParam>
 		base.enter();
 		if (mCharacterGame is CharacterTower tower)
 		{
-			int damage = round(tower.getAttack() * mCustomParam.mPercent);
+			int damage = (tower.getAttack() * mCustomParam.mPercent).round();
 			using var a = new ListScope<CharacterMonster>(out var monsterList);
 			mTowerDefenceSystem.getMonstersInRange(tower.getPosition(), tower.getRange(), monsterList);
 			foreach (CharacterMonster monster in monsterList)

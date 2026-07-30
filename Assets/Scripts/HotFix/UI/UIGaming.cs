@@ -3,7 +3,6 @@ using UnityEngine;
 using static FrameBaseHotFix;
 using static FrameUtility;
 using static GameUtilityHotFix;
-using static MathUtility;
 using static GBR;
 
 // auto generate member start
@@ -105,7 +104,7 @@ public class UIGaming : LayoutScript
 	}
 	public void refresh()
 	{
-		setTimeScaled(!isFloatEqual(Time.timeScale, 1.0f));
+		setTimeScaled(!Time.timeScale.isEqual(1.0f));
 		setHeartCount(mTowerDefenceSystem.getHp());
 		mMapName.setText(mTowerDefenceSystem.getLevelName(), this);
 		refreshCoin();

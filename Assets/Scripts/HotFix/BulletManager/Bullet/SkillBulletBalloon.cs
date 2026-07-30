@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using static GBR;
-using static MathUtility;
 
 // 子弹参数
 public class BulletCustomParam_Balloon : ParamCopyableT<BulletCustomParam_Balloon>
@@ -62,7 +61,7 @@ public class SkillBulletBalloon : SkillBulletT<BulletCustomParam_Balloon>
 			return;
 		}
 		float speed = mBulletData.mSpeed * (mCharacterGame.getGameData().mBulletSpeedIncrease + 1.0f);
-		float time = divide(mCustomParam.mFlyHeight, speed);
+		float time = mCustomParam.mFlyHeight.divide(speed);
         this.MOVE_EX(getPosition(), getPosition() + new Vector3(0.0f, mCustomParam.mFlyHeight), time, mOnMoveDone);
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool isBreak)

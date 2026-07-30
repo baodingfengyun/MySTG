@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using static MathUtility;
 using static FrameBaseHotFix;
 using static GBR;
 
@@ -52,7 +51,7 @@ public class TriggerBuffToTypeBuffMonster : CharacterTriggerT<TriggerBuffToTypeB
 		using var a = new SafeDictionaryReader<CharacterGame, List<CharacterState>>(mBuffList);
 		foreach (CharacterGame item in a.mReadList.Keys)
 		{
-			if (lengthGreater(item.getPosition() - mCharacterGame.getPosition(), mCharacterGame.getRange()))
+			if ((item.getPosition() - mCharacterGame.getPosition()).lengthGreater(mCharacterGame.getRange()))
 			{
 				removeCharacterAddedBuff(item);
 			}

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using static GBR;
-using static MathUtility;
 
 // 子弹参数
 public class BulletCustomParam_Track : ParamCopyableT<BulletCustomParam_Track>
@@ -39,7 +38,7 @@ public class SkillBulletTrack : SkillBulletT<BulletCustomParam_Track>
 		else
 		{
 			Vector3 targetPos = mCharacterGame.getPosition() + mCharacterGame.getForward() * 6.0f;
-			this.MOVE_EX(mStartPosition, targetPos, divide(getLength(resetY(mStartPosition - targetPos)), speed), mOnMoveDone);
+			this.MOVE_EX(mStartPosition, targetPos, (mStartPosition - targetPos).resetY().getLength().divide(speed), mOnMoveDone);
 		}
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool isBreak)

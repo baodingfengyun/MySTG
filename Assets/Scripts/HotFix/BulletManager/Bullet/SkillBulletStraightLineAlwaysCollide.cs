@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using static MathUtility;
 using static UnityUtility;
 using static FrameUtility;
 using static GBR;
@@ -133,9 +132,9 @@ public class SkillBulletStraightLineAlwaysCollide : SkillBulletT<BulletCustomPar
 			collider.size = Vector3.one;
 			mCollider = collider;
 		}
-		float length = getLength(getPosition() - mTargetPosition);
+		float length = (getPosition() - mTargetPosition).getLength();
 		float speed = mBulletData.mSpeed * (mCharacterGame.getGameData().mBulletSpeedIncrease + 1.0f);
-        this.MOVE_EX(getPosition(), mTargetPosition, divide(length, speed), mOnMoveDone);
+        this.MOVE_EX(getPosition(), mTargetPosition, length.divide(speed), mOnMoveDone);
 		mTickTimer = 0.0f;
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool isBreak)

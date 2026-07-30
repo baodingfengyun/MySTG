@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
+using static FrameUtility;
 using static GBR;
 using static GDR;
-using static MathUtility;
-using static FrameUtility;
 
 // 战斗角色基类
 public class CharacterGame : Character
@@ -53,10 +52,14 @@ public class CharacterGame : Character
 	public TriggerProbabilityCallback getTriggerProbabilityCallback() { return mTriggerProbabilityCallback; }
 	public virtual int getHP() { return 0; }
 	public virtual int getMaxHP() { return 0; }
-	public float getHPPercent() { return divide(getHP(), getMaxHP()); }
+	public float getHPPercent() { return getHP().divide(getMaxHP()); }
 	public virtual int getGridIndex() { return -1; }
 	public virtual int getTableID() { return -1; }
-	public void setForceTarget(CharacterGame target) { mForceTarget = target; mForceTargetAssignID = mForceTarget?.getAssignID() ?? 0; }
+	public void setForceTarget(CharacterGame target) 
+	{
+		mForceTarget = target; 
+		mForceTargetAssignID = mForceTarget?.getAssignID() ?? 0; 
+	}
 	public void setMP(int mp) { mGameData.mMP = mp; }
 	public virtual void setGridIndex(int index) { }
 	public void addTriggerProbabilityCallback(TriggerProbabilityCallback callback) { mTriggerProbabilityCallback += callback; }

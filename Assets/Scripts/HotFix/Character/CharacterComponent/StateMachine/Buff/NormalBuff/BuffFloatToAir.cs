@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using static MathUtility;
 using static GDR;
 
 // 参数
@@ -38,7 +37,7 @@ public class BuffFloatToAir : CharacterBuffT<BuffFloatToAirParam>
 		{
 			mFalling = true;
 			var monster = mCharacterGame as CharacterMonster;
-            monster.MOVE(monster.getPosition(), replaceY(monster.getPosition(), mOriginY), 0.1f);
+            monster.MOVE(monster.getPosition(), monster.getPosition().replaceY(mOriginY), 0.1f);
 		}
 		base.update(elapsedTime);
 	}
@@ -47,6 +46,6 @@ public class BuffFloatToAir : CharacterBuffT<BuffFloatToAirParam>
 		base.leave(isBreak, willDestroy, param);
 		// 确认停止下落,立即设置的地面
 		var monster = mCharacterGame as CharacterMonster;
-        monster.MOVE(replaceY(monster.getPosition(), mOriginY));
+        monster.MOVE(monster.getPosition().replaceY(mOriginY));
 	}
 }

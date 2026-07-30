@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static FrameBaseUtility;
-using static MathUtility;
 using static FrameUtility;
 using static UnityUtility;
 using static GameUtilityHotFix;
@@ -87,7 +86,7 @@ public class SkillBulletLinkLine : SkillBulletT<BulletCustomParam_LinkLine>
 					continue;
 				}
 				flag = 8;
-				float curDis = getSquaredLength(thisMonster.getPosition() - curMonster.getPosition());
+				float curDis = (thisMonster.getPosition() - curMonster.getPosition()).getSquaredLength();
 				flag = 9;
 				float maxRange = GRID_SIZE * 2.5f;
 				if (curDis < maxRange * maxRange && (nearestMonster == null || curDis < nearestDis))
@@ -163,7 +162,7 @@ public class SkillBulletLinkLine : SkillBulletT<BulletCustomParam_LinkLine>
 			setDamageCallback((CharacterGame target, CharacterGame attacker, SkillBullet bullet, out bool isHit, out bool isCritical, out HP_DELTA deltaType) =>
 			{
 				int damage = generateDamage(target, attacker, bullet, out isHit, out isCritical, out deltaType);
-				return clampMin(round(damage * (1 - mCustomParam.mAttackDecrease * index)), 1);
+				return (damage * (1 - mCustomParam.mAttackDecrease * index)).round().clampMin(1);
 			});
 			hit(tempList[i]);
 		}

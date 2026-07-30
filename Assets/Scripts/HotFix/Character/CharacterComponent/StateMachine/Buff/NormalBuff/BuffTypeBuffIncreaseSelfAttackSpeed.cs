@@ -1,5 +1,4 @@
 ﻿using System;
-using static MathUtility;
 using static FrameBaseHotFix;
 using static GBR;
 
@@ -60,8 +59,7 @@ public class BuffTypeBuffIncreaseSelfAttackSpeed : CharacterBuffT<BuffTypeBuffIn
 		{
 			mBuffChanged = false;
 			// 计算场上的指定buff数量,增加攻击力
-			float increase = clampMax(mTowerDefenceSystem.getMonsterTypeBuffCount(mBuffType) * mIncreasePerEnemy, mMaxIncrease);
-			clampMax(ref increase, mMaxIncrease);
+			float increase = (mTowerDefenceSystem.getMonsterTypeBuffCount(mBuffType) * mIncreasePerEnemy).clampMax(mMaxIncrease);
 			mCharacterGame.getGameData().addAttackSpeed(increase - mLastIncrease);
 			mLastIncrease = increase;
 		}

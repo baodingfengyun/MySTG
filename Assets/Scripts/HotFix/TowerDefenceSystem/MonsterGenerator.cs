@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using static UnityUtility;
 using static MathUtility;
 using static FrameUtility;
-using static GameUtilityHotFix;
 using static GBR;
 
 // 用于处理刷新怪物的逻辑
@@ -128,7 +127,7 @@ public class MonsterGenerator
 		int minMonsterPopulation = int.MaxValue;
 		foreach (int id in monsterIDList.addRange(monsterIDs))
 		{
-			clampMax(ref minMonsterPopulation, mExcelMonster.query(id).mPopulation);
+			minMonsterPopulation = minMonsterPopulation.clampMax(mExcelMonster.query(id).mPopulation);
 		}
 		// 为避免配置错误而进入无限循环,添加一个循环次数限制
 		int loopLimit = 1000;

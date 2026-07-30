@@ -48,7 +48,7 @@ public class SkillBulletCurve : SkillBulletT<BulletCustomParam_Curve>
 	{
 		base.onBulletLoaded(firePoint);
 		float speed = mBulletData.mSpeed * (mCharacterGame.getGameData().mBulletSpeedIncrease + 1.0f);
-        this.MOVE_CURVE_EX(mPath, divide(generatePathLength(mPath), speed), mOnMoveDone);
+        this.MOVE_CURVE_EX(mPath, generatePathLength(mPath).divide(speed), mOnMoveDone);
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool breakTrack)
 	{

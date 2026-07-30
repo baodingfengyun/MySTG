@@ -52,9 +52,9 @@ public class SkillBulletStraightLine : SkillBulletT<BulletCustomParam_StraightLi
 	protected override void onBulletLoaded(Vector3 firePoint)
 	{
 		base.onBulletLoaded(firePoint);
-		float length = getLength(getPosition() - mTargetPosition);
+		float length = (getPosition() - mTargetPosition).getLength();
 		float speed = mBulletData.mSpeed * (mCharacterGame.getGameData().mBulletSpeedIncrease + 1.0f);
-		this.MOVE_EX(getPosition(), mTargetPosition, divide(length, speed), mOnMoveDone);
+		this.MOVE_EX(getPosition(), mTargetPosition, length.divide(speed), mOnMoveDone);
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool isBreak)
 	{

@@ -68,8 +68,7 @@ public class TowerSkill_ZhenDang : TowerSkillT<SkillCustomParam_ZhenDang>
 			return;
 		}
 		float speed = mBulletDataList[0].mSpeed * (mTower.getGameData().mBulletSpeedIncrease + 1.0f);
-		mRotatedAngle += elapsedTime * speed;
-		adjustAngle180(ref mRotatedAngle);
+		mRotatedAngle = (mRotatedAngle + elapsedTime * speed).adjustAngle180();
 
 		// 每隔一定时间生成一个子弹
 		if (mTowerDefenceSystem.getMonsterMainList().Count > 0 && 
@@ -89,7 +88,7 @@ public class TowerSkill_ZhenDang : TowerSkillT<SkillCustomParam_ZhenDang>
 			{
 				continue;
 			}
-			bullet.setPosition(center + getVectorFromAngle(bullet.getBaseAngle() + toRadian(mRotatedAngle)) * ROTATE_RADIUS);
+			bullet.setPosition(center + (bullet.getBaseAngle() + mRotatedAngle.toRadian()).getVectorFromAngle() * ROTATE_RADIUS);
 		}
 	}
 	// 此处可能是额外的子弹增加,不是自动增加子弹,所以可以设置额外的子弹最多可以增加到多少个
@@ -113,9 +112,9 @@ public class TowerSkill_ZhenDang : TowerSkillT<SkillCustomParam_ZhenDang>
 		var bullet = mBulletList.add(mBulletManager.createBullet(mBulletDataList[0]) as SkillBulletZhenDang);
 		bullet.setCharacter(mTower);
 		bullet.setFaceForward(false);
-		bullet.setBaseAngle(divide(TWO_PI_RADIAN, mCustomParam.mMaxBulletCount) * emptyIndex);
+		bullet.setBaseAngle(TWO_PI_RADIAN.divide(mCustomParam.mMaxBulletCount) * emptyIndex);
 		bullet.setIndex(emptyIndex);
-		bullet.setStartPosition(center + getVectorFromAngle(bullet.getBaseAngle() + toRadian(mRotatedAngle)) * ROTATE_RADIUS);
+		bullet.setStartPosition(center + (bullet.getBaseAngle() + mRotatedAngle.toRadian()).getVectorFromAngle() * ROTATE_RADIUS);
 		bullet.setExplosionCallback(mOnBulletExplosion);
 		bullet.setNotDestroyBulletOnHit(mNotDestroyBulletOnHit > 0);
 		bullet.fire();
@@ -135,7 +134,7 @@ public class TowerSkill_ZhenDang : TowerSkillT<SkillCustomParam_ZhenDang>
 		{
 			SkillBulletZhenDang bullet = mBulletList[i];
 			bullet.setIndex(i);
-			bullet.setBaseAngle(divide(TWO_PI_RADIAN, mCustomParam.mMaxBulletCount) * i);
+			bullet.setBaseAngle(TWO_PI_RADIAN.divide(mCustomParam.mMaxBulletCount) * i);
 		}
 	}
 	public int getMaxBulletCount() { return mCustomParam.mMaxBulletCount; }

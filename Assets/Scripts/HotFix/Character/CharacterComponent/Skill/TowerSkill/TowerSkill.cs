@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using static GBR;
-using static MathUtility;
 using static FrameBaseUtility;
 using static FrameBaseHotFix;
 using static FrameUtility;
+using static MathUtility;
+using static GBR;
 
 // 防御塔技能
 public class TowerSkill : CharacterSkill
@@ -249,7 +249,7 @@ public class TowerSkill : CharacterSkill
 		{
 			return false;
 		}
-		return character.getHP() > 0 && lengthLess(mTower.getPosition() - character.getPosition(), mTower.getRange());
+		return character.getHP() > 0 && (mTower.getPosition() - character.getPosition()).lengthLess(mTower.getRange());
 	}
 	protected virtual void searchNewTarget()
 	{
@@ -356,10 +356,10 @@ public class TowerSkill : CharacterSkill
 		float timeInterval = interval;
 		if (interval < 0.0f)
 		{
-			timeInterval = divide(fireTime, mFireTime.Count);
+			timeInterval = fireTime.divide(mFireTime.Count);
 		}
 		int count = getOriginBulletCount();
-		count = round((count + mBulletIncreaseCount) * (1 + mBulletIncreasePercent)) - count;
+		count = ((count + mBulletIncreaseCount) * (1 + mBulletIncreasePercent)).round() - count;
 		for (int i = 0; i < count; ++i)
 		{
 			startFireTime += timeInterval;

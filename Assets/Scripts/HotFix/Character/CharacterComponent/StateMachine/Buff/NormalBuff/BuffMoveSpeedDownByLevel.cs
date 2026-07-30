@@ -1,6 +1,4 @@
-﻿using static StringUtility;
-using static MathUtility;
-
+﻿
 // 参数
 public class BuffMoveSpeedDownByLevelParam : CharacterBuffParamT<BuffMoveSpeedDownByLevelParam>
 {
@@ -39,9 +37,9 @@ public class BuffMoveSpeedDownByLevel : CharacterBuffT<BuffMoveSpeedDownByLevelP
 		base.enter();
 		int towerStar = (mCustomParam.mSource as CharacterTower).getTowerData().mTableData.mStar;
 		COMMonsterMovement comMovement = (mCharacter as CharacterMonster).getComMovement();
-		float ratio = 5 * sqrt(towerStar * 0.2f + 1) * 0.01f;
+		float ratio = 5 * (towerStar * 0.2f + 1).sqrt() * 0.01f;
 		mSlowDown = comMovement.getSpeed() * ratio * (1.0f + mCharacterGame.getGameData().mSlowDownIncrease);
-		clampMax(ref mSlowDown, comMovement.getSpeed());
+		mSlowDown = mSlowDown.clampMax(comMovement.getSpeed());
 		comMovement.setSpeed(comMovement.getSpeed() - mSlowDown);
 	}
 	public override void leave(bool isBreak, bool willDestroy, string param)

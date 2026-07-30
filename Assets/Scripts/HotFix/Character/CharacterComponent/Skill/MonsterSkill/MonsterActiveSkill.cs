@@ -2,7 +2,6 @@
 using static FrameUtility;
 using static FrameBaseHotFix;
 using static GameUtilityHotFix;
-using static MathUtility;
 using static GBR;
 using static GDR;
 
@@ -38,7 +37,7 @@ public class MonsterActiveSkill : MonsterSkillBase
 	{
 		onPreFireSkill();
 		mRemainCD = mSkillData.mCD;
-		mMonster.setMP(clampMin(mMonster.getMP() - mSkillData.mMP));
+		mMonster.setMP((mMonster.getMP() - mSkillData.mMP).clampMin());
 
 		// 播放动作,动作结束后buff生效
 		if (mSkillData.mAnimation > 0 && mSkillData.mAnimationDuration > 0.0f)

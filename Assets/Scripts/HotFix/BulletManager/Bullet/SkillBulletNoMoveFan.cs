@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using static GBR;
 using static MathUtility;
-using static StringUtility;
 using static FrameUtility;
 using static FrameBaseUtility;
 
@@ -59,14 +58,14 @@ public class SkillBulletNoMoveFan : SkillBulletT<BulletCustomParam_NoMoveFan>
 		base.onBulletLoaded(firePoint);
 		mCurExistTime = mCustomParam.mExistTime;
 		lookAt(mCharacterGame.getFacingDirection());
-		float halfRadian = toRadian(mCustomParam.mFanAngle * 0.5f);
+		float halfRadian = (mCustomParam.mFanAngle * 0.5f).toRadian();
 		Vector3 bulletForward = getForward();
 		mRealtimeRange = mCustomParam.mFanRadius < 0 ? mCharacterGame.getRange() : mCustomParam.mFanRadius;
 		mRealtimeRange *= mCharacterGame.getBulletExploRangeIncreasePercent(getFlyDistance()) + 1.0f;
 		if (isEditor())
 		{
-			Debug.DrawLine(firePoint, firePoint + rotateVector3(bulletForward * mRealtimeRange, halfRadian), Color.red, mCurExistTime);
-			Debug.DrawLine(firePoint, firePoint + rotateVector3(bulletForward * mRealtimeRange, -halfRadian), Color.red, mCurExistTime);
+			Debug.DrawLine(firePoint, firePoint + (bulletForward * mRealtimeRange).rotateVector3(halfRadian), Color.red, mCurExistTime);
+			Debug.DrawLine(firePoint, firePoint + (bulletForward * mRealtimeRange).rotateVector3(-halfRadian), Color.red, mCurExistTime);
 		}
 
 		// 对扇形范围内的敌人造成伤害
@@ -75,7 +74,7 @@ public class SkillBulletNoMoveFan : SkillBulletT<BulletCustomParam_NoMoveFan>
 		getRangeEffectiveMonster(mRealtimeRange, monsterList);
 		foreach (CharacterMonster monster in monsterList)
 		{
-			if (getAngleBetweenVector(resetY(bulletForward), resetY(monster.getPosition() - bulletPos)) < halfRadian)
+			if (getAngleBetweenVector(bulletForward.resetY(), (monster.getPosition() - bulletPos).resetY()) < halfRadian)
 			{
 				hit(monster);
 			}

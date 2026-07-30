@@ -1,5 +1,4 @@
 ﻿using static GBR;
-using static MathUtility;
 
 // 技能参数
 public class SkillCustomParam_TouShiJi : ParamCopyableT<SkillCustomParam_TouShiJi>
@@ -36,7 +35,7 @@ public class TowerSkill_TouShiJi : TowerSkillT<SkillCustomParam_TouShiJi>
 		{
 			return false;
 		}
-		float squaredLength = getSquaredLength(resetY(mTower.getPosition() - mFacingTarget.getPosition()));
+		float squaredLength = (mTower.getPosition() - mFacingTarget.getPosition()).resetY().getSquaredLength();
 		return squaredLength >= mCustomParam.mMinRange * mCustomParam.mMinRange && squaredLength <= mTower.getRange() * mTower.getRange();
 	}
 	protected override void searchNewTarget()

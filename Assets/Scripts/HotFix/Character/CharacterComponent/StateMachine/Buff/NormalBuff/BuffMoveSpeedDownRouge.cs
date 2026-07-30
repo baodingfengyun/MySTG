@@ -1,6 +1,4 @@
-﻿using static StringUtility;
-using static MathUtility;
-
+﻿
 // 参数
 public class BuffMoveSpeedDownRougeParam : CharacterBuffParamT<BuffMoveSpeedDownRougeParam>
 {
@@ -39,7 +37,7 @@ public class BuffMoveSpeedDownRouge : CharacterBuffT<BuffMoveSpeedDownRougeParam
 		base.enter();
 		COMMonsterMovement comMovement = (mCharacter as CharacterMonster).getComMovement();
 		mSlowDown = comMovement.getSpeed() * mCustomParam.mPercent * (1.0f + mCharacterGame.getGameData().mSlowDownIncrease);
-		clampMax(ref mSlowDown, comMovement.getSpeed());
+		mSlowDown = mSlowDown.clampMax(comMovement.getSpeed());
 		comMovement.setSpeed(comMovement.getSpeed() - mSlowDown);
 	}
 	public override void leave(bool isBreak, bool willDestroy, string param)

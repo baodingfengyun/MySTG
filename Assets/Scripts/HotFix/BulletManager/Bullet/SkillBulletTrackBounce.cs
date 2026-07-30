@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using static GameUtilityHotFix;
-using static MathUtility;
 using static GBR;
 
 // 子弹参数
@@ -86,7 +85,7 @@ public class SkillBulletTrackBounce : SkillBulletT<BulletCustomParam_TrackBounce
 		else
 		{
 			Vector3 targetPos = mCharacterGame.getPosition() + mCharacterGame.getForward() * 6.0f;
-            this.MOVE_EX(mStartPosition, targetPos, divide(getLength(resetY(mStartPosition - targetPos)), speed), mOnMoveDone);
+            this.MOVE_EX(mStartPosition, targetPos, (mStartPosition - targetPos).resetY().getLength().divide(speed), mOnMoveDone);
 		}
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool isBreak)
@@ -122,7 +121,7 @@ public class SkillBulletTrackBounce : SkillBulletT<BulletCustomParam_TrackBounce
 			setDamageCallback((CharacterGame target, CharacterGame attacker, SkillBullet bullet, out bool isHit, out bool isCritical, out HP_DELTA deltaType) =>
 			{
 				int damage = generateDamage(target, attacker, bullet, out isHit, out isCritical, out deltaType);
-				return clampMin(round(damage * pow(mBounceDamagePercent, bouncedTimes)), 1);
+				return (damage * mBounceDamagePercent.pow(bouncedTimes)).round().clampMin(1);
 			});
 		}
 		hit(getComponent<ComponentTrackTarget>().getTrackTarget() as CharacterMonster);
@@ -132,7 +131,7 @@ public class SkillBulletTrackBounce : SkillBulletT<BulletCustomParam_TrackBounce
 			CharacterMonster findMonster = null;
 			using var a = new ListScope<CharacterMonster>(out var monsters);
 			getRangeEffectiveMonster(mCustomParam.mBounceRange < 0 ? mCharacterGame.getRange() : mCustomParam.mBounceRange, monsters);
-			monsters.Sort((x, y) => getSquaredLength(getPosition() - x.getPosition()).CompareTo(getSquaredLength(getPosition() - y.getPosition())));
+			monsters.Sort((x, y) => (getPosition() - x.getPosition()).getSquaredLength().CompareTo((getPosition() - y.getPosition()).getSquaredLength()));
 			int monstersCount = monsters.Count;
 			if(monstersCount > 0)
 			{

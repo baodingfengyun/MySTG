@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using static GBR;
-using static MathUtility;
 
 // 子弹参数
 public class BulletCustomParam_ParabolaTrack : ParamCopyableT<BulletCustomParam_ParabolaTrack>
@@ -54,7 +53,7 @@ public class SkillBulletParabolaTrack : SkillBulletT<BulletCustomParam_ParabolaT
 		if (mTarget == null)
 		{
 			Vector3 targetPos = mCharacterGame.getPosition() + mCharacterGame.getForward() * 6.0f;
-			float time = divide(getLength(resetY(mStartPosition - targetPos)), speed);
+			float time = (mStartPosition - targetPos).resetY().getLength().divide(speed);
 			this.MOVE_PARABOLA_EX(mStartPosition, targetPos, mCustomParam.mMaxHeight, time, mOnMoveDone);
 		}
 		else

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using static MathUtility;
 using static UnityUtility;
 using static GameUtilityHotFix;
 using static GBR;
@@ -30,7 +29,7 @@ public class ClientPackItemTower : ClientPackItem
 	public override void update()
 	{
 		base.update();
-		mCD.setFillPercent(divide(mTowerDefenceSystem.getBuildingCD(), BUILDING_CD));
+		mCD.setFillPercent(mTowerDefenceSystem.getBuildingCD().divide(BUILDING_CD));
 	}
 	public CharacterTower getDragingTower() { return mDragingTower; }
 	public EDTower getTowerData() { return mTowerData; }

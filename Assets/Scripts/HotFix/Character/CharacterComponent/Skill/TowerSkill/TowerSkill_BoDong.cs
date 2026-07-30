@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using static FrameUtility;
-using static MathUtility;
 
 // 技能参数
 public class SkillCustomParam_BoDong : ParamCopyableT<SkillCustomParam_BoDong>
@@ -60,8 +59,8 @@ public class TowerSkill_BoDong : TowerSkillT<SkillCustomParam_BoDong>
 	protected void onBulletFire(SkillBullet bullet)
 	{
 		var thisBullet = bullet as SkillBulletStraightLineAlwaysCollide;
-		Vector3 dir = resetY(thisBullet.getTarget().getPosition() - thisBullet.getStartPosition());
-		thisBullet.setTargetPosition(thisBullet.getStartPosition() + setLength(dir, mCustomParam.mDistance + mTower.getGameData().mIncreaseFlyDis));
+		Vector3 dir = (thisBullet.getTarget().getPosition() - thisBullet.getStartPosition()).resetY();
+		thisBullet.setTargetPosition(thisBullet.getStartPosition() + dir.setLength(mCustomParam.mDistance + mTower.getGameData().mIncreaseFlyDis));
 	}
 	protected override void refreshBulletCount()
 	{

@@ -24,7 +24,7 @@ public class CmdGlobalRandomChangeTowerRogue : CmdGlobalPutTower
 		// 记录旧塔数据
 		Vector3 pos = tower.getPosition();
 		int gridIndex = tower.getGridIndex();
-		int level = saveLevel ? clampMax(tower.getTowerData().getBattleLevel(), 10) : 1;
+		int level = saveLevel ? tower.getTowerData().getBattleLevel().clampMax(10) : 1;
 		bool selecting = mTowerDefenceSystem.getSelectedTowerScene() == tower;
 		CmdGlobalDestroyTower.execute(tower);
 		// 创建新塔

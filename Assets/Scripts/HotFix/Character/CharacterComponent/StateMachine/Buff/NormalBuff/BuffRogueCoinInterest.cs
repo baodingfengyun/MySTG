@@ -56,7 +56,7 @@ public class BuffRogueCoinInterest : CharacterBuffT<BuffRogueCoinInterestParam>
 		if (mTowerDefenceSystem.getBattleMode() == BATTLE_MODE.ROGUE_LIKE)
 		{
 			int curCoin = mTowerDefenceSystem.getGoldCoinRogue();
-			CmdGlobalSetGoldCoinRogue.execute(curCoin + getMin(divideInt(curCoin, mEachCoin), mMaxCoin));
+			CmdGlobalSetGoldCoinRogue.execute(curCoin + getMin(curCoin.divideInt(mEachCoin), mMaxCoin));
 		}
 	}
 }

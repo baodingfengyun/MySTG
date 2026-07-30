@@ -1,5 +1,4 @@
 ﻿using static GBR;
-using static MathUtility;
 using static UnityUtility;
 using static FrameBaseHotFix;
 
@@ -19,9 +18,9 @@ public class CmdMonsterSetHP
 		}
 		if (showNumber)
 		{
-			mUIDamageNumber.showNumber(worldToScreen(monster.getPosition()), abs(delta), deltaType, critical);
+			mUIDamageNumber.showNumber(worldToScreen(monster.getPosition()), delta.abs(), deltaType, critical);
 		}
-		clamp(ref hp, 0, monster.getMaxHP());
+		hp = hp.clamp(0, monster.getMaxHP());
 		int lastHP = monsterData.mHP;
 		monsterData.mHP = hp;
 		if (monsterData.mHP <= 0 && attacker != null)
@@ -45,13 +44,12 @@ public class CmdMonsterSetHP
 		{
 			return;
 		}
-		clampMin(ref hp);
-		monsterData.mHP = hp;
-		updateHPPercent(monster, hp);
+		monsterData.mHP = hp.clampMin();
+		updateHPPercent(monster, monsterData.mHP);
 	}
 	protected static void updateHPPercent(CharacterMonster monster, int hp)
 	{
-		float percent = divide(hp, monster.getMaxHP());
+		float percent = hp.divide(monster.getMaxHP());
 		monster.getComAvatar()?.getHPBar()?.setPercent(percent);
 		mUIMonsterQueue.safe()?.updateHpBar(monster.getGUID(), percent);
 	}

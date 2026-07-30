@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using static GBR;
-using static MathUtility;
 using static FrameBaseUtility;
+using static GBR;
 
 // 子弹参数
 public class BulletCustomParam_Parabola : ParamCopyableT<BulletCustomParam_Parabola>
@@ -59,7 +58,7 @@ public class SkillBulletParabola : SkillBulletT<BulletCustomParam_Parabola>
 			targetPos = mCharacterGame.getPosition() + mCharacterGame.getForward() * 6.0f;
 		}
 		float speed = mBulletData.mSpeed * (mCharacterGame.getGameData().mBulletSpeedIncrease + 1.0f);
-		float time = divide(getLength(resetY(mStartPosition - targetPos)), speed);
+		float time = (mStartPosition - targetPos).resetY().getLength().divide(speed);
         this.MOVE_PARABOLA_EX(mStartPosition, targetPos, mCustomParam.mMaxHeight, time, mMoveDoneCallback);
 	}
 	protected void onReachTarget(ComponentKeyFrame com, bool isBreak)

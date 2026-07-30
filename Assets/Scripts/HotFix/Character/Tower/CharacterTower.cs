@@ -31,7 +31,7 @@ public class CharacterTower : CharacterGame
 		mTowerData.mCritical = towerData.mCritical;
 		mTowerData.mAttack = 1;
 		mTowerData.mOriginRange = towerData.mRange * GRID_SIZE;
-		mTowerData.mCriticalDamage = divide(mExcelGlobalConfig.getInitCriticalDamage(), ODDS_SCALE);
+		mTowerData.mCriticalDamage = mExcelGlobalConfig.getInitCriticalDamage().divide(ODDS_SCALE);
 		mTowerData.setGlobalLevel(1);
 		mComAvatar.setModelLoaded(false);
 		if (towerData.mSkill > 0)

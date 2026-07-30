@@ -107,14 +107,14 @@ public class UISelectLevel : LayoutScript
         {
             EDLevel levelData = levelButton.getLevelData();
             levelButton.setLevelData(levelData);
-            levelButton.setPosition(replaceX(levelButton.getRoot().getPosition(), buttonPosX));
+            levelButton.setPosition(levelButton.getRoot().getPosition().replaceX(buttonPosX));
             buttonPosX += (int)(mNormalRoot.getSize().x * 0.7f); // 间距稍微近一点
             levelButton.setSelect(mSelectLevel == levelButton.getLevelData());
             if (mSelectLevel == levelButton.getLevelData())
             {
                 selectButton = levelButton;
             }
-            clampMin(ref maxAbsX, abs((int)levelButton.getRoot().getPosition().x));
+			maxAbsX = maxAbsX.clampMin(((int)levelButton.getRoot().getPosition().x).abs());
             if (mClientSystem.getCOMLevel().isLevelComplete(levelData.mID))
             {
                 levelButton.setLevelState(LEVEL_STATE.COMPLETED);
@@ -140,7 +140,7 @@ public class UISelectLevel : LayoutScript
         findButton ??= mLevelButtonPool.getUsedList().get(0);
         mLayout.refreshUIDepth(mLevelListRoot, true);
         // 当图标所占区域的宽度没有超出屏幕时,就设置为屏幕大小。拖拽后所有图标需要居中，再加一个屏幕长度。
-        mLevelListRoot.setWidth(clampMin((maxAbsX + 300.0f) * 2.0f, getScreenSize().x) + getScreenSize().x);
+        mLevelListRoot.setWidth(((maxAbsX + 300.0f) * 2.0f).clampMin(getScreenSize().x) + getScreenSize().x);
         setSelectLevelButton(findButton);
         if (findButton != null)
         {
@@ -247,14 +247,14 @@ public class UISelectLevel : LayoutScript
     protected void onLevelListRootDraging(ComponentOwner dragObj, Vector3 mousePos)
     {
         float maxX = mLevelListRoot.getSize().x * 0.5f - mCenterRoot.getSize().x * 0.5f;
-        mLevelListRoot.setPosition(new(clamp(mLevelListRoot.getPosition().x, -maxX, maxX), 0.0f));
+        mLevelListRoot.setPosition(new(mLevelListRoot.getPosition().x.clamp(-maxX, maxX), 0.0f));
         float nearX = float.MaxValue;
         LevelButton select = null;
         foreach (LevelButton each in mLevelButtonPool.getUsedList().safe())
         {
             float xOffset = mDragStartMousePosX - mousePos.x;
             // 如果拖拽的距离大于了屏幕的0.2，就不比较最初的按钮位置
-            if (mDragStartButton == each && abs(xOffset) > mRoot.getSize().x * DRAG_CHANGE_SCREEN_PERCENT)
+            if (mDragStartButton == each && xOffset.abs() > mRoot.getSize().x * DRAG_CHANGE_SCREEN_PERCENT)
             {
                 if (mDragStartButtonEdge == 0 || (mDragStartButtonEdge == -1 && xOffset > 0) || (mDragStartButtonEdge == 1 && xOffset < 0))
                 {
@@ -262,7 +262,7 @@ public class UISelectLevel : LayoutScript
                 }
             }
             float eachX = mNormalRoot.worldToLocal(each.getRoot().getWorldPosition()).x;
-            if (abs(eachX) < abs(nearX))
+            if (eachX.abs() < nearX.abs())
             {
                 nearX = eachX;
                 select = each;
@@ -278,7 +278,7 @@ public class UISelectLevel : LayoutScript
         {
             float xOffset = mDragStartMousePosX - mousePos.x;
             // 如果拖拽的距离大于了屏幕的0.2，就不比较最初的按钮位置
-            if (mDragStartButton == each && abs(xOffset) > mRoot.getSize().x * DRAG_CHANGE_SCREEN_PERCENT)
+            if (mDragStartButton == each && xOffset.abs() > mRoot.getSize().x * DRAG_CHANGE_SCREEN_PERCENT)
             {
                 if (mDragStartButtonEdge == 0 || (mDragStartButtonEdge == -1 && xOffset > 0) || (mDragStartButtonEdge == 1 && xOffset < 0))
                 {
@@ -286,14 +286,14 @@ public class UISelectLevel : LayoutScript
                 }
             }
             float eachX = mNormalRoot.worldToLocal(each.getRoot().getWorldPosition()).x;
-            if (abs(eachX) < abs(nearX))
+            if (eachX.abs() < nearX.abs())
             {
                 nearX = eachX;
                 select = each;
             }
         }
         float maxX = mLevelListRoot.getSize().x * 0.5f - mCenterRoot.getSize().x * 0.5f;
-        Vector3 targetPos = new(clamp(mLevelListRoot.getPosition().x - nearX, -maxX, maxX), 0.0f);
+        Vector3 targetPos = new((mLevelListRoot.getPosition().x - nearX).clamp(-maxX, maxX), 0.0f);
         mLevelListRoot.MOVE(KEY_CURVE.EXPO_OUT, mLevelListRoot.getPosition(), targetPos, 0.3f);
         setSelectLevelButton(select);
     }
@@ -328,7 +328,7 @@ public class UISelectLevel : LayoutScript
         LevelButton lastButton = mLevelButtonPool.getUsedList()[index - 1];
         float nearX = mNormalRoot.worldToLocal(lastButton.getRoot().getWorldPosition()).x;
         float maxX = mLevelListRoot.getSize().x * 0.5f - mCenterRoot.getSize().x * 0.5f;
-        Vector3 targetPos = new(clamp(mLevelListRoot.getPosition().x - nearX, -maxX, maxX), 0.0f);
+        Vector3 targetPos = new((mLevelListRoot.getPosition().x - nearX).clamp(-maxX, maxX), 0.0f);
         mLevelListRoot.MOVE(KEY_CURVE.EXPO_OUT, mLevelListRoot.getPosition(), targetPos, 0.3f);
         setSelectLevelButton(lastButton);
     }
@@ -346,7 +346,7 @@ public class UISelectLevel : LayoutScript
         LevelButton nextButton = mLevelButtonPool.getUsedList()[index + 1];
         float nearX = mNormalRoot.worldToLocal(nextButton.getRoot().getWorldPosition()).x;
         float maxX = mLevelListRoot.getSize().x * 0.5f - mCenterRoot.getSize().x * 0.5f;
-        Vector3 targetPos = new(clamp(mLevelListRoot.getPosition().x - nearX, -maxX, maxX), 0.0f);
+        Vector3 targetPos = new((mLevelListRoot.getPosition().x - nearX).clamp(-maxX, maxX), 0.0f);
         mLevelListRoot.MOVE(KEY_CURVE.EXPO_OUT, mLevelListRoot.getPosition(), targetPos, 0.3f);
         setSelectLevelButton(nextButton);
     }

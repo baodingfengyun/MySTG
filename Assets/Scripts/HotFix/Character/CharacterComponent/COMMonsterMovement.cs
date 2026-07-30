@@ -84,9 +84,9 @@ public class COMMonsterMovement : GameComponent
 		while (true)
 		{
 			// 剩余距离还没有到下一个点,则直接设置位置
-			if (lengthGreater(curPos - mTargetPosition, moveDelta))
+			if ((curPos - mTargetPosition).lengthGreater(moveDelta))
 			{
-				curPos += setLength(mTargetPosition - curPos, moveDelta);
+				curPos += (mTargetPosition - curPos).setLength(moveDelta);
 				break;
 			}
 			// 已经移动到最后一个点,移动结束
@@ -97,7 +97,7 @@ public class COMMonsterMovement : GameComponent
 				break;
 			}
 			// 移动的距离超过了下一个点,则减去到下一个点的距离,继续计算
-			moveDelta -= getLength(mTargetPosition - curPos);
+			moveDelta -= (mTargetPosition - curPos).getLength();
 			curPos = mTargetPosition;
 			setTargetPointIndex(mTargetPointIndex + 1);
 		}
@@ -119,9 +119,9 @@ public class COMMonsterMovement : GameComponent
 		while (true)
 		{
 			// 剩余距离还没有到下一个点,则直接设置位置
-			if (lengthGreater(curPos - mTargetPosition, moveDelta))
+			if ((curPos - mTargetPosition).lengthGreater(moveDelta))
 			{
-				curPos += setLength(mTargetPosition - curPos, moveDelta);
+				curPos += (mTargetPosition - curPos).setLength(moveDelta);
 				break;
 			}
 			// 已经移动到起点,不再继续移动
@@ -131,7 +131,7 @@ public class COMMonsterMovement : GameComponent
 				break;
 			}
 			// 移动的距离超过了下一个点,则减去到下一个点的距离,继续计算
-			moveDelta -= getLength(mTargetPosition - curPos);
+			moveDelta -= (mTargetPosition - curPos).getLength();
 			curPos = mTargetPosition;
 			// 切换到路线的前一个目标点
 			setTargetPointIndex(mTargetPointIndex - 1);
@@ -175,7 +175,7 @@ public class COMMonsterMovement : GameComponent
 	// 获得到终点的距离
 	public float getDistanceToEnd()
 	{
-		return getLength(mMonster.getPosition() - mTargetPosition) + (mRoadPointList.Count - 1 - mTargetPointIndex) * GRID_SIZE;
+		return (mMonster.getPosition() - mTargetPosition).getLength() + (mRoadPointList.Count - 1 - mTargetPointIndex) * GRID_SIZE;
 	}
 	public void startMove()
 	{
@@ -210,11 +210,11 @@ public class COMMonsterMovement : GameComponent
 			// 随机偏移
 			if (mRandomGridOffset == MONSTER_GRID_OFFSET.LEFT)
 			{
-				mTargetPosition += setLength(rotateVector3(direction, HALF_PI_RADIAN), HEX_MONSTER_MOVE_OFFSET);
+				mTargetPosition += direction.rotateVector3(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 			}
 			else if(mRandomGridOffset == MONSTER_GRID_OFFSET.RIGHT)
 			{
-				mTargetPosition += setLength(rotateVector3(direction, -HALF_PI_RADIAN), HEX_MONSTER_MOVE_OFFSET);
+				mTargetPosition += direction.rotateVector3(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 			}
 			if (mMonster.getMonsterData().mFlyable)
 			{
@@ -294,23 +294,23 @@ public class COMMonsterMovement : GameComponent
 	public void generateNextRoadIndex(Vector3 pos, out int index, bool forward)
 	{
 		// 忽略Y轴
-		pos = resetY(pos);
+		pos = pos.resetY();
 		if (forward)
 		{
 			int count = mRoadPointList.Count - 1;
 			for (int i = 0; i < count; ++i)
 			{
 				// 因为会有3条不同的路径,所以需要三条都检查
-				Vector3 pos0 = resetY(mBattleScene.getGridPosition(mRoadPointList[i]));
-				Vector3 pos1 = resetY(mBattleScene.getGridPosition(mRoadPointList[i + 1]));
+				Vector3 pos0 = mBattleScene.getGridPosition(mRoadPointList[i]).resetY();
+				Vector3 pos1 = mBattleScene.getGridPosition(mRoadPointList[i + 1]).resetY();
 				Vector3 offset = Vector3.zero;
 				if (mRandomGridOffset == MONSTER_GRID_OFFSET.LEFT)
 				{
-					offset = setLength(rotateVector3(pos1 - pos0, HALF_PI_RADIAN), HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos1 - pos0).rotateVector3(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				else if (mRandomGridOffset == MONSTER_GRID_OFFSET.RIGHT)
 				{
-					offset = setLength(rotateVector3(pos1 - pos0, -HALF_PI_RADIAN), HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos1 - pos0).rotateVector3(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				if (isInLine(pos, pos0 + offset, pos1 + offset))
 				{
@@ -324,16 +324,16 @@ public class COMMonsterMovement : GameComponent
 			int count = mRoadPointList.Count;
 			for (int i = count - 1; i > 0; --i)
 			{
-				Vector3 pos0 = resetY(mBattleScene.getGridPosition(mRoadPointList[i]));
-				Vector3 pos1 = resetY(mBattleScene.getGridPosition(mRoadPointList[i - 1]));
+				Vector3 pos0 = mBattleScene.getGridPosition(mRoadPointList[i]).resetY();
+				Vector3 pos1 = mBattleScene.getGridPosition(mRoadPointList[i - 1]).resetY();
 				Vector3 offset = Vector3.zero;
 				if (mRandomGridOffset == MONSTER_GRID_OFFSET.LEFT)
 				{
-					offset = setLength(rotateVector3(pos0 - pos1, HALF_PI_RADIAN), HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos0 - pos1).rotateVector3(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				else if (mRandomGridOffset == MONSTER_GRID_OFFSET.RIGHT)
 				{
-					offset = setLength(rotateVector3(pos0 - pos1, -HALF_PI_RADIAN), HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos0 - pos1).rotateVector3(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				if (isInLine(pos, pos0 + offset, pos1 + offset))
 				{
@@ -347,8 +347,8 @@ public class COMMonsterMovement : GameComponent
 	//------------------------------------------------------------------------------------------------------------------------------
 	protected static bool isInLine(Vector3 pos, Vector3 pos0, Vector3 pos1)
 	{
-		return isVectorEqual(pos, pos0) || 
-			   isVectorEqual(pos, pos1) || 
+		return pos.isEqual(pos0) ||
+			   pos.isEqual(pos1) || 
 			   isPointInSection(new(pos.x, pos.z), new(new(pos0.x, pos0.z), new(pos1.x, pos1.z)));
 	}
 }

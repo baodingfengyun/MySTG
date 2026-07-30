@@ -1,5 +1,4 @@
 ﻿using System;
-using static MathUtility;
 using static FrameBaseHotFix;
 using static GBR;
 
@@ -74,8 +73,8 @@ public class BuffTypeBuffIncreaseSelfAttack : CharacterBuffT<BuffTypeBuffIncreas
 			mBuffChanged = false;
 			// 计算场上的指定buff数量,增加攻击力
 			int buffCount = mTowerDefenceSystem.getMonsterTypeBuffCount(mBuffType);
-			int increase = clampMax(buffCount * mIncreasePerEnemy, mMaxIncrease);
-			float increasePercent = clampMax(buffCount * mIncreasePercentPerEnemy, mMaxIncreasePercent);
+			int increase = (buffCount * mIncreasePerEnemy).clampMax(mMaxIncrease);
+			float increasePercent = (buffCount * mIncreasePercentPerEnemy).clampMax(mMaxIncreasePercent);
 			mCharacterGame.getGameData().mAttackIncrease += increase - mLastIncrease;
 			mCharacterGame.getGameData().mIncreaseAttackPercent += increasePercent - mLastIncreasePercent;
 			mLastIncrease = increase;

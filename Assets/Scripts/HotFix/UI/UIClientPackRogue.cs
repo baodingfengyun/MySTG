@@ -95,7 +95,7 @@ public class UIClientPackRogue : LayoutScript
 		mStoneTowerOn.registeCollider();
 		// auto generate init end
 		mDragView.setDragDirection(DRAG_DIRECTION.HORIZONTAL);
-        mDragView.setDragAngleThreshold(toRadian(15.0f));
+        mDragView.setDragAngleThreshold(15.0f.toRadian());
 		mStoneTowerOn.registeCollider();
 		mReceiveDragArea.registeCollider(true);
 		mReceiveDragArea.setOnReceiveDrag(onReceiveDrag);
@@ -104,7 +104,7 @@ public class UIClientPackRogue : LayoutScript
 		mDeleteDisplayStartPosition = mDeleteDisplay.getPosition();
 		mTagSelecterOriginPos = mTagSelecter.getPosition();
 		var dragCom = mStoneTowerOff.getOrAddComponent<COMWindowDrag>();
-		dragCom.initDrag(Vector2.up, toRadian(180.0f), true, false);
+		dragCom.initDrag(Vector2.up, 180.0f.toRadian(), true, false);
 		dragCom.setDragCallback(onDragStart, onDraging, onDragEnd);
 	}
 	public override void onGameState()
@@ -170,10 +170,10 @@ public class UIClientPackRogue : LayoutScript
 		if (visible)
 		{
 			mPanel.setActive(true);
-			mPanel.MOVE(KEY_CURVE.EXPO_OUT, mPanel.getPosition(), replaceY(mPanel.getPosition(), mPanelStartPosition.y), 0.2f);
+			mPanel.MOVE(KEY_CURVE.EXPO_OUT, mPanel.getPosition(), mPanel.getPosition().replaceY(mPanelStartPosition.y), 0.2f);
 			if(mDeleteDisplay.isActive())
 			{
-                mDeleteDisplay.MOVE_EX(KEY_CURVE.EXPO_OUT, mDeleteDisplayStartPosition, replaceY(mDeleteDisplayStartPosition, mPanelHidePoint.getPosition().y), 0.2f, (_, _)=>
+                mDeleteDisplay.MOVE_EX(KEY_CURVE.EXPO_OUT, mDeleteDisplayStartPosition, mDeleteDisplayStartPosition.replaceY(mPanelHidePoint.getPosition().y), 0.2f, (_, _)=>
 				{
 					mDeleteDisplay.setActive(false);
 				});
@@ -181,11 +181,11 @@ public class UIClientPackRogue : LayoutScript
 		}
 		else
 		{
-			mPanel.MOVE(KEY_CURVE.EXPO_IN, mPanel.getPosition(), replaceY(mPanel.getPosition(), mPanelHidePoint.getPosition().y), 0.2f);
+			mPanel.MOVE(KEY_CURVE.EXPO_IN, mPanel.getPosition(), mPanel.getPosition().replaceY(mPanelHidePoint.getPosition().y), 0.2f);
 			if(showDeleteOnHide)
 			{
 				mDeleteDisplay.setActive(true);
-				mDeleteDisplay.MOVE(KEY_CURVE.EXPO_OUT, replaceY(mDeleteDisplayStartPosition, mPanelHidePoint.getPosition().y), mDeleteDisplayStartPosition, 0.2f);
+				mDeleteDisplay.MOVE(KEY_CURVE.EXPO_OUT, mDeleteDisplayStartPosition.replaceY(mPanelHidePoint.getPosition().y), mDeleteDisplayStartPosition, 0.2f);
 			}
 		}
 	}

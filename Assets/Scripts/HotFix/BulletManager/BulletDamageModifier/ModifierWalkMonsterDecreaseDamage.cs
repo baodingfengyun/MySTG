@@ -1,5 +1,4 @@
-﻿using static MathUtility;
-
+﻿
 // 对地面敌人伤害减少
 public class ModifierWalkMonsterDecreaseDamage : BulletDamageModifier
 {
@@ -22,7 +21,7 @@ public class ModifierWalkMonsterDecreaseDamage : BulletDamageModifier
 		}
 		if (!monster.getMonsterData().mFlyable)
 		{
-			damage = clampMin((int)(damage * (1.0f - mPercent)));
+			damage = ((int)(damage * (1.0f - mPercent))).clampMin();
 		}
 	}
 }

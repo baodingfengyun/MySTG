@@ -46,7 +46,7 @@ public class TowerSkill_FangKongFeiDan : TowerSkill_Bounce
 			{
 				Vector3 vec0 = monster0.getPosition() - mTower.getPosition();
 				Vector3 vec1 = monster1.getPosition() - mTower.getPosition();
-				return (int)sign(getSquaredLength(vec0) - getSquaredLength(vec1));
+				return (int)sign(vec0.getSquaredLength() - vec1.getSquaredLength());
 			});
 		}
 		// 发射子弹
@@ -55,7 +55,7 @@ public class TowerSkill_FangKongFeiDan : TowerSkill_Bounce
 			CMD_DELAY(out CmdCharacterFireBullet cmd);
 			cmd.mFirePosMap = mFirePointLocalPosition;
 			cmd.mBulletData = mBulletDataList[i];
-			cmd.mTarget = targetList[clampMax(i, targetList.Count - 1)];
+			cmd.mTarget = targetList[i.clampMax(targetList.Count - 1)];
 			cmd.mTargetAssignID = cmd.mTarget?.getAssignID() ?? 0;
 			cmd.mFireID = mFireID;
 			cmd.mWillFireBullet = (bullet) =>

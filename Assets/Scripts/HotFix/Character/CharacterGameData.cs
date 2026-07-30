@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using static MathUtility;
 using static GDR;
 
 // 战斗角色基类的数据
@@ -99,11 +98,11 @@ public class CharacterGameData
 		mIncreaseFlyDis = 0.0f;
 	}
 	public float getCriticalDamage() { return mCriticalDamage + mCriticalDamageIncrease; }
-	public float getFinalCD(float cd) { return divide(cd, (mAttackSpeed + 1.0f) * (mAttackSpeedIncreasePercent + 1.0f)); }
-	public int getAttack() { return round((mAttack + mAttackIncrease) * (1.0f + mIncreaseAttackPercent)); }
+	public float getFinalCD(float cd) { return cd.divide((mAttackSpeed + 1.0f) * (mAttackSpeedIncreasePercent + 1.0f)); }
+	public int getAttack() { return ((mAttack + mAttackIncrease) * (1.0f + mIncreaseAttackPercent)).round(); }
 	public float getCritical() { return mCritical + mCriticalIncrease; }
 	public float getAttackSpeed() { return mAttackSpeed; }
-	public void setAttackSpeed(float value) { mAttackSpeed = clampMin(value, ATTACK_SPEED_MIN); }
+	public void setAttackSpeed(float value) { mAttackSpeed = value.clampMin(ATTACK_SPEED_MIN); }
 	public void addAttackSpeed(float value) { setAttackSpeed(mAttackSpeed + value); }
 	public void removeAttackSpeed(float value) { setAttackSpeed(mAttackSpeed - value); }
 	public void addBulletScale(float value) { mBulletScale += new Vector3(value, value, value); }

@@ -119,8 +119,8 @@ public class BattleScene : SceneInstance
 			float halfAllHeight4D = mapHeight * GRID_SIZE * 0.5f;
 			for (int i = 0; i < gridCount; ++i)
 			{
-				int indexX = indexToX(i, mapWidth);
-				int indexY = indexToY(i, mapWidth);
+				int indexX = i.indexToX(mapWidth);
+				int indexY = i.indexToY(mapWidth);
 				int index = i;
 				group.addTask(mPrefabPoolManager.createObjectAsync(GRID_PREFAB_4D, true, true, (go) =>
 				{
@@ -143,8 +143,8 @@ public class BattleScene : SceneInstance
 				GameObject go = findGameObject("Grid" + i.IToS(), mGridRoot, false, false);
 				if (go == null)
 				{
-					int indexX = indexToX(i, mapWidth);
-					int indexY = indexToY(i, mapWidth);
+					int indexX = i.indexToX(mapWidth);
+					int indexY = i.indexToY(mapWidth);
 					int index = i;
 					// 奇数行需要向右移动一点,这样才能紧密排列
 					float x = HEX_EDGE_LENGTH + indexX * GRID_SIZE - halfAllWidth6D + (indexY & 1) * GRID_SIZE * 0.5f;
@@ -153,7 +153,7 @@ public class BattleScene : SceneInstance
 					group.addTask(mPrefabPoolManager.createObjectAsync(GRID_PREFAB_6D, true, true, (go) =>
 					{
 						go.transform.localPosition = gridPos + new Vector3(0.0f, 0.05f);
-						go.transform.localEulerAngles = replaceY(go.transform.localEulerAngles, 30.0f);
+						go.transform.localEulerAngles = go.transform.localEulerAngles.replaceY(30.0f);
 						// 稍微放大一些,避免由于计算精度导致的格子之间的空隙
 						go.transform.localScale = new(GRID_SIZE + 0.01f, 1.0f, GRID_SIZE + 0.01f);
 						createGridBaseObject(go, index);
@@ -411,7 +411,7 @@ public class BattleScene : SceneInstance
 	// 获取世界坐标垂直投影到地面的位置
 	public bool getWorldPositionDownToTerrain(Vector3 pos, out Vector3 point)
 	{
-		return raycast(new Ray(replaceY(pos, 1000.0f), Vector3.down), out _, out point, MASK_TERRAIN);
+		return raycast(new Ray(pos.replaceY(1000.0f), Vector3.down), out _, out point, MASK_TERRAIN);
 	}
 	// 获取屏幕上鼠标的点与地面的交点世界坐标
 	public bool getMouseRayIntersectTerrain(Vector3 screenPos, out Vector3 point)
@@ -542,7 +542,7 @@ public class BattleScene : SceneInstance
 	public Vector3 getHomePosition()			{ return mHomePoint != null ? mHomePoint.transform.position : Vector3.zero; }
 	public int getDragOnlyGrid()				{ return mDragOnlyGrid; }
 	public bool canReplaceTower()				{ return mCanReplaceTower; }
-	public bool isCameraScaled()				{ return !isFloatEqual(getMainCamera().getPosition().y, mCameraMaxHeight); }
+	public bool isCameraScaled()				{ return !getMainCamera().getPosition().y.isEqual(mCameraMaxHeight); }
 	// 获取一个格子的世界坐标
 	public Vector3 getGridPosition(int index) { return mGridObjectList.get(index)?.getWorldPosition() ?? Vector3.zero; }
 	public Vector3 getFocusTerrainPosition()
@@ -609,9 +609,8 @@ public class BattleScene : SceneInstance
 		{
 			// 恢复所有格子的材质
 			setGridMaterial(-1, null);
-			int range = round(tower.getTowerData().mTableData.mRange);
 			using var a = new ListScope<int>(out var grids);
-			getHexAroundGird(gridIndex, range, grids);
+			getHexAroundGird(gridIndex, tower.getTowerData().mTableData.mRange.round(), grids);
 			int length = grids.Count;
 			for (int i = 0; i < length; ++i)
 			{
@@ -700,10 +699,10 @@ public class BattleScene : SceneInstance
 		{
 			return;
 		}
-		mSkillRangeEffect.transform.localPosition = replaceY(pos, 0.1f);
+		mSkillRangeEffect.transform.localPosition = pos.replaceY(0.1f);
 		mSkillRangeEffect.transform.localScale = new(range * 2.0f, 1.0f, range * 2.0f);
 	}
-	public Vector3 focusCamera(Vector3 targetPos) { return clampCameraPos(replaceY(targetPos, 0.0f) + getMainCamera().getPosition() - getFocusTerrainPosition()); }
+	public Vector3 focusCamera(Vector3 targetPos) { return clampCameraPos(targetPos.replaceY(0.0f) + getMainCamera().getPosition() - getFocusTerrainPosition()); }
 	public void deltaMoveCamera(float deltaX, float deltaZ)
 	{
 		GameCamera cam = getMainCamera();
@@ -734,7 +733,7 @@ public class BattleScene : SceneInstance
 	public void clampCameraPos() { getMainCamera().setPosition(clampCameraPos(getMainCamera().getPosition())); }
 	public Vector3 clampCameraPos(Vector3 cameraPos)
 	{
-		clamp(ref cameraPos.y, mCameraMinHeight, mCameraMaxHeight);
+		cameraPos.y = cameraPos.y.clamp(mCameraMinHeight, mCameraMaxHeight);
 		if (cameraPos.y >= mCameraMaxHeight || getPointInPlaneSide(mCameraInitPos, getMainCamera().getForward(), cameraPos) <= 0.0f)
 		{
 			// 如果在摄像机后方就直接拉回原点
@@ -743,8 +742,8 @@ public class BattleScene : SceneInstance
 		// 让摄像机保持在初始位置的视锥与y轴平面的相交范围内
 		Vector3 cameraMinIntersect = intersectRayPlane(new Ray(mCameraInitPos, mCameraMinIntersect - mCameraInitPos), Vector3.up, cameraPos);
 		Vector3 cameraMaxIntersect = intersectRayPlane(new Ray(mCameraInitPos, mCameraMaxIntersect - mCameraInitPos), Vector3.up, cameraPos);
-		clamp(ref cameraPos.x, cameraMinIntersect.x, cameraMaxIntersect.x);
-		clamp(ref cameraPos.z, cameraMinIntersect.z, cameraMaxIntersect.z);
+		cameraPos.x = cameraPos.x.clamp(cameraMinIntersect.x, cameraMaxIntersect.x);
+		cameraPos.z = cameraPos.z.clamp(cameraMinIntersect.z, cameraMaxIntersect.z);
 		return cameraPos;
 	}
 	//------------------------------------------------------------------------------------------------------------------------------

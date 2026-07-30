@@ -1,8 +1,6 @@
 ﻿using Obfuz;
 using static FrameBaseHotFix;
 using static FrameBaseUtility;
-using static GameUtility;
-using static MathUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIFPS.prefab
@@ -47,7 +45,7 @@ public class UIFPS : LayoutScript
 	{
 		base.update(elapsedTime);
 		mFPS.setText(mGameFrameworkHotFix.getFPS());
-		mEnergy.setText(round(AndroidMainClass.getBatteryEnergy() * 0.001f));
+		mEnergy.setText((AndroidMainClass.getBatteryEnergy() * 0.001f).round());
 	}
 	public void setVersionVisible(bool visible)
 	{

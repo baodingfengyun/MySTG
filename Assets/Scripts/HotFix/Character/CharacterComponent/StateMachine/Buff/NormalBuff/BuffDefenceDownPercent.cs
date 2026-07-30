@@ -1,6 +1,4 @@
-﻿using static StringUtility;
-using static MathUtility;
-
+﻿
 // 参数
 public class BuffDefenceDownPercentParam : CharacterBuffParamT<BuffDefenceDownPercentParam>
 {
@@ -33,7 +31,7 @@ public class BuffDefenceDownPercent : CharacterBuffT<BuffDefenceDownPercentParam
 	public override void enter()
 	{
 		base.enter();
-		mDecrease = round(mCustomParam.mPercent * mCharacterGame.getGameData().mDefence);
+		mDecrease = (mCustomParam.mPercent * mCharacterGame.getGameData().mDefence).round();
 		mCharacterGame.getGameData().mDefence -= mDecrease;
 	}
 	public override void leave(bool isBreak, bool willDestroy, string param)

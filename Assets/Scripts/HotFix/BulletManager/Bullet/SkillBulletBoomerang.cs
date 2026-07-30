@@ -100,9 +100,9 @@ public class SkillBulletBoomerang : SkillBulletT<BulletCustomParam_Boomerang>
 		}
 		mDirection = true;
 		Vector3 curPos = getPosition();
-		Vector3 dest = curPos + setLength(mTarget.getPosition() - curPos, mCharacterGame.getRange());
-		generateFlyPath(curPos, replaceY(dest, curPos.y), out float pathLength);
-        this.MOVE_CURVE_EX(KEY_CURVE.CUBIC_OUT, mFlyPath, divide(pathLength, mBulletData.mSpeed), null, mMoveDone);
+		Vector3 dest = curPos + (mTarget.getPosition() - curPos).setLength(mCharacterGame.getRange());
+		generateFlyPath(curPos, dest.replaceY(curPos.y), out float pathLength);
+        this.MOVE_CURVE_EX(KEY_CURVE.CUBIC_OUT, mFlyPath, pathLength.divide(mBulletData.mSpeed), null, mMoveDone);
 		mTickTimer = 0.0f;
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool isBreak)
@@ -121,8 +121,8 @@ public class SkillBulletBoomerang : SkillBulletT<BulletCustomParam_Boomerang>
 		{
 			mHitList.Clear();
 			mDirection = false;
-			generateFlyPath(getPosition(), replaceY(mStartPosition, getPosition().y), out float pathLength);
-			this.MOVE_CURVE_EX(KEY_CURVE.CUBIC_IN, mFlyPath, divide(pathLength, mBulletData.mSpeed), null, mMoveDone);
+			generateFlyPath(getPosition(), mStartPosition.replaceY(getPosition().y), out float pathLength);
+			this.MOVE_CURVE_EX(KEY_CURVE.CUBIC_IN, mFlyPath, pathLength.divide(mBulletData.mSpeed), null, mMoveDone);
 		}
 		else
 		{
@@ -132,32 +132,32 @@ public class SkillBulletBoomerang : SkillBulletT<BulletCustomParam_Boomerang>
 	protected void generateFlyPath(Vector3 start, Vector3 dest, out float arcLength)
 	{
 		mFlyPath.Clear();
-		if (isFloatZero(mCustomParam.mArcAngle))
+		if (mCustomParam.mArcAngle.isZero())
 		{
 			arcLength = 0.0f;
 			logWarning("回旋镖轨迹为空");
 			return;
 		}
-		float angleRadian = toRadian(clamp(mCustomParam.mArcAngle, 0.0f, 90.0f) * 2.0f);
+		float angleRadian = (mCustomParam.mArcAngle.clamp(0.0f, 90.0f) * 2.0f).toRadian();
 		// 计算圆心
 		generatePerpendicular(new(start.x, start.z), new(dest.x, dest.z), out Vector2 otherPoint);
 		// 圆心到起点终点连线的垂线的方向,方向指向圆心
-		Vector3 dir = normalize(new Vector3(otherPoint.x, dest.y, otherPoint.y) - dest);
+		Vector3 dir = (new Vector3(otherPoint.x, dest.y, otherPoint.y) - dest).normalize();
 		// 弧线的圆心坐标
-		float length = divide(getLength(dest - start) * 0.5f, tan(angleRadian * 0.5f));
+		float length = ((dest - start).getLength() * 0.5f).divide((angleRadian * 0.5f).tan());
 		Vector3 center = (dest + start) * 0.5f + dir * length;
 		// 起点到圆心的连线向量
 		Vector3 startEdge = start - center;
-		float radius = getLength(startEdge);
+		float radius = startEdge.getLength();
 		// 整条轨迹的弧线长度
 		arcLength = angleRadian * radius;
-		// 每0.3米长度的弧度计算一个点
-		float minArcAngle = divide(0.6f, radius);
-		int segmentCount = (int)divide(angleRadian, minArcAngle);
+		// 每0.6米长度的弧度计算一个点
+		float minArcAngle = 0.6f.divide(radius);
+		int segmentCount = (int)angleRadian.divide(minArcAngle);
 		mFlyPath.Add(start);
 		for (int i = 0; i < segmentCount; ++i)
 		{
-			mFlyPath.Add(center + rotateVector3(startEdge, minArcAngle * (i + 1)));
+			mFlyPath.Add(center + startEdge.rotateVector3(minArcAngle * (i + 1)));
 		}
 		mFlyPath.Add(dest);
 	}

@@ -2,7 +2,6 @@
 using static GDR;
 using static GBR;
 using static UnityUtility;
-using static MathUtility;
 using static FrameBaseHotFix;
 using static FrameBaseUtility;
 
@@ -82,7 +81,7 @@ public class COMMonsterAvatar : COMCharacterAvatar
 		CharacterMonsterData monsterData = mMonster.getMonsterData();
 		if (monsterData.mTableData != null)
 		{
-			mHPBar.setPercent(divide(monsterData.mHP, mMonster.getMaxHP()));
+			mHPBar.setPercent(monsterData.mHP.divide(mMonster.getMaxHP()));
 		}
 		setModelParent(mBattleScene.getMonsterRoot());
 		mFootPoint = findGameObject(CHARACTER_FOOT_POINT, mObject, true).transform;

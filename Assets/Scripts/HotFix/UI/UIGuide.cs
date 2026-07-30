@@ -2,7 +2,6 @@
 using UnityEngine;
 using static FrameBaseHotFix;
 using static FrameUtility;
-using static MathUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIGuide.prefab
@@ -143,7 +142,7 @@ public class UIGuide : LayoutScript
     public void setDragTip(Vector3 startPos, Vector3 endPos, int handType)
     {
 		deactiveAllTip();
-        activeHand(handType).MOVE(startPos, endPos, divide(getLength(startPos - endPos), 800.0f), true);
+        activeHand(handType).MOVE(startPos, endPos, (startPos - endPos).getLength().divide(800.0f), true);
     }
     public void deactiveAllTip()
     {

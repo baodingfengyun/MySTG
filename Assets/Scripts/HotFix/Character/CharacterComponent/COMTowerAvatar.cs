@@ -3,7 +3,6 @@ using static GBR;
 using static GDR;
 using static FrameBaseHotFix;
 using static UnityUtility;
-using static MathUtility;
 using static FrameBaseUtility;
 
 // 显示塔模型,主要逻辑由基类提供
@@ -62,7 +61,7 @@ public class COMTowerAvatar : COMCharacterAvatar
 	{
 		if (mTowerRotateRoot != null)
 		{
-			mTowerRotateRoot.LookAt(replaceY(pos, mTowerRotateRoot.position.y));
+			mTowerRotateRoot.LookAt(pos.replaceY(mTowerRotateRoot.position.y));
 		}
 	}
 	public void setModelInitedCallback(CharacterCallback callback)

@@ -121,7 +121,7 @@ public class SkillBullet : MovableObject
 		if (mBulletData.mMuzzleEffect > 0)
 		{
 			EDEffect effect = mExcelEffect.query(mBulletData.mMuzzleEffect);
-			float yaw = getAngleFromVector3(mCharacterGame.getFacingDirection(), ANGLE.DEGREE);
+			float yaw = mCharacterGame.getFacingDirection().getAngle(ANGLE.DEGREE);
 			mEffectManager.playEffectAsyncAtPosition(effect.mPath, mStartPosition, new(0.0f, yaw, 0.0f), 1.0f, effect.mSupportMoveToHide, 0);
 		}
 	}
@@ -155,7 +155,7 @@ public class SkillBullet : MovableObject
 	public CharacterGame getTarget()							{ return mTarget; }
 	public GameEffect getFlyEffect()							{ return mFlyEffect; }
 	public CharacterSkill getSkill()							{ return mSkill; }
-	public float getFlyDistance()								{ return getLength(resetY(getPosition() - mStartPosition)); }
+	public float getFlyDistance()								{ return (getPosition() - mStartPosition).resetY().getLength(); }
 	public virtual float getRealtimeRange()						{ return 0.0f; }
 	public float getAttackPercent()								{ return mAttackPercent; }
 	public bool isWillDestroy()									{ return mWillDestroy; }

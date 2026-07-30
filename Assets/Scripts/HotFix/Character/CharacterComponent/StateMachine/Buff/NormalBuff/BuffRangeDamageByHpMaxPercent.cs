@@ -1,6 +1,5 @@
-﻿using static GBR;
-using static MathUtility;
-using static FrameBaseHotFix;
+﻿using static FrameBaseHotFix;
+using static GBR;
 
 // 参数
 public class BuffRangeDamageByHpMaxPercentParam : CharacterBuffParamT<BuffRangeDamageByHpMaxPercentParam>
@@ -55,7 +54,7 @@ public class BuffRangeDamageByHpMaxPercent : CharacterBuffT<BuffRangeDamageByHpM
 	protected void onKillMonster(EventKillMonster param)
 	{
 		CharacterMonster monster = param.mMonster;
-		int damage = round(monster.getMaxHP() * mPercent);
+		int damage = (monster.getMaxHP() * mPercent).round();
 		var pos = monster.getPosition();
 		using var a = new ListScope<CharacterMonster>(out var monsterList);
 		if (mTargetType == TARGET_BEHAVIOUR_TYPE.ALL_MONSTER)

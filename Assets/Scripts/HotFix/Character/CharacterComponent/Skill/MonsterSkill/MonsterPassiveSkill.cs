@@ -1,5 +1,4 @@
-﻿using static MathUtility;
-using static FrameBaseHotFix;
+﻿using static FrameBaseHotFix;
 using static GBR;
 
 // 怪物被动技能
@@ -7,7 +6,7 @@ public class MonsterPassiveSkill : MonsterSkillBase
 {
 	public virtual void fire()
 	{
-		mMonster.setMP(clampMin(mMonster.getMP() - mSkillData.mMP));
+		mMonster.setMP((mMonster.getMP() - mSkillData.mMP).clampMin());
 
 		// 给目标附加buff
 		foreach (int buffDetailID in mSkillData.mDefaultFireBuff)

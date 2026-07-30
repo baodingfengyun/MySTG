@@ -57,7 +57,7 @@ public class GameUtilityHotFix
 				// 免疫物理伤害
 				return 0;
 			}
-			finalDamage = skillDamage * (1.0f - divide(targetData.mDefence, 50 + targetData.mDefence));
+			finalDamage = skillDamage * (1.0f - targetData.mDefence.divide(50 + targetData.mDefence));
 		}
 		// 属性伤害
 		else
@@ -107,8 +107,7 @@ public class GameUtilityHotFix
 		finalDamage *= 1.0f + attackerData.mDamageIncrease;
 		// 最终伤害上下浮动5%
 		finalDamage *= 1.0f + (randomFloat(0.0f, 0.1f) - 0.05f);
-		clampMin(ref finalDamage, 1.0f);
-		return (int)finalDamage;
+		return (int)finalDamage.clampMin(1.0f);
 	}
 	public static void tip(string text, params string[] param)
 	{
@@ -384,11 +383,11 @@ public class GameUtilityHotFix
 		int mapWidth = mTowerDefenceSystem.getLevelWidth();
 		int mapHeight = mTowerDefenceSystem.getLevelHeight();
 		Vector3 originPos = mBattleScene.getGridPosition(intPosToIndex(mapWidth >> 1, mapHeight - 1, mapWidth));
-		float dis = getLength(pos - originPos);
+		float dis = (pos - originPos).getLength();
 		float maxDis = (mapHeight >> 1) * GRID_SIZE;
 		Vector3 delta = pos - originPos;
-		clampMin(ref delta.z);
-		return pos + lerp(minOffset, maxOffset, divide(dis, maxDis)) * normalize(delta);
+		delta.z = delta.z.clampMin();
+		return pos + lerp(minOffset, maxOffset, dis.divide(maxDis)) * delta.normalize();
 	}
 	public static void waveFinish(bool waveWin)
 	{

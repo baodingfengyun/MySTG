@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using static GDR;
-using static MathUtility;
 
 // 参数
 public class BuffStrickBackParam : CharacterBuffParamT<BuffStrickBackParam>
@@ -41,7 +40,7 @@ public class BuffStrickBack : CharacterBuffT<BuffStrickBackParam>
 		mStateTime = 0.3f;
 		// 往移动方向的反方向击退
 		Vector3 curPos = monster.getPosition();
-		Vector3 delta = setLength(monster.getComMovement().getTargetPosition() - curPos, GRID_SIZE * mCustomParam.mGridCount);
+		Vector3 delta = (monster.getComMovement().getTargetPosition() - curPos).setLength(GRID_SIZE * mCustomParam.mGridCount);
         mCharacter.MOVE(curPos, curPos - delta, mStateTime);
 	}
 }

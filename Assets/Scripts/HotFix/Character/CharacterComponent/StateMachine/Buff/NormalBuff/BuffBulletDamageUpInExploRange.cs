@@ -1,5 +1,4 @@
 ﻿using static FrameBaseHotFix;
-using static MathUtility;
 
 // 参数
 public class BuffBulletDamageUpInExploRangeParam : CharacterBuffParamT<BuffBulletDamageUpInExploRangeParam>
@@ -46,7 +45,7 @@ public class BuffBulletDamageUpInExploRange : CharacterBuffT<BuffBulletDamageUpI
 	//------------------------------------------------------------------------------------------------------------------------------
 	protected void onWillHit(EventWillHitCharacter eventParam)
 	{
-		float curDis = getLength(resetY(eventParam.mBullet.getPosition() - eventParam.mTarget.getPosition()));
+		float curDis = (eventParam.mBullet.getPosition() - eventParam.mTarget.getPosition()).resetY().getLength();
 		if (curDis < mRangePercent * eventParam.mBullet.getRealtimeRange())
 		{
 			eventParam.mDamage.mValue = (int)(eventParam.mDamage.mValue * (1.0f + mIncreaseDamage));

@@ -1,5 +1,4 @@
-﻿using static MathUtility;
-using static GBR;
+﻿using static GBR;
 
 // 防御塔数据
 public class CharacterTowerData : CharacterGameData
@@ -44,7 +43,7 @@ public class CharacterTowerData : CharacterGameData
 		mBattleLevel = level;
 		int lastLevelAttack = mLevelIncreasedAttack;
 		mLevelIncreasedAttack = mExcelTower.getTowerLevelAttack(mTableData, level);
-		mAttackIncrease += round((mIncreaseBattleLevel + 1.0f) * (mLevelIncreasedAttack - lastLevelAttack));
+		mAttackIncrease += ((mIncreaseBattleLevel + 1.0f) * (mLevelIncreasedAttack - lastLevelAttack)).round();
 	}
 	public int getGlobalLevel() { return mGlobalLevel; }
 	public void setGlobalLevel(int level) { mGlobalLevel = level; }
@@ -65,12 +64,12 @@ public class CharacterTowerData : CharacterGameData
 	public void addIncreaseBattleLevel(float percent)
 	{
 		mIncreaseBattleLevel += percent;
-		mAttackIncrease += round(mLevelIncreasedAttack * percent);
+		mAttackIncrease += (mLevelIncreasedAttack * percent).round();
 	}
 	public void removeIncreaseBattleLevel(float percent)
 	{
 		mIncreaseBattleLevel -= percent;
-		mAttackIncrease -= round(mLevelIncreasedAttack * percent);
+		mAttackIncrease -= (mLevelIncreasedAttack * percent).round();
 	}
 	public void setUseCoin(int count) { mUseCoin = count; }
 	public void addUseCoin(int count) { mUseCoin += count; }

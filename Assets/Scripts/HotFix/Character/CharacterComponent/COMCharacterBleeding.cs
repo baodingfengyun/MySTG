@@ -1,5 +1,4 @@
-﻿using static MathUtility;
-
+﻿
 // 实现流血逻辑
 public class COMCharacterBleeding : GameComponent
 {
@@ -22,11 +21,11 @@ public class COMCharacterBleeding : GameComponent
 	// 只保留最大的流血百分比
 	public void addBleeding(float value)
 	{
-		clampMin(ref mMaxBleeding, value);
+		mMaxBleeding = mMaxBleeding.clampMin(value);
 	}
 	public void removeBleeding(float value)
 	{
-		if (isFloatEqual(value, mMaxBleeding))
+		if (value.isEqual(mMaxBleeding))
 		{
 			mMaxBleeding = 0.0f;
 		}
@@ -46,7 +45,7 @@ public class COMCharacterBleeding : GameComponent
 			// 出血伤害一次
 			if (mComponentOwner is CharacterMonster monster)
 			{
-				int damage = ceil(mMaxBleeding * monster.getMonsterData().mHP);
+				int damage = (mMaxBleeding * monster.getMonsterData().mHP).ceil();
 				CmdMonsterSetHP.execute(monster, null, monster.getMonsterData().mHP - damage, -damage, true, HP_DELTA.DEBUFF);
 			}
 		}

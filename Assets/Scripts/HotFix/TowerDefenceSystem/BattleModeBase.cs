@@ -823,7 +823,7 @@ public abstract class BattleModeBase : IEventListener
 		{
 			sum += tower.generatPower();
 		}
-		return round(sum);
+		return sum.round();
 	}
 	public void notifyWaveChanged()
 	{

@@ -1,5 +1,4 @@
 ﻿using static FrameBaseHotFix;
-using static MathUtility;
 using static GBR;
 
 // 参数
@@ -72,7 +71,7 @@ public class BuffVertigoDecrease : CharacterBuffT<BuffVertigoDecreaseParam>
 		var buff = eventParam.mMonster.getFirstState<BuffVertigo>();
 		if (buff != null && buff.getStateTime() > 0.0f)
 		{
-			buff.setStateTime(clampMin(buff.getStateTime() * (1.0f - mVertigoTimeDecreasePercent), 0.01f));
+			buff.setStateTime((buff.getStateTime() * (1.0f - mVertigoTimeDecreasePercent)).clampMin(0.01f));
 		}
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using static UnityUtility;
-using static MathUtility;
 using static GBR;
 
 // 参数
@@ -74,8 +73,7 @@ public class BuffSummonMonster : CharacterBuffT<BuffSummonMonsterParam>
 			for (int j = 0; j < summonCount; ++j)
 			{
 				CharacterMonster newMonster = CmdGlobalCreateMonster.execute(newMonsterData, curGridIndex);
-				Vector3 pos = replaceY(monster.getPosition(), newMonster.getPosition().y);
-				newMonster.setPosition(pos);
+				newMonster.setPosition(monster.getPosition().replaceY(newMonster.getPosition().y));
 				COMMonsterMovement comMovement = newMonster.getComMovement();
 				comMovement.checkRoadPointBetween();
 				if (mCustomParam.mOffsetPosition)
@@ -88,7 +86,7 @@ public class BuffSummonMonster : CharacterBuffT<BuffSummonMonsterParam>
 					{
 						// 刚召唤出来的怪物没有从当前位置到起点的路线,所以向后偏移只能强制设置位置
 						Vector3 curPos = monster.getPosition();
-						Vector3 delta = setLength(comMovement.getTargetPosition() - curPos, 1.0f * ((j >> 1) + 1));
+						Vector3 delta = (comMovement.getTargetPosition() - curPos).setLength(1.0f * ((j >> 1) + 1));
 						newMonster.setPosition(curPos - delta);
 					}
 					offsetDir = !offsetDir;

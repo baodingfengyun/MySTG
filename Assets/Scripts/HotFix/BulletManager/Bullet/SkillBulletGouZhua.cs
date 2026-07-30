@@ -56,7 +56,7 @@ public class SkillBulletGouZhua : SkillBulletT<BulletCustomParam_GouZhua>
 		// 按直线将目标拉到指定位置
 		if (mTarget != null)
 		{
-			float time = divide(getLength(mTargetPosition - mTarget.getPosition()), speed);
+			float time = (mTargetPosition - mTarget.getPosition()).getLength().divide(speed);
             mTarget.MOVE_EX(mTarget.getPosition(), mTargetPosition, time, mMovingCallback, mMoveDoneCallback);
 		}
 		else
@@ -64,7 +64,7 @@ public class SkillBulletGouZhua : SkillBulletT<BulletCustomParam_GouZhua>
 			// 没有目标时固定向正前方伸出10米
 			float moveDistance = 10.0f;
 			mHookStartPosition = mTargetPosition + mCharacterGame.getForward() * moveDistance;
-			OT.TWEEN_FLOAT(0.0f, 1.0f, divide(moveDistance, speed), mMovingCallback, mMoveDoneCallback);
+			OT.TWEEN_FLOAT(0.0f, 1.0f, moveDistance.divide(speed), mMovingCallback, mMoveDoneCallback);
 		}
 	}
 	protected void onMoving(ComponentKeyFrame com, bool isBreak)

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using static StringUtility;
-using static MathUtility;
 
 // 界面上显示的塔的图标,可拖拽出去创建塔
 public class ClientPackItem : WindowRecyclableUGUI
@@ -42,7 +41,7 @@ public class ClientPackItem : WindowRecyclableUGUI
 		mDisableMask.registeCollider();
 		mClickArea.registeCollider(onAreaClick);
 		var dragCom = mDragArea.addComponent<COMWindowDrag>(false);
-		dragCom.initDrag(Vector2.up, toRadian(82.0f), true, false);
+		dragCom.initDrag(Vector2.up, 82.0f.toRadian(), true, false);
 		dragCom.setDragCallback(onDragStart, onDraging, onDragEnd);
 		mOriginCostColor = mCost.getColor();
 	}

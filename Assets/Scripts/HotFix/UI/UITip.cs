@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using static FrameUtility;
-using static MathUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UITip.prefab
@@ -89,7 +88,7 @@ public class UITip : LayoutScript
 		}
 		mTipQueue.AddLast(new KeyValuePair<string, List<string>>(tip, temp));
 		// 如果还未在计时中,则开启计时,避免无法显示
-		clampMin(ref mTipCD);
+		mTipCD = mTipCD.clampMin();
 	}
 	public void notifyTipShowDone(TipItem tip)
 	{

@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using static StringUtility;
 using static FrameUtility;
 using static UnityUtility;
 using static MathUtility;
@@ -82,7 +81,7 @@ public class SkillBulletCurveMultiDamage : SkillBulletT<BulletCustomParam_CurveM
 		mCollider.center = Vector3.zero;
 		mCollider.radius = GRID_SIZE * 0.5f;
 		float speed = mBulletData.mSpeed * (mCharacterGame.getGameData().mBulletSpeedIncrease + 1.0f);
-        this.MOVE_CURVE_EX(mPath, divide(generatePathLength(mPath), speed), mOnMoveDone);
+        this.MOVE_CURVE_EX(mPath, generatePathLength(mPath).divide(speed), mOnMoveDone);
 		mCurTime = 0;
 	}
 	protected void onMoveDone(ComponentKeyFrame com, bool breakTrack)

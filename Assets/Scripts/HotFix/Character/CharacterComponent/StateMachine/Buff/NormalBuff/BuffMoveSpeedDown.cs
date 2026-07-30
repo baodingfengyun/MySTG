@@ -1,5 +1,4 @@
-﻿using static MathUtility;
-using static FrameBaseHotFix;
+﻿using static FrameBaseHotFix;
 using static GBR;
 
 // 参数
@@ -46,7 +45,7 @@ public class BuffMoveSpeedDown : CharacterBuffT<BuffMoveSpeedDownParam>
 		base.enter();
 		COMMonsterMovement comMovement = (mCharacter as CharacterMonster).getComMovement();
 		mSlowDown = comMovement.getSpeed() * mCustomParam.mPercent * (1.0f + mCharacterGame.getGameData().mSlowDownIncrease);
-		clampMax(ref mSlowDown, comMovement.getSpeed());
+		mSlowDown = mSlowDown.clampMax(comMovement.getSpeed());
 		comMovement.setSpeed(comMovement.getSpeed() - mSlowDown);
 
 		// 播放冰冻特效
