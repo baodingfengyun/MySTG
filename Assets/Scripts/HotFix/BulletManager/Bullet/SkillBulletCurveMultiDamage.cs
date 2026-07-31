@@ -65,7 +65,7 @@ public class SkillBulletCurveMultiDamage : SkillBulletT<BulletCustomParam_CurveM
 			for (int i = 0; i < hitCount; ++i)
 			{
 				CharacterMonster monster = mTowerDefenceSystem.getMonsterByCollider(mTempResult[i]);
-				if (checkMonsterCanEffective(monster) && mCustomParam.mDamageRepeat || mHitList.Add(monster))
+				if (checkMonsterCanEffective(monster) && (mCustomParam.mDamageRepeat || mHitList.Add(monster)))
 				{
 					hit(monster);
 				}
