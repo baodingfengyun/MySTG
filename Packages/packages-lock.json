@@ -204,7 +204,7 @@
         "com.unity.textmeshpro": "3.0.6",
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       },
-      "hash": "0477f1fe390b811fec35fb0b3838a18379c353be"
+      "hash": "ef5cc1fff46ea36e05ad8c26c4462a0c98a7cc01"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",

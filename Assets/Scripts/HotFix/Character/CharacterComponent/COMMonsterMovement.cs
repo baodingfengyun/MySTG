@@ -210,11 +210,11 @@ public class COMMonsterMovement : GameComponent
 			// 随机偏移
 			if (mRandomGridOffset == MONSTER_GRID_OFFSET.LEFT)
 			{
-				mTargetPosition += direction.rotateVector3(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
+				mTargetPosition += direction.rotate(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 			}
 			else if(mRandomGridOffset == MONSTER_GRID_OFFSET.RIGHT)
 			{
-				mTargetPosition += direction.rotateVector3(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
+				mTargetPosition += direction.rotate(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 			}
 			if (mMonster.getMonsterData().mFlyable)
 			{
@@ -306,11 +306,11 @@ public class COMMonsterMovement : GameComponent
 				Vector3 offset = Vector3.zero;
 				if (mRandomGridOffset == MONSTER_GRID_OFFSET.LEFT)
 				{
-					offset = (pos1 - pos0).rotateVector3(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos1 - pos0).rotate(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				else if (mRandomGridOffset == MONSTER_GRID_OFFSET.RIGHT)
 				{
-					offset = (pos1 - pos0).rotateVector3(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos1 - pos0).rotate(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				if (isInLine(pos, pos0 + offset, pos1 + offset))
 				{
@@ -329,11 +329,11 @@ public class COMMonsterMovement : GameComponent
 				Vector3 offset = Vector3.zero;
 				if (mRandomGridOffset == MONSTER_GRID_OFFSET.LEFT)
 				{
-					offset = (pos0 - pos1).rotateVector3(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos0 - pos1).rotate(HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				else if (mRandomGridOffset == MONSTER_GRID_OFFSET.RIGHT)
 				{
-					offset = (pos0 - pos1).rotateVector3(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
+					offset = (pos0 - pos1).rotate(-HALF_PI_RADIAN).setLength(HEX_MONSTER_MOVE_OFFSET);
 				}
 				if (isInLine(pos, pos0 + offset, pos1 + offset))
 				{

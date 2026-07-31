@@ -64,8 +64,8 @@ public class SkillBulletNoMoveFan : SkillBulletT<BulletCustomParam_NoMoveFan>
 		mRealtimeRange *= mCharacterGame.getBulletExploRangeIncreasePercent(getFlyDistance()) + 1.0f;
 		if (isEditor())
 		{
-			Debug.DrawLine(firePoint, firePoint + (bulletForward * mRealtimeRange).rotateVector3(halfRadian), Color.red, mCurExistTime);
-			Debug.DrawLine(firePoint, firePoint + (bulletForward * mRealtimeRange).rotateVector3(-halfRadian), Color.red, mCurExistTime);
+			Debug.DrawLine(firePoint, firePoint + (bulletForward * mRealtimeRange).rotate(halfRadian), Color.red, mCurExistTime);
+			Debug.DrawLine(firePoint, firePoint + (bulletForward * mRealtimeRange).rotate(-halfRadian), Color.red, mCurExistTime);
 		}
 
 		// 对扇形范围内的敌人造成伤害

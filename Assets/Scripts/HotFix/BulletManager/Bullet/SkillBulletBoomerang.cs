@@ -157,7 +157,7 @@ public class SkillBulletBoomerang : SkillBulletT<BulletCustomParam_Boomerang>
 		mFlyPath.Add(start);
 		for (int i = 0; i < segmentCount; ++i)
 		{
-			mFlyPath.Add(center + startEdge.rotateVector3(minArcAngle * (i + 1)));
+			mFlyPath.Add(center + startEdge.rotate(minArcAngle * (i + 1)));
 		}
 		mFlyPath.Add(dest);
 	}
