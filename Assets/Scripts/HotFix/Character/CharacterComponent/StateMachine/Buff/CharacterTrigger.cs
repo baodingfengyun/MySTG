@@ -189,8 +189,7 @@ public class CharacterTrigger : CharacterBuff
 	// 移除所有角色的通过当前buff所触发的buff
 	protected void removeAllAdded()
 	{
-		using var a = new SafeDictionaryReader<CharacterGame, List<CharacterState>>(mBuffList);
-		foreach (var buffPair in a.mReadList)
+		foreach (var buffPair in mBuffList)
 		{
 			foreach (CharacterState buff in buffPair.Value)
 			{
@@ -208,10 +207,9 @@ public class CharacterTrigger : CharacterBuff
 	// 移除所有通过当前buff所触发的buff,仅限添加在自己身上的buff
 	protected void removeAllAddedSelf(bool willDestroy)
 	{
-		using var a = new SafeDictionaryReader<CharacterGame, List<CharacterState>>(mBuffList);
-		foreach (var buffList in a.mReadList.Values)
+		foreach (var buffList in mBuffList)
 		{
-			foreach (CharacterState buff in buffList)
+			foreach (CharacterState buff in buffList.Value)
 			{
 				// 只能移除触发添加在自己身上的buff,添加到别人身上的buff不能移除,否则会出现重复退出状态的问题
 				if (!buff.isValid() || buff.getCharacter() != mCharacter)
@@ -228,7 +226,7 @@ public class CharacterTrigger : CharacterBuff
 					mCharacter.getStateMachine().removeState(buff, true);
 				}
 			}
-			UN_LIST(buffList);
+			UN_LIST(buffList.Value);
 		}
 		mBuffList.clear();
 	}

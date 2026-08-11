@@ -45,6 +45,10 @@ public class CmdGlobalSelectTowerScene
 	protected static void showOpertion()
 	{
 		CharacterTower tower = mTowerDefenceSystem.getSelectedTowerScene();
+		if (tower == null)
+		{
+			return;
+		}
 		LT.LOAD<UITowerOperation>().setTowerPosition(tower.getPosition());
 		LT.LOAD<UITowerInfo>().setTower(tower);
 		using var a = new ClassScope<EventTowerSelect>(out var eventParam);

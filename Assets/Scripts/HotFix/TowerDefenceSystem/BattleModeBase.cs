@@ -84,8 +84,7 @@ public abstract class BattleModeBase : IEventListener
 			mMonsterGenerator.update(elapsedTime);
 
 			// 检查有没有已经移动完成的怪物
-			using var a = new SafeListReader<CharacterMonster>(mMonsterList);
-			foreach (CharacterMonster monster in a.mReadList)
+			foreach (CharacterMonster monster in mMonsterList)
 			{
 				if (monster.isDestroy())
 				{

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using static FrameUtility;
+﻿using static FrameUtility;
 using static FrameBaseHotFix;
 using static GBR;
 
@@ -28,12 +27,11 @@ public class TriggerBuffToInvisibleMonster : CharacterTriggerT<TriggerBuffToInvi
 		if (tickTimerLoop(ref mTickTimer, elapsedTime, 0.2f))
 		{
 			// 之前附加过,现在不在范围内,则移除buff
-			using var a = new SafeDictionaryReader<CharacterGame, List<CharacterState>>(mBuffList);
-			foreach (CharacterGame item in a.mReadList.Keys)
+			foreach (var item in mBuffList)
 			{
-				if ((item.getPosition() - mCharacterGame.getPosition()).lengthGreater(mCharacterGame.getRange()))
+				if ((item.Key.getPosition() - mCharacterGame.getPosition()).lengthGreater(mCharacterGame.getRange()))
 				{
-					removeCharacterAddedBuff(item);
+					removeCharacterAddedBuff(item.Key);
 				}
 			}
 

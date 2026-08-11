@@ -65,7 +65,7 @@ public class TowerSkill_HuoPao : TowerSkillT<SkillCustomParam_HuoPao>
 		int mBulletDataListCount = mBulletDataList.Count;
 		for(int i = 0; i < mBulletDataListCount; ++i)
 		{
-			if (isEven(i))
+			if (i.isEven())
 			{
 				CMD_DELAY(out CmdCharacterFireBullet cmd);
 				cmd.mFirePosMap = mFirePointLocalPosition;

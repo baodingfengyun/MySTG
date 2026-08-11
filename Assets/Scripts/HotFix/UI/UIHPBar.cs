@@ -14,6 +14,8 @@ public class UIHPBar : LayoutScript
 		mMonsterHPBarPool = new(this);
 		// auto generate constructor end
 		mNeedUpdate = false;
+		mNeedResetAllChild = false;
+		mUnuseAllWhenHide = false;
 	}
 	public override void assignWindow()
 	{

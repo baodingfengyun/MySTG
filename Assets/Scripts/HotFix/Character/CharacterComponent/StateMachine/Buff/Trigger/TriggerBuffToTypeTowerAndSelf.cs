@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using static FrameBaseHotFix;
+﻿using static FrameBaseHotFix;
 using static FrameUtility;
 using static GBR;
 
@@ -58,13 +57,12 @@ public class TriggerBuffToTypeTowerAndSelf : CharacterTriggerT<TriggerBuffToType
 					addBuff(tower);
 				}
 			}
-			using var a = new SafeDictionaryReader<CharacterGame, List<CharacterState>>(mBuffList);
-			foreach (CharacterGame item in a.mReadList.Keys)
+			foreach (var item in mBuffList)
 			{
 				// 已经不在的塔
-				if (!newList.Contains(item as CharacterTower) && item != mCharacterGame)
+				if (!newList.Contains(item.Key as CharacterTower) && item.Key != mCharacterGame)
 				{
-					removeCharacterAddedBuff(item);
+					removeCharacterAddedBuff(item.Key);
 				}
 			}
 		}
