@@ -1,0 +1,12 @@
+version: 2
+importPivots: 1
+tpsheetFileNames:
+- Assets/GameResources/Atlas/NumberStyle/CommonNumber.tpsheet
+- Assets/Resources/Atlas/GameAtlas/Common.tpsheet
+textureFileNames:
+- Assets/GameResources/Atlas/NumberStyle/CommonNumber.png
+- Assets/Resources/Atlas/GameAtlas/Common.png
+normalmapFileNames:
+- 
+- 
+enableDebugOutput: 0
