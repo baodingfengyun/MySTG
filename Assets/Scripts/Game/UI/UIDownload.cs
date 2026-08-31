@@ -3,6 +3,9 @@ using UnityEngine;
 using static StringUtility;
 using static GB;
 
+/// <summary>
+/// UI：下载
+/// </summary>
 public class UIDownload : GameLayout
 {
 	protected Image mProgressForeground;

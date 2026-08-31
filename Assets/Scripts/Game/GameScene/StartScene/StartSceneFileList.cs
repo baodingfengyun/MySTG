@@ -4,7 +4,9 @@ using static GameUtility;
 using static FrameBase;
 using static GB;
 
-// 获取所有资源文件信息的流程
+/// <summary>
+/// 启动场景 - （3）获取所有资源文件信息的流程
+/// </summary>
 public class StartSceneFileList : SceneProcedure
 {
     public string mRemoteListMD5;       // 远端文件列表的MD5,用于对比本地和远端的文件列表是否一致
@@ -25,6 +27,7 @@ public class StartSceneFileList : SceneProcedure
     }
     protected void onSuccess()
     {
+        // 进入下一个流程：下载
         mGameSceneManager.getCurScene().changeProcedure<StartSceneDownload>();
     }
     protected void onFailed()

@@ -2,8 +2,12 @@
 using static GameUtility;
 using static GB;
 
+/// <summary>
+/// 启动场景 - （4）下载流程
+/// </summary>
 public class StartSceneDownload : SceneProcedure
 {
+	// 游戏下载（框架提供）
 	protected GameDownload mInstance;
 	public StartSceneDownload()
 	{
@@ -27,7 +31,8 @@ public class StartSceneDownload : SceneProcedure
 		mInstance.willDestroy();
 	}
     //------------------------------------------------------------------------------------------------------------------------------
-    protected void retry(bool yes)
+    // 是否重新下载
+	protected void retry(bool yes)
     {
         if (yes)
         {
@@ -38,6 +43,7 @@ public class StartSceneDownload : SceneProcedure
             stopApplication();
         }
     }
+	// 根据下载错误类型，设置不同的弹窗
     protected void onDownloadError(DOWNLOAD_ERROR tip)
     {
 		if (tip == DOWNLOAD_ERROR.NONE)
@@ -57,24 +63,27 @@ public class StartSceneDownload : SceneProcedure
 			dialogYesNoResources("下载文件错误,是否重试?", retry);
 		}
 	}
+	// 下载过程中的提示信息（根据不同类型，设置不同的提示信息）
     protected void onDownloadProgress(float progress, PROGRESS_TYPE type, string info, int bytesPerSecond, int downloadRemainSeconds)
 	{
 		mUIDownload.setProgress(progress);
 		if (type == PROGRESS_TYPE.CHECKING_UPDATE)
 		{
-			mUIDownload.setDownloadInfo("正在巡视村庄...");
+			mUIDownload.setDownloadInfo("CHECKING_UPDATE 正在巡视村庄...");
 		}
 		else if (type == PROGRESS_TYPE.DELETE_FILE)
 		{
-			mUIDownload.setDownloadInfo("正在打扫羊毛，准备干净利落...");
+			mUIDownload.setDownloadInfo("DELETE_FILE 正在打扫羊毛，准备干净利落...");
 		}
 		else if (type == PROGRESS_TYPE.DOWNLOAD_RESOURCE)
 		{
-			mUIDownload.setDownloadInfo("正在运送物资...");
+			mUIDownload.setDownloadInfo("DOWNLOAD_RESOURCE 正在运送物资...");
 		}
 		else if (type == PROGRESS_TYPE.FINISH)
 		{
-			mUIDownload.setDownloadInfo("准备完毕, 即将启程...");
+			mUIDownload.setDownloadInfo("FINISH 准备完毕, 即将启程...");
+			// 资源加载完成后，加载程序集
+			logBase("资源加载完成后，加载程序集...");
             launch();
         }
 	}

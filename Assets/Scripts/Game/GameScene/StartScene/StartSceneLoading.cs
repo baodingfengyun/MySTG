@@ -4,6 +4,9 @@ using static FrameBase;
 using static GameDefine;
 using static GB;
 
+/// <summary>
+/// 启动场景 - （1）加载流程
+/// </summary>
 public class StartSceneLoading : SceneProcedure
 {
 	public override void init()
@@ -20,6 +23,7 @@ public class StartSceneLoading : SceneProcedure
 			default:								defaultLanguage = LANGUAGE_ENGLISH; break;
 		}
         mLocalizeResourcesManager.setCurLanguage(PlayerPrefs.GetString(PREF_LOCALIZATION, defaultLanguage));
+		// 进入下一个流程：版本比较
         mGameSceneManager.getCurScene().changeProcedure<StartSceneVersion>();
 	}
 }

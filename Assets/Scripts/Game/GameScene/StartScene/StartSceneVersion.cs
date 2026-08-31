@@ -3,6 +3,9 @@ using static GameUtility;
 using static FrameBase;
 using static GB;
 
+/// <summary>
+/// 启动场景 - （2）版本比较流程
+/// </summary>
 public class StartSceneVersion : SceneProcedure
 {
     protected bool mRemoteDone;
@@ -58,6 +61,7 @@ public class StartSceneVersion : SceneProcedure
                     ", RemoteVersion:" + mAssetVersionSystem.getRemoteVersion());
             // 这里按需设置自己的资源下载地址
             //mResourceManager.setDownloadURL();
+            // 进入下一个流程：文件列表
             mGameSceneManager.getCurScene().changeProcedure<StartSceneFileList>();
         }
     }
