@@ -1,6 +1,7 @@
 ﻿using System;
 using static GB;
 using static FrameBase;
+using static FrameBaseUtility;
 
 // 非热更层的界面注册
 public class LayoutRegister
@@ -15,6 +16,8 @@ public class LayoutRegister
 	//------------------------------------------------------------------------------------------------------------------------------
 	protected static void registeLayout<T>(Action<T> callback = null) where T : GameLayout
 	{
-        mLayoutManager.registeLayout(typeof(T), typeof(T).ToString(), (script) => { callback?.Invoke(script as T); });
+		String fileName = typeof(T).ToString();
+		logBase("注册UI: Assets/Resources/UI/UIPrefab/" + fileName + ".prefab");
+        mLayoutManager.registeLayout(typeof(T), fileName, (script) => { callback?.Invoke(script as T); });
     }
 }

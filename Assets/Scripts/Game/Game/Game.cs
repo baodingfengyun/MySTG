@@ -29,7 +29,7 @@ public class Game : GameFramework
     }
     protected void gameRegiste()
     {
+        logBase("[游戏注册]LayoutRegister");
         LayoutRegister.registeAllLayout();
-        logBase("[注册]LayoutRegister");
     }
 }
