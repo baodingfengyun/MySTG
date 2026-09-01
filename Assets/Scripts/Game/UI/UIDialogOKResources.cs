@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// 确认对话UI
 public class UIDialogOKResources : GameLayout
 {
+	// 位置
 	protected Transform mPanel;
+	// 关闭按钮（右上角默认）
 	protected Button mClose;
+	// 提示信息
 	protected Text mTip;
+	// 确认按钮
 	protected Button mOk;
+	// 点击确认按钮的回调
 	protected OnDialogOKCallback mOKCallback;
 	public override void assignWindow()
 	{

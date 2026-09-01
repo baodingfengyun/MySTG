@@ -36,6 +36,7 @@ public class GameUtility
 
         }
 	}
+	// 确认框
 	public static void dialogOKResources(string info, OnDialogOKCallback callback = null)
 	{
 		if (info != null)
@@ -52,6 +53,7 @@ public class GameUtility
 			mUIDialogOKResources?.close();
         }
 	}
+	// 提示框（提示信息）
 	public static void dialogTipResources(string info)
 	{
 		if (info != null)
