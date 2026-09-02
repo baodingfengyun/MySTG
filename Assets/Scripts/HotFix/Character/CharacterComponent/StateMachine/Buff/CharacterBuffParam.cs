@@ -12,6 +12,7 @@ public abstract class CharacterBuffParam : StateParam
 	public CharacterSkill mSkill;                   // 由技能释放或者技能子弹附加的buff会记录技能对象
 	public INT mDamage;                             // 伤害值,可以对伤害进行修改
 	public long mTriggerAssignID;                   // 触发类buff的唯一分配ID,用于校验mBuffTrigger是否有效
+	// 放回对象池时重置
 	public override void resetProperty()
 	{
 		base.resetProperty();
