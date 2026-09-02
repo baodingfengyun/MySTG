@@ -1,4 +1,4 @@
 // csv表格文件所在目录
-CSVPath=E:\Github\TowerDefence_Demo\Excels
+CSVPath=D:\workplace\MySTG\Excels
 // 转换表格的脚本文件的路径
-CSVToBinaryExePath=E:\Github\TowerDefence_Demo\Excels/.转换表格文件.bat
+CSVToBinaryExePath=D:\workplace\MySTG\Excels/.转换表格文件.bat
