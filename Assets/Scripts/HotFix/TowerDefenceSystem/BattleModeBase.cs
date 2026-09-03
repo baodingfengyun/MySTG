@@ -11,7 +11,13 @@ using static FrameBaseUtility;
 using static GBR;
 using static GDR;
 
-// 战斗模式基类
+// 战斗模式基类，定义战斗时需要的数据容器。主要分为几类：
+// 关卡数据
+// 地图数据
+// 单位集合：怪物，地面怪物，飞行怪物，防御塔和传送门
+// 波次数据
+// 局内状态
+// 操作状态
 public abstract class BattleModeBase : IEventListener
 {
 	protected SafeList<CharacterMonster> mMonsterList = new();      // 场景中怪物的列表,包含mWalkMonsterList和mFlyMonsterList
@@ -170,6 +176,7 @@ public abstract class BattleModeBase : IEventListener
 		// 建造CD
 		tickTimerOnce(ref mBuildingCD, elapsedTime);
 	}
+	// 设置关卡配置数据
 	public virtual void setLevelData(EDLevel levelData)
 	{
 		mLevelData = levelData;
@@ -186,6 +193,7 @@ public abstract class BattleModeBase : IEventListener
 		}
 		initMapDataInternal();
 	}
+	// 初始化关卡
 	public virtual void initLevel()
 	{
 		initLevelPortalFromConfig();
@@ -861,7 +869,9 @@ public abstract class BattleModeBase : IEventListener
 			}
 		}
 	}
+	// 初始化全局buff
 	protected void initGlobalBuff(){}
+	// 初始化关卡传送门
 	protected void initLevelPortalFromConfig()
 	{
 		if (mLevelData == null)

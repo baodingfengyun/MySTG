@@ -3,7 +3,7 @@
 // 防御塔数据
 public class CharacterTowerData : CharacterGameData
 {
-	public EDTower mTableData;								// 塔的表格数据
+	public EDTower mTableData;								// 塔的表格数据（配置）
 	public int mLevelIncreasedAttack;						// Level增加的伤害
 	public float mLevelUpdateTimer;							// 升级倒计时
 	public float mOriginRange;                              // 攻击范围,由表格数据和格子大小共同计算出来
@@ -16,6 +16,7 @@ public class CharacterTowerData : CharacterGameData
 	public float mIncreaseGlobalLevel;						// 对局外等级带来的 攻击加成 进行加成 mGlobalLevel
 	public float mIncreaseBattleLevel;						// 对局内等级带来的 攻击加成 进行加成 mNormalModeLevel/mRogueModeLevel/mCardModeLevel
 	public int mUseCoin;									// 塔实际花了多少钱，比如手动升级，而天赋自动升级不花钱也不记录，这样卖出才能返还正确的钱
+	// 重置属性和其它数据
 	public override void resetProperty()
 	{
 		base.resetProperty();

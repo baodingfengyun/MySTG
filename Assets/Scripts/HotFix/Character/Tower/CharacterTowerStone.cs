@@ -1,5 +1,5 @@
 
-// 石墩
+// 石墩（继承自防御塔）
 public class CharacterTowerStone : CharacterTower
 {
 	public override bool canOperate()

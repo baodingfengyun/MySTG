@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static GBR;
 
+// 如何管理一整局战斗？流程只回答“现在应该做什么”。需要一个贯穿整场战斗的统一入口解决。
+// TowerDefenceSystem: 对外统一入口（它的目的是让外围代码不与具体模式绑定）
+// |- BattleModeBase: 一局战斗的公共数据与规则
+//    |- BattleModeRogue: 肉鸽特有数据与行为
 // 战斗逻辑系统,位于最顶层,管理战斗场景,战斗中的所有角色单元,战斗逻辑状态以及数据
 public class TowerDefenceSystem : FrameSystem
 {

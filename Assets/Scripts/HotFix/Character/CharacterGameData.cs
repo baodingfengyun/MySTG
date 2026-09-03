@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using static GDR;
 
-// 战斗角色基类的数据
+// 战斗角色基类的数据（属性）
 public class CharacterGameData
 {
 	public float mCritical;								// 暴击率
@@ -49,6 +49,7 @@ public class CharacterGameData
 	public int mFireImprintCount;						// 火焰印记的数量
 	public Vector3 mBulletScale;						// 子弹缩放
 	public float mIncreaseFlyDis;						// 子弹飞行距离增加,对塔射程(索敌范围)不影响
+	// 重置所有属性的值
 	public virtual void resetProperty()
 	{
 		mCritical = 0.0f;
@@ -97,16 +98,28 @@ public class CharacterGameData
 		mBulletScale = Vector3.zero;
 		mIncreaseFlyDis = 0.0f;
 	}
+	// 暴击伤害
 	public float getCriticalDamage() { return mCriticalDamage + mCriticalDamageIncrease; }
+	// CD
 	public float getFinalCD(float cd) { return cd.divide((mAttackSpeed + 1.0f) * (mAttackSpeedIncreasePercent + 1.0f)); }
+	// 攻击
 	public int getAttack() { return ((mAttack + mAttackIncrease) * (1.0f + mIncreaseAttackPercent)).round(); }
+	// 暴击率
 	public float getCritical() { return mCritical + mCriticalIncrease; }
+	// 攻速
 	public float getAttackSpeed() { return mAttackSpeed; }
+	// 设置攻速
 	public void setAttackSpeed(float value) { mAttackSpeed = value.clampMin(ATTACK_SPEED_MIN); }
+	// 增加攻速
 	public void addAttackSpeed(float value) { setAttackSpeed(mAttackSpeed + value); }
+	// 降低攻速
 	public void removeAttackSpeed(float value) { setAttackSpeed(mAttackSpeed - value); }
+	// 增加子弹缩放
 	public void addBulletScale(float value) { mBulletScale += new Vector3(value, value, value); }
+	// 降低子弹缩放
 	public void removeBulletScale(float value) { mBulletScale -= new Vector3(value, value, value); }
+	// 增加飞行距离
 	public void addIncreaseFlyDis(float value) { mIncreaseFlyDis += value; }
+	// 降低飞行距离
 	public void removeIncreaseFlyDis(float value) { mIncreaseFlyDis -= value; }
 }

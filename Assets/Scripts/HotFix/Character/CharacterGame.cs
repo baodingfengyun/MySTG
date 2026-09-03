@@ -6,10 +6,11 @@ using static GDR;
 // 战斗角色基类
 public class CharacterGame : Character
 {
-	protected CharacterGameData mGameData;								// 需要在子类中赋值
+	protected CharacterGameData mGameData;								// 角色属性，需要在子类中赋值
 	protected TriggerProbabilityCallback mTriggerProbabilityCallback;   // 用于修改触发器的触发几率
 	protected CharacterGame mForceTarget;                               // 强制目标,技能会将此角色强制作为攻击目标,技能目标为自身时除外
 	protected long mForceTargetAssignID;								// 用于校验强制目标是否还有效
+	// 重置属性
 	public override void resetProperty()
 	{
 		base.resetProperty();
@@ -24,6 +25,7 @@ public class CharacterGame : Character
 		base.update(elapsedTime);
 		if (mGameData != null)
 		{
+			// 针对麻痹/冰冻状态，减少对应的时间
 			tickTimerOnce(ref mGameData.mParalysisCD, elapsedTime);
 			tickTimerOnce(ref mGameData.mFreezeCD, elapsedTime);
 		}

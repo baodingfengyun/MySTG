@@ -4,6 +4,8 @@ using static UnityUtility;
 using static MathUtility;
 using static FrameUtility;
 using static GBR;
+using static FrameBaseUtility;
+using Newtonsoft.Json;
 
 // 用于处理刷新怪物的逻辑
 public class MonsterGenerator
@@ -12,7 +14,8 @@ public class MonsterGenerator
 	protected float mCurMonsterTimer;								// 当前怪物刷新计时器
 	protected float mMonsterTimeInterval;							// 怪物出现的间隔时间,秒
 	protected bool mMonsterGenerateMaxHP;							// 生成怪物时是否设置无限血量,用于提供调试的功能
-	protected bool mMonsterGenerateMinHP;							// 生成怪物时是否设置1血量,用于提供调试的功能
+	protected bool mMonsterGenerateMinHP;                           // 生成怪物时是否设置1血量,用于提供调试的功能
+	protected int mMonsterGenId;									// 刷怪次数
 	public void clear()
 	{
 		UN_CLASS_LIST(mMonsterGenerateList);
@@ -27,24 +30,34 @@ public class MonsterGenerator
 		UN_CLASS_LIST(mMonsterGenerateList);
 		mCurMonsterTimer = 0.0f;
 	}
+	// 刷怪初始化
 	public void init()
 	{
+		mMonsterGenId = 0;
 		mCurMonsterTimer = 0.0f;
 		mMonsterTimeInterval = mTowerDefenceSystem.getWaveData().mInterval * 0.001f;
 	}
 	public void update(float elapsedTime)
 	{
+		// 等待刷怪间隔时间满足，且怪物出生列表还有剩余时
 		if (mMonsterGenerateList.Count > 0 && tickTimerLoop(ref mCurMonsterTimer, elapsedTime, mMonsterTimeInterval))
 		{
+			mMonsterGenId++;
+			// 从列表头部获取刷怪数据
 			MonsterSpawnInfo spawnInfo = mMonsterGenerateList.Dequeue();
 			List<int> monsters = spawnInfo.mMonsters;
+			List<int> spawnPointIndex = spawnInfo.mSpawnPointIndex;
 			int monstersCount = monsters.Count;
+			logBase("[刷怪" + mMonsterGenId +"] 数量:" + monstersCount + ", 怪物id: " + JsonConvert.SerializeObject(monsters) +
+				", 出生点: " + JsonConvert.SerializeObject(spawnPointIndex));
 			for(int i = 0; i < monstersCount; ++i)
 			{
 				int monsterID = monsters[i];
-				int startIndex = mTowerDefenceSystem.getStartPointIndex(spawnInfo.mSpawnPointIndex[i]);
+				int startIndex = mTowerDefenceSystem.getStartPointIndex(spawnPointIndex[i]);
+				// Command方式创建一个怪物角色
 				CharacterMonster monster = CmdGlobalCreateMonster.execute(mExcelMonster.query(monsterID), startIndex);
 				CharacterMonsterData monsterData = monster.getMonsterData();
+				// 判断调试开关
 				if (mMonsterGenerateMaxHP)
 				{
 					monsterData.mMaxHP = 9999999;
@@ -57,6 +70,7 @@ public class MonsterGenerator
 				{
 					monsterData.mMaxHP = (int)(monster.getMaxHP() * mTowerDefenceSystem.getWaveIntensity(monsterID));
 				}
+				// Command方式设置怪物的最大血量
 				CmdMonsterSetHP.execute(monster, monster.getMaxHP());
 			}
 			UN_CLASS(ref spawnInfo);

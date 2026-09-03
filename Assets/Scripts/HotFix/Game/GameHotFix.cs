@@ -37,6 +37,7 @@ public class GameHotFix : GameHotFixBase<GameHotFix>
         BulletDamageModifierRegister.registerAll();
         logBase("[游戏热更]BulletDamageModifierRegister");
     }
+    // 在GameHotFix启动时注册【游戏热更】系统
     protected override void initFrameSystem()
     {
         registeFrameSystem<TowerDefenceSystem>(com =>       mTowerDefenceSystem = com);

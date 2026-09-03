@@ -1,10 +1,10 @@
 using UnityEngine;
 using static FrameBaseUtility;
 
-// 气球炸弹塔
+// 气球炸弹塔（继承自防御塔）
 public class CharacterTowerQiQiuZhaDan : CharacterTower
 {
-	protected Animator mBalloonAnimator;
+	protected Animator mBalloonAnimator;			// 气球动画
 	public override void resetProperty()
 	{
 		base.resetProperty();
