@@ -1,7 +1,8 @@
 ﻿using static GBR;
 using static FrameBaseHotFix;
+using static FrameBaseUtility;
 
-// 打怪战斗流程
+// 战斗逻辑场景 - 打怪战斗流程
 public class GameSceneBattleGamingFight : SceneProcedure
 {
     protected override void onInit(SceneProcedure lastProcedure)
@@ -26,9 +27,11 @@ public class GameSceneBattleGamingFight : SceneProcedure
 			mUIBattleItemSelectRogue?.close();
 		}
 		mEventSystem.pushEvent<EventWaveChange>();
+		logBase("[流程]GameSceneBattleGamingFight onInit 进入战斗");
 	}
 	protected override void onExit(SceneProcedure nextProcedure)
 	{
 		mUIGaming.safe()?.notifyStartFight(false);
-	}
+        logBase("[流程]GameSceneBattleGamingFight onExit 退出战斗");
+    }
 }

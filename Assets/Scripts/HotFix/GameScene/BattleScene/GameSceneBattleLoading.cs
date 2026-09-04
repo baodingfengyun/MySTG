@@ -2,7 +2,7 @@
 using static FrameBaseHotFix;
 using static GBR;
 
-// 加载资源流程
+// 战斗逻辑场景 - 加载资源流程
 public class GameSceneBattleLoading : SceneProcedure
 {
 	protected override void onInit(SceneProcedure lastProcedure)

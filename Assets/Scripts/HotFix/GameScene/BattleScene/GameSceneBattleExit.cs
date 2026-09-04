@@ -2,7 +2,7 @@
 using static FrameBaseHotFix;
 using static GameUtilityHotFix;
 
-// 退出流程,用于清理资源
+// 战斗逻辑场景 - 退出流程,用于清理资源
 public class GameSceneBattleExit : SceneProcedure
 {
 	protected override void onExit(SceneProcedure nextProcedure)

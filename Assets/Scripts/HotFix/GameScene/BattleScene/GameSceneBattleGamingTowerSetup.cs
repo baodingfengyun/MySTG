@@ -1,7 +1,8 @@
 ﻿using static GBR;
 using static FrameBaseHotFix;
+using static FrameBaseUtility;
 
-// 可以布置塔的流程
+// 战斗逻辑场景 - 可以布置塔的流程
 public class GameSceneBattleGamingTowerSetup : SceneProcedure
 {
 	protected override void onInit(SceneProcedure lastProcedure)
@@ -16,5 +17,6 @@ public class GameSceneBattleGamingTowerSetup : SceneProcedure
 		mTowerDefenceSystem.generateWaveMonster();
 		// 每波刷新monster列表的内容
 		LT.LOAD<UIMonsterQueue>().refresh();
+		logBase("[流程]GameSceneBattleGamingTowerSetup onInit 生成下一波怪物的列表");
 	}
 }

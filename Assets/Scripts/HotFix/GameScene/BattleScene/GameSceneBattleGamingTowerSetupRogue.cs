@@ -1,6 +1,7 @@
 ﻿using static GBR;
+using static FrameBaseUtility;
 
-// 可以布置塔的流程
+// 战斗逻辑场景 - 可以布置塔的流程（肉鸽）
 public class GameSceneBattleGamingTowerSetupRogue : SceneProcedure
 {
 	protected override void onInit(SceneProcedure lastProcedure)
@@ -37,9 +38,11 @@ public class GameSceneBattleGamingTowerSetupRogue : SceneProcedure
 		{
 			LT.HIDE<UIBattleItemSelectRogue>();
 		}
+		logBase("[流程]GameSceneBattleGamingTowerSetupRogue onInit 显示三选一界面");
 	}
 	protected override void onExit(SceneProcedure nextProcedure)
 	{
 		CmdGlobalSelectItemOwnedRogue.execute(null);
-	}
+        logBase("[流程]GameSceneBattleGamingTowerSetupRogue onExit 取消选中手牌中的塔");
+    }
 }

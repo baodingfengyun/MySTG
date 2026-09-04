@@ -1,7 +1,7 @@
 ﻿using static GBR;
 using static FrameBaseHotFix;
 
-// 关卡结束显示奖励
+// 战斗逻辑场景 - 关卡结束显示奖励
 public class GameSceneBattleGamingLevelFinish: SceneProcedure
 {
     protected override void onInit(SceneProcedure lastProcedure)
