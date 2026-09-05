@@ -46,27 +46,30 @@ public class COMMonsterMovement : GameComponent
 		mMoveFinish = false;
 		mConfusion = false;
 	}
+	// 怪物移动更新
 	public override void update(float elapsedTime)
 	{
 		base.update(elapsedTime);
+		// 所有不可移动的条件（符合其中1个即不可移动）
 		if (mRoadPointList == null ||
 			mRoadPointList.Count == 0 ||
 			mTargetPointIndex < 0 ||
 			mTargetPointIndex >= mRoadPointList.Count ||
 			mMonster.getMonsterData().mHP <= 0 ||
-			mMonster.hasStateGroup<StateGroupNotAllowMove>() ||
+			mMonster.hasStateGroup<StateGroupNotAllowMove>() ||  // 是否处于不可移动状态
 			mSpeed <= 0.0f)
 		{
 			return;
 		}
+		// 移动距离 = 时间 * 移动速度
 		float delta = elapsedTime * mSpeed;
 		if (!mConfusion)
 		{
-			moveForward(delta);
+			moveForward(delta);		// 非混乱状态，往前走
 		}
 		else
 		{
-			moveBackward(delta);
+			moveBackward(delta);	// 混乱状态，往回走
 		}
 		mMovingCallback?.Invoke(delta);
 		float curYaw = getVectorYaw(mMonster.getForward());
@@ -177,6 +180,7 @@ public class COMMonsterMovement : GameComponent
 	{
 		return (mMonster.getPosition() - mTargetPosition).getLength() + (mRoadPointList.Count - 1 - mTargetPointIndex) * GRID_SIZE;
 	}
+	// 开始移动
 	public void startMove()
 	{
 		if (mRoadPointList.Count == 0)

@@ -32,6 +32,7 @@ public class COMCharacterBleeding : GameComponent
 	}
 	public FloatCallback getListenFunction() { return mListenFunction; }
 	//------------------------------------------------------------------------------------------------------------------------------
+	// DEBUFF效果：移动（距离累加）引发出血逻辑
 	protected void onMoving(float distance)
 	{
 		if (mMaxBleeding <= 0.0f)
@@ -46,6 +47,7 @@ public class COMCharacterBleeding : GameComponent
 			if (mComponentOwner is CharacterMonster monster)
 			{
 				int damage = (mMaxBleeding * monster.getMonsterData().mHP).ceil();
+				// 执行怪物设置血量
 				CmdMonsterSetHP.execute(monster, null, monster.getMonsterData().mHP - damage, -damage, true, HP_DELTA.DEBUFF);
 			}
 		}
