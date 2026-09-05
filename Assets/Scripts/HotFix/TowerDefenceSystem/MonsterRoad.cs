@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 
+// 怪物路点
 public class MonsterRoad
 {
 	public List<int> mMonsterWalkRoadPoint = new();      // 怪物的地面移动路线

@@ -79,6 +79,7 @@ public class CmdGlobalCreateMonster
 		mTowerDefenceSystem.addMonster(monster);
 		if (monster.getMonsterData().mTableData.mStrength == MONSTER_STRENGTH.BOSS)
 		{
+			// 触发生成BOSS怪物事件
 			using var a = new ClassScope<EventSpawnMonster>(out var param);
 			param.mMonster = monster;
 			mEventSystem.pushEvent(param);

@@ -5,6 +5,8 @@ using static UnityUtility;
 using static FrameBaseHotFix;
 using static GBR;
 using static GDR;
+using static FrameBaseUtility;
+using Newtonsoft.Json;
 
 // 怪物移动逻辑,沿着指定路线移动
 public class COMMonsterMovement : GameComponent
@@ -199,6 +201,7 @@ public class COMMonsterMovement : GameComponent
 		setTargetPointIndex(1);
 		// 初始时朝向前进的方向
 		mMonster.lookAtPoint(mTargetPosition);
+		logBase("[开始移动] " + mMonster.ToString() + ", roadPointList: " + JsonConvert.SerializeObject(mRoadPointList));
 	}
 	public void setTargetPointIndex(int index)
 	{

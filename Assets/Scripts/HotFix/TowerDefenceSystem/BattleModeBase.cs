@@ -350,6 +350,7 @@ public abstract class BattleModeBase : IEventListener
 		}
 		return false;
 	}
+	// 添加怪物至怪物列表
 	public void addMonster(CharacterMonster monster)
 	{
 		if (!monster.getMonsterData().mFlyable)
