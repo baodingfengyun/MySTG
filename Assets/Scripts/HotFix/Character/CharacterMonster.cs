@@ -89,9 +89,12 @@ public class CharacterMonster : CharacterGame
 	public override int getMaxHP() { return mMonsterData.mMaxHP; }
 	public override int getTableID() { return mMonsterData.mTableData.mID; }
 	//------------------------------------------------------------------------------------------------------------------------------
+	// 初始化怪物的功能组件
 	protected override void initComponents()
 	{
+		// 角色基础组件
 		base.initComponents();
+		// 怪物特有组件
 		addComponent(out mComBleeding, true);
 		addComponent(out mComMovement, true);
 		addComponent(out mComLifeTime, true);
@@ -100,4 +103,9 @@ public class CharacterMonster : CharacterGame
 		addComponent(out mComTalk, true);
 		mAvatar = mComAvatar;
 	}
+	// 打印一个怪物的基本信息
+    public override string ToString()
+    {
+		return "Monster id:" + getTableID() + ", guid:" + mGUID + ", name:" + mName + ", hp:" + getHP();
+    }
 }

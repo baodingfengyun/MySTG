@@ -2,6 +2,7 @@
 using static FrameBaseHotFix;
 using static UnityUtility;
 using static GBR;
+using static FrameBaseUtility;
 
 // 创建一个怪物对象
 public class CmdGlobalCreateMonster
@@ -12,6 +13,8 @@ public class CmdGlobalCreateMonster
 		var monster = mCharacterManager.createCharacter<CharacterMonster>("monster");
 		monster.initData(monsterTableData);
 		monster.notifyFightStart();
+		logBase("[CMD创建怪物] " + monster.ToString());
+
 		COMMonsterMovement comMove = monster.getComMovement();
 		List<MonsterRoad> roadList = mTowerDefenceSystem.getMonsterRoadList();
 		if (!monster.getMonsterData().mFlyable)

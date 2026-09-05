@@ -72,26 +72,33 @@ public abstract class BattleModeBase : IEventListener
 		mState = BATTLE_STATE.NONE;
 		mEventSystem?.unlistenEvent(this);
 	}
+	// 清空波次数据
 	public virtual void clearWave()
 	{
 		mCharacterManager.destroyCharacterList(mMonsterList.getMainList());
 		mMonsterList.clear();
 		mMonsterGenerator.clearWave();
 		mMonsterDisplay.Clear();
+		logBase("[波次]清空数据 怪物列表，出怪，下一波怪");
 	}
+	// 战斗基础规则
 	public virtual void update(float elapsedTime)
 	{
+		// 编辑器模式下，按下S键：时间倍数为10 （快进）
 		if (isEditor() && isKeyCurrentDown(KeyCode.S))
 		{
 			Time.timeScale = 10.0f;
 		}
+		// 在战斗状态更新生成器并检查活动怪物
 		if (mState == BATTLE_STATE.FIGHTING)
 		{
+			// 调用出怪逻辑的更新
 			mMonsterGenerator.update(elapsedTime);
 
 			// 检查有没有已经移动完成的怪物
 			foreach (CharacterMonster monster in mMonsterList)
 			{
+				// 如果怪物对象已经销毁，从怪物表中删除
 				if (monster.isDestroy())
 				{
 					removeMonster(monster);
@@ -101,10 +108,11 @@ public abstract class BattleModeBase : IEventListener
 				// 怪物移动到终点,直接销毁
 				if (monster.getComMovement().isMoveFinish())
 				{
+					// 怪物突破防线事件
 					using var b = new ClassScope<EventMonsterBreak>(out var param);
 					param.mMonster = monster;
 					mEventSystem.pushEvent(param);
-
+					// 扣对应的血，播放音效，删除怪物，发送事件
 					CmdGlobalSetLevelHp.execute(mHp - monsterData.mTableData.mHurtHp);
 					AT.SOUND_2D(SOUND_HOTFIX.LOSE_HP);
 					removeMonster(monster);
@@ -120,9 +128,11 @@ public abstract class BattleModeBase : IEventListener
 				else if (monsterData.mHP <= 0)
 				{
 					var killer = mCharacterManager.getCharacter(monsterData.mKillerGUID) as CharacterGame;
+					// 波次经验
 					int exp = mExcelMonster.getWaveExp(monsterData.mTableData.mID, mWaveIndex);
 					CmdGlobalSetCurExp.execute(mCurExp + exp);
 					removeMonster(monster);
+					// 怪物死亡事件
 					using var b = new ClassScope<EventMonsterWillDie>(out var eventParam0);
 					eventParam0.mMonster = monster;
 					eventParam0.mKiller = killer;
@@ -953,6 +963,7 @@ public abstract class BattleModeBase : IEventListener
 
 		mEventSystem?.unlistenEvent(this);
 	}
+	// 从怪物表中删除
 	protected void removeMonster(CharacterMonster monster)
 	{
 		if (mBeenFocusedMonster == monster)
