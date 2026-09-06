@@ -215,6 +215,7 @@ public abstract class BattleModeBase : IEventListener
 	public GRID_TYPE getGridType() { return mMapConfig?.mGridDirection ?? GRID_TYPE.SIX; }
 	public int getEndPoint() { return mMapConfig.mTargetPoint.get(0); }
 	public List<int> getStartPoints() { return mMapConfig.mSpawnPoint; }
+	// 获取地图某一行的数据
 	public void getGridLine(int lineIndex, List<int> line)
 	{
 		line.Clear();
@@ -901,7 +902,7 @@ public abstract class BattleModeBase : IEventListener
 	protected void initMapDataInternal()
 	{
 		mGlobalCharacter = mCharacterManager.createCharacter<CharacterGame>("global");
-		int gridCount = getMapWidth() * getMapHeight();
+		int gridCount = getMapWidth() * getMapHeight();		// 地图格子数量
 		Span<GRID_STATE> pointStateList = stackalloc GRID_STATE[gridCount];
 		using var a = new ListScope<int>(out var gridLine);
 		int curStateCount = 0;
