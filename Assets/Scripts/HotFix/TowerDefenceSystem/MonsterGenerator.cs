@@ -87,6 +87,7 @@ public class MonsterGenerator
 		}
 		mMonsterTimeInterval = waveConfig.mInterval * 0.001f;
 		using var a = new ListScope<int>(out var monsters);
+		// 固定怪物序列生成。例如：怪物A两只，怪物B三只。得到：A,A,B,B,B. 用来指定教学波次，及严格控制顺序的序列。
 		foreach (Vector2Int item in waveConfig.mSpawnQueue.safe())
 		{
 			for (int j = 0; j < item.y; ++j)
@@ -94,10 +95,12 @@ public class MonsterGenerator
 				monsters.Add(item.x);
 			}
 		}
+		// 随机怪物生成（按人口随机，而不是按数量随机）
 		if (waveConfig.mPopulation != 0 && waveConfig.mMonsterIDs.Count > 0)
 		{
 			generateRamdomMonsters(waveConfig.mMonsterWeights, waveConfig.mMonsterIDs, waveConfig.mPopulation, monsters);
 		}
+		// 怪物出生点规则
 		SPAWN_POINT_RULE rule = waveConfig.mSpawnRule;
 		if (rule == SPAWN_POINT_RULE.RANDOM)
 		{
@@ -138,8 +141,10 @@ public class MonsterGenerator
 	{
 		using var a = new ListScope2<int>(out var monsterWeightList, out var monsterIDList);
 		monsterWeightList.AddRange(monsterWeights);
-		int minMonsterPopulation = int.MaxValue;
-		foreach (int id in monsterIDList.addRange(monsterIDs))
+		monsterIDList.addRange(monsterIDs);
+
+        int minMonsterPopulation = int.MaxValue;
+		foreach (int id in monsterIDList)
 		{
 			minMonsterPopulation = minMonsterPopulation.clampMax(mExcelMonster.query(id).mPopulation);
 		}
@@ -158,7 +163,8 @@ public class MonsterGenerator
 			}
 			EDMonster monsterData = mExcelMonster.query(monsterIDList[randomHit(monsterWeightList)]);
 			monsters.Add(monsterData.mID);
-			population -= monsterData.mPopulation;
+			population -= monsterData.mPopulation;      // 从总人口中减去当前怪物所占人口
+			logBase("[随机怪物]id: " + monsterData.mID + "，占用人口：" + monsterData.mPopulation + ", 剩余人口：" + population);
 		}
 	}
 	// 从权重中随机一个出口
