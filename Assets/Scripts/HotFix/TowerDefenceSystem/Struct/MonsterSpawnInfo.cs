@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 
 /// <summary>
-/// 怪物出生信息
+/// 怪物出生信息（代表一次刷新时刻，而不一定只代表一只怪）。
+/// 既能单个出口依次出怪，也能多个出口在同一次计时触发同时出怪。
 /// </summary>
 public class MonsterSpawnInfo : ClassObject
 {
