@@ -9,6 +9,10 @@ using static FrameBaseUtility;
 using Newtonsoft.Json;
 
 // 怪物移动逻辑,沿着指定路线移动
+// 怪物移动完整流程：生成命令创建CharacterMonster，移动组件获得自己的格子路线；startMove把怪物放到起点并指向下一格；
+// 每帧按照“时间x当前速度”计算距离，并逐段消耗；格子发生变化时发送事件；到达终点只设置完成标记，再由战斗模块统一扣血和销毁；
+// 如果混乱，传送或者放塔导致方向与路线改变，组件就从怪物当前位置重新选择下一个目标。
+// 移动组件的价值：在离散格子路线和连续角色运动之间建立了一层稳定的转换。
 public class COMMonsterMovement : GameComponent
 {
 	protected List<int> mRoadPointList = new();		// 路点列表,值是格子下标,每个怪物会拷贝一份路线
@@ -81,6 +85,7 @@ public class COMMonsterMovement : GameComponent
 		// 始终朝向移动方向
 		mMonster.lookAt(getDirectionFromRadianYawPitch(curYaw, 0.0f));
 	}
+	// 循环消耗距离后，无论跨过几个路点，本帧的总位移都能得到正确处理。
 	public void moveForward(float moveDelta, bool triggerEvent = true)
 	{
 		int lastGridIndex = mGridIndex;
@@ -98,7 +103,7 @@ public class COMMonsterMovement : GameComponent
 			if (mTargetPointIndex >= mRoadPointList.Count - 1)
 			{
 				curPos = mTargetPosition;
-				mMoveFinish = true;
+				mMoveFinish = true;		// 达到终点只打标记，不在组件更新中销毁怪物
 				break;
 			}
 			// 移动的距离超过了下一个点,则减去到下一个点的距离,继续计算
@@ -111,6 +116,7 @@ public class COMMonsterMovement : GameComponent
 		// 触发格子改变的事件,如果一帧中跨过了多个格子,则只处理最后一个格子的改变,因为中间可能是瞬移过去的,瞬移过去应该不会触发中间格子会合理一些
 		if (mGridIndex != lastGridIndex && triggerEvent)
 		{
+			// 触发怪物所在的格子发生变化的事件
 			using var a = new ClassScope<EventMonsterGridChange>(out var param);
 			param.mMonster = mMonster;
 			mEventSystem.pushEvent(param, mMonster.getGUID());
@@ -182,7 +188,7 @@ public class COMMonsterMovement : GameComponent
 	{
 		return (mMonster.getPosition() - mTargetPosition).getLength() + (mRoadPointList.Count - 1 - mTargetPointIndex) * GRID_SIZE;
 	}
-	// 开始移动
+	// 开始移动（寻路层只关心哪些格子可以通过，移动层再决定怪物具体显示在哪个位置。）
 	public void startMove()
 	{
 		if (mRoadPointList.Count == 0)
@@ -233,6 +239,7 @@ public class COMMonsterMovement : GameComponent
 	public bool checkPath(int extraBlockIndex)
 	{
 		// 有怪物不在有效的格子中时,不允许放置塔,否则放置后无法计算怪物路线
+		// 先把怪物当前位置转换为格子下标
 		int curGridIndex = mBattleScene.worldPointToGridIndex(mMonster.getPosition(), mGridIndex);
 		if (curGridIndex < 0)
 		{

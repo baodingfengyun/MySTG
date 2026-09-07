@@ -840,6 +840,7 @@ public class BattleScene : SceneInstance
 				CmdGlobalSetGoldCoinRogue.execute(mTowerDefenceSystem.getGoldCoinRogue() - buildCost);
 				var tower = CmdGlobalCreateTower.execute(towerData, point);
 				tower.getTowerData().addUseCoin(buildCost);
+				// 将塔放置在地图上
 				CmdGlobalPutTowerRogue.execute(tower, gridIndex, 0);
 			} while (false);
 			CmdGlobalSelectItemOwnedRogue.execute(null);

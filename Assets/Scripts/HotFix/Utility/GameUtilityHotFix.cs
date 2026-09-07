@@ -240,6 +240,7 @@ public class GameUtilityHotFix
 		{
 			return false;
 		}
+		// 只验证出怪口仍然不够。怪物可能正在道路中间，也可能因为击退等效果拥有从当前位置生成的独立路线。
 		// 放置塔以后,如果使任意怪物找不到路线到达终点,也不允许放置
 		foreach (CharacterMonster monster in modeInstance.getMonsterMainList())
 		{
