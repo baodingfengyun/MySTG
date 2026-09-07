@@ -4,12 +4,16 @@ using static GDR;
 using static MathUtility;
 using static GameUtilityHotFix;
 using static UnityUtility;
+using static FrameBaseUtility;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 // 随机卡池中的物品,Rogue模式
 public class CmdGlobalRandomPropListRogue
 {
 	public static void execute(int costCoin)
 	{
+		// 判断随机卡池时的金币花费
 		if (costCoin > 0)
 		{
 			if (mTowerDefenceSystem.getGoldCoinRogue() < costCoin)
@@ -17,17 +21,20 @@ public class CmdGlobalRandomPropListRogue
 				tip("金币不足");
 				return;
 			}
+			// 设置剩余金币数量
 			CmdGlobalSetGoldCoinRogue.execute(mTowerDefenceSystem.getGoldCoinRogue() - costCoin);
 		}
 
+		// 检查波次配置中的卡池id
 		EDWaveConfig waveConfig = mTowerDefenceSystem.getWaveData();
-		if (waveConfig.mCardPool == 0)
+        int cardPoolID = waveConfig.mCardPool;
+        if (cardPoolID == 0)
 		{
 			mTowerDefenceSystem.setAllowSelectPropListRogue(null);
 			mUIBattleItemSelectRogue.setPropList(mTowerDefenceSystem.getAllowSelectPropListRogue());
 			return;
 		}
-		int cardPoolID = waveConfig.mCardPool;
+		// 以下逻辑为生成三选一的内容（类似抽卡逻辑，包含必出，优先级等）
 		EDCardPoolConfig cardPoolConfig = mExcelCardPoolConfig.query(cardPoolID);
 		using var a = new ListScope2<int>(out var weightList, out var tempItemIDList);
 		using var b = new ListScope2T<ExcelData, BATTLE_ITEM_TYPE>(out var selectedDataList, out var tempItemTypeList);
@@ -48,6 +55,7 @@ public class CmdGlobalRandomPropListRogue
 		tempItemIDList.AddRange(cardPoolConfig.mItemID);
 		tempItemTypeList.AddRange(cardPoolConfig.mItemType);
 		weightList.AddRange(cardPoolConfig.mItemWeight);
+		// 过滤一些不符合条件的选项
 		for (int i = 0; i < tempItemIDList.Count; ++i)
 		{
 			// 把所有非天赋卡牌的删除掉,不满足当前条件的天赋也删除
@@ -79,7 +87,7 @@ public class CmdGlobalRandomPropListRogue
 		{
 			if (existTowerList.Contains(mExcelTowerTalent.query(tempItemIDList[i]).mTowerType))
 			{
-				// 暂时固定加500
+				// 权重暂时固定加500
 				weightList[i] += ROGUE_RANDOM_ADD_PROBABILITY;
 			}
 		}
@@ -107,20 +115,33 @@ public class CmdGlobalRandomPropListRogue
 			}
 		}
 
-		int remainCount = ROGUE_RANDOM_PROP_COUNT - selectedDataList.Count;
+        List<int> talentIdList = new();	// 保存随机天赋id，打印用
+        int remainCount = ROGUE_RANDOM_PROP_COUNT - selectedDataList.Count;
 		if (remainCount > 0 && weightList.Count > 0)
 		{
 			Span<int> indexList = stackalloc int[getMin(weightList.Count, remainCount)];
+			// 从weightList中选择remainCount个不重复下标放入indexList
 			randomSelect(weightList, remainCount, indexList);
 			foreach (int index in indexList)
 			{
-				if (!selectedDataList.addUnique(mExcelTowerTalent.query(tempItemIDList[index])))
+				int talentId = tempItemIDList[index];
+				if (!selectedDataList.addUnique(mExcelTowerTalent.query(talentId)))
 				{
-					logError("随机出了重复词条");
+					logError("[三选一]随机出了重复词条");
+				}
+				else
+				{
+					talentIdList.Add(talentId);
 				}
 			}
-		}
-		mTowerDefenceSystem.setAllowSelectPropListRogue(selectedDataList);
+        }
+
+        logBase("[三选一]随机id：" + JsonConvert.SerializeObject(tempItemIDList) + ", 类型：" +
+                JsonConvert.SerializeObject(tempItemTypeList) + ", 权重：" +
+                JsonConvert.SerializeObject(weightList) + ", 金币：" + costCoin + "，选中：" +
+                JsonConvert.SerializeObject(talentIdList));
+
+        mTowerDefenceSystem.setAllowSelectPropListRogue(selectedDataList);
 		mUIBattleItemSelectRogue.setPropList(mTowerDefenceSystem.getAllowSelectPropListRogue());
 	}
 }

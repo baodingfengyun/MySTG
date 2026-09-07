@@ -58,6 +58,7 @@ public class ExcelGlobalConfig : ExcelTableT<EDGlobalConfig>
         return mRogueAddTowerWeight[^1].z;
     }
     public int getInitCriticalDamage() { return getIntValue("init_critical_damage"); }
+    // 肉鸽塔的种类
     public int getRogueTowerSlotCount() { return getIntValue("rogue_tower_slot_count"); }
     //------------------------------------------------------------------------------------------------------------------------------
     protected void initList()

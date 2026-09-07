@@ -13,32 +13,37 @@ public class GameSceneBattleGamingTowerSetupRogue : SceneProcedure
 		CmdGlobalSelectItemOwnedRogue.execute(null);
 
 		EDWaveConfig waveConfig = mTowerDefenceSystem.getWaveData();
-		if (waveConfig.mCardPool != 0)
+		int cardPool = waveConfig.mCardPool;
+        logBase("[流程]GameSceneBattleGamingTowerSetupRogue onInit 三选一界面 cardPool: " + cardPool);
+        if (cardPool != 0)
 		{
 			// 选过就隐藏且不随机了
 			if (mTowerDefenceSystem.getBattleModeRogue().isRogueSelected())
 			{
 				LT.HIDE<UIBattleItemSelectRogue>();
+				logBase("[流程]GameSceneBattleGamingTowerSetupRogue 隐藏：选过就隐藏且不随机了");
 			}
 			// 放塔流程时，为空时随机一次
 			else if (mTowerDefenceSystem.getAllowSelectPropListRogueCount() == 0)
 			{
 				// 因为卡池界面一直不会隐藏,所以除了第一次以外都不会走onGameState,所以需要手动显示
 				LT.LOAD<UIBattleItemSelectRogue>().setListVisible(true);
+                logBase("[流程]GameSceneBattleGamingTowerSetupRogue 显示：放塔流程时，为空时随机一次");
 				CmdGlobalRandomPropListRogue.execute(0);
-			}
+            }
 			// 如果有说明已经读取了服务器的存档
 			else
 			{
 				// 因为卡池界面一直不会隐藏,所以除了第一次以外都不会走onGameState,所以需要手动显示
 				LT.LOAD<UIBattleItemSelectRogue>().setListVisible(true);
-			}
+                logBase("[流程]GameSceneBattleGamingTowerSetupRogue 显示：读取了服务器的存档");
+            }
 		}
 		else
 		{
 			LT.HIDE<UIBattleItemSelectRogue>();
-		}
-		logBase("[流程]GameSceneBattleGamingTowerSetupRogue onInit 显示三选一界面");
+            logBase("[流程]GameSceneBattleGamingTowerSetupRogue 隐藏：没有配置卡池");
+        }
 	}
 	protected override void onExit(SceneProcedure nextProcedure)
 	{

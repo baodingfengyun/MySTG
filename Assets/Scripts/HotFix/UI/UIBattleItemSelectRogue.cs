@@ -152,6 +152,7 @@ public class UIBattleItemSelectRogue : LayoutScript
 		mRootAnimator.SetInteger("SelectAnim", 1);
 		mBackgroundAnimator.SetInteger("SelectAnim", 1);
 	}
+	// 三选一界面，点击刷新按钮，花费2金币
 	protected void onRefreshClick()
 	{
 		CmdGlobalRandomPropListRogue.execute(RANDOM_TOWER_COST_COIN);
