@@ -140,6 +140,7 @@ public class CharacterTower : CharacterGame
 		addComponent(out mComDrag, true);
 		mAvatar = mComAvatar;
 	}
+	// 开始拖拽时的回调
 	protected void onStartDrag(ComponentOwner dragObj, TouchPoint touchPoint, ref bool allowDrag)
 	{
 		// 不知道什么原因导致下面拖拽过程中会出现拖拽有效但是下标无效的错误,可能原因之一就是塔拖拽时还没设置下标,所以没有下标时不允许拖拽
@@ -159,6 +160,7 @@ public class CharacterTower : CharacterGame
 		mDragValid = false;
 		mCurDragingIndex = -1;
 	}
+	// 拖拽塔到地图上的某个位置，判断是否可以真正放下
 	protected void onDraging(ComponentOwner dragObj, Vector3 pos)
 	{
 		// 计算当前在哪个格子
@@ -194,6 +196,7 @@ public class CharacterTower : CharacterGame
 			}
 			else
 			{
+				// 必须检查所有出怪口，只有每条路线都能够找到终点，mDragValid才会保持为true。计算出的临时路径会立即showPreviewPath反馈：绿色或红色
 				mDragValid = true;
 				int roadListCount = mTowerDefenceSystem.getMonsterRoadList().Count;
 				for (int i = 0; i < roadListCount; ++i)
@@ -220,6 +223,7 @@ public class CharacterTower : CharacterGame
 			}
 		}
 	}
+	// 拖拽结束时回调
 	protected void onEndDrag(ComponentOwner dragObj, Vector3 pos, bool cancel)
 	{
 		// 还原缩放

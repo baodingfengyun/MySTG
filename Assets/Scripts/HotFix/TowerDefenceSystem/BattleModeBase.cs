@@ -243,6 +243,7 @@ public abstract class BattleModeBase : IEventListener
 		}
 		return success;
 	}
+	// 放塔前不是先修改地图再回滚
 	// 计算怪物路线,extraBlockIndex表示临时作为不可通过的格子下标,emptyIndex表示临时作为可通过的格子下标
 	public bool generateRoadPath(int roadIndex, int extraBlockIndex, int emptyIndex, List<int> walkRoadList, List<int> flyRoadList = null)
 	{
@@ -255,27 +256,30 @@ public abstract class BattleModeBase : IEventListener
 			return true;
 		}
 
+		// 寻路前先生成bool地图
 		using var a = new ListScope<bool>(out var roadMap);
 		int count = mGridList.Count;
 		if (flyRoadList != null)
 		{
+			// 判断格子是否允许飞行，加入到roadMap
 			for (int i = 0; i < count; ++i)
 			{
 				bool isGridSelfFlyable = isGridStateFlyable(mGridList[i].getState());
 				bool canFly = extraBlockIndex != i;
 				roadMap.Add(isGridSelfFlyable && (emptyIndex == i || canFly));
 			}
-			if (getGridType() == GRID_TYPE.FOUR)
+			if (getGridType() == GRID_TYPE.FOUR)		// 四方向可通行
 			{
 				AStar4(roadMap, startPoint.toIndex(getMapWidth()), mTargetPoint.toIndex(getMapWidth()), getMapWidth(), flyRoadList);
 			}
-			else if (getGridType() == GRID_TYPE.SIX)
+			else if (getGridType() == GRID_TYPE.SIX)	// 六方向可通行
 			{
                 AStar6OddR(roadMap, startPoint.toIndex(getMapWidth()), mTargetPoint.toIndex(getMapWidth()), getMapWidth(), flyRoadList);
 			}
 		}
 
 		roadMap.Clear();
+		// 判断格子是否可行走，加入到roadMap
 		for (int i = 0; i < count; ++i)
 		{
 			LevelGrid grid = mGridList[i];
@@ -907,6 +911,7 @@ public abstract class BattleModeBase : IEventListener
 	}
 	protected void initMapDataInternal()
 	{
+		// 创建全局唯一的角色
 		mGlobalCharacter = mCharacterManager.createCharacter<CharacterGame>("global");
 		int gridCount = getMapWidth() * getMapHeight();		// 地图格子数量
 		Span<GRID_STATE> pointStateList = stackalloc GRID_STATE[gridCount];
