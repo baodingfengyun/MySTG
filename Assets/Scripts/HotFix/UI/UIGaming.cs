@@ -4,6 +4,7 @@ using static FrameBaseHotFix;
 using static FrameUtility;
 using static GameUtilityHotFix;
 using static GBR;
+using static FrameBaseUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIGaming.prefab
@@ -202,6 +203,7 @@ public class UIGaming : LayoutScript
 			}
 		}
 		changeProcedure<GameSceneBattleGamingFight>();
+		logBase("点击开始战斗按钮，进入战斗流程");
 	}
 	protected void onCameraScaleClick()
 	{

@@ -2,7 +2,7 @@
 using static FrameUtility;
 using static GBR;
 
-// 管理塔的技能
+// 管理塔的技能：通用攻击节奏
 public class COMTowerSkill : GameComponent
 {
 	protected List<TowerSkill> mSkillList = new();  // 技能列表,一般只有一个技能

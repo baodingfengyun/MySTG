@@ -6,7 +6,7 @@ using static FrameUtility;
 using static MathUtility;
 using static GBR;
 
-// 防御塔技能
+// 防御塔技能（技能差异）
 public class TowerSkill : CharacterSkill
 {
 	protected Dictionary<string, Transform> mFirePointLocalPosition = new(); // 发射子弹的坐标,相对坐标,使用时需要转换为世界坐标

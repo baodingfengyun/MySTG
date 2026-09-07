@@ -16,13 +16,13 @@ public class CharacterBuff : CharacterState
 		base.enter();
 		var thisParam = getParam() as CharacterBuffParam;
 		thisParam?.mCallback?.Invoke(true, thisParam.mBuffTrigger, thisParam.mTriggerAssignID);
-		if (mCharacterGame is CharacterMonster monster)
+		if (mCharacterGame is CharacterMonster monster)		// 怪物
 		{
 			using var a = new ClassScope<EventMonsterAddBuff>(out var param);
 			param.mMonster = monster;
 			mEventSystem.pushEvent(param, mCharacterGame.getGUID());
 		}
-		else if (mCharacterGame is CharacterTower tower)
+		else if (mCharacterGame is CharacterTower tower)	// 塔
 		{
 			using var a = new ClassScope<EventTowerAddBuff>(out var param);
 			param.mTower = tower;

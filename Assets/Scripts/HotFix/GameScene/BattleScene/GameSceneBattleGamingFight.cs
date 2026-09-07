@@ -10,6 +10,7 @@ public class GameSceneBattleGamingFight : SceneProcedure
 		mGameFrameworkHotFix.resetFrameRate();
 		// 进入战斗时确认关闭塔的操作相关界面
 		CmdGlobalSelectTowerScene.execute(null);
+		// 设置刷怪计时器，战斗状态，UI相关
 		mTowerDefenceSystem.getMonsterGenerator().setCurMonsterTimer(1);
 		mTowerDefenceSystem.setBattleState(BATTLE_STATE.FIGHTING);
 		mUIGaming.notifyStartFight(true);

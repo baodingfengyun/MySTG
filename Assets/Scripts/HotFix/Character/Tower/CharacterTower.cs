@@ -7,7 +7,7 @@ using static MathUtility;
 using static GBR;
 using static GDR;
 
-// 防御塔角色,处理防御塔的所有逻辑
+// 防御塔角色,处理防御塔的所有逻辑。负责保存塔的数据，组合组件以及处理放置和拖拽。
 public class CharacterTower : CharacterGame
 {
 	protected List<CharacterState> mBuffStates = new(); // 添加的buff state列表
@@ -34,10 +34,12 @@ public class CharacterTower : CharacterGame
 		mTowerData.mCriticalDamage = mExcelGlobalConfig.getInitCriticalDamage().divide(ODDS_SCALE);
 		mTowerData.setGlobalLevel(1);
 		mComAvatar.setModelLoaded(false);
-		if (towerData.mSkill > 0)
+		// 初始化塔时，EDTower的mSkill决定它使用哪个技能
+		int skillId = towerData.mSkill;
+		if (skillId > 0)
 		{
-			mComSkill.addSkill(towerData.mSkill);
-			mComSkill.setCurSkill(towerData.mSkill);
+			mComSkill.addSkill(skillId);
+			mComSkill.setCurSkill(skillId);
 		}
 		mComSkill.setActive(false);
 		mComAvatar.setModelInitedCallback((Character character) =>
@@ -88,8 +90,10 @@ public class CharacterTower : CharacterGame
 		mCurDragingIndex = -1;
 		mDragValid = false;
 	}
+	// 通知战斗开始
 	public void notifyStartFight()
 	{
+		// 设置技能组件：激活
 		mComSkill.setActive(true);
 	}
 	public CharacterTowerData getTowerData() { return mTowerData; }

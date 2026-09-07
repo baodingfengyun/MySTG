@@ -17,6 +17,6 @@ public class GameSceneBattleGamingTowerSetup : SceneProcedure
 		mTowerDefenceSystem.generateWaveMonster();
 		// 每波刷新monster列表的内容
 		LT.LOAD<UIMonsterQueue>().refresh();
-		logBase("[流程]GameSceneBattleGamingTowerSetup onInit 生成下一波怪物的列表");
+		logBase("[流程]GameSceneBattleGamingTowerSetup onInit 进入布阵流程时，系统先生成下一波数据，并刷新预览界面");
 	}
 }
