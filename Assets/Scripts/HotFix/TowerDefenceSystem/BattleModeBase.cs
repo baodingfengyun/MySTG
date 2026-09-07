@@ -854,10 +854,12 @@ public abstract class BattleModeBase : IEventListener
 	public void setFocusedMonster(CharacterMonster monster) { mBeenFocusedMonster = monster; }
 	public CharacterMonster getFocusedMonster() { return mBeenFocusedMonster; }
 	//------------------------------------------------------------------------------------------------------------------------------
+	// 刷新怪物显示（按怪物第一次出现的顺序统计数量，并检测本波是否包含BOSS）
 	protected void refreshMonsterDisplaySkill()
 	{
 		mMonsterDisplay.Clear();
 		mHasBossNextWave = false;
+		// 遍历所有怪物出生信息
 		foreach (MonsterSpawnInfo info in mMonsterGenerator.getMonsterGenerateList())
 		{
 			foreach (int id in info.mMonsters)
@@ -880,6 +882,10 @@ public abstract class BattleModeBase : IEventListener
 				}
 			}
 		}
+		foreach (Vector2Int md in mMonsterDisplay)
+		{
+            logBase("[怪物预览] monster id: " + md.x + ", num: " + md.y);
+        }
 	}
 	// 初始化全局buff
 	protected void initGlobalBuff(){}

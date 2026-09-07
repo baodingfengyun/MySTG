@@ -102,19 +102,19 @@ public class MonsterGenerator
 		}
 		// 怪物出生点规则
 		SPAWN_POINT_RULE rule = waveConfig.mSpawnRule;
-		if (rule == SPAWN_POINT_RULE.RANDOM)
-		{
+		if (rule == SPAWN_POINT_RULE.RANDOM)        // （权重）随机出怪口
+        {
 			setSpawnRuleRandom(monsters, waveConfig.mSpawnPoint, waveConfig.mSpawnPointWeight);
 		}
-		else if (rule == SPAWN_POINT_RULE.SYNC)
+		else if (rule == SPAWN_POINT_RULE.SYNC)		// 放入多只怪物，绑定多个出口
 		{
 			setSpawnRuleSync(monsters, waveConfig.mSpawnPoint);
 		}
-		else if (rule == SPAWN_POINT_RULE.TIMES)
+		else if (rule == SPAWN_POINT_RULE.TIMES)	// 每次只放一只怪，在同一个出口连续刷新指定次数
 		{
 			setSpawnRuleTimes(monsters, waveConfig.mSpawnPoint, waveConfig.mSpawnPointTimes);
 		}
-		else if (rule == SPAWN_POINT_RULE.NONE)
+		else if (rule == SPAWN_POINT_RULE.NONE)		// 每次只放一只怪
 		{
 			setSpawnRuleTimes(monsters, waveConfig.mSpawnPoint, 1);
 		}
