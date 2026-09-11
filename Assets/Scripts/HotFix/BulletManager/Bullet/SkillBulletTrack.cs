@@ -27,20 +27,23 @@ public class SkillBulletTrack : SkillBulletT<BulletCustomParam_Track>
 		// mOnMoveDone = null;
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
+	// 子弹装载时
 	protected override void onBulletLoaded(Vector3 firePoint)
 	{
 		base.onBulletLoaded(firePoint);
+		// 计算子弹的移动速度
 		float speed = mBulletData.mSpeed * (mCharacterGame.getGameData().mBulletSpeedIncrease + 1.0f);
-		if (mTarget != null)
+		if (mTarget != null)	// 如果有攻击目标
 		{
 			this.TRACK_TARGET(mTarget, speed, mHitPointOffset, mOnTrackDone);
 		}
-		else
+		else	// 如果没有攻击目标（以发射者的位置为基点、方向计算目标位置）
 		{
 			Vector3 targetPos = mCharacterGame.getPosition() + mCharacterGame.getForward() * 6.0f;
 			this.MOVE_EX(mStartPosition, targetPos, (mStartPosition - targetPos).resetY().getLength().divide(speed), mOnMoveDone);
 		}
 	}
+	// 移动结束（无目标）
 	protected void onMoveDone(ComponentKeyFrame com, bool isBreak)
 	{
 		if (mWillDestroy)
@@ -54,6 +57,7 @@ public class SkillBulletTrack : SkillBulletT<BulletCustomParam_Track>
 		explosion();
 		mBulletManager.destroyBullet(this, mCharacterGame.getGUID());
 	}
+	// 追踪结束（有目标）
 	protected void onTrackDone(bool breakTrack)
 	{
 		if (mWillDestroy)

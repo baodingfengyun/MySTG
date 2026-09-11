@@ -87,8 +87,10 @@ public class TowerSkill : CharacterSkill
 	public float getRealCD() { return mTower.getTowerData().getFinalCD(mSkillData.mCD); }
 	public List<EDSkillBullet> getBulletDataList() { return mBulletDataList; }
 	public int getOriginBulletCount() { return mSkillData.mBullet.Count; }
+	// 技能攻击
 	public virtual void fire()
 	{
+		// 检测是否有合适的攻击目标
 		checkSearchTarget();
 
 		// 没有目标则无法攻击
@@ -297,6 +299,7 @@ public class TowerSkill : CharacterSkill
 			}
 		}
 	}
+	// 发射子弹
 	protected virtual void fireAllBullet()
 	{
 		if (!mFirePointListInited || mBulletDataList.Count == 0)

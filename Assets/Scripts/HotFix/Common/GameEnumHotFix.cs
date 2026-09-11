@@ -107,26 +107,26 @@ public enum LEVEL_STATE
 	PLAYING,        // 正在玩的
 }
 
-// 子弹类型
+// 子弹类型（共计16种）
 public enum BULLET_TYPE : byte
 {
-	NONE,                           // 无效值
-	TRACK,                          // 追踪子弹
-	PARABOLA_TRACK,                 // 抛物线,带追踪
-	LINK_LINE,                      // 连线,可以瞬间串联多个目标
-	NO_MOVE,                        // 原地范围伤害子弹
-	STRAIGHT_LINE,                  // 直线飞行的子弹
-	STRAIGHT_LINE_ALWAYS_COLLIDE,   // 直线飞行的子弹,飞行过程中会一直检测是否碰到物体
-	CURVE_MULTI_DAMAGE,             // 按折线移动,每隔一定时间产生一次
-	NO_MOVE_FAN,                    // 扇形子弹
-	CURVE,                          // 按折线移动
-	PARABOLA,                       // 抛物线,不带追踪
-	BALLOON,                        // 气球子弹
-	ROTATE_AROUND,                  // 绕某个点旋转的子弹
-	ZHEN_DANG,                      // 震荡塔子弹
-	GOU_ZHUA,                       // 钩爪
-	TRACK_BOUNCE,                   // 追踪并且弹射周围目标
-	BOOMERANG,                      // 回旋镖
+	NONE,                           // 0  无效值
+	TRACK,                          // 1  追踪子弹
+	PARABOLA_TRACK,                 // 2  抛物线,带追踪
+	LINK_LINE,                      // 3  连线,可以瞬间串联多个目标
+	NO_MOVE,                        // 4  原地范围伤害子弹
+	STRAIGHT_LINE,                  // 5  直线飞行的子弹
+	STRAIGHT_LINE_ALWAYS_COLLIDE,   // 6  直线飞行的子弹,飞行过程中会一直检测是否碰到物体
+	CURVE_MULTI_DAMAGE,             // 7  按折线移动,每隔一定时间产生一次
+	NO_MOVE_FAN,                    // 8  扇形子弹
+	CURVE,                          // 9  按折线移动
+	PARABOLA,                       // 10 抛物线,不带追踪
+	BALLOON,                        // 11 气球子弹
+	ROTATE_AROUND,                  // 12 绕某个点旋转的子弹
+	ZHEN_DANG,                      // 13 震荡塔子弹
+	GOU_ZHUA,                       // 14 钩爪
+	TRACK_BOUNCE,                   // 15 追踪并且弹射周围目标
+	BOOMERANG,                      // 16 回旋镖
 }
 
 // 战斗中物品的类型

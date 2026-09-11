@@ -25,6 +25,7 @@ public class COMTowerSkill : GameComponent
 		mCurSkill = null;
 		mTower = null;
 	}
+	// COMTowerSkill只决定什么时候尝试攻击
 	public override void update(float elapsedTime)
 	{
 		base.update(elapsedTime);
@@ -33,6 +34,7 @@ public class COMTowerSkill : GameComponent
 			skill.update(elapsedTime);
 		}
 
+		// 战场上存在怪物，当前技能有效，技能冷却完成，塔没有“不允许攻击”状态
 		if (mTowerDefenceSystem.getMonsterMainList().Count > 0 && 
 			mCurSkill != null && 
 			mCurSkill.isCoolDown() &&

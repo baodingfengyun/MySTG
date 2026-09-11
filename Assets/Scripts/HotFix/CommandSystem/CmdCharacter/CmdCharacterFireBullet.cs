@@ -6,12 +6,12 @@ using static FrameBaseHotFix;
 // 角色发射子弹
 public class CmdCharacterFireBullet : Command
 {
-	public Dictionary<string, Transform> mFirePosMap;
-	public EDSkillBullet mBulletData;
-	public CharacterGame mTarget;
-	public BulletCallback mWillFireBullet;
-	public HitCallback mHitCallback;
-	public DamageCallback mDamageCallback;
+	public Dictionary<string, Transform> mFirePosMap;	// 发射位置
+	public EDSkillBullet mBulletData;					// 子弹数据
+	public CharacterGame mTarget;						// 目标
+	public BulletCallback mWillFireBullet;				// 子弹发射时
+	public HitCallback mHitCallback;					// 子弹击中时
+	public DamageCallback mDamageCallback;				// 产生伤害时
 	public long mTargetAssignID;
 	public long mFireID;
 	public override void resetProperty()
@@ -44,8 +44,10 @@ public class CmdCharacterFireBullet : Command
 
 		using var a = new ClassScope<EventBulletWillFire>(out var param0);
 		param0.mBullet = bullet;
+		// 子弹发射事件
 		mEventSystem.pushEvent(param0, character.getGUID());
 
+		// 子弹发射
 		bullet.fire();
 		if(character is CharacterTower tower)
 		{

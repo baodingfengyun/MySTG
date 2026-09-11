@@ -46,15 +46,19 @@ public class CharacterSkill : DelayCmdWatcher
 		}
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
+	// 技能生效之前的行为
 	protected void onPreFireSkill()
 	{
 		++mFireID;
+		// 发送事件：EventPreFireSkill
 		using var a = new ClassScope<EventPreFireSkill>(out var param);
 		param.mSkill = this;
 		mEventSystem.pushEvent(param, mCharacter.getGUID());
 	}
+	// 技能生效后的行为
 	protected void onPostFireSkill()
 	{
+		// 发送事件：EventPostFireSkill
 		using var a = new ClassScope<EventPostFireSkill>(out var param);
 		param.mSkill = this;
 		mEventSystem.pushEvent(param, mCharacter.getGUID());

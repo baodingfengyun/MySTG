@@ -7,8 +7,10 @@ public class BulletManager : FrameSystem
 {
 	protected Dictionary<long, SkillBullet> mBulletList = new();					// 所有子弹实例列表
 	protected HashSet<SkillBullet> mDeadBullet = new();								// 待销毁的子弹列表
+	// 创建子弹实例
 	public SkillBullet createBullet(EDSkillBullet bulletData)
 	{
+		// 子弹类型
 		BULLET_TYPE bulletType = bulletData.mType;
 		// 创建子弹对象
 		var bullet = CLASS(BulletRegister.getBulletType(bulletType)) as SkillBullet;
@@ -16,15 +18,18 @@ public class BulletManager : FrameSystem
 		bullet.initData(bulletData, BulletRegister.getParamTemplate(bulletData));
 		return mBulletList.add(bullet.getObjectID(), bullet);
 	}
+	// 子弹更新
 	public override void update(float elapsedTime)
 	{
 		base.update(elapsedTime);
+		// 遍历所有子弹
 		foreach (SkillBullet bullet in mBulletList.Values)
 		{
 			bullet.update(elapsedTime);
 		}
 		if (mDeadBullet.Count > 0)
 		{
+			// 销毁子弹
 			foreach (SkillBullet bullet in mDeadBullet)
 			{
 				bullet.destroy();
