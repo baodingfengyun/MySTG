@@ -13,6 +13,22 @@ using static GBR;
 public class GameUtilityHotFix
 {
 	private static Vector2Int[] mHexDiagonalVector2Int = new Vector2Int[6];
+	// 全链路 ④伤害 的终点：整工程唯一的伤害结算公式，被 SkillBullet.hit() 默认调用。
+	// 【完整结算顺序，KR1 复刻改造就认准这一处】
+	//   1. 暴击判定：mAlwaysCriticalHit>0 必暴，否则 randomHit(暴击率 - 目标抗暴)
+	//   2. 闪避判定：randomHit(目标 mEvasion) 命中则直接返回 0 —— 注意这里对"所有伤害"都吃闪避，
+	//      而 KR1 是"仅近战可闪"，这是已识别的语义差（KR 里弓箭照吃、近战才闪）。
+	//   3. 基础技能伤害 = 攻击力 × 子弹攻击% + 子弹固定攻击(mAttack)
+	//   4. 精英/BOSS 增伤：塔对 ELITE/BOSS 有独立加成系数
+	//   5. 按元素分支减伤（关键的护甲曲线差异）：
+	//      · NONE(物伤)：dmg × (1 - def/(50+def))，且受 mImmunityPhysicDamage 免疫
+	//        —— 这是"递减曲线"，与 KR1 的线性 dmg×(100-armor)/100 不同，95甲 KR剩5%、这里剩34.5%
+	//      · FIRE/ICE/POISON/LIGHTNING：dmg × (1 - 对应抗性) × (1 + 目标"被该元素伤害"增幅)，deltaType=DEBUFF
+	//      · DARK/LIGHT：同上但 deltaType 保持 NORMAL_DAMAGE
+	//      —— 属性伤害直接绕开护甲 def，这是与 KR1"炮伤吃半甲"最大的机制差
+	//   6. 通用受伤增幅 mBeenDamageIncrease → 暴击倍率 → 攻击者全局增伤 mDamageIncrease
+	//   7. 最终 ±5% 随机浮动，clampMin(1) 保证至少打 1 点
+	// 【KR1 缺口在此一览】无"炮伤(护甲折半)"通道、无真伤/穿透、无秒杀、无"按子弹类型判定可否闪避"。
 	public static int generateDamage(CharacterGame target, CharacterGame attacker, SkillBullet bullet, out bool isHit, out bool isCritical, out HP_DELTA deltaType)
 	{
 		CharacterGameData attackerData = attacker.getGameData();

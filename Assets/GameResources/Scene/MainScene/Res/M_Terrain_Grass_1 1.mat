@@ -87,19 +87,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BLACK_Emiss:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 092febb0e8a723c40aeb4bcde1de3b11, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BLUE_Emiss:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 092febb0e8a723c40aeb4bcde1de3b11, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GREEN_Emiss:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 092febb0e8a723c40aeb4bcde1de3b11, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RED_Emiss:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 092febb0e8a723c40aeb4bcde1de3b11, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_05de2d88e98e4ce08d05e6062c986e05_Texture_1_Texture2D:
@@ -177,4 +177,3 @@ Material:
     - _GREEN_Emis_ColorHDR: {r: 0, g: 0, b: 0, a: 0}
     - _RED_Emis_ColorHDR: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1

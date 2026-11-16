@@ -242,6 +242,17 @@ public class SkillBullet : MovableObject
 		mLastPosition = getPosition();
 		setScale(Vector3.one + mCharacterGame.getGameData().mBulletScale);
 	}
+	// 子弹命中处理：全链路 ④中"子弹 → 伤害 → 扣血 → Buff → 事件"的汇聚点
+	// 严格的执行顺序（Buff/触发器作者必须理解，否则不知道自己的效果何时生效）：
+	//   1. EventWillGenerateDamage：命中前事件，可在这里改伤害（如"对减速目标+X%"）
+	//   2. mWillHitBuffToTarget：命中瞬间给目标挂 Buff（伤害计算之前）
+	//   3. 伤害计算：有 mDamageCallback 用自定义公式，否则走 generateDamage()，
+	//      再依次叠加飞行距离增幅、BulletDamageModifier 修正
+	//   4. EventWillHitCharacter：扣血前最后的机会修改 mDamage（传的是引用包装 INT）
+	//   5. CmdMonsterSetHP 真正扣血 —— 血量归零不会在这里销毁，而是留给 BattleModeBase.update 统一走死亡链
+	//   6. 命中特效/音效 → mHitBuffToTarget(命中后挂目标) → mHitBuffToSelf(挂自己) → mHitCallback
+	//   7. EventHitCharacter(发射者guid) + EventCharacterBeenHit(目标guid)：命中后事件，供击杀/连击类触发器
+	// 注意"命中前/命中后"两组 Buff 的区分：前者在伤害前，后者在伤害后，是很多词条效果的关键。
 	protected void hit(CharacterGame target)
 	{
 		if (target == null)

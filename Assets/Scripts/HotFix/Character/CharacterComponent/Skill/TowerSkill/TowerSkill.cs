@@ -6,7 +6,16 @@ using static FrameUtility;
 using static MathUtility;
 using static GBR;
 
-// 防御塔技能（技能差异）
+// 防御塔技能（技能差异）——全链路 ④战斗 的"索敌 + 开火"核心
+// 继承自 CharacterSkill（提供冷却 mRemainCD、mCharacter 等），本类补上塔特有的一套：
+//   索敌：checkSearchTarget → searchNewTarget，按 SEARCH_TARGET(NEAREST/RANDOM/SELF) 和
+//         TARGET_BEHAVIOUR_TYPE(全部/地面/飞行) 从 BattleModeBase 的三份怪物集合里挑目标。
+//         Buff 可以动态 push/pop mSearchTarget 改变索敌策略（取列表最后一个为当前）。
+//   开火：fire() → fireAllBullet()，按 mFireTime 时间点把 mBulletDataList 里的子弹
+//         通过延迟命令 CmdCharacterFireBullet 依次发射，实现"一次技能多连发"。
+//   数量成长：mBulletIncreaseCount / mBulletIncreasePercent 由 Rogue 天赋 Buff 修改，
+//             refreshBulletCountInterval 据此在末尾追加子弹，这就是"子弹+X"/"+X%"词条的落点。
+// 差异化扩展：具体塔（投石机、震荡、弹射等）用 TowerSkill_XXX 子类覆写 fire/searchNewTarget。
 public class TowerSkill : CharacterSkill
 {
 	protected Dictionary<string, Transform> mFirePointLocalPosition = new(); // 发射子弹的坐标,相对坐标,使用时需要转换为世界坐标
@@ -87,9 +96,10 @@ public class TowerSkill : CharacterSkill
 	public float getRealCD() { return mTower.getTowerData().getFinalCD(mSkillData.mCD); }
 	public List<EDSkillBullet> getBulletDataList() { return mBulletDataList; }
 	public int getOriginBulletCount() { return mSkillData.mBullet.Count; }
-	// 技能攻击
+	// 技能攻击：一次开火的完整时序（由 COMTowerSkill.update 在冷却好时调用）
 	public virtual void fire()
 	{
+		// ①索敌：先校验集火目标/当前目标是否有效，无效则按规则重新选一个
 		// 检测是否有合适的攻击目标
 		checkSearchTarget();
 
@@ -98,11 +108,14 @@ public class TowerSkill : CharacterSkill
 		{
 			return;
 		}
+		// ②前摇事件：派发 EventPreFireSkill，触发"开火时"类 Buff/触发器
 		onPreFireSkill();
+		// ③进入冷却：实际 CD = 技能表 CD 经塔的攻速加成修正（getFinalCD）
 		mRemainCD = getRealCD();
 		mEverHasTarget = true;
 		// 朝向目标,默认朝向第一个目标
 		mTower.getComAvatar().towerLookPostion(mFacingTarget.getPosition());
+		// ④发射全部子弹：按 mFireTime 延迟排队（真正创建子弹在 CmdCharacterFireBullet）
 		fireAllBullet();
 
 		// 播放释放技能的特效，如果没有加载就先异步加载再播放
@@ -195,6 +208,11 @@ public class TowerSkill : CharacterSkill
 		}
 		return monster;
 	}
+	// 索敌决策的优先级（从高到低），理解顺序就知道"集火"为什么有时不生效：
+	//   ①玩家/系统指定的集火目标(getFocusedMonster) 且可用 → 用它
+	//   ②当前目标 mFacingTarget 仍有效 → 保留（除非 mClearTarget 强制清空）
+	//   ③塔被 Buff 强制指定的目标 getForceTarget()
+	//   ④以上都没有 → searchNewTarget() 按 SEARCH_TARGET 规则现选
 	protected void checkSearchTarget()
 	{
 		CharacterGame focusTarget = getFocusAttackTarget();
@@ -253,6 +271,9 @@ public class TowerSkill : CharacterSkill
 		}
 		return character.getHP() > 0 && (mTower.getPosition() - character.getPosition()).lengthLess(mTower.getRange());
 	}
+	// 按配置的索敌规则 + 目标类型从 BattleModeBase 的怪物集合里挑目标。
+	// 所有距离判断都用 getNearest*/get*InRange 系列（遍历分好的地面/飞行/全部三份集合），
+	// 且自动跳过死亡(mHP<=0)和隐身(mIsInvisible>0)单位。子类可覆写实现特殊索敌（如优先血最少）。
 	protected virtual void searchNewTarget()
 	{
 		SEARCH_TARGET searchTarget = getSearchTarget();
@@ -299,7 +320,10 @@ public class TowerSkill : CharacterSkill
 			}
 		}
 	}
-	// 发射子弹
+	// 发射子弹：把本技能的所有子弹按 mFireTime 时间点排成"延迟命令"。
+	// 用 CMD_DELAY + pushDelayCommand 而非立即发，是为了支持"一次技能多连发且有时间间隔"
+	// （如三连射在 0/0.1/0.2 秒依次出膛）。mFireID 是本次释放的唯一编号，
+	// 同一次 fire() 的所有子弹共享它，供后续"按一次释放统计命中数"类触发器中止/计数。
 	protected virtual void fireAllBullet()
 	{
 		if (!mFirePointListInited || mBulletDataList.Count == 0)

@@ -80,7 +80,6 @@ Material:
     - _bottom: {r: 0, g: 0.4056604, b: 0.3149979, a: 1}
     - _top: {r: 0.28833035, g: 0.554717, b: 0.003139862, a: 0}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &942487932808161254
 MonoBehaviour:
   m_ObjectHideFlags: 11

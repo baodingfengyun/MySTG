@@ -1,7 +1,12 @@
 ﻿using static GBR;
 using static FrameBaseUtility;
 
-// 战斗逻辑场景 - 可以布置塔的流程（肉鸽）
+// 战斗逻辑场景 - 可以布置塔的流程（肉鸽版，全链路 ①布阵 的 Rogue 分支）
+// 继承 TowerSetup 的布阵准备，额外叠一层"三选一卡牌"：
+//   本波 WaveConfig.mCardPool != 0 时，若还没选过且候选为空 → CmdGlobalRandomPropListRogue 抽卡池；
+//   若是从服务器存档恢复的候选（非空）→ 直接显示；选过或用完 → 隐藏。
+// 玩家从三选一里拿到的天赋/新塔，会写进 BattleModeRogue.mSelectedTalentDic / mAllowUseTowerList，
+// 再通过全局角色 mGlobalCharacter 上的 Buff 影响本波及之后的所有战斗（Rogue 构筑的"叠层"就在这）。
 public class GameSceneBattleGamingTowerSetupRogue : SceneProcedure
 {
 	protected override void onInit(SceneProcedure lastProcedure)

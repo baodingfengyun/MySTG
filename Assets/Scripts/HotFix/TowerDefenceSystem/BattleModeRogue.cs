@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using static FrameUtility;
 using static GBR;
 
-// Rogue战斗模式的逻辑
+// Rogue战斗模式的逻辑：在 BattleModeBase 的公共规则上，补充肉鸽特有的数据与行为
+// 相比基类多出来的四样东西，正对应"局内 Rogue 构筑"这条成长轴：
+//   mGoldCoin        —— 抽卡/买塔用的局内货币，每波结束按 WaveConfig.mRewardCurrency 发放
+//   mAllowUseTowerList —— 当前可用的塔（初始只有 Lv1*Star1），通过天赋卡解锁新塔
+//   mAllowSelectPropList —— 本波三选一卡池的候选条目（AllowSelectProp = 表格数据 + 是否已用）
+//   mSelectedTalentDic —— 玩家已选中的天赋词条 → 叠层次数（Buff 强度靠次数堆叠）
+// 覆写的三个 cmd* 把"放塔/卖塔/选卡"派发给 Rogue 版命令；cmdWaveFinish 先发奖励再走基类流程。
 public class BattleModeRogue : BattleModeBase
 {
 	protected Dictionary<EDTowerTalent, int> mSelectedTalentDic = new();	// 从卡池中选择的随机词条列表

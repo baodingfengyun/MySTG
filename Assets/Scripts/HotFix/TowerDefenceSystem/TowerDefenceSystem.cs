@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using static GBR;
 
-// 如何管理一整局战斗？流程只回答“现在应该做什么”。需要一个贯穿整场战斗的统一入口解决。
+// 如何管理一整局战斗？流程只回答"现在应该做什么"。需要一个贯穿整场战斗的统一入口解决。
 // TowerDefenceSystem: 对外统一入口（它的目的是让外围代码不与具体模式绑定）
 // |- BattleModeBase: 一局战斗的公共数据与规则
 //    |- BattleModeRogue: 肉鸽特有数据与行为
 // 战斗逻辑系统,位于最顶层,管理战斗场景,战斗中的所有角色单元,战斗逻辑状态以及数据
+//
+// 【设计角色：门面(Facade)】
+// 本类自身几乎没有逻辑，所有方法都是一行转发给 mBattleModeInstance。存在的意义是解耦：
+// 场景流程、UI、命令、Buff 等外围代码只认这一个稳定入口，不需要知道当前是哪种战斗模式；
+// 甚至可以在 setBattleMode() 里整体替换模式实现（目前只有 ROGUE_LIKE 一种）。
+// 全链路中各环节的调用入口都能在这里找到：
+//   布阵 cmdPutTower / 刷怪 generateWaveMonster / 寻路 generateRoadPathAndRefresh /
+//   索敌 getNearestMonsterInRange 系列 / 状态 setBattleState / 结算 setHp、setWin / 查询 getGridState 等。
+// 注意：本类还顺带提供 getWaveData()（读 WaveConfig），是"数据层"在门面上的一个便捷出口。
 public class TowerDefenceSystem : FrameSystem
 {
 	protected BattleModeBase mBattleModeInstance;                               // 当前战斗实例
@@ -24,6 +33,8 @@ public class TowerDefenceSystem : FrameSystem
 		base.update(elapsedTime);
 		mBattleModeInstance?.update(elapsedTime);
 	}
+	// 按关卡模式创建战斗实例：ROGUE_LIKE → BattleModeRogue，其余模式当前不支持（置空）。
+	// setLevelData 会先判断实例为空再调用它，因此更换关卡不会重建已经存在的战斗。
 	public void setBattleMode(BATTLE_MODE mode, bool isEndless)
 	{
 		if (mode == BATTLE_MODE.ROGUE_LIKE)

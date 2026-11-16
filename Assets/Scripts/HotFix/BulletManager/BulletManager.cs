@@ -2,7 +2,11 @@
 using static FrameUtility;
 using static FrameBaseHotFix;
 
-// 用来管理所有的子弹,tick所有的子弹
+// 用来管理所有的子弹,tick所有的子弹（全链路 ④中子弹的"容器 + 生命期管理员"）
+// createBullet() 是工厂入口：按子弹表里的 BULLET_TYPE 从 BulletRegister 反射出对应子类
+// （直线/抛物/追踪/弹射/回旋/扇形…共 16 种形态），这就是"换子弹形态只改配置"的底层支撑。
+// 每帧 update 遍历 tick 所有子弹，lateUpdate 处理朝向；销毁走 mDeadBullet 缓冲，
+// 延迟到遍历结束后统一清理，避免在遍历中修改字典。destroyAllBullet 在退出战斗时兜底清场。
 public class BulletManager : FrameSystem
 {
 	protected Dictionary<long, SkillBullet> mBulletList = new();					// 所有子弹实例列表

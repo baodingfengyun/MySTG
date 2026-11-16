@@ -159,7 +159,6 @@ Material:
     - _GREEN_Emis_ColorHDR: {r: 0, g: 0, b: 0, a: 0}
     - _RED_Emis_ColorHDR: {r: 64, g: 1.2009416, b: 0, a: 0}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &8559951121982791794
 MonoBehaviour:
   m_ObjectHideFlags: 11

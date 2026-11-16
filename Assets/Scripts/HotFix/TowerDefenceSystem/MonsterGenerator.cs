@@ -7,7 +7,15 @@ using static GBR;
 using static FrameBaseUtility;
 using Newtonsoft.Json;
 
-// 用于处理刷新怪物的逻辑
+// 用于处理刷新怪物的逻辑：把 WaveConfig 波次表翻译成"按时间点排队出怪"的队列，再逐帧吐出怪物
+//
+// 【在全链路中的位置】它是 ③刷怪 的执行者，由 BattleModeBase.update() 在 FIGHTING 状态每帧驱动。
+// 分两步走，理解这点很关键：
+//   generateMonsters()  —— 布阵阶段(SETUP_TOWER)调用一次，只"生成数据"：把本波要出的怪和对应出怪口
+//                          打包成一个个 MonsterSpawnInfo 塞进 mMonsterGenerateList 队列，并不创建实体。
+//   update()            —— 战斗阶段每帧调用，按 mMonsterTimeInterval(来自 WaveConfig.mInterval) 到点就
+//                          Dequeue 一批，逐个走 CmdGlobalCreateMonster 真正实例化怪物并挂上移动路线。
+// 队列结构 Queue<MonsterSpawnInfo> 的意义：一个批次=一个刷怪时刻，批内可多口同时出怪（见三种出生规则）。
 public class MonsterGenerator
 {
 	protected Queue<MonsterSpawnInfo> mMonsterGenerateList = new();	// 当前已经随机出的怪物列表,记录了这一波的每一刷怪刻需要刷出的怪
@@ -87,7 +95,8 @@ public class MonsterGenerator
 		}
 		mMonsterTimeInterval = waveConfig.mInterval * 0.001f;
 		using var a = new ListScope<int>(out var monsters);
-		// 固定怪物序列生成。例如：怪物A两只，怪物B三只。得到：A,A,B,B,B. 用来指定教学波次，及严格控制顺序的序列。
+			// 第一步：按 mSpawnQueue 生成"固定序列"——教学波次和需要严格控序的关卡用它，
+		// 例如怪物A两只、B三只得到 A,A,B,B,B（确定顺序，不随机）。
 		foreach (Vector2Int item in waveConfig.mSpawnQueue.safe())
 		{
 			for (int j = 0; j < item.y; ++j)
@@ -100,6 +109,9 @@ public class MonsterGenerator
 		{
 			generateRamdomMonsters(waveConfig.mMonsterWeights, waveConfig.mMonsterIDs, waveConfig.mPopulation, monsters);
 		}
+		// 出生点规则：决定这批怪从哪个/哪些口出，四种规则对应不同关卡节奏：
+		//   RANDOM — 权重随机选口（每只怪独立随机）；SYNC — 多口同时刷，一批怪均分到各出口
+		//   TIMES  — 每个口连刷 times 只再换下个口；NONE — 每批一只，等价于 TIMES=1
 		// 怪物出生点规则
 		SPAWN_POINT_RULE rule = waveConfig.mSpawnRule;
 		if (rule == SPAWN_POINT_RULE.RANDOM)        // （权重）随机出怪口

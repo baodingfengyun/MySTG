@@ -7,7 +7,13 @@ using static GBR;
 using static UnityUtility;
 using Newtonsoft.Json;
 
-// 创建一个怪物对象
+// 创建一个怪物对象：全链路 ③刷怪 的"实体化"终点，也是寻路结果的消费者
+// 生成器的 update() 每批到点就调本命令，完成三件事：
+//   1. 从对象池建 CharacterMonster、initData(表格数据)、notifyFightStart() 激活各组件
+//   2. preStartMove() 选路线（关键）：起点若等于某个预设出怪口，直接用 BattleModeBase 预算好的
+//      mMonsterWalkRoadPoint/mMonsterFlyRoadPoint；否则（如被击退后重生、自定义起点）实时 A* 现算
+//   3. 挂到 mTowerDefenceSystem.addMonster() 纳入三份集合，之后就被主循环和索敌系统看见
+// BOSS 额外派发 EventSpawnMonster（用于镜头、BGM、提示等表现层）。
 public class CmdGlobalCreateMonster
 {
 	public static CharacterMonster execute(EDMonster monsterTableData, int startIndex)
@@ -33,6 +39,9 @@ public class CmdGlobalCreateMonster
 		return monster;
 	}
     // 移动之前，先设置移动路径
+	// 地面/飞行逻辑对称：先按 startIndex 匹配预设出怪口 → 命中则拷贝预算路线（零开销、全怪一致）；
+	// 未命中则调 generateWalk/FlyRoadPathCustom 现算。每个怪物拿到的是"自己的一份拷贝"，
+	// 这样后续被击退、混乱时才能单独改路线而不影响同批其他怪（详见 COMMonsterMovement）。
 	private static void preStartMove(COMMonsterMovement comMove, CharacterMonster monster, int startIndex)
 	{
         List<MonsterRoad> roadList = mTowerDefenceSystem.getMonsterRoadList();

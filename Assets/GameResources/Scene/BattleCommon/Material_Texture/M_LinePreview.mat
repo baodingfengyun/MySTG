@@ -52,7 +52,6 @@ Material:
     - Color_bb6a33de553c4a15bfcbbf8cdc05e6d4: {r: 0.57544136, g: 0, b: 1, a: 0}
     - Vector2_243e3ab4fdef4e18a8b8704503cdfb57: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &7515169207189607220
 MonoBehaviour:
   m_ObjectHideFlags: 11

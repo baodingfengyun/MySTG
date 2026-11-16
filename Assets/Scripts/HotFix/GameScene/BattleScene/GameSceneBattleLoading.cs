@@ -2,7 +2,11 @@
 using static FrameBaseHotFix;
 using static GBR;
 
-// 战斗逻辑场景 - 加载资源流程
+// 战斗逻辑场景 - 加载资源流程（全链路起点）
+// onInit 里延迟一帧再加载，避免上一关残留 UI（尤其新手引导）干扰；然后依次：
+//   异步加载地图场景 → BattleScene.loadResourceAsync → initData →
+//   预加载所有怪物 prefab 到对象池（避免战斗中首次出怪卡顿）→
+//   TowerDefenceSystem.initLevel()（建传送门+全局角色）→ 切到布阵流程。
 public class GameSceneBattleLoading : SceneProcedure
 {
 	protected override void onInit(SceneProcedure lastProcedure)

@@ -8,7 +8,14 @@ using static FrameBaseUtility;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-// 随机卡池中的物品,Rogue模式
+// 随机卡池中的物品,Rogue模式（Rogue 三选一的"抽卡算法"，全链路 ①布阵阶段调用）
+// 抽卡按四层过滤 + 权重，理解这套流程就知道"为什么三选一总能出有用的牌"：
+//   1. 必出项(mMustItemID)：卡池配置里指定必出的条目
+//   2. 条件过滤：非天赋卡全删；上阵塔已满时，只保留"已上阵塔相关"的天赋
+//   3. 动态加权：场上已有该类型塔 → 权重 +ROGUE_RANDOM_ADD_PROBABILITY（提高构筑聚焦度）；
+//      上阵塔未满时，追加"塔上阵词条"让新塔有机会出现，权重随波次变化
+//   4. randomSelect 按权重不重复抽 ROGUE_RANDOM_PROP_COUNT 个，写入 mAllowSelectPropList 供 UI 显示
+// 玩家选定后走 CmdGlobalSelectItemOwnedRogue，把天赋叠到全局角色的 Buff 上（见 BattleModeRogue）。
 public class CmdGlobalRandomPropListRogue
 {
 	public static void execute(int costCoin)

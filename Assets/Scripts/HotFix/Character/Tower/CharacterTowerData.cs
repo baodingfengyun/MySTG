@@ -1,6 +1,15 @@
 ﻿using static GBR;
 
-// 防御塔数据
+// 防御塔数据：塔的全部数值状态，挂在一系列机制的交汇点上
+// 【两条成长轴（与 KR1 的"塔4级+专精"哲学不同）】
+//   mBattleLevel  —— 局内等级，setBattleLevel 时按 Tower 表查该级攻击增量并计入 mAttackIncrease
+//   mGlobalLevel  —— 局外养成等级；再加 Rogue 的 Star 与天赋 Buff，构成"Level × Star + 词条叠层"
+// 没有 HP 字段（塔不会被打死）——这正是 KR1 复刻里"兵营/英雄需要新建子系统"的根因。
+// 【被全链路读取的关键量】
+//   mOriginRange / getRange()：索敌范围，TowerSkill.searchNewTarget 用它筛怪
+//   mEliteMonsterDamageIncrease / mBossMonsterDamageIncrease：generateDamage 里的精英/BOSS 增伤
+//   mAttackIncrease / mIncreaseBattleLevel / mIncreaseGlobalLevel：各类攻击 Buff 汇聚到基类 mAttackIncrease
+//   mUseCoin：记录实际花费，卖塔时据此返还金币（天赋免费升级的不计）
 public class CharacterTowerData : CharacterGameData
 {
 	public EDTower mTableData;								// 塔的表格数据（配置）

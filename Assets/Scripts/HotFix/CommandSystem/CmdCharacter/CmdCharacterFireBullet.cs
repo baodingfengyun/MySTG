@@ -3,7 +3,13 @@ using UnityEngine;
 using static GBR;
 using static FrameBaseHotFix;
 
-// 角色发射子弹
+// 角色发射子弹：全链路 ④中"从技能意图到真实子弹对象"的落地命令
+// 由 TowerSkill.fireAllBullet 以延迟命令形式推入，到点后 execute()：
+//   BulletManager.createBullet() 按 BULLET_TYPE 建出对应子弹子类（工厂模式，见 BulletRegister）
+//   填入发射者、起点(由 mFirePosMap 发射点映射生成)、目标、各种回调（命中/伤害）
+//   派发 EventBulletWillFire（Buff 可在此改子弹参数）→ bullet.fire() 真正开始飞行
+// 发完给塔的当前技能 mWaveBulletCount+1 并派发 EventBulletWaveCountChanged，
+// 这就是"本波累计发射 N 发子弹"类触发器的数据来源。
 public class CmdCharacterFireBullet : Command
 {
 	public Dictionary<string, Transform> mFirePosMap;	// 发射位置

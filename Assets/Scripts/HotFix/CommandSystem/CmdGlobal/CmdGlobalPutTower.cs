@@ -1,7 +1,14 @@
 ﻿using static FrameBaseHotFix;
 using static GBR;
 
-// 放置塔到场景中的命令基类,提供公共函数
+// 放置塔到场景中的命令基类,提供公共函数（全链路 ①布阵 的落塔执行）
+// putTower()：设置格子下标 → 加入塔列表 → 占格 → notifyStartFight 激活 → 放置特效/音效 → 派发事件。
+// swapCharacter()：交换两个已存在塔（或塔与英雄）的位置，只换格子归属不改数据。
+//
+// 【postPutTower 是"动态寻路"的体现，也是性能优化点】
+// 放塔后要重算怪物路线，但不是无脑全场重算：先判断新塔是否压在任一出怪口的
+// mMonsterWalkRoadPoint 上，再判断是否有被击退的怪物的独立路线经过该格；只有都命中才
+// regenerateRoadList() 刷受影响的怪。这样"塔没放在路线上"时零开销，支撑玩家频繁拖拽调位。
 public class CmdGlobalPutTower
 {
 	// 简单设置两个场景中已经存在的塔的位置,塔可以为空

@@ -2,7 +2,13 @@
 using static FrameBaseHotFix;
 using static FrameBaseUtility;
 
-// 战斗逻辑场景 - 打怪战斗流程
+// 战斗逻辑场景 - 打怪战斗流程（全链路 ②③④⑤：开战→刷怪→战斗→怪物消亡）
+// 进入本流程即"开战"，一次性完成几个状态切换：
+//   setBattleState(FIGHTING) → 通知所有塔 notifyStartFight() 激活技能，塔开始索敌开火
+//   刷怪计时器设为 1 → 下一帧起 MonsterGenerator 开始按间隔吐怪
+//   notifyWaveChanged() → 让所有塔的技能重置本波子弹计数（供"按波发弹数"类 Buff 触发）
+//   Rogue 模式清掉上一波的候选卡池，标记 mIsRogueSelected=false，派发 EventWaveChange
+// 之后每帧的真正推进在 BattleModeBase.update()，本流程只负责"进入/退出"的开关动作。
 public class GameSceneBattleGamingFight : SceneProcedure
 {
     protected override void onInit(SceneProcedure lastProcedure)

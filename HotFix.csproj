@@ -131,8 +131,8 @@
     <Compile Include="Assets\Scripts\HotFix\Character\CharacterComponent\StateMachine\Buff\NormalBuff\BuffIncreaseBulletCountPercent.cs" />
     <Compile Include="Assets\Scripts\HotFix\DataBase\Excel\Table\ExcelLocalization.cs" />
     <Compile Include="Assets\Scripts\HotFix\Character\CharacterComponent\StateMachine\Buff\NormalBuff\BuffMoveSpeedDownByLevel.cs" />
-    <Compile Include="Assets\Scripts\HotFix\EventSystem\EventHitCharacter.cs" />
     <Compile Include="Assets\Scripts\HotFix\Character\CharacterComponent\StateMachine\Buff\NormalBuff\BuffAttackSpeedUp.cs" />
+    <Compile Include="Assets\Scripts\HotFix\EventSystem\EventHitCharacter.cs" />
     <Compile Include="Assets\Scripts\HotFix\DataBase\Excel\Data\EDGlobalConfig.cs" />
     <Compile Include="Assets\Scripts\HotFix\UI\UILogin.cs" />
     <Compile Include="Assets\Scripts\HotFix\Character\CharacterComponent\StateMachine\Buff\NormalBuff\BuffBeenIceDamageDown.cs" />
@@ -921,10 +921,6 @@
     </Reference>
     <Reference Include="TexturePackerImporter">
       <HintPath>Assets\3rdParty\codeandweb.com\Editor\TexturePackerImporter.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="LZ4">
-      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e4def761d6\Plugins\LZ4.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">

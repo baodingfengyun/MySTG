@@ -1,5 +1,9 @@
 ﻿
-// 一个场景格子上的数据,不包含渲染数据
+// 一个场景格子上的数据,不包含渲染数据（全链路地图模型的最小单元）
+// 每格持有：GRID_STATE(可走/可飞/可放塔等，来自 MapConfig.mPoints) + 占用它的角色(塔/障碍) + 传送门。
+// 它是寻路的数据源：BattleModeBase.generateRoadPath 就是读所有格子的 state 和 getTower() 来构建 bool 地图；
+// 它也是占格判定的数据源：hasItem()/getTower() 决定这一格能否放新塔。
+// 继承 ClassObject 走对象池，切关卡时 UN_CLASS_LIST 回收，不产生 GC。
 public class LevelGrid : ClassObject
 {
 	protected CharacterGame mMainCharacter;		// 该格子上放置的主要物品,如塔,英雄,可移除障碍

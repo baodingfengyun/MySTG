@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e4def761d69b27b7b51a5de0f6d272861416a2d6"
+      "hash": "7e74e59637055b535d50f41b69c94605da2a7a40"
     },
     "com.code-philosophy.obfuz": {
       "version": "https://gitee.com/focus-creative-games/obfuz.git",
@@ -204,7 +204,7 @@
         "com.unity.textmeshpro": "3.0.6",
         "com.unity.nuget.newtonsoft-json": "3.2.1"
       },
-      "hash": "264c76b5fecac4e3de07e6ae5774429da105e4ab"
+      "hash": "47c2c3fdb41197015ab8f44631795560364e4b77"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
