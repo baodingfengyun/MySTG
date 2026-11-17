@@ -1,5 +1,7 @@
 using static GBR;
 
+// 带技能的怪物条目:在基础怪物条目上叠加一个"技能标记"图标,
+// 若怪物配置了技能则显示其首个技能图标,否则隐藏。
 public class LevelDetailMonsterItemWithSkill : LevelDetailMonsterItem
 {
 	protected myUGUIObject mMask;

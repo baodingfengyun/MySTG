@@ -1,5 +1,7 @@
 using static GBR;
 
+// 关卡详情里的怪物条目(可回收):显示怪物头像与类型标记,响应背景点击(当前空实现,留给子类/外部扩展)。
+// setData 按怪物ID查表填充图标,类型图标为空时隐藏标记。
 public class LevelDetailMonsterItem : WindowRecyclableUGUI
 {
 	protected myUGUIObject mBg;

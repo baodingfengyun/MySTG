@@ -3,6 +3,9 @@ using static FrameBaseHotFix;
 using static MathUtility;
 using static GBR;
 
+// 传送门实体:地图上的特殊格子,怪物走到此格时会被"传送"到配置的出口点并重新寻路。
+// 出口规则由 EDMapPortal 配置:RANDOM=从出口列表随机选一个,SEQUENCE=按序轮换(循环取模)。
+// 通过监听 EventMonsterGridChange(怪物跨格事件)触发,只在怪物恰好停在传送门所在格时生效。
 public class CharacterPortal : Character
 {
 	protected EDMapPortal mTableData;
@@ -31,6 +34,8 @@ public class CharacterPortal : Character
 		mTableData = mapPortal;
 	}
 	public void setSequenceIndex(int value) { mSequenceIndex = value; }
+	// 怪物跨格事件回调:若怪物当前格不是本传送门格则忽略;否则按配置的出口规则把它送到出口格,
+	// 并调用 regenerateRoadList 从新位置重新计算行进路线(SEQUENCE 模式发送后会推进序号)。
 	private void onMonsterGridChange(EventMonsterGridChange param)
 	{
 		if (param.mMonster.getComMovement().getGridIndex() != mGridIndex)

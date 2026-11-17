@@ -8,9 +8,14 @@ using System.Collections;
 using System.IO;
 using System.Text;
 
+// 【第三方工具】Unity 地形导出 OBJ 编辑器插件(源码由 UnityScript 转换而来,原作者见文件头)。
+// 与游戏逻辑无关,仅用于在编辑器里把 Terrain 高度图按所选精度/格式导出为 .obj 网格文件。
+// 下列注释为辅助理解,不改动原有代码与英文注释。
 enum SaveFormat { Triangles, Quads }
 enum SaveResolution { Full = 0, Half, Quarter, Eighth, Sixteenth }
 
+// 导出窗口:Init 取当前选中的 Terrain(否则用场景激活地形);Export 按 SaveResolution 抽稀高度图,
+// 生成顶点/UV/三角形(或四边面)索引,写成 OBJ,并用进度条反馈大尺寸地形的导出进度。
 class ExportTerrain : EditorWindow
 {
     SaveFormat saveFormat = SaveFormat.Triangles;

@@ -1,5 +1,7 @@
 using static GBR;
 
+// 塔天赋信息条目(可回收列表项):展示"某塔的某天赋 + 已拥有数量"。
+// setData 用塔类型取1级塔图标、天赋图标,并在数量>1时显示"X{数量}"。
 public class TowerTalentInfoItem : WindowRecyclableUGUI
 {
 	protected myUGUIImage mTowerIcon;

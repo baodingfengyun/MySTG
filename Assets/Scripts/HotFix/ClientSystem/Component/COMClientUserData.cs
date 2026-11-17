@@ -1,4 +1,5 @@
 
+// 客户端本地玩家资料组件:缓存用户名、头像、账号、ID 四项,对象池回收时清空。
 public class COMClientUserData : GameComponent, IClientSystemComponent
 {
 	public string mUserName;

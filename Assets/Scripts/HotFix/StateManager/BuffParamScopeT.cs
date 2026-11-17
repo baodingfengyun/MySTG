@@ -3,6 +3,8 @@ using static UnityUtility;
 using static FrameUtility;
 using static GBR;
 
+// BuffParamScope 的泛型版:借出参数时校验实际类型是否为 T,不匹配则报错(仍强制转型)。
+// 同样配合 using 使用,Dispose 归还对象池,让调用方拿到强类型参数。
 public struct BuffParamScopeT<T> : IDisposable where T : CharacterBuffParam
 {
 	private T mParam;
