@@ -4,7 +4,9 @@ using static GBR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UILevelFaild.prefab
-// 战斗失败界面
+// 战斗失败界面：显示本关消耗体力(getLevelUsePower)，两个选择——
+//   onBackClick → CmdGlobalEnterLevelContinue 确认返回；onReplayClick → 再次游玩(重开本关)。
+// refresh 用 canPlayAgain 决定显示体力消耗文本还是"体力不足"提示(当前恒 true)。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UILevelFaild : LayoutScript
 {

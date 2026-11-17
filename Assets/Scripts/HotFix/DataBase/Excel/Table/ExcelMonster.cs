@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using static GBR;
 
-// 怪物表
+// 怪物表：怪物的静态属性与技能/Buff 引用。
+// 这里额外维护"波次经验曲线"：mWaveExpData = 怪物ID -> [(波次, 击杀经验)...]。
+// getWaveExp 按当前波次取应得经验——同样的怪，越到后期击杀收益越高，
+// 这是 Rogue 模式经验成长（推进关卡）的数据来源之一。曲线懒加载 + clearCache 置空。
 public class ExcelMonster : ExcelTableT<EDMonster>
 {
     protected Dictionary<int, List<Vector2Int>> mWaveExpData;       // 波次经验列表
+    // 取怪物在第 waveIndex 波的击杀经验：曲线按波次升序，
+    // 遍历取"波次不超过当前值的最后一条"，实现经验按波分段递增。
     public int getWaveExp(int monsterID, int waveIndex)
     {
         if (mWaveExpData == null)

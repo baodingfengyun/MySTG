@@ -26,7 +26,10 @@ public class BuffRemoveTypeBuffParam : CharacterBuffParamT<BuffRemoveTypeBuffPar
 	}
 }
 
-// 移除指定类型的buff
+// 移除指定类型的 buff（Buff 操作族代表，如清除中毒/燃烧）。
+// 通过 mStateManager.getStateType(buffType) 把配表里的 Buff 类型 ID 反射成状态类，
+// 再让目标状态机 removeFirstState(..., true) 移除第一个匹配状态。
+// 对比 BuffClearDebuff(清所有 debuff)：本类是"按类型精确清除"，是词条系统里"驱散"能力的基础。
 public class BuffRemoveTypeBuff : CharacterBuffT<BuffRemoveTypeBuffParam>
 {
 	public override void enter()

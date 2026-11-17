@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using static StringUtility;
 
-// 界面上显示的塔的图标,可拖拽出去创建塔
+// 背包栏里一个可拖拽条目的基类：显示图标/名称/品质/数量，可拖出创建塔。
+//   WindowRecyclableUGUI 表示它是对象池条目(reset 时清状态复用)。
+//   positionAvailable/setSelected/refreshCoinColor 分别处理"位置可用"高亮、选中态、金币够不够的染色。
 public class ClientPackItem : WindowRecyclableUGUI
 {
 	protected myUGUIText mCost;

@@ -8,7 +8,17 @@ using static FrameBaseHotFix;
 using static FrameUtility;
 using static GDR;
 
-// 角色的触发类buff
+// ===== 触发器：Buff 体系的核心，"条件满足时自动生成别的 Buff" =====
+// 【继承】CharacterTrigger : CharacterBuff——触发器本身也是一种挂在角色上的 Buff，
+//   只不过 enter() 后不直接产生效果，而是监听事件，事件满足条件时调用 addBuff() 生出新 Buff。
+// 【四道触发门槛(canTrigger)】激活中 → 未死(除非 mDeadCanTrigger) → CD 已过(乘 timeScale) →
+//   叠加未超上限(mMaxOverlap) → 自定义检查(mCanTriggerCheck)。全过才触发。
+// 【概率】triggerProbability 用万分比 randomHit；目标的 getTriggerProbabilityCallback 可再修正概率。
+// 【给谁加】mBuffToTarget=false 加给自己(mCharacterGame)，true 加给事件目标(如被攻击者)。
+// 【CD 重置时机】不是触发瞬间重置，而是新 Buff 添加成功的回调(onBuffAdd)里、且用
+//   assignID 校验来源后才重置——避免"触发了但 Buff 没挂上"却白进 CD。
+// 【生命周期】触发器 leave 时通过 removeAllAdded* 系列把生出的 Buff 一并清掉，
+//   其中 removeAllAddedSelf 只清加在自己身上的，避免误清别人身上的导致重复退出状态。
 public class CharacterTrigger : CharacterBuff
 {
 	protected SafeDictionary<CharacterGame, List<CharacterState>> mBuffList = new();// 已添加的buff列表
@@ -75,6 +85,7 @@ public class CharacterTrigger : CharacterBuff
 		}
 		return propbability > 0 && randomHit(propbability, ODDS_SCALE); 
 	}
+	// 四道触发门槛：任一不满足就不触发。target 是事件相关方(如被攻击的怪)，用于判定 buff 加给了谁
 	protected bool canTrigger(CharacterGame target)
 	{
 		// 是否已经死亡,是否已冷却
@@ -120,6 +131,10 @@ public class CharacterTrigger : CharacterBuff
 			resultList?.Add(buff);
 		}
 	}
+	// 真正把一个 Buff 挂到目标状态机上：准备参数 → 反射查类型 → addState → 登记到 mBuffList
+	// 【参数 Scope】BuffParamScope 从对象池取参数并自动回收，避免每次触发都 new。
+	// 【反射查类型】用 mBuffData.mID 从 StateManager 查到具体 Buff 类，这就是"配表生成 Buff"的关键。
+	// 【调用链】mOnTriggerWillAddBuff(可改参数) → getStateType → addState → 登记 + 挂移除回调。
 	protected CharacterBuff doAddBuff(int buffDetailID, CharacterGame target, INT damage = null, SkillBullet bullet = null, CharacterSkill skill = null)
 	{
 		using var a = new BuffParamScope(out CharacterBuffParam param, buffDetailID);
@@ -230,6 +245,7 @@ public class CharacterTrigger : CharacterBuff
 		}
 		mBuffList.clear();
 	}
+	// 触发瞬间的通知回调（注意：这里只发通知，CD 重置要等 addBuff 成功后的 onBuffAdd）
 	protected void onTrigger()
 	{
 		mWillTriggerCallback?.Invoke(mCharacter, this);

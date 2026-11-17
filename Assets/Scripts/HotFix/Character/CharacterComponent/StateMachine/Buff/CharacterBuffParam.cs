@@ -1,7 +1,13 @@
 ﻿using System.Collections.Generic;
 using static GBR;
 
-// buff参数对象
+// Buff 参数对象：创建/挂载一个 Buff 时随附的"上下文"，走对象池复用
+// 【关键字段分三类】
+//   ① 表格数据：mBuffData(Buff 类型表)、mBuffDetailData(Buff 细分表)——数值来源；
+//   ② 来源信息：mBullet(哪发子弹挂的)、mSkill(哪个技能挂的)、mBuffTrigger(哪个触发器挂的)——
+//      让 Buff 能追溯来源，比如"攻击力提升 X% 来源于某塔"；
+//   ③ 可改写的伤害：mDamage——命中链里 Buff 可在此改伤害值(扣血前)。
+// 【mTriggerAssignID】触发器的实例 ID，配合回调校验，防止旧触发器误重置新触发器的 CD。
 public abstract class CharacterBuffParam : StateParam
 {
 	public CharacterTrigger mBuffTrigger;           // 如果是由触发类buff添加的此buff,则表示触发类的buff

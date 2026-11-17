@@ -3,7 +3,10 @@ using static FrameUtility;
 using static MathUtility;
 using static GBR;
 
-// 关卡表
+// 关卡表：一关的入口数据（所属模式、章节、地图ID、背景音乐、关卡类型）。
+// 提供四种维度的查询缓存——按模式、按章节、按(模式+章节)、以及每种模式的最大章节数，
+// 供选关界面(UILevelInfo/UISelectLevel)组织"模式 -> 章节 -> 关卡"的层级列表。
+// 所有缓存懒加载 + clearCache 置空。
 public class ExcelLevel : ExcelTableT<EDLevel>
 {
     protected Dictionary<BATTLE_MODE, Dictionary<int, List<EDLevel>>> mBattleModeChapters;  // 所有模式 章节对应的关卡
@@ -81,10 +84,12 @@ public class ExcelLevel : ExcelTableT<EDLevel>
         mBattleModeChapters = new();
         foreach (EDLevel level in queryAll())
         {
+            // 关卡类型枚举非法的行直接跳过，避免脏数据污染选关列表。
             if (!isEnumValid(level.mLevelType))
             {
                 continue;
             }
+            // 两层分组：先按战斗模式，再按章节，得到"模式 -> 章节 -> 关卡列表"。
             mBattleModeChapters.getOrAddNew(level.mMode).getOrAddNew(level.mChapter).Add(level);
         }
     }

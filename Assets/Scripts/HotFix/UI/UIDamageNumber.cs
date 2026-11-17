@@ -7,7 +7,14 @@ using static UnityUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIDamageNumber.prefab
-// 伤害数字显示
+// ===== 伤害数字显示：飘字(普通/DEBUFF/MISS/暴击)的对象池管理器 =====
+// 【三类数字】init 里注册三种：DamageNumberNormal(普通伤害,pg01)、DamageNumberDebuff(毒/烧等持续伤害,bj03)、
+//   DamageNumberMiss(闪避,bj03)。每张表用 HP_DELTA 类型索引到对应的池 DamageNumberInfo<T>。
+// 【显示流程 showNumber】按 HP_DELTA 取池 → newItem 取一个数字对象 → 设数值/暴击样式 →
+//   MOVE_PATH_EX 沿配置路径飘动 + SCALE_PATH 缩放；移动结束回调 onNumberMoveDone 回收进池。
+// 【上限保护】最多 100 个同时显示，超出时强制回收最早的一批(MOVE/SCALE 停止动画再 unuseItem)。
+// 【对象池】每种数字用自己的 ClassPool(mNumberPool)，模板来自 prefab 的三个节点，避免频繁实例化。
+// 【性能】mNeedUpdate=false——本界面不逐帧 tick，飘字动画全交给关键帧组件(ComponentKeyFrame)。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIDamageNumber : LayoutScript
 {
@@ -47,7 +54,7 @@ public class UIDamageNumber : LayoutScript
 		registeDamageNumber<DamageNumberDebuff>(mDebuff, "bj03", HP_DELTA.DEBUFF);
 		registeDamageNumber<DamageNumberMiss>(mMiss, "bj03", HP_DELTA.MISS);
 	}
-	// 显示伤害数字,position是数字的世界坐标
+	// 显示一个飘字：position 是世界坐标，deltaType 决定用哪个数字池，critical 控制暴击样式(MISS 不显示暴击)
 	public void showNumber(Vector3 position, int number, HP_DELTA deltaType, bool critical)
 	{
 		if (!mHPDeltaTypeList.TryGetValue(deltaType, out DamageNumberInfoBase numberInfo))

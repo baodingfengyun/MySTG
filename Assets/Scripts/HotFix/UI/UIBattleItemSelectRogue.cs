@@ -9,7 +9,16 @@ using static GDR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIBattleItemSelectRogue.prefab
-// rogue模式中的抽卡列表界面
+// ===== Rogue 三选一抽卡界面：波次结束后弹出的待选道具/塔列表 =====
+// 【数据】onGameState 读 TowerDefenceSystem.getAllowSelectPropListRogue()——由
+//   CmdGlobalRandomPropListRogue 生成的候选列表(每项 AllowSelectProp)；setPropList 用对象池铺开并
+//   播放入场动画(每个 item 的 playInitAnim + Animator 的 SelectAnim=1)。
+// 【选择】点某张卡 → hideItemList(index)：选中的播选中动画、其余播变暗动画，
+//   动画结束(0.8s)后 close 界面；真正的"应用卡牌效果"由每张卡自己的点击命令完成。
+// 【刷新】onRefreshClick 花 2 金币(RANDOM_TOWER_COST_COIN)重新抽 → CmdGlobalRandomPropListRogue。
+// 【折叠/展开】可收起成小按钮(Expand)，展开时取消当前手牌选中(CmdGlobalSelectItemOwnedRogue(null))
+//   因为"抽卡列表"与"手牌选中"互斥。notifyStartFight 在开战时强制收起。
+// 【引导】setActiveOnlyPropItem 用 GlobalTouchSystem 限定只可点某一张/全部卡(新手引导用)。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIBattleItemSelectRogue : LayoutScript
 {

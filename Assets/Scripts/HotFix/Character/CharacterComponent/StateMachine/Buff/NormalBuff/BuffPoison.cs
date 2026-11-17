@@ -26,7 +26,13 @@ public class BuffPoisonParam : CharacterBuffParamT<BuffPoisonParam>
 	}
 }
 
-// 中毒,可叠加层数,伤害为层数*固定伤害
+// 【代表样例：可叠加持续伤害 Buff】中毒
+// 【叠加策略】STATE_MUTEX.OVERLAP_LAYER——同类型中毒不互斥，addSameState 把新层数累加到 mLayerCount；
+//   这就是"毒能叠 N 层、每层都加伤害"的实现（对比 BuffBurn 也是 OVERLAP_LAYER 但叠的是伤害值）。
+// 【伤害】每秒 tick 一次(tickTimerLoop 1.0s)，伤害 = 层数 × POISON_DAMAGE(10) × (1+怪物中毒易伤)。
+//   走 CmdMonsterSetHP 且 deltaType=DEBUFF，与玩家攻击伤害分通道。
+// 【免疫】怪物的 mImmunityElementDebuffDamage 标记可完全免疫此类元素 debuff 伤害。
+// 【表现】enter 异步加载中毒特效并挂到模型，leave 时销毁。
 public class BuffPoison : CharacterBuffT<BuffPoisonParam>
 {
 	protected float mCurTime;					// 当前计时

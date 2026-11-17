@@ -4,7 +4,8 @@ using static GBR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UICameraDrag.prefab
-// 用于实现摄像机拖拽的界面
+// 摄像机操控界面(全屏透明拖拽层)：onDraging 拖动平移镜头，onTwoFingerScale 双指缩放；
+//   setEnable 开关。战斗中查看地图用。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UICameraDrag : LayoutScript
 {

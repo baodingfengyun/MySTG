@@ -2,7 +2,12 @@
 using UnityEngine;
 using static UnityUtility;
 
-// 不推荐这种全局参数的配置方式,请使用MyFramework仓库中的示例形式去配置全局参数
+// 全局配置表：以"键(mType) -> 字符串值(mValue)"的散装形式存零星参数。
+// 不推荐这种全局参数的配置方式,请使用MyFramework仓库中的示例形式去配置全局参数。
+// 实现要点：initList() 把每行读入 mStringValues，再把能转成整数的键额外放进 mIntValues，
+// 于是 getIntValue/getStringValue 可按类型取值；取不到的键会 logError 并返回默认值。
+// 例如 rogue_add_tower_weight 是一串用 | 分隔的 "起始波|结束波|权重"，
+// getRogueAddTowerWeight 解析成区间列表，按当前波次落在哪段返回对应权重（超界取最后一段）。
 public class ExcelGlobalConfig : ExcelTableT<EDGlobalConfig>
 {
     protected Dictionary<string, string> mStringValues;

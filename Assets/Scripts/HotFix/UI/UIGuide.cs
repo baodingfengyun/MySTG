@@ -5,7 +5,17 @@ using static FrameUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIGuide.prefab
-// 新手引导界面
+// ===== 新手引导界面：一个界面承载所有引导表现(文字提示/NPC对话/手势动画) =====
+// 【四种表现】
+//   ① setTip：顶部/底部文字气泡(tipID 是本地化文本 ID，pos=1/2 决定上下)；
+//   ② setNPCTalk：NPC 对话框(短/长两种背景)，needClick 时用 GlobalTouchSystem 只留对话可点，
+//      强制玩家点击继续(onNPCRootClick 关闭)；
+//   ③ setDragTip：手势从 startPos 移动到 endPos(activeHand 选 4 种手型之一)，演示拖拽；
+//   ④ setHandPosition / setRogueBuffTip：静态手指定位 / 延迟 1 秒出现的 Rogue Buff 提示。
+// 【互斥清理】deactiveAllTip 关掉所有提示并中断延迟显示命令(mDelayActiveAssignID)——每个 setXxx
+//   开头都先调它，保证同一时刻只有一种引导表现。
+// 【注意 bug】setNPCTalk 里 dialogPos==2 的分支写了两次(应有一个是 3)，导致"中间位置"永远走不到。
+//   这里只作注释标注，未改动代码逻辑。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIGuide : LayoutScript
 {

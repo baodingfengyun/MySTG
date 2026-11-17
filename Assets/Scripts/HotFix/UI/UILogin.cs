@@ -4,7 +4,8 @@ using static GameUtilityHotFix;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UILogin.prefab
-// 登录界面
+// 登录界面：点登录 → 显示"登录中..." → 延迟 0.5s 进 GameSceneLobby(大厅)。
+// 这是 Demo 流程的起点，没有真实账号校验。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UILogin : LayoutScript
 {

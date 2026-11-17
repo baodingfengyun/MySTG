@@ -10,7 +10,18 @@ using static GBR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIClientPackRogue.prefab
-// rogue模式中底部显示当前背包中的所有道具的界面
+// ===== Rogue 模式底部背包栏：显示可用塔槽，支持"拖拽放塔 / 点击选中后放置" =====
+// 【核心交互：拖塔三阶段】
+//   ① onDragStart：清选中态，建一座 STONE_TOWER(石墩)当"幽灵塔"跟着鼠标，隐藏背包栏；
+//   ② onDraging：算鼠标所在格，幽灵塔实时跟位；若格子空则对每个出怪口 checkCanPutTower
+//      并重算预览路线(showPreviewPath)——放塔不能堵死任何一条路；若格子有塔则判断是否可替换；
+//      用格子材质红/绿表示可否放置。mDragValid 汇总所有校验结果。
+//   ③ onDragEnd：取消则销毁幽灵塔；否则再校验金币，够了就扣钱 + cmdPutTower 真正放塔，否则销毁。
+// 【拖到背包=卖塔】onReceiveDrag 收到来自 UIDraging(场景塔拖拽)的对象 → CmdGlobalSellTowerRogue 拆除。
+// 【内容来源 refresh】读 BattleModeRogue.getAllowUseTowerList()，按 mDisplayInOrder 排序，
+//   填满 mExcelGlobalConfig 配置的塔槽数(不足补 null 空槽)，对象池复用 ClientPackRogueItemTower。
+// 【辅助函数】setActiveOnlyXxx 用 GlobalTouchSystem 把可交互范围限定到某个塔的拖拽/点击区
+//   (新手引导用)；因节点在滑动列表里，必须用 addActiveOnlyObjectWithAllParent 连带父节点。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIClientPackRogue : LayoutScript
 {
@@ -372,6 +383,8 @@ public class UIClientPackRogue : LayoutScript
 			mBattleScene.hideAllPreviewPath();
 		}
 	}
+	// 拖拽结束：清掉格子高亮/预览路径/射程圈，然后二选一——
+	//   cancel=销毁幽灵塔；否则校验金币，够了扣钱并把幽灵塔正式放到目标格(cmdPutTower)，否则销毁
 	protected void onDragEnd(ComponentOwner dragObj, Vector3 mousePos, bool cancel)
 	{
 		setPanelVisible(true);

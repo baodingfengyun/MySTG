@@ -1,5 +1,8 @@
 ﻿
-// 怪物数据
+// 怪物运行时数据：表配置(只读) + 战斗中会变的量(HP/击杀者/隐身/飞行标记)
+// 【为什么单列 mIsInvisible / mFlyable 两个缓存】隐身靠"身上有没有隐身 Buff"判断太慢且不准
+//   （可能有多个来源），飞行同理要查状态组；所以各用一个字段缓存，避免每帧查状态机。
+// 【mKillerGUID】记录是谁打死了它——死亡结算发金币/经验/触发"击杀"事件时要归因。
 public class CharacterMonsterData : CharacterGameData
 {
 	public EDMonster mTableData;    // 怪物的表格数据（配置）

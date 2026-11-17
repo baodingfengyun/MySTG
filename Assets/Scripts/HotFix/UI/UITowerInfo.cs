@@ -5,7 +5,14 @@ using static GDR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UITowerInfo.prefab
-// 防御塔信息界面
+// ===== 防御塔信息面板：展示一座塔的图标/名称/星级/攻击/攻速/射程/描述 =====
+// 【两种数据来源(两个重载)】
+//   ① setTower(CharacterTower)：场景中已放置的塔——数值取实时实例(攻击、最终CD、射程按格数)；
+//      并根据塔在屏幕左/右半边，把面板定位到另一侧(mPosLeft/mPosRight)避免遮挡。
+//   ② setTower(EDTower, battleLevel)：配置表里的塔(选卡/图鉴预览)——数值取表+等级加成，固定放左侧。
+// 【攻速显示】mRate 显示的是"攻击间隔(CD)"而非频率：有技能取技能表 CD，无技能显示 0；
+//   实例版用 getFinalCD 叠 Buff 后的最终 CD。
+// 【刷新 refreshForData】通用部分：图标、名字、等级、本地化描述、按 mStar 点亮星星。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UITowerInfo : LayoutScript
 {

@@ -8,7 +8,15 @@ using static GDR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UITowerOperation.prefab
-// 防御塔操作界面
+// ===== 防御塔操作浮层：点选场景中一座塔后，在其头顶弹出的"升级 / 拆除"小面板 =====
+// 【定位】它跟着塔走(setTowerPosition 把世界坐标转屏幕坐标)，不是常驻界面。
+// 【三个操作】
+//   ① 升级(onUpgradeClick)：Rogue 模式走 CmdGlobalUpgradeLevelTowerRogue，升完刷新按钮+塔信息；
+//   ② 拆除(onSellClick)：二次确认弹窗后 cmdSellTower，按 mUseCoin × 比例退钱；
+//   ③ 遮罩点击(onMaskClick)：CmdGlobalSelectTowerScene(null) 取消选中，面板消失。
+// 【按钮状态 refreshButtonState】比较"升级花费"与"当前金币"决定显示可点升级还是上锁图标；
+//   满级(无下一阶)或 Rogue 升级已达上限则都隐藏。开始战斗后(isFighting)禁止卖塔。
+// 【金币体系】Rogue 模式读 getGoldCoinRogue；免费升级(getFreeUpModeLevel)时花费显示为 0。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UITowerOperation : LayoutScript
 {

@@ -1,6 +1,9 @@
 ﻿using static FrameUtility;
 
-// 管理怪物的生命时间
+// 怪物的存活计时器：mLifeTime 初始 -1 表示"永久存活，不计时"。
+// setLifeTime 设置倒计时后，每帧 tickTimerOnce 递减，到点置 mLifeDone=true。
+// 典型用途是召唤物/临时怪物——BattleModeBase.update 检查 isLifeDone() 后走超时消亡分支。
+// 注意它只打标记，不自己销毁怪物（与移动组件到达终点同理，统一由战斗模块处理）。
 public class COMMonsterLifeTime : GameComponent
 {
 	protected CharacterMonster mMonster;	// 怪物对象

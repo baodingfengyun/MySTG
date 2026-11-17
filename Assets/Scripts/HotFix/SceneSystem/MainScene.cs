@@ -6,6 +6,11 @@ using static FrameBaseUtility;
 using static FrameDefine;
 using static GDR;
 
+// 大厅(主界面)场景脚本,是 SceneInstance 的子类之一,由 SceneRegister.registerAll 登记。
+// 大厅里分布着若干功能建筑(防线、祈福广场、地图编辑器、酒馆、矿场、农田、商店、丰碑),
+// 每个建筑是一个可点击的 MovableObject,点击后由全局触摸系统派发到对应 UI 逻辑。
+// 生命周期(init/onShow/onHide/destroy/resetProperty/update)均由框架 SceneSystem 驱动,
+// 本类只在各回调里管理"建筑对象 + 相机 + 环境音效 + 合并网格材质"这些场景专属资源。
 // 大厅的场景
 public class MainScene : SceneInstance
 {
@@ -23,6 +28,9 @@ public class MainScene : SceneInstance
 	protected AudioHelper mMainBirdsongBgm;		// 鸟鸣环境音效
 	protected GameCamera mMainCamera;
 	protected Material[] mOriginMaterials;
+	// 灰度材质路径前缀:指向大厅场景资源目录下的 Res 子目录,存放各建筑的黑白(_BW)材质。
+	// 下面一组 *GreyMaterialName 分别对应防线/广场/商店/矿场/酒馆/农田/丰碑,
+	// 用于建筑未解锁时把合并网格对应槽位替换为灰度;实际切换逻辑见 checkActiveMaterial。
 	protected static string mMaterialPath = R_SCENE_PATH + SCENE_MAIN + "/Res/";
 	public static string mDefenseGreyMaterialName = mMaterialPath + "M_fangxian_BW.mat";
 	public static string mFountainGreyMaterialName = mMaterialPath + "M_guangchang_BW.mat";
@@ -31,6 +39,8 @@ public class MainScene : SceneInstance
 	public static string mHeroTavernGreyMaterialName = mMaterialPath + "M_jiuguan_BW.mat";
 	public static string mTowerResearchGreyMaterialName = mMaterialPath + "M_nongtian_BW.mat";
 	public static string mMonumentGreyMaterialName = mMaterialPath + "M_StoneHenge_BW.mat";
+	// 场景加载完成后由框架 SceneSystem 回调。先走基类初始化,再创建场景物体、播放环境鸟鸣,
+	// 并缓存合并网格的原始彩色材质数组(约定恰好 8 个槽位,对应 8 个功能建筑)。
 	public override void init()
 	{
 		base.init();
@@ -44,6 +54,8 @@ public class MainScene : SceneInstance
 			logError("建筑材质的数量应该为8个");
 		}
 	}
+	// 场景卸载时由框架回调:销毁相机与所有建筑 MovableObject、停止环境音、取消事件监听,
+	// 最后回到基类清理。此处统一用 ?. 防止异常路径下字段为空导致崩溃。
 	public override void destroy()
 	{
 		mCameraManager?.destroyCamera(mMainCamera);
@@ -62,6 +74,7 @@ public class MainScene : SceneInstance
 		mEventSystem?.unlistenEvent(this);
 		base.destroy();
 	}
+	// 对象池回收复用时把所有引用清空(置 null),与 init 配对,避免持有已销毁的 Unity 对象。
 	public override void resetProperty()
 	{
 		base.resetProperty();
@@ -80,6 +93,7 @@ public class MainScene : SceneInstance
 		mMainCamera = null;
 		mOriginMaterials = null;
 	}
+	// 下面一组方法返回各建筑节点下名为"Name"的子节点世界坐标,供 UI 在建筑上方浮动显示名称。
 	public Vector3 getDefenseNamePos() { return findGameObject("Name", mDefense.getGameObject()).transform.position; }
 	public Vector3 getSquareNamePos() { return findGameObject("Name", mFountain.getGameObject()).transform.position; }
 	public Vector3 getMapEditorNamePos() { return findGameObject("Name", mMapEditor.getGameObject()).transform.position; }
@@ -88,6 +102,7 @@ public class MainScene : SceneInstance
 	public Vector3 getFarmLandNamePos() { return findGameObject("Name", mTowerResearch.getGameObject()).transform.position; }
 	public Vector3 getShopNamePos() { return findGameObject("Name", mShop.getGameObject()).transform.position; }
 	public Vector3 getMonumentNamePos() { return findGameObject("Name", mMonument.getGameObject()).transform.position; }
+	// 场景被显示时回调:把本场景自带的相机设为游戏主相机。
 	public override void onShow()
 	{
 		if (mMainCamera != null)
@@ -95,17 +110,21 @@ public class MainScene : SceneInstance
 			mCameraManager.setMainCamera(mMainCamera);
 		}
 	}
+	// 场景被隐藏时回调:把主相机恢复为框架默认相机。
 	public override void onHide()
 	{
 		base.onHide();
 		mCameraManager.setMainCamera(mCameraManager.getDefaultCamera());
 	}
+	// 新手引导用:只允许点击农田建筑,并输出其屏幕坐标供 UI 定位引导手/箭头。
 	public void setActiveOnlyTowerResearch(out Vector3 pos)
 	{
 		mGlobalTouchSystem.setActiveOnlyObject(mTowerResearch);
 		pos = worldToScreen(mTowerResearch.getWorldPosition());
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
+	// 切换合并网格第 index 个材质槽的彩色/灰度:isActive=true 恢复原始彩色材质,
+	// false 则异步加载灰度材质替换。异步回调内再次判空,防止加载期间场景已销毁而空引用。
 	protected void checkActiveMaterial(bool isActive, int index, string greyMaterialName)
 	{
 		if (mCombinesRenderer == null)
@@ -132,6 +151,8 @@ public class MainScene : SceneInstance
 			});
 		}
 	}
+	// 从场景根节点 mRoot 下按固定名称查找并创建各建筑 MovableObject、合并网格与相机;
+	// 遵循"先创建相机,再注册点击碰撞体"的顺序,并为酒馆/商店/丰碑设置点击音效。
 	protected void initGameObject()
 	{
         mDefense = mMovableObjectManager.createMovableObject(findGameObject("B_FangXian", mRoot));

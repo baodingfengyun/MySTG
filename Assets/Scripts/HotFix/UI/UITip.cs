@@ -5,7 +5,9 @@ using static FrameUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UITip.prefab
-// 提示信息飘字界面
+// 屏幕提示飘字(tip)：showTip 显示一条带参数的短提示，用 TipItem 对象池铺开；
+//   "内容+参数都相同"的提示会被去重(不重复显示)，显示完 notifyTipShowDone 回收。
+//   常驻(PERSIST)，全局 tip(...) 调用最终落到这里。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UITip : LayoutScript
 {

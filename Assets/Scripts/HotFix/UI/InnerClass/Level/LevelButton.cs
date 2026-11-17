@@ -2,7 +2,9 @@
 
 // auto generate classname start
 // generate from:Assets/GameResources/UI/UIPrefab/UISelectLevel.prefab
-// 选择关卡界面的关卡按钮
+// 关卡选择界面里的单个关卡按钮(对象池条目)：setLevelData 填关卡配置，
+//   setLevelState 按 COMPLETED/UNLOCKED/LOCK/PLAYING 切图标状态，setSelect 控制选中光圈；
+//   onRootClick 通知 UISelectLevel.selectLevel(会拦截未解锁关卡)。
 public class LevelButton : WindowRecyclableUGUI
 // auto generate classname end
 {

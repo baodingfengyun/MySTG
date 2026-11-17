@@ -23,7 +23,11 @@ public class BuffAroundTowerCountAttackUpParam : CharacterBuffParamT<BuffAroundT
 	}
 }
 
-// 攻击力提升
+// 周围塔数加成：统计本塔相邻六边形格子上的塔数量来提升攻击（AtkSpeedUp 同构，改攻速）。
+// 与 BuffTypeTowerIncreaseSelfAttack 的区别：那个数"全图某类型塔"，这个只数"身边一圈"。
+// 同样走"事件置脏 + 每帧重算"：getHexDiagonalGird(grid,1) 取相邻6格，hasTowerAtGrid 逐格判断。
+// 用 mCount 记录上次计数，只补差额 mPercent*(new-old)；leave 减掉 mPercent*mCount。
+// 注意类名是 AttackUp，原单行注释只写"攻击力提升"过于笼统，此处补全语义。
 public class BuffAroundTowerCountAttackUp : CharacterBuffT<BuffAroundTowerCountAttackUpParam>
 {
 	public float mPercent;      // 每个塔增加的攻击力百分比

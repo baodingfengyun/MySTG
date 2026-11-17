@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using static FrameUtility;
 using static GBR;
 
-// 管理怪物的技能
+// 怪物的技能容器：按技能ID从 ExcelMonsterSkill 表 + MonsterSkillRegister 反射工厂造出技能实例。
+// 维护两份列表——mSkillList(全部：主动+被动)、mActiveSkillList(仅主动，需每帧 update 与按状态开关)。
+// 关键设计：监听怪物状态机的 setStateChangedCallback，状态一变就重算"是否允许攻击"
+// (是否处于 StateGroupNotAllowAttack，如眩晕)，批量开关所有主动技能，而非每个技能各自判断。
+// 技能销毁在 destroy 里显式逐个调用（先于 Avatar 销毁），保证技能挂在角色上的特效先清理。
 public class COMMonsterSkill : GameComponent
 {
 	protected List<MonsterSkillBase> mSkillList = new();		// 技能列表,包含mActiveSkillList
@@ -53,6 +57,9 @@ public class COMMonsterSkill : GameComponent
 			skill.update(elapsedTime);
 		}
 	}
+	// 反射工厂：先查表拿配置，再问 MonsterSkillRegister 该ID是否有特例类(如自爆)，
+	// 没有则按 mIsPassive 选 MonsterPassiveSkill(被动)或 MonsterActiveSkill(主动)。
+	// 造出的实例 setCharacter 绑定怪物、initData 读表；主动技能额外进 mActiveSkillList 接受每帧更新。
 	public MonsterSkillBase addSkill(int skillID)
 	{
 		EDMonsterSkill skillData = mExcelMonsterSkill.query(skillID);

@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using static GBR;
 
-// 参数对象
+// 触发器参数对象：描述"触发后给谁加哪些 Buff、触发条件如何"
+// 【核心字段】mBuffDetailIDList(要生成的 Buff 细分表 ID 列表)、mProbability(万分比概率)、
+//   mCD(触发冷却秒)、mMaxOverlap(同目标身上最多叠几个)、mBuffTarget(给自己还是给事件目标)。
+// 【registeAllParam】声明表里字符串列 → 字段的解析规则，由配置表自动生成/校验。
 public class CharacterTriggerParam : CharacterBuffParam
 {
 	public List<int> mBuffDetailIDList = new();	// 可触发的buff列表

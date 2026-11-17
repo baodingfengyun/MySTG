@@ -2,7 +2,9 @@
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIDialogYesNo.prefab
-// 包含确认取消按钮的对话框
+// "是/否"二选一对话框：setInfo 设文案，setConfirmCallback / setCallback 分别注入
+//   仅确认回调、或确认+取消两个回调；onYesClick/onNoClick 各执其回调并关闭。
+//   常驻(PERSIST)，UITowerOperation 卖塔二次确认就是 dialogYesNo(...) 调它。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIDialogYesNo : LayoutScript
 {

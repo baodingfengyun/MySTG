@@ -21,7 +21,13 @@ public class SkillCustomParam_BoDong : ParamCopyableT<SkillCustomParam_BoDong>
 	}
 }
 
-// 波动塔的技能
+// 波动塔的技能：发射"穿透型直线波",沿一条线持续飞行并碰撞沿途所有怪
+// 【机制】和基类的最大差异在子弹命中后的处理——用 mWillFireBullet 回调在子弹出膛瞬间
+//   把它的终点从"目标当前位置"改成"起点 + 朝向目标方向 × 飞行距离"，
+//   于是子弹不再停在目标身上,而是一条固定长度、可贯穿多个怪的直线波。
+// 【参数】mDistance 是配置表的飞行距离;发射时再叠加塔的 mIncreaseFlyDis(词条增益)。
+// 【连发】每发子弹 interval=0.1s(refreshBulletCountInterval),让多道波依次推进而非重叠。
+// 【实现链】fireAllBullet 排延迟命令 → CmdCharacterFireBullet 造弹 → onBulletFire 改写终点
 public class TowerSkill_BoDong : TowerSkillT<SkillCustomParam_BoDong>
 {
 	protected BulletCallback mOnBulletFire;	// 发射子弹的回调
@@ -56,6 +62,10 @@ public class TowerSkill_BoDong : TowerSkillT<SkillCustomParam_BoDong>
 			pushDelayCommand(cmd, mTower, mFireTime[i], this);
 		}
 	}
+	// 子弹发射回调：把"追踪单目标"的子弹改造成"定长穿透直线波"
+	//  ① 算出起点→目标的水平方向(resetY 忽略高度差)
+	//  ② 终点 = 起点 + 方向 × (配置飞行距离 + 塔的飞行距离加成)
+	//  ③ setTargetPosition 固定终点后,子弹按直线飞行并持续碰撞(SkillBulletStraightLineAlwaysCollide)
 	protected void onBulletFire(SkillBullet bullet)
 	{
 		var thisBullet = bullet as SkillBulletStraightLineAlwaysCollide;

@@ -25,7 +25,12 @@ public class BuffShockedParam : CharacterBuffParamT<BuffShockedParam>
 	}
 }
 
-// 感电,只有百分比最高的感电属性才会生效产生附加伤害,其余的不会移除,但是也不会产生伤害
+// 感电（元素状态族代表，与 BuffBurn/FireImprint 等同类）：受到普通伤害时追加一笔百分比伤害。
+// 独特机制"只最高层生效"：多个来源挂了不同百分比的感电时，全部状态都留着(不互斥移除)，
+// 但 onMonsterBeenHit 里遍历自身所有 BuffShocked 找 mPercent 最大的，只有 maxState==this 的那个才结算，
+// 避免多份感电叠加导致伤害爆炸。这是"状态共存但效果取最强"的范例（区别于 OVERLAP_LAYER 的叠层相加）。
+// 附加伤害 = 本次伤害 × mPercent × (1 + mBeenShockedDamageIncrease)，并受元素异常免疫(mImmunityElementDebuffDamage)拦截。
+// 特效走异步加载 createEffectAsyncSafe，回调里校验 mCharacterGame 非空（防止加载完成时才被销毁），leave 时销毁。
 public class BuffShocked : CharacterBuffT<BuffShockedParam>
 {
 	protected float mPercent;		// 提升的百分比

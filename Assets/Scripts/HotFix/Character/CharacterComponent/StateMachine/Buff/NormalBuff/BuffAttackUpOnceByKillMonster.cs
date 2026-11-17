@@ -24,7 +24,13 @@ public class BuffAttackUpOnceByKillMonsterParam : CharacterBuffParamT<BuffAttack
 	}
 }
 
-// 击杀n个敌人后，下一次攻击提高
+// 击杀 n 个敌人后，下一次攻击提高（击杀触发族代表，同族 BuffAttackSpeedUpByKillMonster 等）。
+// 三事件接力实现"只强化下一次开火"：
+//   ①EventKillMonster 计数，攒满 mNeedCount 置 mActivtingIncrease=true
+//   ②EventPreFireSkill 在下次技能开火前，把该技能 fireID 记下来并清标记（锁定"就这一次"）
+//   ③EventBulletWillFire 每颗子弹出膛前比 fireID，命中才把 attackPercent 加上加成
+// 用 fireID 而非布尔开关，是因为一次开火可能发多颗子弹(齐射/三连发)，它们属于同一次技能，
+// 都该吃到加成；而下一波开火 fireID 变了就不再享受。加成直接改子弹对象，不动 GameData。
 public class BuffAttackUpOnceByKillMonster : CharacterBuffT<BuffAttackUpOnceByKillMonsterParam>
 {
 	protected int mNeedCount;			// 需要击杀的数量

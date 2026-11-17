@@ -33,7 +33,14 @@ public class BuffTypeTowerIncreaseSelfAttackParam : CharacterBuffParamT<BuffType
 	}
 }
 
-// 场上指定类型的塔越多,自身攻击力增加越多
+// 场上指定类型的塔越多，自身攻击力增加越多（"塔数光环"族代表）。
+// 同族：BuffTypeTowerIncreaseSelfAttackSpeed/Critical/Damage、BuffAroundTowerCountAtkUp/AtkSpeedUp、
+// BuffAttackCriticalUpByTowerCount 等，都是"根据场上塔数量动态给自身加成"。
+// 核心范式是"事件置脏 + 每帧重算 + 差值更新"：
+//   ①enter 监听 EventGridTowerChange(放塔/卖塔)只置 mTowerChanged=true，不在事件里直接算
+//   ②update 每帧若脏则查当前塔数，算出新加成，只把"增量差额"加进 GameData（不是重复加全量）
+//   ③leave 把当前累计加成 mIncreaseAttackPercent 一次性减掉
+// 置脏而非即时算，是因为一帧内塔可能变多次，只需在帧末算一次最终值。
 public class BuffTypeTowerIncreaseSelfAttack : CharacterBuffT<BuffTypeTowerIncreaseSelfAttackParam>
 {
 	protected float mIncreasePerTower;      // 每增加一个塔,攻击力提升的百分比
@@ -53,6 +60,8 @@ public class BuffTypeTowerIncreaseSelfAttack : CharacterBuffT<BuffTypeTowerIncre
 		if (mTowerChanged)
 		{
 			mTowerChanged = false;
+			// 只加"新值 - 旧值"的差额，而不是累加全量——否则每放一座塔就重复叠加历史总数。
+			// mIncreaseAttackPercent 保存上一次已加进去的值，leave 时也是减掉它。
 			float increasePercent = mTowerDefenceSystem.getTypeTowerCount(mTowerType) * mIncreasePerTower;
 			mCharacterGame.getGameData().mIncreaseAttackPercent += increasePercent - mIncreaseAttackPercent;
 			mIncreaseAttackPercent = increasePercent;

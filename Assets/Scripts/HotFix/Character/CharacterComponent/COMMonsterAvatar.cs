@@ -5,7 +5,10 @@ using static UnityUtility;
 using static FrameBaseHotFix;
 using static FrameBaseUtility;
 
-// 显示怪物模型,大部分逻辑由基类提供
+// 怪物的显示组件，继承 COMCharacterAvatar，大部分模型加载逻辑由基类提供。
+// 怪物特化的部分：模型加载后(postModelLoaded)挂血条、找三个命中点(脚/身/头，头可缺省)、
+// 取碰撞体并注册到 GlobalTouchSystem(供点击拾取)、设置 MONSTER 层；血条随 setPosition 跟随移动。
+// 点击模型触发 CmdGlobalFocusAttackMonster——把该怪物设为集火目标（呼应 TowerSkill 的索敌优先级）。
 public class COMMonsterAvatar : COMCharacterAvatar
 {
 	protected CharacterMonster mMonster;	// 怪物
@@ -98,6 +101,8 @@ public class COMMonsterAvatar : COMCharacterAvatar
 		mMonster.setClickCallback(onClick);
 		mMonster.setPassRay(false);
 	}
+	// 点击怪物模型：发命令把此怪设为全塔集火目标。
+	// 这是玩家手动集火的入口，TowerSkill.checkSearchTarget 会优先锁定该焦点目标。
 	protected void onClick()
 	{
 		CmdGlobalFocusAttackMonster.execute(mMonster);

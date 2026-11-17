@@ -25,7 +25,11 @@ public class BuffMoveSpeedDownParam : CharacterBuffParamT<BuffMoveSpeedDownParam
 	}
 }
 
-// 百分比减速,固定百分比
+// 【代表样例：直接改组件数值的 Buff】百分比减速
+// 【策略】STATE_MUTEX.NO_NEW——已有同类减速时不接受新的(防止无限叠加减速)。
+// 【实现】enter 算出绝对减速量 = 当前速度 × mPercent × (1+角色减速抗性加成)，clamp 后扣速度；
+//   leave 时原样加回去。这是"Buff 通过修改组件属性生效、离开时还原"的典型范式。
+// 【注意】它改的是 COMMonsterMovement 的速度，与眩晕(靠状态组禁用移动)是两套不同机制。
 public class BuffMoveSpeedDown : CharacterBuffT<BuffMoveSpeedDownParam>
 {
 	protected float mSlowDown;			// 减速的绝对值

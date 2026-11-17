@@ -4,7 +4,9 @@ using static UnityUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIDraging.prefab
-// 显示拖拽物品的界面
+// 场景塔拖拽界面：把已放置的塔从场景拖起时，用本界面生成一个跟手的悬浮图标。
+//   setDragingItem 启动拖拽并记录被拖的塔；onEndDragObjectItem 松手隐藏。
+//   与 UIClientPackRogue 配合——把塔拖到背包栏即触发拆除(onReceiveDrag 里判断 layout 是 mUIDraging)。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIDraging : LayoutScript
 {

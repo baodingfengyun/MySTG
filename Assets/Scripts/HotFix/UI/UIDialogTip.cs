@@ -2,7 +2,7 @@
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIDialogTip.prefab
-// 提示信息对话框
+// 纯提示对话框：setInfo 设一段文本，无确认按钮(点遮罩/自动关闭)。常驻(PERSIST)。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIDialogTip : LayoutScript
 {

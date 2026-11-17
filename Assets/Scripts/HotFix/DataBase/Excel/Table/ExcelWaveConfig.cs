@@ -3,7 +3,13 @@ using UnityEngine;
 using static UnityUtility;
 using static GBR;
 
-// 波次配置
+// 波次配置表：定义"每一关的每一波刷什么怪、血量系数、从哪些口出、给什么卡池"。
+// 运行时被 MonsterGenerator 按 (level, waveIndex) 查询，是刷怪逻辑的数据源。
+// 本类不存原始行（原始行由基类 ExcelTableT 持有），只额外维护三份"派生缓存"：
+//   mLevelWaveDict     关卡 -> 有序波次列表（初始化时按表内顺序 Add，故顺序即配置顺序）
+//   mLevelMonsters     关卡 -> 该关所有可能出现的怪物ID集合（供 UI 预加载/图鉴）
+//   mWaveMonsterHpRatio 波次ID -> (怪物ID -> 单独血量系数)（怪物可覆盖波次通用系数）
+// 三份缓存均懒加载（首次查询才建），并在 clearCache() 中统一置空；换关卡/热更重载时由框架调用。
 public class ExcelWaveConfig : ExcelTableT<EDWaveConfig>
 {
     public Dictionary<int, List<EDWaveConfig>> mLevelWaveDict;
@@ -17,6 +23,9 @@ public class ExcelWaveConfig : ExcelTableT<EDWaveConfig>
         }
         return mLevelWaveDict.get(level);
     }
+    // 取指定关卡第 waveIndex 波的配置。注意 waveIndex 是代码里的 0 基下标，
+    // 而策划表里的 mWave 从 1 开始，所以这里 +1 后再对齐。
+    // 波次列表是升序的：取"mWave 不超过目标波次的最后一条"，实现"跨波沿用上一波配置"。
     public EDWaveConfig getWaveConfig(int level, int waveIndex)
     {
         if (level == 0)
@@ -39,6 +48,10 @@ public class ExcelWaveConfig : ExcelTableT<EDWaveConfig>
         }
         return config;
     }
+    // 计算某波某怪物的"血量成长系数"——刷怪时乘到怪物基础血量上，决定难度曲线。
+    // 优先级：怪物单独配置的系数(mHpRatioMonster) > 波次通用系数(mHpRatio)。
+    // 最终系数 = (基准系数 + 超出本配置波次的累加成长) * 修正百分比 / 10000，
+    // 即随着 waveIndex 推进，血量按 mHpRatioGrow 逐波递增。
     public float getWaveMonsterIncreaseValue(int level, int waveIndex, int monsterID)
     {
         EDWaveConfig waveConfig = getWaveConfig(level, waveIndex);
@@ -95,7 +108,9 @@ public class ExcelWaveConfig : ExcelTableT<EDWaveConfig>
                 }
             }
 
-            // 怪物的难度系数是否已经配置
+            // 怪物的难度系数是否已经配置：这是启动期的数据一致性校验。
+            // 若波次通用系数为 0，则必须为这一波出现的每只怪都在 mHpRatioMonster 里
+            // 单独配一个系数，否则运行时血量会算成 0。这里把所有怪收集起来逐个比对。
             if (item.mHpRatio == 0)
             {
                 using var a = new ListScope<int>(out var monsterIDList);

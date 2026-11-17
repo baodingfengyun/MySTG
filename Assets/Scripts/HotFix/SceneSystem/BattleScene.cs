@@ -53,6 +53,9 @@ public class BattleScene : SceneInstance
 	protected Vector3 mCameraMinIntersect;										// 镜头在y=0平面上的最小视锥交点
 	protected Vector3 mCameraMaxIntersect;										// 镜头在y=0平面上的最大视锥交点
 	protected Vector3 mCameraInitPos;											// 镜头初始位置
+	// 构造六边形格子的 6 个本地顶点坐标(相对格子中心),从最上方顶点开始顺时针排列。
+	// HEX_CORNER_DISTANCE 为对角顶点距离,HEX_EDGE_LENGTH 为边长相关量,GRID_SIZE 为格子宽度。
+	// 这组点供 isPointInPolygon 做"鼠标世界坐标落在哪个六边形内"的多边形包含判定。
 	public BattleScene()
 	{
 		// 从最上面的点开始,顺时针计算点坐标
@@ -63,6 +66,8 @@ public class BattleScene : SceneInstance
 		mHexPoints.Add(new(-GRID_SIZE * 0.5f, -HEX_EDGE_LENGTH * 0.5f));
 		mHexPoints.Add(new(-GRID_SIZE * 0.5f, HEX_EDGE_LENGTH * 0.5f));
 	}
+	// 场景加载完成后由框架回调:初始化地形碰撞与点击、创建主相机并用视锥射线求出
+	// 相机在 y=0 平面的可视范围交点(用于后续夹取相机移动边界)。
 	public override void init()
 	{
 		base.init();
@@ -83,6 +88,10 @@ public class BattleScene : SceneInstance
 		mCameraMinIntersect = intersectRayPlane(new Ray(mCameraInitPos, bottomLeftWorld - mCameraInitPos), Vector3.up, Vector3.zero);
 		mCameraMaxIntersect = intersectRayPlane(new Ray(mCameraInitPos, topRightWorld - mCameraInitPos), Vector3.up, Vector3.zero);
 	}
+	// 异步预加载战斗场景所需的全部资源,全部加入一个 AsyncTaskGroup,完成后统一回调 callback。
+	// 分三部分:①材质与范围/路径特效;②按格子类型(四方格/六边形)生成格子对象与模型;
+	// ③把动效预制体预热进对象池。四方格按矩形排布;六边形是错行排列(奇数行右移半格),
+	// 且优先复用场景里已存在的 Grid 节点,找不到才运行时创建,以节省加载开销。
 	public void loadResourceAsync(Action callback)
 	{
 		AsyncTaskGroup group = mAsyncTaskGroupManager.createGroup(callback);
@@ -183,6 +192,8 @@ public class BattleScene : SceneInstance
 			}
 		}
 	}
+	// 资源加载完成后的数据初始化:给所有格子套上可行走/阻挡材质,按 Grid_Prefab 是否存在
+	// 决定是否显示基础模型,隐藏三种范围特效,异步创建终点特效,并为每条怪物路线创建一条预览线。
 	public void initData()
 	{
 		// 加载好所有资源后，再给模型加材质
@@ -242,6 +253,9 @@ public class BattleScene : SceneInstance
 			mMovePathPoint.Add(new());
 		}
 	}
+	// 场景卸载时由框架回调:逐项归还格子对象/模型/预览线/路径特效/范围特效/相机到对象池或销毁,
+	// 再调用基类清理。区分"生成的格子"(在 mGridObjectModelList 中)与"场景已有的格子",
+	// 只有生成的才回池销毁,避免误删场景固有节点。
 	public override void destroy()
 	{
 		foreach (MovableObject obj in mGridObjectList.Values)
@@ -288,6 +302,7 @@ public class BattleScene : SceneInstance
 		mEffectManager?.destroyEffect(ref mGridDragTipArrow);
 		base.destroy();
 	}
+	// 对象池回收复用时清空所有字典/列表引用并复位标量、相机边界字段,与 init 配对。
 	public override void resetProperty()
 	{
 		base.resetProperty();
@@ -332,6 +347,8 @@ public class BattleScene : SceneInstance
         mCameraMaxIntersect = Vector3.zero;
         mCameraInitPos = Vector3.zero;
     }
+	// 每帧由框架驱动:按固定间隔 BATTLE_PATH_EFFECT_INTERVAL_TIME 为每条怪物路线
+	// 生成一个"沿路径飞行"的粒子特效(startPathEffect),形成持续的路径流动提示。
 	public override void update(float elapsedTime)
 	{
 		base.update(elapsedTime);
@@ -345,6 +362,9 @@ public class BattleScene : SceneInstance
 		}
 	}
 	// 获取世界坐标在忽略Y轴的情况下落在哪个格子中,如果之前已经计算过了格子下标,则优先判断此格子
+	// 把世界坐标(忽略 y)换算成格子下标。四方格:转到 GridRoot 本地坐标后整除 GRID_SIZE 得行列;
+	// 六边形:先判断 lastGridIndex(上一帧所在格)是否仍能包含该点以快速命中,否则遍历所有格子
+	// 用 mHexPoints 做多边形包含判定。返回 -1 表示点不在任何格子上。
 	public int worldPointToGridIndex(Vector3 point, int lastGridIndex = -1)
 	{
 		GRID_TYPE gridType = mTowerDefenceSystem.getGridType();
@@ -394,11 +414,13 @@ public class BattleScene : SceneInstance
 		return -1;
 	}
 	// 获取屏幕上鼠标的点与格子的交点世界坐标
+	// 从屏幕坐标发一条主相机射线,与"格子层"(MASK_LEVEL_GRID)求交,得到交点世界坐标。
 	public bool getMouseRayIntersectGrid(Vector3 screenPos, out Vector3 point)
 	{
 		return raycast(getMainCameraRay(screenPos), out _, out point, MASK_LEVEL_GRID);
 	}
 	// 获取屏幕上鼠标点击到的格子下标
+	// 组合接口:先射线求格子交点,再换算成格子下标。
 	public bool getMouseGridIndex(Vector3 screenPos, out int index)
 	{
 		index = -1;
@@ -419,6 +441,8 @@ public class BattleScene : SceneInstance
 		return raycast(getMainCameraRay(screenPos), out _, out point, MASK_TERRAIN);
 	}
 	// 根据屏幕坐标,获得所在的格子下标以及地面上的点坐标
+	// 同时取"格子下标 + 地面交点":命中格子返回 true;未命中格子则退而求地面交点并返回 false。
+	// 用于放塔时即使点在格子缝隙/地面,也能拿到一个世界坐标作为塔的落点。
 	public bool getMouseGridIndexAndPoint(Vector3 screenPos, out int index, out Vector3 point)
 	{
 		if (getMouseRayIntersectGrid(screenPos, out point))
@@ -453,6 +477,8 @@ public class BattleScene : SceneInstance
 		mGridDragTipArrow.setPosition(getGridPosition(index));
 	}
 	// 设置一个格子的渲染材质,并且重置其他格子的材质,阻挡类型的格子不能设置
+	// 把第 index 个格子高亮为 mat,同时把其余非阻挡格子恢复为可行走材质;
+	// mDragOnlyGrid(新手引导限制格)在六边形下会保留专用的拖拽提示材质。阻挡格始终跳过。
 	public void setGridMaterial(int index, Material mat)
 	{
 		GRID_TYPE dirType = mTowerDefenceSystem.getGridType();
@@ -551,6 +577,8 @@ public class BattleScene : SceneInstance
 		return intersectRayPlane(ray, Vector3.up, Vector3.zero);
 	}
 	// 显示怪物的实际寻路路线
+	// 显示怪物的实际寻路路线:把格子下标序列转成世界点列表,复用/关闭已有路径粒子特效,
+	// 并重置定时器让下一帧立即开始播放流动动效。
 	public void showPath(int roadIndex, List<int> path)
 	{
 		List<Vector3> pathPoints = mMovePathPoint[roadIndex];
@@ -567,6 +595,7 @@ public class BattleScene : SceneInstance
 		mPathLineTimer = 0.0f;
 	}
 	// 显示怪物的预览寻路路线,一般是在拖拽防御塔时显示的额外路线
+	// 显示预览路线(拖拽塔摆放时预览额外路径),用 LineRenderer 直接画出折线。
 	public void showPreviewPath(int roadIndex, List<int> path)
 	{
 		mPreviewPathRenderer[roadIndex].setActive(true);
@@ -589,6 +618,10 @@ public class BattleScene : SceneInstance
 		}
 	}
 	// 显示一个防御塔的攻击范围
+	// 显示一座塔的攻击范围。分三类处理:
+	// ① 六边形且塔配置了 mHexRange(按朝向的扇区):不画圆环,而是把覆盖到的格子染成绿色;
+	// ② 投石机:额外显示一个"最小攻击范围"圆环(近身盲区);
+	// ③ 普通情况:用一个缩放过的圆环特效表示半径。tower 为 null 时隐藏所有范围显示。
 	public void showTowerRange(CharacterTower tower, int gridIndex = -1)
 	{
 		// 塔有效则没有指定下标时就自动获取塔的下标
@@ -642,6 +675,7 @@ public class BattleScene : SceneInstance
 		}
 	}
 	// 突出显示或者取消突出显示当前可行走且没有塔的格子
+	// 高亮所有"可放塔且当前无塔"的格子(缩放脉动动画),用于进入放塔模式时的可视化提示。
 	public void showWalkableGrid(bool show)
 	{
 		if (show)
@@ -665,6 +699,8 @@ public class BattleScene : SceneInstance
 		}
 	}
 	// 标记指定的塔被选中
+	// 标记选中的塔:异步创建选中特效(创建回调里用 assignID 校验塔是否已变更,防止特效错位),
+	// 之后只移动位置;传 null 则隐藏。
 	public void showTowerSelect(CharacterTower tower)
 	{
 		if (tower != null)
@@ -692,6 +728,7 @@ public class BattleScene : SceneInstance
 		mSelectingEffect?.setActive(tower != null);
 	}
 	// 显示一个技能的攻击范围
+	// 显示技能范围圆环,范围为 0 时隐藏。圆环缩放为 range*2(特效按直径建模)。
 	public void showSkillRange(Vector3 pos, float range)
 	{
 		mSkillRangeEffect.SetActive(range > 0.0f);
@@ -703,6 +740,7 @@ public class BattleScene : SceneInstance
 		mSkillRangeEffect.transform.localScale = new(range * 2.0f, 1.0f, range * 2.0f);
 	}
 	public Vector3 focusCamera(Vector3 targetPos) { return clampCameraPos(targetPos.replaceY(0.0f) + getMainCamera().getPosition() - getFocusTerrainPosition()); }
+	// 平移相机(x/z 平面),随后夹取到可视边界内,防止镜头移出地图。
 	public void deltaMoveCamera(float deltaX, float deltaZ)
 	{
 		GameCamera cam = getMainCamera();
@@ -710,6 +748,8 @@ public class BattleScene : SceneInstance
 		cam.setPositionZ(cam.getPosition().z + deltaZ);
 		mBattleScene.clampCameraPos();
 	}
+	// 沿相机朝向推拉缩放:限制在 [mCameraMinHeight, mCameraMaxHeight] 之间;
+	// 触底时按方向分量回退 x/z,保证镜头贴地时仍落在合法视锥内,最后夹取边界。
 	public void deltaMoveCamera(float deltaY)
 	{
 		GameCamera cam = getMainCamera();
@@ -731,6 +771,8 @@ public class BattleScene : SceneInstance
 		mBattleScene.clampCameraPos();
 	}
 	public void clampCameraPos() { getMainCamera().setPosition(clampCameraPos(getMainCamera().getPosition())); }
+	// 相机位置夹取:y 限制在高度区间;若目标点在相机初始视锥的后方则直接拉回原点;
+	// 否则用两条边界射线求出在 y=0 平面的交点,把 x/z 夹在可视范围内,实现"镜头不越界"。
 	public Vector3 clampCameraPos(Vector3 cameraPos)
 	{
 		cameraPos.y = cameraPos.y.clamp(mCameraMinHeight, mCameraMaxHeight);
@@ -747,6 +789,8 @@ public class BattleScene : SceneInstance
 		return cameraPos;
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
+	// 查找或创建场景中的功能节点(怪物/塔/道具/格子/可移除物/时间轴根节点),读取相机初始高度
+	// 作为最高点,可选的 MainCamera_ZoomIn 作为最低缩放点,并校验地形层是否配置为 MASK_TERRAIN。
 	protected void initGameObject()
 	{
 		mMonsterRoot = findOrCreateGameObject("MonsterRoot", mRoot);
@@ -779,6 +823,8 @@ public class BattleScene : SceneInstance
 			logError("Terrain没设置layer");
 		}
 	}
+	// 把一个格子 GameObject 登记为可点击的 MovableObject:设为凸 MeshCollider、静态、
+	// 注册点击回调 onGridClick、缓存 Renderer,并记录第一个格子的初始缩放作为动画基准。
 	protected void createGridBaseObject(GameObject go, int index)
 	{
 		go.transform.parent = mGridRoot.transform;
@@ -796,11 +842,15 @@ public class BattleScene : SceneInstance
 		}
 	}
 	// 点击地面时,关闭所有塔的范围显示
+	// 点击空白地面时取消当前塔选择与道具选择,即"点空白处关闭所有范围显示"。
 	protected void onTerrainClick()
 	{
 		CmdGlobalSelectTowerScene.execute(null);
 		mTowerDefenceSystem.cmdSelectItemOwned(null);
 	}
+	// 点击格子的核心放塔逻辑:先汇总所有怪物路线判定该格是否可放塔(不阻断任一路径),
+	// 再叠加新手引导的 mDragOnlyGrid 限制。Rogue 模式下:读取待放置塔→校验金币→扣费→
+	// 创建塔实体→记录花费→执行落塔命令,最后清空待放置状态。非 Rogue 模式的放塔由 UI 流程处理。
 	protected void onGridClick(MovableObject obj, Vector3 mousePos)
 	{
 		List<MonsterRoad> roadList = mTowerDefenceSystem.getMonsterRoadList();
@@ -846,6 +896,7 @@ public class BattleScene : SceneInstance
 			CmdGlobalSelectItemOwnedRogue.execute(null);
 		}
 	}
+	// 线性查找某个点击对象对应的格子下标。
 	protected int findGridIndex(IMouseEventCollect obj)
 	{
 		int count = mGridObjectList.Count;
@@ -859,6 +910,8 @@ public class BattleScene : SceneInstance
 		return -1;
 	}
 	// 显示怪物的寻路路线
+	// 把格子下标路径展开成 LineRenderer 点列:在每个相邻格子间插入 0.01/0.99 处的两个过渡点,
+	// 让折线在拐角处更平滑;路径为空则隐藏线。
 	protected void setPathPoints(myLineRenderer lineRenderer, List<int> path)
 	{
 		lineRenderer.setActive(!path.isEmpty());
@@ -880,6 +933,7 @@ public class BattleScene : SceneInstance
 		}
 		lineRenderer.setPointList(points);
 	}
+	// 从对象池复用一个未激活的路径特效,没有则新建一个,并启用其移动组件后返回。
 	protected GameEffect createNewPathEffect(int index)
 	{
 		List<GameEffect> pathList = mMovePathEffect[index];
@@ -893,6 +947,7 @@ public class BattleScene : SceneInstance
 		effect.setActive(true);
 		return effect;
 	}
+	// 让一个路径特效沿点列播放(ZERO_ONE 曲线),运动中朝向前进方向,结束后自动隐藏以便复用。
 	protected void startPathEffect(int index, List<Vector3> points)
 	{
         createNewPathEffect(index).MOVE_CURVE_EX(KEY_CURVE.ZERO_ONE, points, BATTLE_PATH_EFFECT_TIME,

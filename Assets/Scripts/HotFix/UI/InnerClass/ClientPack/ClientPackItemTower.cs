@@ -4,7 +4,9 @@ using static GameUtilityHotFix;
 using static GBR;
 using static GDR;
 
-// 界面上显示的塔的图标的基类,可拖拽出去创建塔
+// 背包中的"塔"条目(ClientPackItem 的塔特化)：mDragArea 挂 COMWindowDrag，
+//   update 里跟随拖拽状态，setReadyToSetup 用遮罩表示"已选中待放置"，setTargetType 显示对空/对地标记。
+//   拖拽放置的实际逻辑在 UIClientPackRogue，本类只管条目自身表现与拖拽区。
 public class ClientPackItemTower : ClientPackItem
 {
 	protected myUGUIImage mTowerIcon;

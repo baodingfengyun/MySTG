@@ -2,7 +2,7 @@
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UILoading.prefab
-// 加载界面
+// 加载进度界面：游戏启动/切场景时显示，setProgress(0~1) 驱动进度条；无交互。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UILoading : LayoutScript
 {

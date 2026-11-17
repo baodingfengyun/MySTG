@@ -3,7 +3,21 @@ using System.Collections.Generic;
 using static UnityUtility;
 using static GBR;
 
-// 防御塔技能注册
+// 防御塔技能注册：把 TowerSkill 表里的技能 ID 反射映射到具体技能类 + 参数模板
+//
+// 【理解"13 座塔如何差异化"的总钥匙】
+// 每座塔在 Tower.csv 的 Skill 列只填一个技能 ID，COMTowerSkill.addSkill() 拿这个 ID 调
+// TowerSkillRegister.getSkillType() 得到真正的 C# 类。注册情况分两类：
+//   · 专属技能类（约 7 种）：震荡/火炮/投石机/气球炸弹/波动/防空飞弹(含球形)/飞镖发射器
+//     —— 这些塔有独特行为（绕圈卫星弹、两段抛射、最小射程、弹跳等），必须写子类。
+//   · 通用 TowerSkill（十字弓/霰弹/天空之矛/回旋飞镖/镶嵌塔等）
+//     —— 行为就是标准"索敌→按 FireTime 发弹"，差异完全靠 SkillBullet 表里不同的子弹形态
+//        （直线/扇形/曲线/追踪）+ Buff 配置实现，一行 C# 都不用写。
+// 这正是 KR1 复刻评估里"塔层约七成能落、靠配置就够"的由来：加塔优先配子弹形态和 Buff，
+// 只有需要全新行为模式时才 register 一个新 TowerSkill 子类。
+//
+// registe<T>(id)          —— 只登记类，用于无专属参数的技能
+// registe<Skill,Param>(id) —— 同时登记类和参数模板，TowerSkillT<Param> 会用它解析表里的自定义参数
 public class TowerSkillRegister
 {
 	protected static ParamParseCollection mParamCollection = new();		// 参数解析对象
@@ -219,10 +233,12 @@ public class TowerSkillRegister
 		return mParamCollection.getParamTemplate(skillData.mID) as ParamCopyable;
 	}
 	//------------------------------------------------------------------------------------------------------------------------------
+	// 仅登记技能类：addSkill 时 CLASS(类型) 从对象池反射出实例
 	protected static void registe<T>(int id) where T : TowerSkill
 	{
 		mSkillTypeList.Add(id, typeof(T));
 	}
+	// 登记技能类 + 参数模板：模板由 getSkillParam 取出，交给 TowerSkillT.initData 深拷贝解析
 	protected static void registe<Skill, Param>(int id) where Skill : TowerSkill where Param : ParamBase
 	{
 		mSkillTypeList.Add(id, typeof(Skill));

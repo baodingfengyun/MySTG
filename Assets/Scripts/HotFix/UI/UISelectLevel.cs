@@ -10,7 +10,15 @@ using static GBR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UISelectLevel.prefab
-// 关卡选择界面
+// ===== 关卡选择界面：横向滑动的章节/关卡列表，选关进入战斗 =====
+// 【数据】onGameState 从 ExcelChapter 读所有章节 ID，默认显示第一章(MAIN_LEVEL 模式)；
+//   每章的关卡按钮走 LevelButton 对象池。
+// 【解锁状态 refreshAllLevelButtonState】每个 LevelButton 按 ClientSystem.COMLevel 的存档判定：
+//   已通关→COMPLETED；前置关(mUnLockByCompleteLevel)已通→UNLOCKED；否则 LOCK。
+//   按钮按固定间距横向排布，并选出一个默认关卡(战斗中优先选当前进行中的关)。
+// 【交互】selectLevel 选中时若关卡仍 LOCK 则提示"未解锁"并清空选择；
+//   左右拖拽列表(onLevelListRootDragStart/Draging/End)可跨章浏览，翻页按钮切章节/模式。
+// 【引导】setActiveOnlyLevel / setActiveOnlyNormalBack 用 GlobalTouchSystem 限定可点区域(新手引导)。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UISelectLevel : LayoutScript
 {

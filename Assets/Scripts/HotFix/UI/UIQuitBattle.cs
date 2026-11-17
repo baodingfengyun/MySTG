@@ -3,7 +3,10 @@ using System;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIQuitBattle.prefab
-// 退出战斗的提示界面
+// 通用"退出战斗"二次确认弹窗：setConfirm 注入确认回调(各调用方决定退出去向)，
+//   确认则执行回调、取消则 close。UIGaming 的设置按钮就是 LT.LOAD<UIQuitBattle>() 用它。
+// 【注意】init 里 registeCollider 对 mMask/mConfirm/mCancel 各写了两遍(重复注册)，
+//   这里只作注释标注，未改代码。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIQuitBattle : LayoutScript
 {

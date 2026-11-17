@@ -5,7 +5,17 @@ using static GameUtilityHotFix;
 using static GBR;
 using static GDR;
 
-// 怪物主动技能
+// 怪物主动技能：血量跌到阈值时自动释放，可带前摇动画、特效、子弹和 Buff
+// 【触发】initData 时监听 EventMonsterHPChange；onMonsterHPChanged 检测血量从阈值上方跌到下方
+//   （param.mLastHP > 阈值 且 mCurHP <= 阈值）才 fire，用两个阈值分出 hpIndex=0/1 两套效果。
+//   死亡(HP<=0)不再触发。canFire 还要过冷却(isCoolDown)。
+// 【释放时序 fire()】扣蓝 → 设 CD →
+//   ① 若配了动画：挂 ActionSkillStart，等动作"正常结束"(非打断)的回调里再索敌+加 Buff；
+//   ② 没动画：立即索敌+加 Buff；
+//   然后播放特效(异步加载后 delayCall 到 mFireEffectTime 才播) + 发子弹 + 后处理。
+//   "Buff 在前摇结束后才生效"是关键——给玩家闪避/打断的反应窗口。
+// 【索敌 searchTarget】三种：SELF(给自己) / 范围内血量百分比最低的怪 / 攻击最高的塔。
+// 【buffToTarget】给目标挂两类：默认触发器(DefaultFireBuff，可改来源) + 按 hpIndex 选 FireBuff0/1。
 public class MonsterActiveSkill : MonsterSkillBase
 {
 	protected List<EDSkillBullet> mBulletDataList = new();      // 技能初始包含的子弹表格数据列表
@@ -155,6 +165,7 @@ public class MonsterActiveSkill : MonsterSkillBase
 		}
 		mFireTime.setRange(mSkillData.mFireTime);
 	}
+	// 血量跨越阈值检测：只有"上一帧在阈值上方、这一帧在阈值下方"才触发一次，避免重复释放
 	protected void onMonsterHPChanged(EventMonsterHPChange param)
 	{
 		// 怪物死亡就不需要再触发技能了

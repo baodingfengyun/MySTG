@@ -42,7 +42,13 @@ public class BuffSummonMonsterParam : CharacterBuffParamT<BuffSummonMonsterParam
 	}
 }
 
-// 在当前的位置召唤一个怪物
+// 【代表样例：召唤类 Buff】在当前位置召唤一只/多只怪物
+// 【参数】三个平行列表 mMonsterID / mMonsterCount / mHPPercent 必须等长(check 里校验表引用)，
+//   分别指定"召唤哪种怪/几只/血防按宿主百分比"。mOffsetPosition 让新生怪前后错开避免重叠。
+// 【实现链】取宿主当前所在格 → CmdGlobalCreateMonster.execute 建怪 → 对齐位置 →
+//   checkRoadPointBetween 接上路线 → 交错偏移 → 设朝向/生存时间 →
+//   按宿主 HP×百分比 重算血防 → CmdMonsterSetHP 定血。
+// 【范式】展示了一个 Buff 如何调用全局命令(CmdGlobalCreateMonster)生成新实体并改写其初始属性。
 public class BuffSummonMonster : CharacterBuffT<BuffSummonMonsterParam>
 {
 	public override void enter()

@@ -1,7 +1,17 @@
 ﻿using UnityEngine;
 using static GameUtilityHotFix;
 
-// 怪物角色,处理怪物的所有逻辑
+// ===== 怪物实体：一只怪 = 一组功能组件 + 一份数据表 + 一堆状态(Buff/动作) =====
+// 【组件化】怪物自身几乎不写逻辑，能力都拆到 6 个 COM 组件：
+//   COMMonsterMovement(寻路移动) / COMMonsterLifeTime(存活计时) / COMMonsterAvatar(模型动画) /
+//   COMMonsterSkill(技能) / COMMonsterTalk(台词) / COMCharacterBleeding(出血)。
+//   基类还自动挂了 HP/Buff/状态机等通用组件。addComponent(out x, true) 的 true=参与对象池回收。
+// 【组件顺序有讲究】initComponents 里技能组件必须在模型组件之前加——销毁时能先清技能特效再销毁模型。
+// 【initData 链】填入表数据 → 初始化移动/速度 → 拷贝六抗+闪避+HP → 异步加载模型 →
+//   注册 ActionWalk 动画层 → 挂默认 Buff → 学技能 → 把移动回调接到出血组件(走路留血迹)。
+// 【开战】notifyFightStart 触发被动技能(如出生自爆前的蓄力)。
+// 【Avatar 特化】构造函数里 addDontAutoCreate<COMCharacterAvatar> 禁止基类自动建 Avatar，
+//   改用继承的 COMMonsterAvatar——因为怪物动画接口(MONSTER_ANIMATION)和塔/玩家不同。
 public class CharacterMonster : CharacterGame
 {
 	protected CharacterMonsterData mMonsterData = new();	// 怪物数据
@@ -53,6 +63,7 @@ public class CharacterMonster : CharacterGame
 			}
 		}
 
+		// 把移动回调接到出血组件：怪物每走一段就由出血组件决定是否留血迹
 		mComMovement.setMovingCallback(mComBleeding.getListenFunction());
 
 #if UNITY_EDITOR

@@ -25,7 +25,11 @@ public class BuffDamageOverTimeParam : CharacterBuffParamT<BuffDamageOverTimePar
 	}
 }
 
-// 无属性持续伤害
+// 无属性持续伤害(DoT)族代表，与 BuffPoison/BuffBurn 的区别是它不依赖元素克制字段。
+// 范式：enter 读参数，update 用 tickTimerLoop 按 mInterval 周期触发，每跳 CmdMonsterSetHP 扣固定伤害，
+// 类型标记 HP_DELTA.NORMAL_DAMAGE（毒/燃烧则走 DEBUFF，会被易伤/免伤字段修正）。
+// 只有 target 是 CharacterMonster 才扣血——说明 DoT 是"挂在怪物身上"的 Buff。
+// 注意它是"持续到 Buff 结束"的周期伤害，与 BuffDamageOnce(仅 enter 扣一次)形成对照。
 public class BuffDamageOverTime : CharacterBuffT<BuffDamageOverTimeParam>
 {
 	public int mDamage;					// 伤害

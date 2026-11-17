@@ -1,5 +1,5 @@
 ﻿
-// 参数
+// 技能结束阶段的参数（结构同 ActionSkillStartParam，预留 mAnimation/mSpeed 扩展）
 public class ActionSkillEndParam : StateParam
 {
 	public int mAnimation;      // 动画状态机的参数值
@@ -12,7 +12,7 @@ public class ActionSkillEndParam : StateParam
 	}
 }
 
-// 技能结束状态
+// 技能结束状态：施法收尾播 SKILL 动画，REMOVE_OLD 互斥
 public class ActionSkillEnd : CharacterStateT<ActionSkillEndParam>
 {
 	public ActionSkillEnd()

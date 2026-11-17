@@ -1,6 +1,8 @@
 ﻿using static GBR;
 
-// 技能的子弹表
+// 技能子弹表：一颗子弹的完整静态定义——形态类型、元素类型、起点/命中特效、伤害修正，
+// 以及命中前/命中后给目标或自身挂的 Buff（对应 SkillBullet.hit 里的严格时序钩子）。
+// 本类无查询缓存，职责是 checkAllData 校验所有这些跨表引用（特效/伤害修正/Buff）合法。
 public class ExcelSkillBullet : ExcelTableT<EDSkillBullet>
 {
     public override void checkAllData()

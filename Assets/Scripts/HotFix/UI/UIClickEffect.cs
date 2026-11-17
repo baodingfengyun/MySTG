@@ -4,7 +4,8 @@ using static UnityUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIClickEffect.prefab
-// 用于显示点击特效
+// 点击特效界面：onRootClick 在全屏任意点击处播放一个点击反馈特效。
+//   常驻(PERSIST)，单例复用避免每次点击都创建界面。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIClickEffect : LayoutScript
 {

@@ -1,5 +1,5 @@
 ﻿
-// 站立
+// 站立动作状态：进入时给怪物播 STAND 动画；与走路/施法同属 StateGroupAction 互斥
 public class ActionStand : CharacterState
 {
 	public ActionStand()

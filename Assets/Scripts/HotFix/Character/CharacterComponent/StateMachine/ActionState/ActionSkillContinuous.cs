@@ -1,5 +1,5 @@
 ﻿
-// 参数
+// 技能持续阶段的参数（结构同 ActionSkillStartParam，预留 mAnimation/mSpeed 扩展）
 public class ActionSkillContinuousParam : StateParam
 {
 	public int mAnimation;      // 动画状态机的参数值
@@ -12,7 +12,7 @@ public class ActionSkillContinuousParam : StateParam
 	}
 }
 
-// 技能持续状态
+// 技能持续状态：施法过程中持续播 SKILL 动画，REMOVE_OLD 互斥
 public class ActionSkillContinuous : CharacterStateT<ActionSkillContinuousParam>
 {
 	public ActionSkillContinuous()

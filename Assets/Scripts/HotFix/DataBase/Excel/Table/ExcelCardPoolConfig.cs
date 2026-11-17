@@ -1,6 +1,10 @@
 ﻿using static GBR;
 
-// 卡池表
+// 卡池表：Rogue 三选一抽卡的候选池，每行是一个池，内含"普通项"和"必选项"两组。
+// 每项用 (ID, 类型) 表示一个道具，类型决定去哪张表校验 ID 合法性：
+//   TOWER_TALENT -> 塔天赋表，TOWER -> 防御塔表，BATTLE_PROP -> 战斗道具（暂无校验）。
+// 本类没有查询缓存，核心职责是 checkAllData 的引用完整性校验：
+// checkListPair 保证每个并行 List 等长（ID/类型/权重一一对应），再按类型逐级查表。
 public class ExcelCardPoolConfig : ExcelTableT<EDCardPoolConfig>
 {
     public override void checkAllData()

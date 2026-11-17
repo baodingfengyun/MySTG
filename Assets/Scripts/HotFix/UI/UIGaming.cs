@@ -8,7 +8,16 @@ using static FrameBaseUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIGaming.prefab
-// 战斗主界面
+// ===== 战斗主界面 HUD：整局战斗常驻的顶部/右下角信息条 =====
+// 【显示内容】地图名、通关进度(经验/需求)、当前波次、剩余生命(心)、金币、倍速开关、
+//   天赋入口、开始战斗按钮(含自动开战倒计时)。
+// 【数据来源】全部读 TowerDefenceSystem：getCurExp/getLevelNeedExp(进度)、getWaveIndex(波次)、
+//   getHp(生命)、getGoldCoinRogue(金币)、getLevelName、isEnded(是否已通关)。
+// 【生命周期】assignWindow 绑控件 → init 注册点击 → onGameState 每次显示时 refresh →
+//   update 处理自动开战倒计时(每秒递减,到 0 自动触发 onStartFightClick)。
+// 【开始战斗】onStartFightClick 先校验"已通关不能再开"和"每个出怪口都有寻路路线"，
+//   通过后 changeProcedure<GameSceneBattleGamingFight>() 切到战斗流程。
+// 【代码生成】auto generate 标记的字段/构造/assignWindow/init 由 prefab 工具生成，勿手改。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIGaming : LayoutScript
 {
@@ -92,6 +101,8 @@ public class UIGaming : LayoutScript
 	public override void update(float elapsedTime)
 	{
 		base.update(elapsedTime);
+		// 自动开战倒计时：仅在"关卡开启自动开战 + 倒计时>0 + 三选一卡牌界面未弹出"时走秒；
+		//   每秒递减并显示(≤5秒变红)，到 0 自动点开始战斗。选卡时暂停倒计时避免打断玩家选择。
 		if(mTowerDefenceSystem.getLevelData().mAutoStart && mAutoStartTotalTimer > 0 && mUIBattleItemSelectRogue.safe() == null && tickTimerLoop(ref mAutoStartTimer, elapsedTime, 1))
 		{
 			mAutoStartTotalTimer -= 1;
@@ -184,6 +195,7 @@ public class UIGaming : LayoutScript
 	{
 		CmdGlobalTimeScale.execute(false);
 	}
+	// 点"开始战斗"：两道前置校验(已通关 / 每个出怪口都有寻路路线)通过后切到战斗流程
 	protected void onStartFightClick()
 	{
 		// 如果已经获得了足够的通关经验,就不能再继续开始战斗了

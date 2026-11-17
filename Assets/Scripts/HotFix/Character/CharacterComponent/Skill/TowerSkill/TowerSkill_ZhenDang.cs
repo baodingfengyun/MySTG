@@ -28,7 +28,16 @@ public class SkillCustomParam_ZhenDang : ParamCopyableT<SkillCustomParam_ZhenDan
 	}
 }
 
-// 震荡塔的技能
+// 震荡塔的技能：绕塔公转的"卫星弹"阵列（≈ KR 的特斯拉/电圈，但这里靠轨道碰撞持续输出）
+// 【独特机制】它完全不走基类的 fire() → fireAllBullet() 流程（fire 被覆写成空函数），
+// 而是在 update() 里自己维护一组 SkillBulletZhenDang：
+//   · 每颗子弹有固定的 baseAngle(基准角)，整体再叠加一个随时间累加的 mRotatedAngle，
+//     位置 = 塔中心 + (baseAngle + 旋转角) 方向 × ROTATE_RADIUS(2格半径)，形成匀速公转。
+//   · 子弹均匀分布在圆周（baseAngle = 2π / maxBulletCount × index），数量由 mMaxBulletCount 控制。
+//   · 按技能 CD 定时补充子弹到上限；爆炸后从列表移除（除非 mNotDestroyBulletOnHit>0，
+//     即"碰撞不消失"Buff —— 此时卫星弹会一直绕圈反复命中，是强力词条）。
+// 【玩法钩子】setMaxBulletCount 供 Rogue 词条动态加减卫星数；addNotDestroyBulletOnHit 是引用计数，
+// 支持多个 Buff 叠加。火炮的"子弹数+X"改 mBulletDataList，震荡塔则改这里的 mMaxBulletCount。
 public class TowerSkill_ZhenDang : TowerSkillT<SkillCustomParam_ZhenDang>
 {
 	protected List<SkillBulletZhenDang> mBulletList = new();// 已经生成的子弹列表
@@ -91,6 +100,8 @@ public class TowerSkill_ZhenDang : TowerSkillT<SkillCustomParam_ZhenDang>
 			bullet.setPosition(center + (bullet.getBaseAngle() + mRotatedAngle.toRadian()).getVectorFromAngle() * ROTATE_RADIUS);
 		}
 	}
+	// 生成一颗新卫星弹：先找一个空的 index 槽位（保证圆周上均匀分布），
+	// 再按槽位算 baseAngle，起点直接进入轨道，并挂上爆炸回调用于回收。
 	// 此处可能是额外的子弹增加,不是自动增加子弹,所以可以设置额外的子弹最多可以增加到多少个
 	public void createBullet()
 	{
@@ -119,7 +130,7 @@ public class TowerSkill_ZhenDang : TowerSkillT<SkillCustomParam_ZhenDang>
 		bullet.setNotDestroyBulletOnHit(mNotDestroyBulletOnHit > 0);
 		bullet.fire();
 	}
-	// 技能释放里面什么也不做,自定义释放子弹
+	// 技能释放里面什么也不做,自定义释放子弹（卫星弹由 update() 自行生成，不走基类开火流程）
 	public override void fire() {}
 	public void setMaxBulletCount(int count) 
 	{

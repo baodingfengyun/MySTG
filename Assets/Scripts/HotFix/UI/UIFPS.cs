@@ -4,7 +4,8 @@ using static FrameBaseUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIFPS.prefab
-// 显示版本号,帧率,电量
+// 调试信息条：显示版本号、帧率、电量；setVersionVisible 控制版本号显隐。
+//   常驻(PERSIST)界面。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIFPS : LayoutScript
 {

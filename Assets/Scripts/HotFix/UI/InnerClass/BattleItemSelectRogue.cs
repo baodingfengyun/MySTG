@@ -4,7 +4,9 @@ using static FrameUtility;
 
 // auto generate classname start
 // generate from:Assets/GameResources/UI/UIPrefab/UIBattleItemSelectRogue.prefab
-// 显示肉鸽词条的选项
+// 三选一抽卡界面里的一个"词条选项"条目：setPropData 填入道具数据与序号，
+//   三种动画 playInitAnim(入场)/playSelectAnim(选中)/playNotSelectAnim(未选变暗)对应选择流程；
+//   onRootClick 点击后由 UIBattleItemSelectRogue 统一处理应用与收尾。对象池复用。
 public class BattleItemSelectRogue : WindowRecyclableUGUI
 // auto generate classname end
 {

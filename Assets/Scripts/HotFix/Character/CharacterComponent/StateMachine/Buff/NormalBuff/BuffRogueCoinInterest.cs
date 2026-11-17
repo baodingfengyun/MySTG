@@ -30,7 +30,12 @@ public class BuffRogueCoinInterestParam : CharacterBuffParamT<BuffRogueCoinInter
 	}
 }
 
-// 肉鸽回合结束时，每有n银币，额外获得m银币，m有上限
+// 肉鸽回合结束时，每有 n 银币额外获得 m 银币，m 有上限（Rogue 经济族代表）。
+// 同族：BuffRogueKillMonsterAddBuildCoin(击杀加币)、BuffRogueHitMonsterAddBuildCoin(命中加币)、
+// BuffRogueMonsterBreakAddCoin(破防加币)、BuffRogueKillMonsterCureLevelHp 等，都是监听某事件改局内资源。
+// 本类监听 EventWaveWillFinish，在波次结算前按"当前银币/每n币"取商、封顶 mMaxCoin 后发钱；
+// 用 getBattleMode()==ROGUE_LIKE 守卫，确保只在肉鸽模式生效。
+// 与数值族不同：它不改 GameData 字段，而是直接发 CmdGlobalSetGoldCoinRogue 命令改局内金币。
 public class BuffRogueCoinInterest : CharacterBuffT<BuffRogueCoinInterestParam>
 {
 	protected int mEachCoin;	// 每多少个银币

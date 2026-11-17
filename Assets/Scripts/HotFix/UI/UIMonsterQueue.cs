@@ -5,7 +5,13 @@ using static GBR;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIMonsterQueue.prefab
-// 出场怪物信息
+// ===== 出场怪物队列 UI：屏幕上方显示"这一波有哪些怪"(普通怪列表 + Boss 列表) =====
+// 【两个对象池】MonsterQueueItem(普通怪，显示图标+数量) 和 MonsterBossQueueItem(Boss，带血条)。
+// 【数据来源 refresh】读 TowerDefenceSystem.getMonsterDisplay()——一组 (怪物ID, 数量) 对，
+//   查 Monster 表按 mStrength 分流：BOSS 进 Boss 池、其余进普通池，再 autoGridHorizontal 排布。
+// 【事件驱动】监听 EventSpawnMonster：Boss 出场时把队列项绑定真实怪物实体(trySetCharacter，
+//   之后血条靠 updateHpBar 按 GUID 更新)；监听 EventMonsterDestroy：Boss 死了回收对应项。
+// 【注】普通怪的"数量"是波次预览，Boss 项才跟踪实体血量——所以只有 Boss 池需要事件联动。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIMonsterQueue : LayoutScript
 {

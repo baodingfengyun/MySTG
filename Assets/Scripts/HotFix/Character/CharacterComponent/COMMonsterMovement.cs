@@ -31,6 +31,9 @@ public class COMMonsterMovement : GameComponent
 		base.init(owner);
 		mMonster = mComponentOwner as CharacterMonster;
 	}
+	// 初始化移动数据：非 Boss 怪随机分配一个格子内偏移(左/右/无)。
+	// 同一条路线上的怪各自走略微不同的轨迹，避免完全重叠成一条线，视觉更自然；
+	// Boss 不偏移，严格沿路线中心行走。偏移方向在 setTargetPointIndex 里换算成实际坐标。
 	public void initData()
 	{
 		if (mMonster.getMonsterData().mTableData.mStrength != MONSTER_STRENGTH.BOSS)
@@ -209,6 +212,10 @@ public class COMMonsterMovement : GameComponent
 		mMonster.lookAtPoint(mTargetPosition);
 		logBase("[开始移动] " + mMonster.ToString() + ", roadPointList: " + JsonConvert.SerializeObject(mRoadPointList));
 	}
+	// 切换目标路点并刷新目标世界坐标 mTargetPosition。
+	// 三件事：①取路点格子的世界坐标；②按 initData 的随机偏移把目标点沿行进方向的
+	// 左/右法线平移一点(所谓"三条路径")，使怪错开走；③飞行怪再抬高 FLY_MONSTER_HEIGHT。
+	// 之后 forward/backward 的移动和转向都以 mTargetPosition 为准。
 	public void setTargetPointIndex(int index)
 	{
 		mTargetPointIndex = index;
@@ -235,7 +242,9 @@ public class COMMonsterMovement : GameComponent
 			}
 		}
 	}
-	// 检查当前是否有可走的路线
+	// 布塔校验：把"若在该格放塔(extraBlockIndex)后，这只怪还能否找到路"交给寻路层判断。
+	// UI 拖塔时的 checkCanPutTower 最终就落到这只怪的这个方法上——任何一只怪判失败就不允许放，
+	// 保证不会堵死出怪口。飞行怪走 generateFlyRoadPathCustom，地面怪走 Walk 版本。
 	public bool checkPath(int extraBlockIndex)
 	{
 		// 有怪物不在有效的格子中时,不允许放置塔,否则放置后无法计算怪物路线
@@ -254,7 +263,10 @@ public class COMMonsterMovement : GameComponent
 			return mTowerDefenceSystem.generateWalkRoadPathCustom(curGridIndex, null, extraBlockIndex);
 		}
 	}
-	// 地图上塔的位置有改变,重新计算怪物的路线
+	// 地图布局变化(放塔/卖塔)后，从怪物当前格子重新寻路，把新路线写回 mRoadPointList。
+	// 与 checkPath 的区别：checkPath 只是"假设放塔"的只读预演(不改路线)，
+	// 这里是真正落塔后对每只存活怪执行的重算。算完用 checkRoadPointBetween 修正当前目标点，
+	// 使怪物平滑衔接到新路线而不是瞬移回头。失败则清空路线(该怪随后按异常消亡处理)。
 	public void regenerateRoadList()
 	{
 		int curGridIndex = mBattleScene.worldPointToGridIndex(mMonster.getPosition(), mGridIndex);

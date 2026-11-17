@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using static UnityUtility;
 
-// 伤害数字基类
+// 单个飘字数字对象(对象池条目)：setCriticalHitEnabled 切换暴击样式，
+//   recycle 归还时清状态。三个子类 Normal/Debuff/Miss 用不同 prefab 模板与飘动路径，
+//   由 UIDamageNumber 按 HP_DELTA 类型从对应池里借出/回收。
 public class DamageNumber : WindowRecyclableUGUI
 {
 	protected myUGUINumber mNumber;

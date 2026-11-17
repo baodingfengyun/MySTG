@@ -4,7 +4,8 @@ using static FrameBaseHotFix;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UIDialogOK.prefab
-// 确定对话框
+// 单按钮"确定"对话框：setInfo 设文案(支持两个格式化参数)、setOKCallback 注入确认回调；
+//   onOKClick 执行回调并关闭。常驻(PERSIST)界面，供 tip/确认场景复用。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UIDialogOK : LayoutScript
 {

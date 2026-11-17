@@ -1,6 +1,13 @@
 ﻿using static FrameBaseHotFix;
 
-// 角色的buff
+// ===== Buff/状态反射注册表：配表驱动体系的地基 =====
+// 【作用】把"Buff 类型表 ID"(EDBuff.Xxx_ID)映射到一对具体类型：状态类 State + 参数类 Param。
+//   运行时挂 Buff 时，只需一个 ID，就能从 StateManager 反射创建出对应的 Buff 实例和参数实例。
+// 【自动生成】auto generate start/end 之间的 160 行由工具从配置表生成——所以加一个新 Buff
+//   的绝大多数工作是"填表 + 写一个小 Buff 类"，然后重新生成这张表，不用改框架代码。
+// 【命名规律】BuffXxx → 普通效果(改数值/持续伤害/控制)，TriggerXxx → 触发器(条件满足再生 Buff)；
+//   每个 State 都配一个 Param 参数类，承载表里的数值。
+// 【约束】State 必须继承 CharacterBuff，Param 必须继承 CharacterBuffParam(见 registeState 签名)。
 public class StateRegister
 {
 	public static void registerAll()
@@ -172,7 +179,8 @@ public class StateRegister
         // auto generate end
     }
     //------------------------------------------------------------------------------------------------------------------------------
-    protected static void registeState<State, Param>(int id) where State : CharacterBuff where Param : CharacterBuffParam
+	// 把一个 ID 连同"状态类 + 参数类"一起登记到全局 StateManager（反射创建的依据）
+	protected static void registeState<State, Param>(int id) where State : CharacterBuff where Param : CharacterBuffParam
 	{
 		mStateManager.registeState(id, typeof(State), typeof(Param));
 	}

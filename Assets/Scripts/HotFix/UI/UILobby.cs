@@ -3,7 +3,7 @@ using static FrameUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UILobby.prefab
-// 大厅主界面
+// 大厅主界面：只有"开始游戏"按钮，点击切到 GameSceneLobbySelectLevel(关卡选择)。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UILobby : LayoutScript
 {

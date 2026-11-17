@@ -3,7 +3,9 @@ using static GameUtilityHotFix;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UILevelReward.prefab
-// 关卡胜利界面
+// 关卡胜利/奖励界面：与 UILevelComplete 同构的两个出口——
+//   onBackClick → CmdGlobalEnterLevelContinue 继续；onNextClick → 退出到大厅/地图编辑器。
+// 具体内容(奖励项)由 prefab 静态展示，脚本只管按钮。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UILevelReward : LayoutScript
 {

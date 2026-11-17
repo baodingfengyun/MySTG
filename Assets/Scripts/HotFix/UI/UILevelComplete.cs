@@ -4,7 +4,9 @@ using static StringUtility;
 
 // auto generate member start
 // generate from:Assets/GameResources/UI/UIPrefab/UILevelComplete.prefab
-// 关卡完成界面
+// 关卡完成(通关)界面：显示到达波次，两个选择——
+//   onBackClick → CmdGlobalEnterLevelContinue 继续下一关；onNextClick → 退出到大厅/地图编辑器。
+// setWave 由关卡结算流程填入"到达波次: N"。
 [ObfuzIgnore(ObfuzScope.TypeName)]
 public class UILevelComplete : LayoutScript
 {

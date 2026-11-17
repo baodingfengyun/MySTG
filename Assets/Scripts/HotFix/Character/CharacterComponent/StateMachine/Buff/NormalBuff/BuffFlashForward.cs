@@ -21,7 +21,11 @@ public class BuffFlashForwardParam : CharacterBuffParamT<BuffFlashForwardParam>
 	}
 }
 
-// 向前闪现一定距离
+// 向前闪现一定距离（瞬时位移族代表）。
+// 没有 leave/reset——因为它是一次性效果：只在 enter 里调移动组件 moveForward(GRID_SIZE×距离) 立即位移，
+// Buff 本身只是"触发一次动作"的载体，时间到了自然移除，无状态需要还原。
+// 位移前检查 StateGroupNotAllowMove(被禁锢时不能闪)，体现状态组互斥对行为的约束。
+// 与 BuffFloatToAir/BuffPushMove 等同族，都是 enter 里直接改角色位置。
 public class BuffFlashForward : CharacterBuffT<BuffFlashForwardParam>
 {
 	public override void enter()

@@ -38,7 +38,13 @@ public class BuffBurnParam : CharacterBuffParamT<BuffBurnParam>
 	}
 }
 
-// 伤害递减的燃烧伤害
+// 【代表样例：伤害值叠加 + 逐跳递减 Buff】燃烧
+// 【伤害公式】每跳伤害 = mDamage × (1+怪物燃烧易伤)，其中
+//   mDamage = 固定值 mDamageFixed + mDamagePercent × 来源攻击力(来源来自 BuffParam.mSource)；
+//   每跳后 mDamage *= mDecreasePercent：小于1=递减(常规燃烧)，大于1=递增(可在 apply 前调
+//   decreaseToIncreasePercent 反转)。伤害<=0 时 removeSelf 自行移除。
+// 【叠加策略】OVERLAP_LAYER——addSameState 把新燃烧的伤害值加到现有 mDamage 上（不是加层数）。
+// 【对比中毒】中毒叠"层数×固定伤害"，燃烧叠"伤害值"且支持递增/递减，两者都是 OVERLAP_LAYER。
 public class BuffBurn : CharacterBuffT<BuffBurnParam>
 {
 	protected int mDamage;				// 伤害值
