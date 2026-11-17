@@ -462,10 +462,6 @@
       <HintPath>Assets\3rdParty\codeandweb.com\Editor\TexturePackerImporter.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="LZ4">
-      <HintPath>Library\PackageCache\com.code-philosophy.hybridclr@e4def761d6\Plugins\LZ4.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.2\Runtime\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
