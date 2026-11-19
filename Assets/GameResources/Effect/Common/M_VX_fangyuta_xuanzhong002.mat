@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_VX_fangyuta_xuanzhong002
-  m_Shader: {fileID: 4800000, guid: d706ecf086aa0d84b9cec83c14e3d9a9, type: 3}
+  m_Shader: {fileID: 4800000, guid: 940c9010525fd3c4d9037068d8dbf59d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
